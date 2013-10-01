@@ -1,4 +1,11 @@
 principal:
     resource: "@PrincipalBundle/Resources/config/routing.yml"
     prefix:   /
+    pattern:  
+    
+index:
+    pattern:  /index
+    defaults:  
+        _controller: PrincipalBundle:Default:index
+    
 
