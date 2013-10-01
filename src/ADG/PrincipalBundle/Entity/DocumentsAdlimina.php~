@@ -1,0 +1,53 @@
+<?php
+
+namespace ADG\PrincipalBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * DocumentsAdlimina
+ *
+ * @ORM\Table(name="documents_adlimina")
+ * @ORM\Entity
+ */
+class DocumentsAdlimina
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nodac", type="string", length=255, nullable=true)
+     */
+    private $nodac;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="poblacio", type="text", nullable=true)
+     */
+    private $poblacio;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="titol", type="text", nullable=true)
+     */
+    private $titol;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="texte", type="text", nullable=true)
+     */
+    private $texte;
+
+
+}

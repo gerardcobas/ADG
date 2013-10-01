@@ -1,0 +1,67 @@
+<?php
+
+namespace ADG\PrincipalBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Documents
+ *
+ * @ORM\Table(name="documents")
+ * @ORM\Entity
+ */
+class Documents
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="codi_doc", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $codiDoc;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="referencia", type="string", length=255, nullable=true)
+     */
+    private $referencia;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nodac", type="string", length=255, nullable=true)
+     */
+    private $nodac;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="poblacio", type="text", nullable=true)
+     */
+    private $poblacio;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="data", type="text", nullable=true)
+     */
+    private $data;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descripcio", type="text", nullable=true)
+     */
+    private $descripcio;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="texte", type="text", nullable=true)
+     */
+    private $texte;
+
+
+}

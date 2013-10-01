@@ -1,0 +1,46 @@
+<?php
+
+namespace ADG\PrincipalBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * FonsSeminaristes
+ *
+ * @ORM\Table(name="fons_seminaristes")
+ * @ORM\Entity
+ */
+class FonsSeminaristes
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="num", type="string", length=255, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $num;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nodac", type="string", length=255, nullable=true)
+     */
+    private $nodac;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cognom", type="text", nullable=true)
+     */
+    private $cognom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="data", type="text", nullable=true)
+     */
+    private $data;
+
+
+}
