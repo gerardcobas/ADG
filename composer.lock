@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "fca3b053cd16d9a525d44dac3c917520",
+    "hash": "0f02f0a13484d351fe6ad811398df806",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1657,43 +1657,6 @@
             "time": "2013-09-26 07:49:44"
         },
         {
-            "name": "twbs/bootstrap",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "a32b626f5cce692be2cec6fe9b8cb630ec47634c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/a32b626f5cce692be2cec6fe9b8cb630ec47634c",
-                "reference": "a32b626f5cce692be2cec6fe9b8cb630ec47634c",
-                "shasum": ""
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Jacob Thornton",
-                    "email": "jacobthornton@gmail.com"
-                },
-                {
-                    "name": "Mark Otto",
-                    "email": "markdotto@gmail.com"
-                }
-            ],
-            "description": "Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.",
-            "homepage": "http://getbootstrap.com",
-            "keywords": [
-                "bootstrap",
-                "css"
-            ],
-            "time": "2013-10-01 18:01:08"
-        },
-        {
             "name": "twig/extensions",
             "version": "v1.0.0",
             "source": {
@@ -1797,9 +1760,9 @@
 
     ],
     "minimum-stability": "alpha",
-    "stability-flags": {
-        "twbs/bootstrap": 20
-    },
+    "stability-flags": [
+
+    ],
     "platform": {
         "php": ">=5.3.3"
     },
