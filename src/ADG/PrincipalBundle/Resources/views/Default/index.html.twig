@@ -1,1 +1,22 @@
-Hello !
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>Index!</title>
+		
+		
+		{% javascripts 'bundles/twbs/js/*' output='js/bootstrap.js' %}
+		    <script src="{{ asset_url }}"></script>
+		{% endjavascripts %}
+		{% stylesheets 'bundles/twbs/css/*' output='css/bootstrap.css' %}
+		    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" />
+		{% endstylesheets %}
+	</head>
+	
+	<body>
+
+
+	</body>
+      
+</html>
