@@ -3,12 +3,16 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}{% endblock %} | Arxiu diocesà de Girona</title>
-        {% block stylesheets %}{% endblock %}
-       	{% stylesheets 'bundles/twbs/css/*' output='css/bootstrap.css' %}
-		    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" />
-		{% endstylesheets %}
+        
+        <link href="{{ asset('bundles/frontend/css/bootstrap.css') }}" rel="stylesheet">
+	    <link href="{{ asset('bundles/frontend/css/bootstrap-theme.css') }}" rel="stylesheet">
+		<link href="{{ asset('bundles/frontend/css/font-awesome.css') }}" rel="stylesheet">
+		<link href="{{ asset('bundles/frontend/css/font-awesome-ie7.css') }}" rel="stylesheet">
+			
 		<link href="{{ asset('bundles/adg/css/comu.css') }}" rel="stylesheet">
-
+			
+        {% block stylesheets %}{% endblock %}
+		
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         
@@ -25,41 +29,12 @@
 				    <a class="navbar-brand" href="#">Arxiu diocesà de Girona</a>
 				</div>
 
-			  <div class="collapse navbar-collapse navbar-ex1-collapse">
+			      {{ knp_menu_render('PrincipalBundle:MenuBuilder:mainMenu', {'currentClass': 'active', 'template': 'PrincipalBundle:Menu:knp_menu.html.twig'}) }}
+				  {{ knp_menu_render('PrincipalBundle:MenuBuilder:userMenu', {'currentClass': 'active', 'template': 'PrincipalBundle:Menu:knp_menu.html.twig'}) }}
 
-			    <ul class="nav navbar-nav">
-			      <li class="active"><a href="#">Principal</a></li>
-			      <li class="dropdown">
-			        <a class="dropdown-toggle" data-toggle="dropdown">Arxiu diocesà<b class="caret"></b></a>
-			        <ul class="dropdown-menu">
-			          <li><a href="#">Action</a></li>
-			          <li><a href="#">Another action</a></li>
-			          <li><a href="#">Something else here</a></li>
-			          <li><a href="#">Separated link</a></li>
-			          <li><a href="#">One more separated link</a></li>
-			        </ul>
-			      </li>
-			      <li><a href="#">Arxiu capitular</a></li>
-			      <li class="dropdown">
-			        <a class="dropdown-toggle" data-toggle="dropdown">Biblioteca<b class="caret"></b></a>
-			        <ul class="dropdown-menu">
-			          <li><a href="#">Action</a></li>
-			          <li><a href="#">Another action</a></li>
-			          <li><a href="#">Something else here</a></li>
-			          <li><a href="#">Separated link</a></li>
-			          <li><a href="#">One more separated link</a></li>
-			        </ul>
-			      </li>
-			      <li><a href="#">Normativa</a></li>
-			      <li><a href="#">Contacte</a></li>
-			    </ul>
-			    <ul class="nav navbar-nav navbar-right">
-			      <li><a href="#">Link</a></li>
-			    </ul>
 			  </div>
 		 </nav>
-
-					
+		
 		<div class="container">
 			<div class="row">
 				{% block body %}{% endblock %}
@@ -69,17 +44,11 @@
 			  <p>Footer</p>
 			</footer>
 		</div>
-        
-        
-        
-        
-        
+
+
+	    <script src="http://code.jquery.com/jquery.js" type="text/javascript"></script>
+	    <script src="{{ asset('bundles/frontend/js/bootstrap.js') }}" type="text/javascript"></script>	         
         {% block javascripts %}{% endblock %}
-        
-        {% javascripts 'bundles/twbs/js/*' output='js/bootstrap.js' %}
-		    <script src="{{ asset_url }}"></script>
-		    <script src="http://code.jquery.com/jquery.js" type="text/javascript"></script>
-		{% endjavascripts %}
 
 
     </body>
