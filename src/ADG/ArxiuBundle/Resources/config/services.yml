@@ -1,0 +1,7 @@
+parameters:
+#    arxiu.example.class: ADG\ArxiuBundle\Example
+
+services:
+#    arxiu.example:
+#        class: %arxiu.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

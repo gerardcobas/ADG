@@ -1,0 +1,81 @@
+<?php
+
+namespace ADG\ArxiuBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * FonsCapellans
+ *
+ * @ORM\Table(name="fons_capellans")
+ * @ORM\Entity
+ */
+class FonsCapellans
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="num", type="string", length=255, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $num;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nodac", type="string", length=255, nullable=true)
+     */
+    private $nodac;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="data_naixement", type="text", nullable=true)
+     */
+    private $dataNaixement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cognom", type="text", nullable=true)
+     */
+    private $cognom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="natural", type="text", nullable=true)
+     */
+    private $natural;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ordenacio", type="text", nullable=true)
+     */
+    private $ordenacio;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="data_obit", type="text", nullable=true)
+     */
+    private $dataObit;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fitxa", type="text", nullable=true)
+     */
+    private $fitxa;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="altres", type="text", nullable=true)
+     */
+    private $altres;
+
+
+}
