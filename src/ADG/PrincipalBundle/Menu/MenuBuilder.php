@@ -13,12 +13,12 @@ class MenuBuilder extends ContainerAware
 		$menu->setChildrenAttribute('class', 'nav navbar-nav');
 
         $menu->addChild('Principal', array('route' => 'index'))->setAttribute('icon', 'icon-home');
-        $menu->addChild('Arxiu', array('route' => 'index'))->setAttribute('icon', 'icon-book');
+        $menu->addChild('Arxiu diocesà', array('route' => 'arxiu'))->setAttribute('icon', 'icon-folder-close');
+        $menu->addChild('Arxiu capitular', array('route' => 'capitular'))->setAttribute('icon', 'icon-folder-close-alt');
+        $menu->addChild('Biblioteca', array('route' => ''))->setAttribute('icon', 'icon-book');
+        $menu->addChild('Contacte', array('route' => 'contacte'))->setAttribute('icon', 'icon-envelope');
+        $menu->addChild('Normativa', array('route' => 'normativa'))->setAttribute('icon', 'icon-legal');
         
-        //$menu->addChild('Iniciar sessió', array('route' => 'index'))->setAttribute('icon', 'icon-user')->setAttribute('class', 'nav navbar-right');;
-        
-     
-        // ... add more children
 
         return $menu;
     }

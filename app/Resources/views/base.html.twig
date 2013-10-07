@@ -3,15 +3,12 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}{% endblock %} | Arxiu diocesà de Girona</title>
-        
-        
+          
         <link href="{{ asset('bundles/frontend/css/font-awesome.css') }}" rel="stylesheet">
 		<link href="{{ asset('bundles/frontend/css/font-awesome-ie7.css') }}" rel="stylesheet">
         <link href="{{ asset('bundles/frontend/css/bootstrap.min.css') }}" rel="stylesheet">
 	    <link href="{{ asset('bundles/frontend/css/bootstrap-theme.css') }}" rel="stylesheet">
 	    
-
-			
 		<link href="{{ asset('bundles/adg/css/comu.css') }}" rel="stylesheet">
 			
         {% block stylesheets %}{% endblock %}
@@ -39,9 +36,9 @@
 		 </nav>
 		
 		<div class="container">
-			<div class="row">
-				{% block body %}{% endblock %}
-			</div>
+
+			{% block body %}{% endblock %}
+
 			<hr>
 			<footer>
 			  <p>Footer</p>
@@ -50,8 +47,6 @@
 
 
 	    <script src="http://code.jquery.com/jquery.js" type="text/javascript"></script>
-
-
 	    <script src="{{ asset('bundles/frontend/js/bootstrap.min.js') }}" type="text/javascript"></script>	         
         {% block javascripts %}{% endblock %}
 

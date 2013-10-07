@@ -1,3 +1,4 @@
-arxiu_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: ArxiuBundle:Default:index }
+arxiu:
+    pattern: /arxiu
+    defaults:
+        _controller: ArxiuBundle:Default:arxiu     

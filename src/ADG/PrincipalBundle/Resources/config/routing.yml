@@ -1,3 +1,20 @@
-principal_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: PrincipalBundle:Default:index }
+index:
+    pattern:  /index
+    defaults: 
+        _controller: PrincipalBundle:Default:index
+
+contacte:
+    pattern: /contacte
+    defaults:
+        _controller: PrincipalBundle:Default:contacte
+        
+normativa:
+    pattern: /normativa
+    defaults:
+        _controller: PrincipalBundle:Default:normativa
+        
+        
+capitular:
+    pattern: /capitular
+    defaults:
+        _controller: PrincipalBundle:Default:capitular                    

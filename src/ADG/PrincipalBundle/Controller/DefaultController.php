@@ -10,4 +10,17 @@ class DefaultController extends Controller
     {
         return $this->render('PrincipalBundle:Default:index.html.twig');
     }
+    
+    public function contacteAction() {
+    	return $this->render('PrincipalBundle:Default:contacte.html.twig');
+    }
+
+    public function normativaAction() {
+    	return $this->render('PrincipalBundle:Default:normativa.html.twig');
+    }
+    
+    public function capitularAction() {
+    	return $this->render('PrincipalBundle:Default:capitular.html.twig');
+    }
+    
 }
