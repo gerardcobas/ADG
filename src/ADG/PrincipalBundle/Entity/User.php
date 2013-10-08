@@ -2,41 +2,17 @@
 
 namespace ADG\PrincipalBundle\Entity;
 
-use Symfony\Component\Security\Core\User\UserInterface;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * User
  *
- * @ORM\Table(name="User")
- * @ORM\Entity(repositoryClass="Adg\PrincipalBundle\Entity\UserRepository")
+ * @ORM\Table(name="User", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_2DA17977F85E0677", columns={"username"}), @ORM\UniqueConstraint(name="UNIQ_2DA17977E7927C74", columns={"email"})})
+ * @ORM\Entity(repositoryClass="ADG\PrincipalBundle\Entity\UserRepository")
  */
-class User implements UserInterface {
-	
-	public function __construct() {
-		$this->fecha_alta = new \DateTime();
-	}
-	
-	public function __toString() {
-		return $this->getNombre() . ' ' . $this->getApellidos();
-	}
-	
-	function equals(\Symfony\Component\Security\Core\User\UserInterface $usuario) {
-		return $this->getEmail() == $usuario->getEmail();
-	}
-	
-	function eraseCredentials() {
-	}
-	
-	function getRoles() {
-		return array('ROLE_USUARIO');
-	}
-	
-	function getUsername() {
-		return $this->getEmail();
-	}
-	
-	
+class User implements UserInterface, \Serializable
+{
     /**
      * @var integer
      *
@@ -49,61 +25,39 @@ class User implements UserInterface {
     /**
      * @var string
      *
-     * @ORM\Column(name="nombre", type="string", length=100, nullable=false)
-     */
-    private $nombre;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="apellidos", type="string", length=255, nullable=false)
-     */
-    private $apellidos;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="email", type="string", length=255, nullable=false)
+     * @ORM\Column(name="email", type="string", length=60, nullable=false)
      */
     private $email;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="password", type="string", length=255, nullable=false)
+     * @ORM\Column(name="password", type="string", length=40, nullable=false)
      */
     private $password;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="salt", type="string", length=255, nullable=false)
+     * @ORM\Column(name="salt", type="string", length=32, nullable=false)
      */
     private $salt;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="permite_email", type="boolean", nullable=false)
+     * @ORM\Column(name="is_active", type="boolean", nullable=false)
      */
-    private $permiteEmail;
+    private $isActive;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="fecha_alta", type="datetime", nullable=false)
+     * @ORM\Column(name="username", type="string", length=25, nullable=false)
      */
-    private $fechaAlta;
+    private $username;
 
-    public function getPassword() {
-    	return $this->password;
-    }
-    
 
-    public function getSalt() {
-    	return $this->salt;
-    }
-    
 
     /**
      * Get id
@@ -113,52 +67,6 @@ class User implements UserInterface {
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set nombre
-     *
-     * @param string $nombre
-     * @return User
-     */
-    public function setNombre($nombre)
-    {
-        $this->nombre = $nombre;
-
-        return $this;
-    }
-
-    /**
-     * Get nombre
-     *
-     * @return string 
-     */
-    public function getNombre()
-    {
-        return $this->nombre;
-    }
-
-    /**
-     * Set apellidos
-     *
-     * @param string $apellidos
-     * @return User
-     */
-    public function setApellidos($apellidos)
-    {
-        $this->apellidos = $apellidos;
-
-        return $this;
-    }
-
-    /**
-     * Get apellidos
-     *
-     * @return string 
-     */
-    public function getApellidos()
-    {
-        return $this->apellidos;
     }
 
     /**
@@ -198,6 +106,16 @@ class User implements UserInterface {
     }
 
     /**
+     * Get password
+     *
+     * @return string 
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
      * Set salt
      *
      * @param string $salt
@@ -211,48 +129,102 @@ class User implements UserInterface {
     }
 
     /**
-     * Set permiteEmail
+     * Get salt
      *
-     * @param boolean $permiteEmail
+     * @return string 
+     */
+    public function getSalt()
+    {
+        return $this->salt;
+    }
+
+    /**
+     * Set isActive
+     *
+     * @param boolean $isActive
      * @return User
      */
-    public function setPermiteEmail($permiteEmail)
+    public function setIsActive($isActive)
     {
-        $this->permiteEmail = $permiteEmail;
+        $this->isActive = $isActive;
 
         return $this;
     }
 
     /**
-     * Get permiteEmail
+     * Get isActive
      *
      * @return boolean 
      */
-    public function getPermiteEmail()
+    public function getIsActive()
     {
-        return $this->permiteEmail;
+        return $this->isActive;
     }
 
     /**
-     * Set fechaAlta
+     * Set username
      *
-     * @param \DateTime $fechaAlta
+     * @param string $username
      * @return User
      */
-    public function setFechaAlta($fechaAlta)
+    public function setUsername($username)
     {
-        $this->fechaAlta = $fechaAlta;
+        $this->username = $username;
 
         return $this;
     }
 
     /**
-     * Get fechaAlta
+     * Get username
      *
-     * @return \DateTime 
+     * @return string 
      */
-    public function getFechaAlta()
+    public function getUsername()
     {
-        return $this->fechaAlta;
+        return $this->username;
     }
+    
+    /**
+     * @inheritDoc
+     */
+    public function getRoles()
+    {
+    	return array('ROLE_USER');
+    }
+    
+    /**
+     * @inheritDoc
+     */
+    public function eraseCredentials()
+    {
+    }
+    
+    /**
+     * @see \Serializable::serialize()
+     */
+    public function serialize()
+    {
+    	return serialize(array(
+    			$this->id,
+    	));
+    }
+    
+    /**
+     * @see \Serializable::unserialize()
+     */
+    public function unserialize($serialized)
+    {
+    	list (
+    			$this->id,
+    	) = unserialize($serialized);
+    }
+
+    
+    public function __construct()
+    {
+    	$this->isActive = true;
+    	$this->salt = md5(uniqid(null, true));
+    }
+    
+    
 }

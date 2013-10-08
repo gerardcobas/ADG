@@ -3,10 +3,22 @@ jms_security_extra:
     expressions: true
     
 security:
+    encoders:
+        ADG\PrincipalBundle\Entity\User: plaintext
+
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: [ ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH ]
+
+    providers:
+       users:
+            entity: { class: Adg\PrincipalBundle\Entity\User }
+            
     firewalls:
-        frontend:
+        login:
             pattern: ^/
             anonymous: ~
+            http_basic: ~
             form_login:
                 login_path: login
                 check_path: login_check
@@ -18,12 +30,12 @@ security:
             logout:
                 path: logout
                 target: index
+     
     access_control:
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/normativa, roles: ROLE_USUARIO }
+        - { path: ^/normativa, roles: ROLE_USER }
+        
 
-    providers:
-        usuarios:
-            entity: { class: Adg\PrincipalBundle\Entity\User, property: email }
-    encoders:
-        Adg\PrincipalBundle\Entity\User: plaintext
+        
+        
+        
