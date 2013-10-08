@@ -2,6 +2,9 @@ parameters:
 #    principal.example.class: ADG\PrincipalBundle\Example
 
 services:
-#    principal.example:
-#        class: %principal.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    adg.bibliotecabundle.menu.voter.request:
+        class: Adg\PrincipalBundle\Menu\RequestVoter
+        arguments:
+            - "@service_container"
+        tags:
+            - name: knp_menu.voter

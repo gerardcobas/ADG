@@ -1,0 +1,13 @@
+
+
+login:
+    pattern: /login
+    defaults: 
+        _controller: PrincipalBundle:Default:login
+
+login_check:
+    pattern: /login_check
+
+logout:
+    pattern: /logout
+    

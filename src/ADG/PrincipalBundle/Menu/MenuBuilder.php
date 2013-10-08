@@ -28,17 +28,24 @@ class MenuBuilder extends ContainerAware
     {
     	$menu = $factory->createItem('root');
     	$menu->setChildrenAttribute('class', 'nav navbar-nav navbar-right');
-    
-    	/*
-    	 You probably want to show user specific information such as the username here. That's possible! Use any of the below methods to do this.
-    
-    	if($this->container->get('security.context')->isGranted(array('ROLE_ADMIN', 'ROLE_USER'))) {} // Check if the visitor has any authenticated roles
-    	$username = $this->container->get('security.context')->getToken()->getUser()->getUsername(); // Get username of the current logged in user
-    
-    	*/
-    	$menu->addChild('Iniciar sessió', array('route' => 'index'))->setAttribute('icon', 'icon-user');
-    	
-    	
+
+    	$securityContext = $this->container->get('security.context');
+    	if ($securityContext->isGranted(array('ROLE_ADMIN', 'ROLE_USER'))) {
+		
+    		
+    		$menu->addChild('User', array('label' => 'Autentificat'))
+    		->setAttribute('dropdown', true)
+    		->setAttribute('icon', 'icon-user');
+    		
+    		$menu['User']->addChild('admin1', array('route' => 'index'))
+    		->setAttribute('icon', 'icon-edit');
+    		$menu['User']->addChild('admin2', array('route' => 'index'))
+    		->setAttribute('icon', 'icon-edit');
+
+    	}
+    	else {
+    		$menu->addChild('Iniciar sessió', array('route' => 'login'))->setAttribute('icon', 'icon-user');
+    	}
 
     	return $menu;
     }

@@ -26,12 +26,13 @@
 				      <span class="icon-bar"></span>
 				      <span class="icon-bar"></span>
 				    </button>
-				    <a class="navbar-brand" href="#">Arxiu diocesà de Girona</a>
+				    <a class="navbar-brand" href="{{ path('index') }}"">Arxiu diocesà de Girona</a>
 				</div>
 				
 				<div class="collapse navbar-collapse navbar-ex1-collapse">
 			      {{ knp_menu_render('PrincipalBundle:MenuBuilder:mainMenu', {'currentClass': 'active', 'template': 'PrincipalBundle:Menu:knp_menu.html.twig'}) }}
 				  {{ knp_menu_render('PrincipalBundle:MenuBuilder:userMenu', {'currentClass': 'active', 'template': 'PrincipalBundle:Menu:knp_menu.html.twig'}) }}
+			
 			  </div>
 		 </nav>
 		

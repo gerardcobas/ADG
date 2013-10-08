@@ -13,3 +13,7 @@ principal:
     pattern:  
 
 
+user_routes:
+    resource: "@PrincipalBundle/Resources/config/routing_user.yml"
+    prefix:   /
+
