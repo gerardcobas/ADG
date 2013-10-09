@@ -44,7 +44,7 @@ class MenuBuilder extends ContainerAware
 
     	}
     	else {
-    		$menu->addChild('Iniciar sessió', array('route' => 'login'))->setAttribute('icon', 'icon-user');
+    		$menu->addChild('Iniciar sessió', array('route' => 'fos_user_security_login'))->setAttribute('icon', 'icon-user');
     	}
 
     	return $menu;

@@ -3,8 +3,7 @@ imports:
     - { resource: security.yml }
   
 framework:
-    #esi:             ~
-    #translator:      { fallback: %locale% }
+    translator: ~
     secret:  "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -74,3 +73,8 @@ knp_menu:
         template: knp_menu.html.twig
     templating: false # if true, enables the helper for PHP templates
     default_renderer: twig # The renderer to use, list is also available by default
+    
+fos_user:
+    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    firewall_name: main
+    user_class: ADG\PrincipalBundle\Entity\User
