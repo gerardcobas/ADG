@@ -30,18 +30,26 @@ class MenuBuilder extends ContainerAware
     	$menu->setChildrenAttribute('class', 'nav navbar-nav navbar-right');
 
     	$securityContext = $this->container->get('security.context');
-    	if ($securityContext->isGranted(array('ROLE_ADMIN', 'ROLE_USER'))) {
-		
-    		
-    		$menu->addChild('User', array('label' => 'Autentificat'))
+    	
+    	if ($securityContext->isGranted(array('ROLE_ADMIN'))) {
+    		$menu->addChild('User', array('label' => 'Administrar'))
     		->setAttribute('dropdown', true)
     		->setAttribute('icon', 'icon-user');
     		
     		$menu['User']->addChild('admin1', array('route' => 'index'))
+    		->setAttribute('icon', 'icon-edit');;
+    	} else if ($securityContext->isGranted(array('ROLE_USER'))) {
+    	
+    	
+    		$menu->addChild('User', array('label' => 'Autentificat'))
+    		->setAttribute('dropdown', true)
+    		->setAttribute('icon', 'icon-user');
+    	
+    		$menu['User']->addChild('user1', array('route' => 'index'))
     		->setAttribute('icon', 'icon-edit');
-    		$menu['User']->addChild('admin2', array('route' => 'index'))
+    		$menu['User']->addChild('user2', array('route' => 'index'))
     		->setAttribute('icon', 'icon-edit');
-
+    	
     	}
     	else {
     		$menu->addChild('Iniciar sessió', array('route' => 'fos_user_security_login'))->setAttribute('icon', 'icon-user');

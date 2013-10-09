@@ -12,10 +12,6 @@ principal:
     prefix:   /
     pattern:  
 
-user_routes:
-    resource: "@PrincipalBundle/Resources/config/routing_user.yml"
-    prefix:   /
-
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 
