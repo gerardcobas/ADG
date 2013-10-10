@@ -15,9 +15,9 @@ class MenuBuilder extends ContainerAware
         $menu->addChild('Principal', array('route' => 'index'))->setAttribute('icon', 'icon-home');
         $menu->addChild('Arxiu diocesà', array('route' => 'arxiu'))->setAttribute('icon', 'icon-folder-close');
         $menu->addChild('Arxiu capitular', array('route' => 'capitular'))->setAttribute('icon', 'icon-folder-close-alt');
-        $menu->addChild('Biblioteca', array('route' => ''))->setAttribute('icon', 'icon-book');
+        $menu->addChild('Biblioteca', array('route' => 'capitular'))->setAttribute('icon', 'icon-book');
         $menu->addChild('Contacte', array('route' => 'contacte'))->setAttribute('icon', 'icon-envelope');
-        $menu->addChild('Normativa', array('route' => 'normativa'))->setAttribute('icon', 'icon-legal');
+        $menu->addChild('Normativa', array('route' => 'normativa'))->setAttribute('icon', 'icon-file-text-alt');
         
 
         return $menu;
@@ -27,7 +27,7 @@ class MenuBuilder extends ContainerAware
     public function userMenu(FactoryInterface $factory, array $options)
     {
     	$menu = $factory->createItem('root');
-    	$menu->setChildrenAttribute('class', 'nav navbar-nav navbar-right');
+    	$menu->setChildrenAttribute('class', 'nav navbar-nav navbar-right ');
 
     	$securityContext = $this->container->get('security.context');
     	
@@ -37,7 +37,9 @@ class MenuBuilder extends ContainerAware
     		->setAttribute('icon', 'icon-user');
     		
     		$menu['User']->addChild('admin1', array('route' => 'index'))
-    		->setAttribute('icon', 'icon-edit');;
+    		->setAttribute('icon', 'icon-edit');
+    		
+    		$menu->addChild('Sortir', array('route' => 'fos_user_security_logout'))->setAttribute('icon', 'icon-signout');
     	} else if ($securityContext->isGranted(array('ROLE_USER'))) {
     	
     	
@@ -49,10 +51,11 @@ class MenuBuilder extends ContainerAware
     		->setAttribute('icon', 'icon-edit');
     		$menu['User']->addChild('user2', array('route' => 'index'))
     		->setAttribute('icon', 'icon-edit');
-    	
+    		$menu->addChild('Sortir', array('route' => 'fos_user_security_logout'))->setAttribute('icon', 'icon-signout');
     	}
     	else {
-    		$menu->addChild('Iniciar sessió', array('route' => 'fos_user_security_login'))->setAttribute('icon', 'icon-user');
+    		$menu->addChild('Iniciar sessió', array('route' => 'fos_user_security_login'))->setAttribute('icon', 'icon-signin');
+    		
     	}
 
     	return $menu;

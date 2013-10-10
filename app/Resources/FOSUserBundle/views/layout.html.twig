@@ -1,0 +1,17 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Principal{% endblock %}
+
+{% block body %}      
+        {% for type, messages in app.session.flashbag.all() %}
+            {% for message in messages %}
+                <div class="flash-{{ type }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+            {% block fos_user_content %}
+            {% endblock fos_user_content %}
+
+{% endblock %}

@@ -4,7 +4,7 @@ parameters:
     database_port: null
     database_name: ADG
     database_user: ADG
-    database_password: root
+    database_password: ADG
     mailer_transport: smtp
     mailer_host: localhost
     mailer_user: ADG

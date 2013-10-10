@@ -1,0 +1,48 @@
+.background-gray {
+    background: red;
+}
+
+.fixed-position {
+	position: fixed;
+}
+
+.centered-text {
+    text-align:center;
+} 
+
+body {
+	padding-top: 70px;
+	padding-bottom: 40px;
+}
+.sidebar-nav {
+	padding: 9px 0;
+}
+
+/* Vertical spacers */
+.space50 {
+    height: 50px;
+}
+
+.space100 {
+    height: 100px;
+}
+
+.space10 {
+    height: 10px;
+}
+
+.space150 {
+    height: 150px;
+}
+
+.space5 {
+    height: 5px;
+}
+
+article {
+    text-align: justify;
+}
+
+.marginleft {
+	margin-left: 15px;
+}
