@@ -13,7 +13,10 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('PrincipalBundle:Default:index.html.twig');
+    	$em = $this->getDoctrine()->getEntityManager();
+    	$noticies = $em->getRepository('PrincipalBundle:Noticies')->findAll();
+    	
+        return $this->render('PrincipalBundle:Default:index.html.twig', array('noticies' => $noticies));
     }
     
     public function contacteAction() {
