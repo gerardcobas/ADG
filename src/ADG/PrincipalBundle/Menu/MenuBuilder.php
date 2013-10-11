@@ -16,8 +16,6 @@ class MenuBuilder extends ContainerAware
         $menu->addChild('Arxiu diocesà', array('route' => 'arxiu'))->setAttribute('icon', 'icon-folder-close');
         $menu->addChild('Arxiu capitular', array('route' => 'capitular'))->setAttribute('icon', 'icon-folder-close-alt');
         $menu->addChild('Biblioteca', array('route' => 'capitular'))->setAttribute('icon', 'icon-book');
-        $menu->addChild('Contacte', array('route' => 'contacte'))->setAttribute('icon', 'icon-envelope');
-        $menu->addChild('Normativa', array('route' => 'normativa'))->setAttribute('icon', 'icon-file-text-alt');
         
 
         return $menu;

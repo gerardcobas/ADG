@@ -1,7 +1,4 @@
-.background-gray {
-    background: red;
-}
-
+/*Custom layout*/
 .fixed-position {
 	position: fixed;
 }
@@ -34,6 +31,7 @@ html, body, .container, .content {
 .push {
     height: 70px; /* same as the footer */
 }
+
 .footer-wrapper {
     position: relative;
     height: 70px;
@@ -48,13 +46,25 @@ html, body, .container, .content {
 	max-width: 200px;
 }
 
-#footer a:hover, a:focus, a:link, a:visited, #footer h4 {
+fa, #footer h4 {
 	  color: #999;
 	  margin-right: 10px;
 }
 
 .sidebar-nav {
 	padding: 9px 0;
+}
+
+article {
+    text-align: justify;
+}
+
+.marginleft {
+	margin-left: 15px;
+}
+.nav>li>a {
+	padding-right: 10px;
+	padding-left: 10px;
 }
 
 /* Vertical spacers */
@@ -76,12 +86,4 @@ html, body, .container, .content {
 
 .space5 {
     height: 5px;
-}
-
-article {
-    text-align: justify;
-}
-
-.marginleft {
-	margin-left: 15px;
 }

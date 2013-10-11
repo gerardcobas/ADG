@@ -53,34 +53,34 @@
 		    <div class="footer-wrapper">
 		    	<footer>
 					<h4>Arxiu diocesà de Girona</h4>
-					<a href=" {{ path('contacte') }}">
+					<fa href=" {{ path('contacte') }}">
 						<i class="icon-envelope"></i>
 						Contacte
-					</a>
+					</fa>
 					
-					<a href=" {{ path('normativa') }}">
+					<fa href=" {{ path('normativa') }}">
 						<i class="icon-file-text-alt"></i>
 						Normativa
-					</a>
+					</fa>
             		{% if is_granted("ROLE_ADMIN") %}
-						<a href=" {{ path('index') }}">
+						<fa href=" {{ path('index') }}">
 							<i class="icon-user"></i>
 							Administrar
-						</a>
-						<a href=" {{ path('fos_user_security_logout') }}">
+						</fa>
+						<fa href=" {{ path('fos_user_security_logout') }}">
 							<i class="icon-signout"></i>
 							Sortir
-						</a>
+						</fa>
            			{% elseif is_granted("ROLE_USER") %}
-           				<a href=" {{ path('fos_user_security_logout') }}">
+           				<fa href=" {{ path('fos_user_security_logout') }}">
 							<i class="icon-signout"></i>
 							Sortir
-						</a>
+						</fa>
 					{% else %}
-					    <a href=" {{ path('fos_user_security_login') }}">
+					    <fa href=" {{ path('fos_user_security_login') }}">
 							<i class="icon-signin"></i>
 							Autentificació
-						</a>
+						</fa>
 					{% endif %}
 				</footer><!-- /.footer -->
 			</div>
