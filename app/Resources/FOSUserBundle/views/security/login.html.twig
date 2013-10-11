@@ -1,17 +1,16 @@
 {% extends "FOSUserBundle::layout.html.twig" %}
 
 {% trans_default_domain 'FOSUserBundle' %}
-{% block title %}Identificacio{% endblock %}
+{% block title %}Autentificació{% endblock %}
 
 {% block fos_user_content %}
 
 	<div class="page-header">
-        <h1>Identificació</h1>
+        <h1>Autentificació</h1>
 	</div>
     
-<div class="row">
-
-      <form class="form-signin col-lg-3 col-sm-3 col-md-3 col-xs-8" action="{{ path("fos_user_security_check") }}" method="post">
+	<div class="row">
+      <form class="form-signin marginleft" action="{{ path("fos_user_security_check") }}" method="post">
       <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
         
         <label for="username">Nom d'usuari</label>
@@ -21,20 +20,19 @@
         <input type="password" class="form-control" id="password" name="_password" required="required" >
         
         <label class="checkbox">
-          <input type="checkbox" value="remember-me" id="remember_me" name="_remember_me">Recordar
+        	<input type="checkbox" value="remember-me" id="remember_me" name="_remember_me">Recordar
         </label>
         <button class="btn btn-lg btn-primary btn-block" id="_submit" name="_submit" type="submit">Entrar</button>
-        <div class="space10 col-xs-offset-8"></div>
-      </form>
-	      
-          {% if error %}
-    	<div class="space10"></div>
-	        <div class="marginleft alert alert-danger col-lg-3 col-md-3 col-sm-3 col-xs-8">
+        
+        {% if error %}
+	    	<div class="space10"></div>
+	        <div class="alert alert-danger">
 	          <button type="button" class="close" data-dismiss="alert">×</button>
 	          <h4>Error!</h4>
 	          {{ error | trans }}
 	        </div>
          {% endif %}
-</div>
+      </form>    
+	</div>
 
 {% endblock fos_user_content %}
