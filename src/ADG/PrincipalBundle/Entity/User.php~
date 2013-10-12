@@ -2,59 +2,23 @@
 
 namespace ADG\PrincipalBundle\Entity;
 
+use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * User
  *
- * @ORM\Table(name="User", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_2DA17977F85E0677", columns={"username"}), @ORM\UniqueConstraint(name="UNIQ_2DA17977E7927C74", columns={"email"})})
+ * @ORM\Table(name="User")
  * @ORM\Entity
  */
-class User
+class User extends BaseUser
 {
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="email", type="string", length=60, nullable=false)
-     */
-    private $email;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="password", type="string", length=40, nullable=false)
-     */
-    private $password;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="salt", type="string", length=32, nullable=false)
-     */
-    private $salt;
-
-    /**
-     * @var boolean
-     *
-     * @ORM\Column(name="is_active", type="boolean", nullable=false)
-     */
-    private $isActive;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="username", type="string", length=25, nullable=false)
-     */
-    private $username;
-
-
+    
 }

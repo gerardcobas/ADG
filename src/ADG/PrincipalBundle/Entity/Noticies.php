@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Noticies
  *
  * @ORM\Table(name="noticies")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="ADG\PrincipalBundle\Entity\NoticiesRepository")
  */
 class Noticies
 {
@@ -24,7 +24,7 @@ class Noticies
     /**
      * @var string
      *
-     * @ORM\Column(name="data", type="text", nullable=true)
+     * @ORM\Column(name="data", type="date", nullable=true)
      */
     private $data;
 
