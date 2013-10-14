@@ -5,25 +5,35 @@
 
 {% block fos_user_content %}
 
-	<div class="page-header">
-        <h1>Autentificació</h1>
-	</div>
-    
-	<div class="row">
-      <form class="form-signin marginleft" action="{{ path("fos_user_security_check") }}" method="post">
+	<div class="account-container">
+	<div class="content-form">
+      <form action="{{ path("fos_user_security_check") }}" method="post">
+      
+       <h1>Autentificació</h1>
+       <p>Sisplau proporcioni les seves credencials</p>
       <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
         
         <label for="username">Nom d'usuari</label>
-        <input type="text" class="form-control" id="username" name="_username" required="required" autofocus>
+		<div class="input-group">
+		  <span class="input-group-addon add-on"><i class="icon-user"></i> </span>
+		  <input type="text" class="form-control" id="username" name="_username" required="required">
+		</div>
+
         <div class="space10"></div>
         <label for="password">Contrasenya</label>
-        <input type="password" class="form-control" id="password" name="_password" required="required" >
-        
+       	<div class="input-group">
+		  <span class="input-group-addon add-on"><i class="icon-key"></i> </span>
+		   <input type="password" class="form-control" id="password" name="_password" required="required" >
+		</div>
+        <div class="space10"></div>
+         
         <label class="checkbox">
-        	<input type="checkbox" value="remember-me" id="remember_me" name="_remember_me">Recordar
+        	<input type="checkbox" value="remember-me" id="remember_me" name="_remember_me" checked>Recordar
+        	<button class="btn btn-lg btn-success pull-right" id="_submit" name="_submit" type="submit">Entrar</button>
         </label>
-        <button class="btn btn-lg btn-primary btn-block" id="_submit" name="_submit" type="submit">Entrar</button>
-        
+
+         <div class="space10"></div>
+         
         {% if error %}
 	    	<div class="space10"></div>
 	        <div class="alert alert-danger">
@@ -34,5 +44,5 @@
          {% endif %}
       </form>    
 	</div>
-
+</div>
 {% endblock fos_user_content %}
