@@ -5,7 +5,7 @@ arrel:
 
 arxiu:
     resource: "@ArxiuBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /arxiu
 
 principal:
     resource: "@PrincipalBundle/Resources/config/routing.yml"

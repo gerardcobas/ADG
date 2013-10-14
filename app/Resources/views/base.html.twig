@@ -37,53 +37,13 @@
 		 </div>
 
 		  <div class="content">
- 
 		    <div class="wrapper">
-		    
 		      <div class="container proper-content">
-
-		        		{% block body %}{% endblock %}
-
+		        {% block body %}{% endblock %}
 		      </div><!-- /.proper-content -->
- 
 		      <div class="push"></div>
- 
 		    </div><!-- /.wrapper -->
- 	
-		    <div class="footer-wrapper">
-		    	<footer>
-					<h4>Arxiu diocesà de Girona</h4>
-					<fa href=" {{ path('contacte') }}">
-						<i class="icon-envelope"></i>
-						Contacte
-					</fa>
-					
-					<fa href=" {{ path('normativa') }}">
-						<i class="icon-file-text-alt"></i>
-						Normativa
-					</fa>
-            		{% if is_granted("ROLE_ADMIN") %}
-						<fa href=" {{ path('index') }}">
-							<i class="icon-user"></i>
-							Administrar
-						</fa>
-						<fa href=" {{ path('fos_user_security_logout') }}">
-							<i class="icon-signout"></i>
-							Sortir
-						</fa>
-           			{% elseif is_granted("ROLE_USER") %}
-           				<fa href=" {{ path('fos_user_security_logout') }}">
-							<i class="icon-signout"></i>
-							Sortir
-						</fa>
-					{% else %}
-					    <fa href=" {{ path('fos_user_security_login') }}">
-							<i class="icon-signin"></i>
-							Autentificació
-						</fa>
-					{% endif %}
-				</footer><!-- /.footer -->
-			</div>
+ 			{% include '::footer.html.twig' %}
 		  </div>
 
 		

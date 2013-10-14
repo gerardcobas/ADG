@@ -1,4 +1,10 @@
 arxiu:
-    pattern: /arxiu
+    pattern: /
     defaults:
-        _controller: ArxiuBundle:Default:arxiu     
+        _controller: ArxiuBundle:Default:arxiu
+        
+        
+altre:
+    pattern: /altre
+    defaults:
+        _controller: ArxiuBundle:Default:altre

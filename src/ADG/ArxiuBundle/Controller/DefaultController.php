@@ -10,4 +10,10 @@ class DefaultController extends Controller
     {
         return $this->render('ArxiuBundle:Default:arxiu.html.twig');
     }
+    
+    public function altreAction()
+    {
+    	return $this->render('ArxiuBundle:Default:altre.html.twig');
+    }
+    
 }

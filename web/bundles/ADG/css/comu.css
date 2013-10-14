@@ -22,6 +22,7 @@ html, body, .container, .content {
 }
  
 .wrapper {
+	
     min-height: 100%;
     height: auto !important;
     height: 100%;
@@ -42,13 +43,13 @@ html, body, .container, .content {
   	border-top: 1px solid transparent;
 }
 
-.form-signin{
-	max-width: 200px;
+a.foot {
+	color: #999;
+	margin-right: 10px;
 }
 
-fa, #footer h4 {
-	  color: #999;
-	  margin-right: 10px;
+.form-signin{
+	max-width: 200px;
 }
 
 .sidebar-nav {
