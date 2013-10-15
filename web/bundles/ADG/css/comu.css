@@ -101,3 +101,49 @@ article {
 .space5 {
     height: 5px;
 }
+
+
+
+
+/*------------------------------------------------------------------
+[1. Max Width: 308px]
+* Can't get smaller than 308 px;
+*/
+
+@media (max-width: 400px) {
+
+	.proper-content{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	
+	
+	.account-container {
+		width: 280px;
+	}
+	
+	.content-form{
+		padding: 6px 8px 23px;
+	}
+	
+	footer-wrapper{
+		margin-right: -10px;
+	}
+	
+	a.foot{
+		margin-right: 0px;
+	}
+
+}
+
+
+/*------------------------------------------------------------------
+[1. Max Width: 308px]
+* Can't get smaller than 308 px;
+*/
+
+@media (max-width: 308px) {
+	body, .navbar {
+		min-width: 308px;
+	}
+}
