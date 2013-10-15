@@ -16,7 +16,6 @@ class MenuBuilder extends ContainerAware
         $menu->addChild('Arxiu diocesà', array('route' => 'arxiu'))->setAttribute('icon', 'icon-folder-close');
         $menu->addChild('Arxiu capitular', array('route' => 'capitular'))->setAttribute('icon', 'icon-folder-close-alt');
         $menu->addChild('Biblioteca', array('route' => 'capitular'))->setAttribute('icon', 'icon-book');
-        
 
         return $menu;
     }
@@ -40,16 +39,11 @@ class MenuBuilder extends ContainerAware
     		$menu->addChild('Sortir', array('route' => 'fos_user_security_logout'))->setAttribute('icon', 'icon-signout');
     	} else if ($securityContext->isGranted(array('ROLE_USER'))) {
     	
-    	
     		$menu->addChild('User', array('label' => 'Autentificat'))
     		->setAttribute('dropdown', true)
     		->setAttribute('icon', 'icon-user');
     	
-    		$menu['User']->addChild('user1', array('route' => 'index'))
-    		->setAttribute('icon', 'icon-edit');
-    		$menu['User']->addChild('user2', array('route' => 'index'))
-    		->setAttribute('icon', 'icon-edit');
-    		$menu->addChild('Sortir', array('route' => 'fos_user_security_logout'))->setAttribute('icon', 'icon-signout');
+    		$menu['User']->addChild('Sortir', array('route' => 'fos_user_security_logout'))->setAttribute('icon', 'icon-signout');
     	}
     	else {
     		$menu->addChild('Autentificació', array('route' => 'fos_user_security_login'))->setAttribute('icon', 'icon-signin');

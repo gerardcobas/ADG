@@ -29,7 +29,6 @@ class SubmenuBuilder extends ContainerAware
     	$menu->addChild('Parròquies', array('route' => 'altre'))
     	->setAttribute('icon', 'icon-bell-alt')->setAttribute('class', 'last');
     	
-    	
     	return $menu;
     }
     
