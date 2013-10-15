@@ -2,6 +2,7 @@ eclipse.preferences.version=1
 encoding//app/Resources/FOSUserBundle/views/security/login.html.twig=UTF-8
 encoding//app/Resources/views/base.html.twig=UTF-8
 encoding//app/Resources/views/footer.html.twig=UTF-8
+encoding//src/ADG/ArxiuBundle/Menu/SubmenuBuilder.php=UTF-8
 encoding//src/ADG/ArxiuBundle/Resources/views/Default/arxiu.html.twig=UTF-8
 encoding//src/ADG/ArxiuBundle/Resources/views/base-arxiu.html.twig=UTF-8
 encoding//src/ADG/PrincipalBundle/Menu/MenuBuilder.php=UTF-8

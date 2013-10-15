@@ -40,7 +40,7 @@
 	display: block;
 	height: 100%;
 	padding: 0 15px;
-	font-size: 12px;
+	font-size: 13px;
 	font-weight: bold;
 	color: #b2afaa;
 }
@@ -54,7 +54,7 @@
 	display: inline-block;
 	width: 24px;
 	height: 24px;
-	margin-top: 11px;
+	margin-top: 12px;
 	margin-bottom: -3px;
 	font-size: 20px;
 }
@@ -67,7 +67,7 @@
 
 .subnavbar .container > ul > li.active > a {
 	
-	border-bottom:3px solid #ff7f74;
+	border-bottom:3px solid #4cae4c;
 	color: #383838;
 }
     
@@ -114,6 +114,18 @@
 }
 
 
+/*------------------------------------------------------------------
+[1. Max Width: 979px]
+*/
+
+@media (max-width: 979px) {
+	.subnavbar {
+	}
+	
+	.subnavbar .container {		
+		width: auto;
+	}
+}
 
 /*------------------------------------------------------------------
 [1. Max Width: 767px]
@@ -122,31 +134,32 @@
 @media (max-width: 767px) {
 
 	.subnavbar {
-		margin-left: -20px;
-		margin-right: -20px;	
+
+
 	}
 	
 	.subnavbar-inner {
 		height: auto;
+		margin-left: -20px;
 	}
 	
 	.subnavbar .container > ul {
 		width: 100%;
 		height: auto;
-		border: none;
 	}
 	
 	.subnavbar .container > ul > li {
 		width: 33%;
-		height: 70px;
-		margin-bottom: 0;
+		height: 60px;
+		margin-bottom: -5px;
 		
 		border: none;
 	}
 	
     .subnavbar .container > ul > li.active > a {
-		font-size: 11px;
+		font-size: 12px;
     	background: transparent;
+    	
     }
 	
 	.subnavbar .container > ul > li > a > i {	
@@ -172,17 +185,18 @@
     
 
 
-
-
 /*------------------------------------------------------------------
-[3. Max Width: 979px]
+[1. Max Width: 530px]
 */
 
-@media (max-width: 979px) {
-	.subnavbar {
+@media (max-width: 530px) {
+	
+	.subnavbar-inner {
+		height: 80px;
 	}
 	
-	.subnavbar .container {		
-		width: auto;
+	.subnavbar .container > ul > li {
+		height: 80px;
+		margin-bottom: -5px;
 	}
 }

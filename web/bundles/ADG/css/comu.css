@@ -1,4 +1,5 @@
 /*Custom layout*/
+
 .fixed-position {
 	position: fixed;
 }
@@ -67,10 +68,6 @@ a.foot {
 .content-form {
 	padding: 16px 28px 23px;
 } 
-
-.sidebar-nav {
-	padding: 9px 0;
-}
 
 article {
     text-align: justify;
