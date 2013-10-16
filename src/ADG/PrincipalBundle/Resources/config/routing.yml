@@ -13,8 +13,7 @@ normativa:
     defaults:
         _controller: PrincipalBundle:Default:normativa
         
-        
 capitular:
     pattern: /capitular
     defaults:
-        _controller: PrincipalBundle:Default:capitular                    
+        _controller: PrincipalBundle:Default:capitular

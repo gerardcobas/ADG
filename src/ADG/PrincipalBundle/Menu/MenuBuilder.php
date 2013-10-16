@@ -29,11 +29,19 @@ class MenuBuilder extends ContainerAware
     	$securityContext = $this->container->get('security.context');
     	
     	if ($securityContext->isGranted(array('ROLE_ADMIN'))) {
-    		$menu->addChild('User', array('label' => 'Administrar'))
+    		$menu->addChild('Admin', array('label' => 'Administrar'))
     		->setAttribute('dropdown', true)
     		->setAttribute('icon', 'icon-user');
     		
-    		$menu['User']->addChild('admin1', array('route' => 'index'))
+    		$menu['Admin']->addChild('General', array('route' => 'admin'))
+    		->setAttribute('icon', 'icon-edit-sign');
+    		
+    		$menu['Admin']->addChild('Noticies')
+    		->setAttribute('class', 'divider');
+    		
+    		$menu['Admin']->addChild('Notícies', array('route' => 'admin'))
+    		->setAttribute('icon', 'icon-edit');
+    		$menu['Admin']->addChild('Usuaris', array('route' => 'admin'))
     		->setAttribute('icon', 'icon-edit');
     		
     		$menu->addChild('Sortir', array('route' => 'fos_user_security_logout'))->setAttribute('icon', 'icon-signout');

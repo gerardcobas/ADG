@@ -1,0 +1,4 @@
+admin:
+    pattern: /
+    defaults:
+        _controller: PrincipalBundle:Admin:admin   
