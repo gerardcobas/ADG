@@ -3,6 +3,6 @@ admin:
     defaults:
         _controller: PrincipalBundle:Admin:admin
         
-#PrincipalBundle_noticies:
-#        resource: "@PrincipalBundle/Resources/config/routing/noticies.yml"
-#        prefix:   /noticies
+PrincipalBundle_noticies:
+        resource: "@PrincipalBundle/Resources/config/routing/noticies.yml"
+        prefix:   /noticies
