@@ -22,6 +22,10 @@
 	           			<p> {{ noticia.contingut }}</p>
 	           		</article>
 	           		<div class="space10"></div>
+	            {% else %}
+	            	<article>
+	           			<p>No hi han notícies recents.<p>
+	           		</article>
 				{% endfor %}
 	     
 	        </div>
