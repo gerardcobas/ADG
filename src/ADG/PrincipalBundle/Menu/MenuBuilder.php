@@ -39,12 +39,16 @@ class MenuBuilder extends ContainerAware
     		$menu['Admin']->addChild('Noticies')
     		->setAttribute('class', 'divider');
     		
-    		$menu['Admin']->addChild('Notícies', array('route' => 'admin'))
+    		$menu['Admin']->addChild('Notícies', array('route' => 'noticies'))
     		->setAttribute('icon', 'icon-edit');
     		$menu['Admin']->addChild('Usuaris', array('route' => 'admin'))
     		->setAttribute('icon', 'icon-edit');
     		
-    		$menu->addChild('Sortir', array('route' => 'fos_user_security_logout'))->setAttribute('icon', 'icon-signout');
+    		$menu['Admin']->addChild('Logout')
+    		->setAttribute('class', 'divider');
+    		$menu['Admin']->addChild('Sortir', array('route' => 'fos_user_security_logout'))
+    		->setAttribute('icon', 'icon-signout');
+
     	} else if ($securityContext->isGranted(array('ROLE_USER'))) {
     	
     		$menu->addChild('User', array('label' => 'Autentificat'))

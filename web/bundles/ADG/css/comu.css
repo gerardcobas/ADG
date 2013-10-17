@@ -69,6 +69,10 @@ a.foot {
 	padding: 16px 28px 23px;
 } 
 
+.col-xs-4{
+	margin-left: -15px;
+}
+
 article {
     text-align: justify;
 }

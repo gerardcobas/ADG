@@ -1,4 +1,9 @@
 admin:
-    pattern: /
+    pattern: /dashboard
     defaults:
-        _controller: PrincipalBundle:Admin:admin   
+        _controller: PrincipalBundle:Admin:admin
+        
+noticies:
+    pattern: /noticies/
+    defaults:
+        _controller: PrincipalBundle:Admin:noticies
