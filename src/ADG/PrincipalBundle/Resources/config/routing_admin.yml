@@ -1,5 +1,5 @@
 admin:
-    pattern: /dashboard
+    pattern: /general
     defaults:
         _controller: PrincipalBundle:Admin:admin
         
