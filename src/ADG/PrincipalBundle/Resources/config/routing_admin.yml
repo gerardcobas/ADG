@@ -1,8 +1,4 @@
 admin:
     pattern: /
     defaults:
-        _controller: PrincipalBundle:Admin:admin
-        
-PrincipalBundle_noticies:
-        resource: "@PrincipalBundle/Resources/config/routing/noticies.yml"
-        prefix:   /noticies
+        _controller: PrincipalBundle:Admin:admin   

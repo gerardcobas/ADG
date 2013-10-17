@@ -2,5 +2,5 @@
 /app/cache/*
 /app/logs/*
 /build/
+/vendor/
 /bin/
-/vendor
