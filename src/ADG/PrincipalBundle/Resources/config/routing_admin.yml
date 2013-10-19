@@ -1,9 +1,0 @@
-admin:
-    pattern: /general
-    defaults:
-        _controller: PrincipalBundle:Admin:admin
-        
-noticies:
-    pattern: /noticies/
-    defaults:
-        _controller: PrincipalBundle:Admin:noticies

@@ -13,28 +13,7 @@ class AdminController extends Controller
 {
     
     public function adminAction() {
-    	return $this->render('PrincipalBundle:Admin:admin.html.twig');
-    }
-
-    public function noticiesAction() {
-    	
-    	$peticion = $this->getRequest();
-    	$search = $peticion->query->get('search');
-    	$param = $peticion->query->get('param');
-    	$em = $this->getDoctrine()->getEntityManager();
-    	
-    	$rep = $em->getRepository('PrincipalBundle:Noticies');
-    	
-    	if (null == $search) {
-    		$noticies = $rep->findAll();
-    	} else {
-    		$noticies = $rep->findByParamFuzzy($param, $search);
-    	}
-    	
-    	return $this
-    	->render('PrincipalBundle:Admin:noticies.html.twig',
-    			array('noticies' => $noticies, 'search' => $search));
-
+    	return $this->render('PrincipalBundle:Admin:general.html.twig');
     }
    
     

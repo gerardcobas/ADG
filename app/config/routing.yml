@@ -14,10 +14,5 @@ principal:
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
-    
-    
-admin_routes:
-    resource: "@PrincipalBundle/Resources/config/routing_admin.yml"
-    prefix:   /admin    
 
 

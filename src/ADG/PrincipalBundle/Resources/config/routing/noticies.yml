@@ -1,0 +1,4 @@
+noticies_index:
+    pattern: /
+    defaults:
+        _controller: PrincipalBundle:Noticies:index

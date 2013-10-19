@@ -39,7 +39,7 @@ class MenuBuilder extends ContainerAware
     		$menu['Admin']->addChild('Noticies')
     		->setAttribute('class', 'divider');
     		
-    		$menu['Admin']->addChild('Notícies', array('route' => 'noticies'))
+    		$menu['Admin']->addChild('Notícies', array('route' => 'noticies_index'))
     		->setAttribute('icon', 'icon-edit');
     		$menu['Admin']->addChild('Usuaris', array('route' => 'admin'))
     		->setAttribute('icon', 'icon-edit');

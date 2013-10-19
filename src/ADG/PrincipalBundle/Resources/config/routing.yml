@@ -17,3 +17,7 @@ capitular:
     pattern: /capitular
     defaults:
         _controller: PrincipalBundle:Default:capitular
+        
+admin_routes:
+    resource: "@PrincipalBundle/Resources/config/routing/admin.yml"
+    prefix:   /admin            
