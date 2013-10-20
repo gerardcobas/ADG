@@ -2,3 +2,8 @@ noticies_index:
     pattern: /
     defaults:
         _controller: PrincipalBundle:Noticies:index
+        
+noticies_crear:
+    pattern:  /crear
+    defaults: { _controller: "PrincipalBundle:Noticies:crear" }
+    requirements: { _method: post }

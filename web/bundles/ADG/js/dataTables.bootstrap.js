@@ -54,8 +54,8 @@ $.extend( $.fn.dataTableExt.oPagination, {
 				'</ul>'
 			);
 			var els = $('a', nPaging);
-			$(els[0]).bind( 'click.DT', { action: "Anterior" }, fnClickHandler );
-			$(els[1]).bind( 'click.DT', { action: "Següent" }, fnClickHandler );
+			$(els[0]).bind( 'click.DT', { action: "Previous" }, fnClickHandler );
+			$(els[1]).bind( 'click.DT', { action: "Next" }, fnClickHandler );
 		},
 
 		"fnUpdate": function ( oSettings, fnDraw ) {

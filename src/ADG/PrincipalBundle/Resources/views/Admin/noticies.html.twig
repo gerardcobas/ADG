@@ -110,15 +110,27 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title">Modal title</h4>
+          <h4 class="modal-title">Afegir nova notícia</h4>
         </div>
-        <div class="modal-body">
-          blabla
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Tancar</button>
-          <button type="button" class="btn btn-success">Save changes</button>
-        </div>
+		<form action="{{ path("noticies_crear") }}" method="post">
+	      	<div class="modal-body"> 	
+		      	<p>Per afegir una nova noticia cal introduir la següent informació:</p>
+		        <label for="username">Títol</label>
+				<div class="form-group">
+				  <input type="text" class="form-control" name="titol" required="required">
+				</div>
+		        <div class="space10"></div>
+		        <label for="password">Contingut</label>
+		       	<div class="form-group">
+				  <input type="text" class="form-control" name="contingut" required="required" >
+				</div>
+	        </div>
+	        <div class="modal-footer">
+	          <button class="btn btn-danger" data-dismiss="modal">Tancar</button>
+	          <button class="btn btn-success" type="submit">Guardar</button>
+	        </div>
+		</form><!-- /.form -->
+
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
