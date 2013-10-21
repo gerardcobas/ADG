@@ -7,3 +7,22 @@ noticies_crear:
     pattern:  /crear
     defaults: { _controller: "PrincipalBundle:Noticies:crear" }
     requirements: { _method: post }
+    
+noticies_editar:
+    pattern:  /{id}/editar
+    defaults: { _controller: "PrincipalBundle:Noticies:editar" }
+    
+noticies_actualitzar:
+    pattern:  /{id}/editar/actualitzar
+    defaults: { _controller: "PrincipalBundle:Noticies:actualitzar" }
+    requirements: { _method: post }    
+    
+noticies_eliminar:
+    pattern:  /{id}/eliminar
+    defaults: { _controller: "PrincipalBundle:Noticies:eliminar" }    
+
+noticies_confirm:
+    pattern:  /{id}/eliminar/confirm
+    defaults: { _controller: "PrincipalBundle:Noticies:confirm" }
+    requirements: { _method: post }    
+    

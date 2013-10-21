@@ -27,7 +27,7 @@ class NoticiesController extends Controller
     	}
     	
     	return $this
-    	->render('PrincipalBundle:Admin:noticies.html.twig',
+    	->render('PrincipalBundle:AdminNoticies:noticies.html.twig',
     			array('noticies' => $noticies, 'search' => $search));
     }
     
@@ -52,18 +52,100 @@ class NoticiesController extends Controller
     		$em = $this->getDoctrine()->getManager();
     		$em->persist($entity);
     		$em->flush();
-    		
-    		
-    		
-    		return $this->redirect($this->generateUrl('admin'));
+
+    		return $this->redirect($this->generateUrl('noticies_index'));
     		
     	}
-
     	return $this
-    	->render('PrincipalBundle:Admin:noticies.html.twig',
+    	->render('PrincipalBundle:AdminNoticies:noticies.html.twig',
     			array('noticies' => null, 'search' => null));
-
     }
    
+    /**
+     * Mostra formulari per editar una Noticia
+     *
+     */
+    public function editarAction($id)
+    {
+    	$em = $this->getDoctrine()->getManager();
+    
+    	$noticiaEditable = $em->getRepository('PrincipalBundle:Noticies')->find($id);
+    
+    	if (!$noticiaEditable) {
+    		throw $this->createNotFoundException("No s'ha trobat");
+    	}
+
+    	return $this->render('PrincipalBundle:AdminNoticies:editarNoticies.html.twig',
+    			array('noticiaEditable' => $noticiaEditable));
+    }
+    
+    /**
+     * Actualitza la noticia seleccionada.
+     *
+     */
+    public function actualitzarAction($id)
+    {
+    	$em = $this->getDoctrine()->getManager();
+    	$noticiaEditable = $em->getRepository('PrincipalBundle:Noticies')->find($id);
+    	
+    	if (!$noticiaEditable) {
+    		throw $this->createNotFoundException("No s'ha trobat");
+    	}
+    	
+    	$request = $this->getRequest();
+    	if ($request->isMethod('POST')) {
+    		$titolEditar = $request->request->get('titolEditar');
+    		$contingutEditar = $request->request->get('contingutEditar');
+    		
+    		$noticiaEditable->setData(new \DateTime());
+    		
+    		$noticiaEditable->setTitol($titolEditar);
+    		$noticiaEditable->setContingut($contingutEditar);
+    		
+    		$em = $this->getDoctrine()->getManager();
+    		$em->persist($noticiaEditable);
+    		$em->flush();
+
+    		return $this->redirect($this->generateUrl('noticies_index'));
+    		
+    	}
+    	return $this->redirect($this->generateUrl('noticies_index'));
+    }
+    
+    
+    /**
+     * Mostra formulari per eliminar una Noticia
+     *
+     */
+    public function eliminarAction($id)
+    {
+    	$em = $this->getDoctrine()->getManager();
+    
+    	$noticia = $em->getRepository('PrincipalBundle:Noticies')->find($id);
+    
+    	if (!$noticia) {
+    		throw $this->createNotFoundException("No s'ha trobat");
+    	}
+    
+    	return $this->render('PrincipalBundle:AdminNoticies:eliminarNoticies.html.twig',
+    			array('noticia' => $noticia));
+    }    
+    
+    /**
+     * Confirma l'eliminació de la noticia seleccionada.
+     *
+     */
+    public function confirmAction($id)
+    {
+    	$em = $this->getDoctrine()->getManager();
+    	$noticia = $em->getRepository('PrincipalBundle:Noticies')->find($id);
+    	if (!$noticia) {
+    		throw $this->createNotFoundException("No s'ha trobat");
+    	}
+		$em->remove($noticia);
+        $em->flush();
+    	return $this->redirect($this->generateUrl('noticies_index'));
+    }
+    
     
 }
