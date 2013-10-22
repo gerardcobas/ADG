@@ -52,13 +52,16 @@ class NoticiesController extends Controller
     		$em = $this->getDoctrine()->getManager();
     		$em->persist($entity);
     		$em->flush();
-
+			
+    		$this->get('session')->getFlashBag()->add(
+    				'success',
+    				"Notícia afegida!"
+    		);
+    		
     		return $this->redirect($this->generateUrl('noticies_index'));
     		
     	}
-    	return $this
-    	->render('PrincipalBundle:AdminNoticies:noticies.html.twig',
-    			array('noticies' => null, 'search' => null));
+    	return $this->redirect($this->generateUrl('noticies_index'));
     }
    
     /**
@@ -74,6 +77,8 @@ class NoticiesController extends Controller
     	if (!$noticiaEditable) {
     		throw $this->createNotFoundException("No s'ha trobat");
     	}
+    	
+    	
 
     	return $this->render('PrincipalBundle:AdminNoticies:editarNoticies.html.twig',
     			array('noticiaEditable' => $noticiaEditable));
@@ -105,6 +110,11 @@ class NoticiesController extends Controller
     		$em = $this->getDoctrine()->getManager();
     		$em->persist($noticiaEditable);
     		$em->flush();
+    		
+    		$this->get('session')->getFlashBag()->add(
+    				'success',
+    				"Notícia actualitzada!"
+    		);
 
     		return $this->redirect($this->generateUrl('noticies_index'));
     		
@@ -144,6 +154,12 @@ class NoticiesController extends Controller
     	}
 		$em->remove($noticia);
         $em->flush();
+        
+        $this->get('session')->getFlashBag()->add(
+        		'success',
+        		"Notícia eliminada!"
+        );
+        
     	return $this->redirect($this->generateUrl('noticies_index'));
     }
     
