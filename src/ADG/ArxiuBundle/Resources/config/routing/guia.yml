@@ -1,0 +1,4 @@
+guia:
+    pattern: /
+    defaults:
+        _controller: ArxiuBundle:Guia:guia

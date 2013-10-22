@@ -11,7 +11,7 @@ class SubmenuBuilder extends ContainerAware
     {
     	$menu = $factory->createItem('root');
 
-    	$menu->addChild("Classificació de l'arxiu", array('route' => 'altre'))
+    	$menu->addChild("Classificació de l'arxiu", array('route' => 'guia'))
     		->setAttribute('icon', 'icon-archive');
     		
     	$menu->addChild('Dispenses matrimonials', array('route' => 'altre'))
