@@ -2,3 +2,13 @@ guia:
     pattern: /
     defaults:
         _controller: ArxiuBundle:Guia:guia
+
+fons:
+    pattern: /{fons}
+    defaults:
+        _controller: ArxiuBundle:Guia:fons
+        
+sub:
+    pattern: /{selSub}
+    defaults:
+        _controller: ArxiuBundle:Guia:sub        
