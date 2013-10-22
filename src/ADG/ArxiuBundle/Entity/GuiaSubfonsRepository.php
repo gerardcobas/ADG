@@ -12,7 +12,7 @@ class GuiaSubfonsRepository extends EntityRepository
 		$qb = $em->createQueryBuilder();
 	
 		// Build the query
-		$qb->select('s')->from('ArxiuBundle:GuiaSubfons', 's');
+		$qb->select('s.nivell, s.titol')->from('ArxiuBundle:GuiaSubfons', 's');
 
 		$qb->where('s.nivell LIKE :fons');
 		

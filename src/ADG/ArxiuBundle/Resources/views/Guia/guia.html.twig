@@ -20,7 +20,7 @@
 	</div>
 	
 <div class="row" style="margin-left:0px ">	
-	<div class="col-xs-8 col-sm-10 col-md-8 col-lg-6 well">
+	<div class="col-md-7 col-lg-7 well">
     	<h4>Continguts:</h4>
     	current id: {{ currentId }}
     	
@@ -80,10 +80,23 @@
 					</a>
 				{% endif %}
 			{% else %}
-				<p>No hi ha contingut</p>
+				<p><strong>No</strong> hi ha contingut</p>
 			{% endfor %}
 		</div><!-- /.Fons --> 
 	</div>
+
+{% if info is not null  %}
+	<div class="col-md-5 col-lg-5">
+		<div class="panel panel-info">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Panel title</h3>
+		  </div>
+		  <div class="panel-body">
+		    Panel content
+		  </div>
+		</div>
+	</div>
+{% endif %}	
 </div>
 	
 	

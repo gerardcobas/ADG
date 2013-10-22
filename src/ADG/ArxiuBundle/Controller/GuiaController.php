@@ -15,7 +15,7 @@ class GuiaController extends Controller
     	$allFons = $repFons->findAll();
 
         return $this->render('ArxiuBundle:Guia:guia.html.twig',
-    			array('allFons' => $allFons, 'currentId' => null)
+    			array('allFons' => $allFons, 'currentId' => null, 'info' => null)
         );
     }
     
@@ -33,9 +33,17 @@ class GuiaController extends Controller
     	
     	$repGrup = $em->getRepository('ArxiuBundle:GuiaGrup');
     	$grups = $repGrup->findByLike($id);
+    	
+    	$parts = explode('.', $id);
+    	$tam=sizeof($parts);
+    	$info=null;
+    	if($tam==2){
+    		$info=$repFons->find($id);
+    	}
+    	
 
     	return $this->render('ArxiuBundle:Guia:guia.html.twig',
-    			array('allFons' => $allFons, 'currentId' => $currentId, 'subFons' => $subFons, 'grups' => $grups)
+    			array('info' => $info, 'allFons' => $allFons, 'currentId' => $currentId, 'subFons' => $subFons, 'grups' => $grups)
     	);
     }
     

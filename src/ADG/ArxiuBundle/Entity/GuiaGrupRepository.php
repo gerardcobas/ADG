@@ -12,7 +12,7 @@ class GuiaGrupRepository extends EntityRepository
 		$qb = $em->createQueryBuilder();
 	
 		// Build the query
-		$qb->select('g')->from('ArxiuBundle:GuiaGrup', 'g');
+		$qb->select('g.nivell, g.titol')->from('ArxiuBundle:GuiaGrup', 'g');
 
 		$qb->where('g.nivell LIKE :grup');
 		

@@ -4,6 +4,6 @@ guia:
         _controller: ArxiuBundle:Guia:guia
 
 search:
-    pattern: /search/{id}
+    pattern: /search/{id}/
     defaults:
         _controller: ArxiuBundle:Guia:search
