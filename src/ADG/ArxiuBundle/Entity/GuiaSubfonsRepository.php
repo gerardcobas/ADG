@@ -16,6 +16,7 @@ class GuiaSubfonsRepository extends EntityRepository
 
 		$qb->where('s.nivell LIKE :fons');
 		
+		//Genera format de subfons (X.)
 		$parts = explode('.', $fons);
 		$qq=$parts[0].'.';
 		$qb->setParameter('fons', $qq . '%');

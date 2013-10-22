@@ -3,12 +3,7 @@ guia:
     defaults:
         _controller: ArxiuBundle:Guia:guia
 
-fons:
-    pattern: /{fons}
+search:
+    pattern: /search/{id}
     defaults:
-        _controller: ArxiuBundle:Guia:fons
-        
-sub:
-    pattern: /{selSub}
-    defaults:
-        _controller: ArxiuBundle:Guia:sub        
+        _controller: ArxiuBundle:Guia:search

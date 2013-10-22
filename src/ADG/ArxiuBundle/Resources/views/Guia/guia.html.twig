@@ -18,8 +18,8 @@
 	<div class="page-header">
         <h1>Classificació de l'arxiu</h1>
 	</div>
-
-<div class="row" style="margin-left:0px">	
+	
+<div class="row" style="margin-left:0px ">	
 	<div class="col-xs-8 col-sm-10 col-md-8 col-lg-6 well">
     	<h4>Continguts:</h4>
     	current id: {{ currentId }}
@@ -27,36 +27,60 @@
     	<div class="list-group">
 			{% for f in allFons %}
 				{% if currentId starts with f.nivell %}
-					<a href="{{ path('fons', { 'fons': f.nivell }) }}" class="list-group-item">
+					<a href="{{ path('search', { 'id': f.nivell }) }}" class="list-group-item">
 						<i class="icon-folder-open"></i>
 						{{ f.nivell }} {{ f.titol }}
 					</a>
-					
-					<div class="list-group" style="margin-left: 15px;">
+
+					<div class="list-group" style="margin-left: 15px; margin-bottom: 0px;">
 						{% for sf in subFons %}
 							{% if currentId starts with sf.nivell %}
-								<a href="{{ path('sub',{ 'selSub': sf.nivell }) }}" class="list-group-item">
+								<a href="{{ path('search',{ 'id': sf.nivell }) }}" class="list-group-item">
 									<i class="icon-folder-open"></i>
 									{{ sf.nivell }} {{ sf.titol }}
 								</a>
-								blabla
-								
+
+								<div class="list-group" style="margin-left: 15px; margin-bottom: 0px;">
+									{% if grups is null %}
+									bla
+									{% endif %}
+									{% for g in grups %}
+										{% if currentId starts with g.nivell %}
+											<a href="{{ path('search',{ 'id': g.nivell }) }}" class="list-group-item">
+												<i class="icon-folder-open"></i>
+												{{ g.nivell }} {{ g.titol }}
+											</a>
+											blabla
+										{% else %}
+											<a href="{{ path('search', { 'id': g.nivell }) }}" class="list-group-item">
+												<i class="icon-folder-close"></i>
+												{{ g.nivell }} {{ g.titol }}
+											</a>
+										{% endif %}
+									{% else %}
+										<p>No hi ha contingut</p>
+									{% endfor %}
+								</div><!-- /.Grup --> 
 								
 							{% else %}
-								<a href="{{ path('sub', { 'selSub': sf.nivell }) }}" class="list-group-item">
+								<a href="{{ path('search', { 'id': sf.nivell }) }}" class="list-group-item">
 									<i class="icon-folder-close"></i>
 									{{ sf.nivell }} {{ sf.titol }}
 								</a>
 							{% endif %}
+						{% else %}
+							<p>No hi ha contingut</p>
 						{% endfor %}
 					</div><!-- /.subFons --> 
 					
 				{% else %}
-					<a href="{{ path('fons', { 'fons': f.nivell }) }}" class="list-group-item">
+					<a href="{{ path('search', { 'id': f.nivell }) }}" class="list-group-item">
 						<i class="icon-folder-close"></i>
 						{{ f.nivell }} {{ f.titol }}
 					</a>
 				{% endif %}
+			{% else %}
+				<p>No hi ha contingut</p>
 			{% endfor %}
 		</div><!-- /.Fons --> 
 	</div>

@@ -9,7 +9,7 @@ class GuiaController extends Controller
     public function guiaAction()
     {
     	
-    	$em = $this->getDoctrine()->getEntityManager();
+    	$em = $this->getDoctrine()->getManager();
     	$repFons = $em->getRepository('ArxiuBundle:GuiaFons');
     	 
     	$allFons = $repFons->findAll();
@@ -19,38 +19,23 @@ class GuiaController extends Controller
         );
     }
     
-    public function fonsAction($fons)
+    public function searchAction($id)
     {
-    	$em = $this->getDoctrine()->getEntityManager();
+    	$em = $this->getDoctrine()->getManager();
     	
-    	$currentId = $fons;
+    	$currentId = $id;
     	
     	$repFons = $em->getRepository('ArxiuBundle:GuiaFons');
     	$allFons = $repFons->findAll();
-    	
+
     	$repSub = $em->getRepository('ArxiuBundle:GuiaSubfons');
-    	$subFons = $repSub->findByLike($fons);
+    	$subFons = $repSub->findByLike($id);
+    	
+    	$repGrup = $em->getRepository('ArxiuBundle:GuiaGrup');
+    	$grups = $repGrup->findByLike($id);
 
     	return $this->render('ArxiuBundle:Guia:guia.html.twig',
-    			array('allFons' => $allFons, 'currentId' => $currentId, 'subFons' => $subFons)
-    	);
-    }
-    
-    
-    public function subAction($selSub)
-    {
-    	$em = $this->getDoctrine()->getEntityManager();
-    	 
-    	$currentId = $selSub;
-    	 
-    	$repFons = $em->getRepository('ArxiuBundle:GuiaFons');
-    	$allFons = $repFons->findAll();
-    	
-    	$repSub = $em->getRepository('ArxiuBundle:GuiaSubfons');
-    	$subFons = $repSub->findByLike($fons);
-    
-    	return $this->render('ArxiuBundle:Guia:guia.html.twig',
-    			array('allFons' => $allFons, 'currentId' => $currentId, 'subFons' => $subFons)
+    			array('allFons' => $allFons, 'currentId' => $currentId, 'subFons' => $subFons, 'grups' => $grups)
     	);
     }
     
