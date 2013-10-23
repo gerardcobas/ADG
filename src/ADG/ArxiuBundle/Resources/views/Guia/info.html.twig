@@ -1,0 +1,49 @@
+	<div class="col-md-5 col-lg-5">
+		<div class="panel panel-info">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Nivell de descripció {{ info.nivell }}</h3>
+		  </div>
+		  <div class="panel-body">
+		  	{% if info.titol is not null %}<h5 style="color: #3a87ad">Titol</h5><p>{{ info.titol }}</p>{% endif %}
+			{% if info.codi is not null %}<h5 style="color: #3a87ad">Codi de referencia</h5><p>{{ info.codi }}</p>{% endif %}
+		    {% if info.data is not null %}<h5 style="color: #3a87ad">Data</h5><p>{{ info.data }}</p>{% endif %}
+		    {% if info.volum is not null %}<h5 style="color: #3a87ad">Volum i suport</h5><p>{{ info.volum }}</p>{% endif %}
+		    
+		    {% if info.nomProductor is not null %}<h5 style="color: #3a87ad">Nom del productor</h5><p>{{ info.nomProductor }}</p>{% endif %}
+		    {% if info.historiaProductor is not null %}<h5 style="color: #3a87ad">Historia del productor</h5><p>{{ info.historiaProductor }}</p>{% endif %}
+		    {% if info.historiaArxivistica is not null %}<h5 style="color: #3a87ad">Historia arxivistica</h5><p>{{ info.historiaArxivistica }}</p>{% endif %}
+		    {% if info.dadesIngres is not null %}<h5 style="color: #3a87ad">Dades sobre l'ingrés</h5><p>{{ info.dadesIngres }}</p>{% endif %}
+		    
+		    {% if info.abast is not null %}<h5 style="color: #3a87ad">Abast i contingut</h5><p>{{ info.abast }}</p>{% endif %}
+		    {% if info.organitzacio is not null %}<h5 style="color: #3a87ad">Sistema d'organització</h5><p>{{ info.organitzacio }}</p>{% endif %}
+		    {% if info.informacioUtilitzacio is not null %}<h5 style="color: #3a87ad">Informació sobre la valoració, selecció i eliminació</h5><p>{{ info.informacioUtilitzacio }}</p>{% endif %}
+		    {% if info.increments is not null %}<h5 style="color: #3a87ad">Increments</h5><p>{{ info.increments }}</p>{% endif %}
+		    
+		    {% if info.condicionsAcces is not null %}<h5 style="color: #3a87ad">Condicions d'accés</h5><p>{{ info.condicionsAcces }}</p>{% endif %}
+		    {% if info.condicionsReproduccio is not null %}<h5 style="color: #3a87ad">Condicions de reproducció</h5><p>{{ info.condicionsReproduccio }}</p>{% endif %}
+		    {% if info.llengues is not null %}<h5 style="color: #3a87ad">Llengues i escriptures dels documents</h5><p>{{ info.llengues }}</p>{% endif %}
+		    {% if info.caracteristiques is not null %}<h5 style="color: #3a87ad">Caracteristiques físiques i requisits técnics</h5><p>{{ info.caracteristiques }}</p>{% endif %}
+		    {% if info.instruments is not null %}<h5 style="color: #3a87ad">Instruments de descripció</h5><p>{{ info.instruments }}</p>{% endif %}
+		    
+		    {% if info.existenciaOriginals is not null %}<h5 style="color: #3a87ad">Existencia i localització dels originals</h5><p>{{ info.existenciaOriginals }}</p>{% endif %}
+		    {% if info.existenciaReproduccions is not null %}<h5 style="color: #3a87ad">Existencia i localització de les reproduccions</h5><p>{{ info.existenciaReproduccions }}</p>{% endif %}
+		    {% if info.documentacio is not null %}<h5 style="color: #3a87ad">Documentació relacionada</h5><p>{{ info.documentacio }}</p>{% endif %}
+		    {% if info.bibliografia is not null %}<h5 style="color: #3a87ad">Bibliografia</h5><p>{{ info.bibliografia }}</p>{% endif %}
+		    
+		    {% if info.notes is not null %}<h5 style="color: #3a87ad">Notes</h5><p>{{ info.notes }}</p>{% endif %}
+		    
+		    {% if info.autoria is not null %}<h5 style="color: #3a87ad">Autoría i dates</h5><p>{{ info.autoria }}</p>{% endif %}
+		    {% if info.fonts is not null %}<h5 style="color: #3a87ad">Fonts</h5><p>{{ info.fonts }}</p>{% endif %}
+		    {% if info.regles is not null %}<h5 style="color: #3a87ad">Regles i convencions</h5><p>{{ info.regles }}</p>{% endif %}
+		    
+		  </div><!-- /.panel-body -->
+		  <div class="panel-footer">
+			  <input type="text" class="form-control" pattern="^([0-9]*\.)*$" title="Només pot tenir números, lletres i punts. Finalitzat amb un punt.">
+			  	<div class="btn-group">
+				  <button type="button" class="btn btn-success">Afegir Nou</button>
+				  <button type="button" class="btn btn-primary">Editar</button>
+				  <button type="button" class="btn btn-danger">Eliminar</button>
+				</div>
+		  </div> 
+		</div>
+	</div>

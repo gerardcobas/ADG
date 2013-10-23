@@ -27,7 +27,7 @@
     	<div class="list-group">
 			{% for f in allFons %}
 				{% if currentId starts with f.nivell %}
-					<a href="{{ path('search', { 'id': f.nivell }) }}" class="list-group-item">
+					<a href="{{ path('search', { 'id': f.nivell }) }}" class="list-group-item {% if currentId is sameas(f.nivell) %}active{% endif %}">
 						<i class="icon-folder-open"></i>
 						{{ f.nivell }} {{ f.titol }}
 					</a>
@@ -35,30 +35,27 @@
 					<div class="list-group" style="margin-left: 15px; margin-bottom: 0px;">
 						{% for sf in subFons %}
 							{% if currentId starts with sf.nivell %}
-								<a href="{{ path('search',{ 'id': sf.nivell }) }}" class="list-group-item">
+								<a href="{{ path('search',{ 'id': sf.nivell }) }}" class="list-group-item {% if currentId is sameas(sf.nivell) %}active{% endif %}">
 									<i class="icon-folder-open"></i>
 									{{ sf.nivell }} {{ sf.titol }}
 								</a>
 
 								<div class="list-group" style="margin-left: 15px; margin-bottom: 0px;">
-									{% if grups is null %}
-									bla
-									{% endif %}
 									{% for g in grups %}
 										{% if currentId starts with g.nivell %}
-											<a href="{{ path('search',{ 'id': g.nivell }) }}" class="list-group-item">
+											<a href="{{ path('search',{ 'id': g.nivell }) }}" class="list-group-item {% if currentId is sameas(g.nivell) %}active{% endif %}">
 												<i class="icon-folder-open"></i>
 												{{ g.nivell }} {{ g.titol }}
 											</a>
 											blabla
 										{% else %}
-											<a href="{{ path('search', { 'id': g.nivell }) }}" class="list-group-item">
+											<a href="{{ path('search', { 'id': g.nivell }) }}" class="list-group-item ">
 												<i class="icon-folder-close"></i>
 												{{ g.nivell }} {{ g.titol }}
 											</a>
 										{% endif %}
 									{% else %}
-										<p>No hi ha contingut</p>
+										<p><strong>No</strong> hi ha contingut</p>
 									{% endfor %}
 								</div><!-- /.Grup --> 
 								
@@ -69,7 +66,7 @@
 								</a>
 							{% endif %}
 						{% else %}
-							<p>No hi ha contingut</p>
+							<p><strong>No</strong> hi ha contingut</p>
 						{% endfor %}
 					</div><!-- /.subFons --> 
 					
@@ -86,17 +83,7 @@
 	</div>
 
 {% if info is not null  %}
-	<div class="col-md-5 col-lg-5">
-		<div class="panel panel-info">
-		  <div class="panel-heading">
-		    <h3 class="panel-title">Panel title</h3>
-		  </div>
-		  <div class="panel-body">
-		    Panel content
-		    <input type="text" class="form-control" pattern="^([0-9]*\.)*$" title="Només pot tenir números, lletres i punts. Finalitzat amb un punt.">
-		  </div>
-		</div>
-	</div>
+	{% include 'ArxiuBundle:Guia:info.html.twig' %}
 {% endif %}	
 </div>
 	
