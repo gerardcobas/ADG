@@ -5,5 +5,9 @@ admin:
                    
 noticies:
     resource: "@PrincipalBundle/Resources/config/routing/noticies.yml"
-    prefix:   /noticies            
+    prefix:   /noticies
+    
+admin_guia:
+    resource: "@PrincipalBundle/Resources/config/routing/guia.yml"
+    prefix:   /guia                      
         

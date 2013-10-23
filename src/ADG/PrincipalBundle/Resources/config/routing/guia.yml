@@ -1,0 +1,27 @@
+admin_guia:
+    pattern: /
+    defaults:
+        _controller: ArxiuBundle:Guia:guia
+        
+guia_afegir:
+    pattern:  /afegir
+    defaults: { _controller: "PrincipalBundle:AdminGuia:crear" }
+    requirements: { _method: post }
+
+guia_editar:
+    pattern:  /{id}/editar
+    defaults: { _controller: "PrincipalBundle:AdminGuia:editar" }
+    
+guia_actualitzar:
+    pattern:  /{id}/editar/actualitzar
+    defaults: { _controller: "PrincipalBundle:AdminGuia:actualitzar" }
+    requirements: { _method: post }        
+    
+guia_eliminar:
+    pattern:  /{id}/eliminar
+    defaults: { _controller: "PrincipalBundle:Noticies:eliminar" }
+    
+guia_confirmar:
+    pattern:  /{id}/editar/confirm
+    defaults: { _controller: "PrincipalBundle:AdminGuia:confirm" }
+    requirements: { _method: post }            

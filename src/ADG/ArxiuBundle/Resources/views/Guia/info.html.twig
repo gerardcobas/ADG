@@ -37,13 +37,26 @@
 		    {% if info.regles is not null %}<h5 style="color: #3a87ad">Regles i convencions</h5><p>{{ info.regles }}</p>{% endif %}
 		    
 		  </div><!-- /.panel-body -->
-		  <div class="panel-footer">
-			  <input type="text" class="form-control" pattern="^([0-9]*\.)*$" title="Només pot tenir números, lletres i punts. Finalitzat amb un punt.">
-			  	<div class="btn-group">
-				  <button type="button" class="btn btn-success">Afegir Nou</button>
-				  <button type="button" class="btn btn-primary">Editar</button>
-				  <button type="button" class="btn btn-danger">Eliminar</button>
-				</div>
-		  </div> 
+		  
+		  {% if is_granted('ROLE_ADMIN') %}         
+			  <div class="panel-footer">
+				  <input type="text" class="form-control" pattern="^([0-9]*\.)*$" title="Només pot tenir números, lletres i punts. Finalitzat amb un punt.">
+				  <div class="btn-group btn-group-justified">
+					  <a data-toggle="modal" href="{{ path('guia_afegir', { 'id': info.nivell }) }}" data-target="#afegirGuia" class="btn btn-success" type="button"><i class="icon-cog"></i>&nbsp;Afegir nou</a>
+                      <a data-toggle="modal" href="{{ path('guia_editar', { 'id': info.nivell }) }}" data-target="#editarGuia" class="btn btn-primary" type="button"><i class="icon-pencil"></i>&nbsp;Editar</a>
+                      <a data-toggle="modal" href="{{ path('guia_eliminar', { 'id': info.nivell }) }}" data-target="#eliminarGuia" class="btn btn-danger" type="button"><i class="icon-remove"></i>&nbsp;Eliminar</a>
+				  </div>
+			  </div> 
+		 {% endif %}
+		  
 		</div>
 	</div>
+
+<div class="modal" id="afegirGuia" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+</div><!-- /.modal -->
+	
+<div class="modal" id="editarGuia" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+</div><!-- /.modal -->
+
+<div class="modal" id="eliminarGuia" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+</div><!-- /.modal -->

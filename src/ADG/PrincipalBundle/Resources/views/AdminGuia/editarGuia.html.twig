@@ -1,0 +1,26 @@
+ <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Editar notícia</h4>
+        </div>
+		<form action="{{ path("noticies_actualitzar", { 'id': noticiaEditable.id }) }}" method="post">
+	      	<div class="modal-body"> 	
+		      	<p>Es pot modificar la següent informació:</p>
+		        <label>Títol</label>
+				<div class="form-group">
+				  <input type="text" class="form-control" name="titolEditar" required="required" value="{{ noticiaEditable.titol }}">
+				</div>
+		        <label>Contingut</label>
+		       	<div class="form-group">
+				  <input type="text" class="form-control" rows="3" name="contingutEditar" required="required" value="{{ noticiaEditable.contingut }}">
+				</div>
+	        </div>
+	        <div class="modal-footer">
+	          <button class="btn btn-default" data-dismiss="modal">Tancar</button>
+	          <button class="btn btn-success" type="submit"><i class="icon-pencil"></i>&nbsp;Actualitzar</button>
+	        </div>
+		</form><!-- /.form -->
+
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
