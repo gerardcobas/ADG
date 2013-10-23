@@ -3,7 +3,7 @@
 namespace ADG\ArxiuBundle\Entity;
 use Doctrine\ORM\EntityRepository;
 
-class GuiaGrupRepository extends EntityRepository
+class GuiaSerieRepository extends EntityRepository
 {
 
 	
@@ -12,15 +12,14 @@ class GuiaGrupRepository extends EntityRepository
 		$qb = $em->createQueryBuilder();
 	
 		// Build the query
-		$qb->select('g.nivell, g.titol')->from('ArxiuBundle:GuiaGrup', 'g');
+		$qb->select('se.nivell, se.titol')->from('ArxiuBundle:GuiaSerie', 'se');
 
-		$qb->where('g.nivell LIKE :grup');
+		$qb->where('se.nivell LIKE :serie');
 		
-		
-		//Genera format de grup (X.X.)
+		//Genera format de subfons (X.X.X.)
 		$parts = explode('.', $id);
-		$qq=$parts[0].'.'.$parts[1].'.';
-		$qb->setParameter('grup', $qq . '%');
+		$qq=$parts[0].'.'.$parts[1].'.'.$parts[2].'.';
+		$qb->setParameter('serie', $qq . '%');
 	
 		$q = $qb->getQuery();
 	

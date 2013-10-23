@@ -22,8 +22,8 @@
 <div class="row" style="margin-left:0px ">	
 	<div class="col-md-7 col-lg-7 well">
     	<h4>Continguts:</h4>
-    	current id: {{ currentId }}
     	
+    	<!-- Fons --> 
     	<div class="list-group">
 			{% for f in allFons %}
 				{% if currentId starts with f.nivell %}
@@ -31,7 +31,8 @@
 						<i class="icon-folder-open"></i>
 						{{ f.nivell }} {{ f.titol }}
 					</a>
-
+					
+					<!-- Subfons --> 
 					<div class="list-group" style="margin-left: 15px; margin-bottom: 0px;">
 						{% for sf in subFons %}
 							{% if currentId starts with sf.nivell %}
@@ -39,7 +40,8 @@
 									<i class="icon-folder-open"></i>
 									{{ sf.nivell }} {{ sf.titol }}
 								</a>
-
+								
+								<!-- Grup --> 
 								<div class="list-group" style="margin-left: 15px; margin-bottom: 0px;">
 									{% for g in grups %}
 										{% if currentId starts with g.nivell %}
@@ -47,7 +49,79 @@
 												<i class="icon-folder-open"></i>
 												{{ g.nivell }} {{ g.titol }}
 											</a>
-											blabla
+											
+											<!-- Serie --> 
+											<div class="list-group" style="margin-left: 15px; margin-bottom: 0px;">
+												{% for se in series %}
+													{% if currentId starts with se.nivell %}
+														<a href="{{ path('search',{ 'id': se.nivell }) }}" class="list-group-item {% if currentId is sameas(se.nivell) %}active{% endif %}">
+															<i class="icon-folder-open"></i>
+															{{ se.nivell }} {{ se.titol }}
+														</a>
+														
+														<!-- Ucomposta --> 
+														<div class="list-group" style="margin-left: 15px; margin-bottom: 0px;">
+															{% for uc in ucomps %}
+																{% if currentId starts with uc.nivell %}
+																	<a href="{{ path('search',{ 'id': uc.nivell }) }}" class="list-group-item {% if currentId is sameas(uc.nivell) %}active{% endif %}">
+																		<i class="icon-folder-open"></i>
+																		{{ uc.nivell }} {{ uc.titol }}
+																	</a>
+																	
+																	<!-- Usimple --> 
+																	<div class="list-group" style="margin-left: 15px; margin-bottom: 0px;">
+																		{% for us in usims %}
+																			{% if currentId starts with us.nivell %}
+																				<a href="{{ path('search',{ 'id': us.nivell }) }}" class="list-group-item {% if currentId is sameas(us.nivell) %}active{% endif %}">
+																					<i class="icon-folder-open"></i>
+																					{{ us.nivell }} {{ us.titol }}
+																				</a>
+																				
+																				<!-- Uinstalacio --> 
+																				<div class="list-group" style="margin-left: 15px; margin-bottom: 0px;">
+																					{% for ui in uinsts %}
+																						<a href="{{ path('search',{ 'id': ui.nivell }) }}" class="list-group-item {% if currentId is sameas(ui.nivell) %}active{% endif %}">
+																							<i class="icon-file-text"></i>
+																							{{ ui.nivell }} {{ ui.titol }}
+																						</a>
+																					{% else %}
+																						<p style="margin: 10px;">No hi ha més contingut</p>
+																					{% endfor %}
+																				</div><!-- /.Uinstalacio --> 
+																				
+																			{% else %}
+																				<a href="{{ path('search', { 'id': us.nivell }) }}" class="list-group-item ">
+																					<i class="icon-folder-close"></i>
+																					{{ us.nivell }} {{ us.titol }}
+																				</a>
+																			{% endif %}
+																		{% else %}
+																			<p style="margin: 10px;">No hi ha més contingut</p>
+																		{% endfor %}
+																	</div><!-- /.Usimple --> 
+																	
+																{% else %}
+																	<a href="{{ path('search', { 'id': uc.nivell }) }}" class="list-group-item ">
+																		<i class="icon-folder-close"></i>
+																		{{ uc.nivell }} {{ uc.titol }}
+																	</a>
+																{% endif %}
+															{% else %}
+																<p style="margin: 10px;">No hi ha més contingut</p>
+															{% endfor %}
+														</div><!-- /.Ucomposta --> 
+														
+													{% else %}
+														<a href="{{ path('search', { 'id': se.nivell }) }}" class="list-group-item ">
+															<i class="icon-folder-close"></i>
+															{{ se.nivell }} {{ se.titol }}
+														</a>
+													{% endif %}
+												{% else %}
+													<p style="margin: 10px;">No hi ha més contingut</p>
+												{% endfor %}
+											</div><!-- /.Serie --> 
+											
 										{% else %}
 											<a href="{{ path('search', { 'id': g.nivell }) }}" class="list-group-item ">
 												<i class="icon-folder-close"></i>
@@ -55,7 +129,7 @@
 											</a>
 										{% endif %}
 									{% else %}
-										<p><strong>No</strong> hi ha contingut</p>
+										<p style="margin: 10px;">No hi ha més contingut</p>
 									{% endfor %}
 								</div><!-- /.Grup --> 
 								
@@ -66,7 +140,7 @@
 								</a>
 							{% endif %}
 						{% else %}
-							<p><strong>No</strong> hi ha contingut</p>
+							<p style="margin: 10px;">No hi ha més contingut</p>
 						{% endfor %}
 					</div><!-- /.subFons --> 
 					
@@ -77,7 +151,7 @@
 					</a>
 				{% endif %}
 			{% else %}
-				<p><strong>No</strong> hi ha contingut</p>
+				<p style="margin: 10px;">No hi ha més contingut</p>
 			{% endfor %}
 		</div><!-- /.Fons --> 
 	</div>

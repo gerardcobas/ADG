@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * GuiaUsimple
  *
  * @ORM\Table(name="guia_usimple")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="ADG\ArxiuBundle\Entity\GuiaUsimpleRepository")
  */
 class GuiaUsimple
 {

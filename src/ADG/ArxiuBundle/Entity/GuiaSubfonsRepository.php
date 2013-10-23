@@ -7,7 +7,7 @@ class GuiaSubfonsRepository extends EntityRepository
 {
 
 	
-	public function findByLike($fons) {
+	public function findByLike($id) {
 		$em = $this->getEntityManager();
 		$qb = $em->createQueryBuilder();
 	
@@ -17,7 +17,7 @@ class GuiaSubfonsRepository extends EntityRepository
 		$qb->where('s.nivell LIKE :fons');
 		
 		//Genera format de subfons (X.)
-		$parts = explode('.', $fons);
+		$parts = explode('.', $id);
 		$qq=$parts[0].'.';
 		$qb->setParameter('fons', $qq . '%');
 	
