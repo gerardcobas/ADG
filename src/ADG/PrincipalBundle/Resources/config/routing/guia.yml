@@ -27,7 +27,7 @@ guia_actualitzar:
     
 guia_eliminar:
     pattern:  /{id}/eliminar
-    defaults: { _controller: "PrincipalBundle:Noticies:eliminar" }
+    defaults: { _controller: "PrincipalBundle:AdminGuia:eliminar" }
     
 guia_confirmar:
     pattern:  /{id}/editar/confirm

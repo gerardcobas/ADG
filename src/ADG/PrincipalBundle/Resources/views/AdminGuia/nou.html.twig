@@ -12,35 +12,188 @@
           	{% elseif tam is sameas(8) %} Afegir nova unitat d'instalació
           	{% endif %}
           </h4>
+          
         </div><!-- /.header -->
         
 		<form action="{{ path("guia_nou_confirmar") }}" method="post">
 			<div class="modal-body">
+		      	<input type="hidden" name="tam" value="{{ tam }}">
+		      	<p class="text-muted text-right" style="font-size:11px;margin-top:-20px;">* indica camps que haurien de ser obligatoris</p>
+		      	
+		    	<p>Informació actual del nivell <strong>{{ info.nivell }}</strong> modificar per afegir un de nou.</p>
+		    	
+		    	<h5>Area d'identificació</h5>
+		    	
 		      	{% set len =  info.nivell | length%}
-		      	Inici:{{ info.nivell | slice(0, len-2) }}
-		      	Canviable:{{ info.nivell | slice(len-2, len) }}
-		      	
-		    	<p>Informació actual del nivell {{ info.nivell }}, modificar per afegir un de nou.</p>
-		      	
 		      	<div class="input-group">
-					<span class="input-group-addon">Nivell: <strong>{{ info.nivell | slice(0, len-2) }}</strong></span>
+					<span class="input-group-addon">Nivell *<strong>{{ info.nivell | slice(0, len-2) }}</strong></span>
 					<input type="text" class="form-control" pattern="^([a-zA-Z0-9]*\.)$" 
 						title="Només pot tenir números i/o lletres i finalitzar amb un punt." 
-						value="{{ info.nivell | slice(len-2, len) }}"
-					>
-				</div>
+						value="{{ info.nivell | slice(len-2, len) }}" name="nivell" required>
+				</div><div class="space10"></div>
 				
-		        <label>{{ info.titol }}</label>
-				<div class="form-group">
-				  <input type="text" class="form-control" name="titol" required="required">
-				</div>
-		        <div class="space10"></div>
-		        <label>Contingut</label>
-		       	<div class="form-group">
-				  <input type="text" class="form-control" rows="3" name="contingut" required="required" >
-				</div>
-				<input type="text" class="form-control" pattern="^([0-9]*\.)*$" title="Només pot tenir números, lletres i punts. Finalitzat amb un punt.">
-				  
+		      	<div class="input-group">
+					<span class="input-group-addon">Titol *</span>
+					<input type="text" class="form-control"
+						value="{{ info.titol }}" name="titol">
+				</div><div class="space10"></div>
+				
+				<div class="input-group">
+					<span class="input-group-addon">Codi de referència *</span>
+					<input type="text" class="form-control"
+						value="{{ info.codi }}" name="codi">
+				</div><div class="space10"></div>				
+		        
+		        <div class="input-group">
+					<span class="input-group-addon">Data *</span>
+					<input type="text" class="form-control"
+						value="{{ info.data }}" name="data">
+				</div><div class="space10"></div>
+				
+				<div class="input-group">
+					<span class="input-group-addon">Volum i suport *</span>
+					<input type="text" class="form-control"
+						value="{{ info.volum }}" name="volum">
+				</div><div class="space10"></div>
+				
+				<h5>Area de context</h5>
+				
+				<div class="input-group">
+					<span class="input-group-addon">Nom del productor {% if tam <= 3 %}*{% endif %}</span>
+					<input type="text" class="form-control"
+						value="{{ info.nomProductor }}" name="nomProductor">
+				</div><div class="space10"></div>
+				
+				<div class="input-group">
+					<span class="input-group-addon">Historia del productor {% if tam <= 3 %}*{% endif %}</span>
+					<input type="text" class="form-control"
+						value="{{ info.historiaProductor }}" name="historiaProductor">
+				</div><div class="space10"></div>
+				
+				<div class="input-group">
+					<span class="input-group-addon">Historia arxivistica {% if tam <= 3 %}*{% endif %}</span>
+					<input type="text" class="form-control"
+						value="{{ info.historiaArxivistica }}" name="historiaArxivistica">
+				</div><div class="space10"></div>
+				
+				<div class="input-group">
+					<span class="input-group-addon">Dades sobre l'ingrés {% if tam <= 3 %}*{% endif %}</span>
+					<input type="text" class="form-control"
+						value="{{ info.dadesIngres }}" name="dadesIngres">
+				</div><div class="space10"></div>
+				
+				<h5>Area de contingut i estructura</h5>
+				
+				<div class="input-group">
+					<span class="input-group-addon">Abast i contingut {% if tam <= 2 %}*{% endif %}</span>
+					<input type="text" class="form-control"
+						value="{{ info.abast }}" name="abast">
+				</div><div class="space10"></div>
+				
+				<div class="input-group">
+					<span class="input-group-addon">Sistema d'organització</span>
+					<input type="text" class="form-control"
+						value="{{ info.organitzacio }}" name="organitzacio">
+				</div><div class="space10"></div>
+				
+				<div class="input-group">
+					<span class="input-group-addon">Informació sobre l'utilització</span>
+					<input type="text" class="form-control"
+						value="{{ info.informacioUtilitzacio }}" name="informacioUtilitzacio">
+				</div><div class="space10"></div>
+				
+				<div class="input-group">
+					<span class="input-group-addon">Increments</span>
+					<input type="text" class="form-control"
+						value="{{ info.increments }}" name="increments">
+				</div><div class="space10"></div>
+				
+				<h5>Area de condicions d'acces i ús</h5>
+				
+				<div class="input-group">
+					<span class="input-group-addon">Condicions d'acces</span>
+					<input type="text" class="form-control"
+						value="{{ info.condicionsAcces }}" name="condicionsAcces">
+				</div><div class="space10"></div>
+				
+				<div class="input-group">
+					<span class="input-group-addon">Condicions de reproducció</span>
+					<input type="text" class="form-control"
+						value="{{ info.condicionsReproduccio }}" name="condicionsReproduccio">
+				</div><div class="space10"></div>
+				
+				<div class="input-group">
+					<span class="input-group-addon">Llengues i escriptures</span>
+					<input type="text" class="form-control"
+						value="{{ info.llengues }}" name="llengues">
+				</div><div class="space10"></div>
+				
+				<div class="input-group">
+					<span class="input-group-addon">Caracteristiques físiques</span>
+					<input type="text" class="form-control"
+						value="{{ info.caracteristiques }}" name="caracteristiques">
+				</div><div class="space10"></div>
+				
+				<div class="input-group">
+					<span class="input-group-addon">Instruments de descripció</span>
+					<input type="text" class="form-control"
+						value="{{ info.instruments }}" name="instruments">
+				</div><div class="space10"></div>
+				
+				<h5>Area de documentació relacionada</h5>
+				
+				<div class="input-group">
+					<span class="input-group-addon">Existencia i localització dels originals</span>
+					<input type="text" class="form-control"
+						value="{{ info.existenciaOriginals }}" name="existenciaOriginals">
+				</div><div class="space10"></div>
+				
+				<div class="input-group">
+					<span class="input-group-addon">Existencia i localització de les reproduccions</span>
+					<input type="text" class="form-control"
+						value="{{ info.existenciaReproduccions }}" name="existenciaReproduccions">
+				</div><div class="space10"></div>
+				
+				<div class="input-group">
+					<span class="input-group-addon">Documentació</span>
+					<input type="text" class="form-control"
+						value="{{ info.documentacio }}" name="documentacio">
+				</div><div class="space10"></div>
+				
+				<div class="input-group">
+					<span class="input-group-addon">Bibliografia</span>
+					<input type="text" class="form-control"
+						value="{{ info.bibliografia }}" name="bibliografia">
+				</div><div class="space10"></div>
+				
+				<h5>Area de notes</h5>
+				
+				<div class="input-group">
+					<span class="input-group-addon">Notes</span>
+					<input type="text" class="form-control"
+						value="{{ info.notes }}" name="notes">
+				</div><div class="space10"></div>
+				
+				<h5>Area de control de la descripció</h5>
+				
+				<div class="input-group">
+					<span class="input-group-addon">Autoria *</span>
+					<input type="text" class="form-control"
+						value="{{ info.autoria }}" name="autoria">
+				</div><div class="space10"></div>
+				
+				<div class="input-group">
+					<span class="input-group-addon">Fonts *</span>
+					<input type="text" class="form-control"
+						value="{{ info.fonts }}" name="fonts">
+				</div><div class="space10"></div>
+				
+				<div class="input-group">
+					<span class="input-group-addon">Regles {% if tam <= 3 %}*{% endif %}</span>
+					<input type="text" class="form-control"
+						value="{{ info.regles }}" name="regles">
+				</div><div class="space10"></div>
+						
 	        </div>
 	        <div class="modal-footer">
 	          <button class="btn btn-default" data-dismiss="modal">Tancar</button>

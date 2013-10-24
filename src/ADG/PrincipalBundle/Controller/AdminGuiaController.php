@@ -21,7 +21,36 @@ class AdminGuiaController extends Controller
 				array('info' => $info, 'tam'=> $tam)
 		);
 	}
-	
+	public function nouConfirmarAction()
+	{
+		$request = $this->getRequest();
+    	if ($request->isMethod('POST')) {
+    		$titol = $request->request->get('titol');
+    		/*obte nivell i comprovara si ja existeix aquesta entrada! si existeix cancela, sino continua*/
+    		
+    		$contingut = $request->request->get('contingut');
+    		
+    		$entity= new GuiaFons();
+    		
+    		$entity->setData(new \DateTime());
+    		
+    		$entity->setTitol($titol);
+    		$entity->setContingut($contingut);
+    		
+    		$em = $this->getDoctrine()->getManager();
+    		$em->persist($entity);
+    		$em->flush();
+			
+    		$this->get('session')->getFlashBag()->add(
+    				'success',
+    				"Notícia afegida!"
+    		);
+    		
+    		return $this->redirect($this->generateUrl('noticies_index'));
+    		
+    	}
+    	return $this->redirect($this->generateUrl('noticies_index'));
+	}
 	
 	public function subnivellAction($id)
 	{
