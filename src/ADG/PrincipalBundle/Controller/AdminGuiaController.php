@@ -21,35 +21,37 @@ class AdminGuiaController extends Controller
 				array('info' => $info, 'tam'=> $tam)
 		);
 	}
+	
 	public function nouConfirmarAction()
 	{
 		$request = $this->getRequest();
     	if ($request->isMethod('POST')) {
-    		$titol = $request->request->get('titol');
-    		/*obte nivell i comprovara si ja existeix aquesta entrada! si existeix cancela, sino continua*/
+
+    		$part1 = $request->request->get('nivell');
+    		$part2=$request->request->get('suffix');
+    		$nivell=$part1.$part2;
+    		$b=self::comprovaExistencia($nivell);
     		
-    		$contingut = $request->request->get('contingut');
-    		
-    		$entity= new GuiaFons();
-    		
-    		$entity->setData(new \DateTime());
-    		
-    		$entity->setTitol($titol);
-    		$entity->setContingut($contingut);
-    		
-    		$em = $this->getDoctrine()->getManager();
-    		$em->persist($entity);
-    		$em->flush();
-			
-    		$this->get('session')->getFlashBag()->add(
-    				'success',
-    				"Notícia afegida!"
-    		);
-    		
-    		return $this->redirect($this->generateUrl('noticies_index'));
+    		if ($b===true) {
+    			
+    			$this->get('session')->getFlashBag()->add(
+    					'error',
+    					"Ja existeix!"
+    			);
+    			return $this->redirect($this->generateUrl('search', array('id' => $nivell)));
+    		}
+    		else{
+    			
+    			$this->get('session')->getFlashBag()->add(
+    					'success',
+    					"Afegit correctament!"
+    			);
+    			return $this->redirect($this->generateUrl('search', array('id' => $nivell)));
+    		}
+
     		
     	}
-    	return $this->redirect($this->generateUrl('noticies_index'));
+    	return $this->redirect($this->generateUrl('guia'));
 	}
 	
 	public function subnivellAction($id)
@@ -107,6 +109,54 @@ class AdminGuiaController extends Controller
 		}
 	
 		return array($info,$tam);
+	}
+	
+	private function comprovaExistencia($id){
+	
+		$em = $this->getDoctrine()->getManager();
+		//es divideix l'identificador indicat per saber a quin nivell es troba
+		$parts = explode('.', $id);
+		$tam=sizeof($parts);
+		$info=null;
+	
+		//obtenir la informacio del identificador indicat
+		if($tam==2){
+			$repFons = $em->getRepository('ArxiuBundle:GuiaFons');
+			$info=$repFons->findOneByNivell($id);
+		}
+		else if($tam==3){
+			$repSub = $em->getRepository('ArxiuBundle:GuiaSubfons');
+			$info=$repSub->findOneByNivell($id);
+		}
+		else if($tam==4){
+			$repGrup = $em->getRepository('ArxiuBundle:GuiaGrup');
+			$info=$repGrup->findOneByNivell($id);
+		}
+		else if($tam==5){
+			$repSerie = $em->getRepository('ArxiuBundle:GuiaSerie');
+			$info=$repSerie->findOneByNivell($id);
+		}
+		else if($tam==6){
+			$repUcomp = $em->getRepository('ArxiuBundle:GuiaUcomposta');
+			$info=$repUcomp->findOneByNivell($id);
+		}
+		else if($tam==7){
+			$repUsim = $em->getRepository('ArxiuBundle:GuiaUsimple');
+			$info=$repUsim->findOneByNivell($id);
+		}
+		else if($tam==8){
+			$repUinst = $em->getRepository('ArxiuBundle:GuiaUinstalacio');
+			$info=$repUinst->findOneByNivell($id);
+		}
+		
+		if($info === null){
+			return false;
+		}
+		else{
+			return true;
+		}
+	
+		return false;
 	}
 		
 }

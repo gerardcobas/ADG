@@ -17,19 +17,20 @@
         
 		<form action="{{ path("guia_nou_confirmar") }}" method="post">
 			<div class="modal-body">
-		      	<input type="hidden" name="tam" value="{{ tam }}">
 		      	<p class="text-muted text-right" style="font-size:11px;margin-top:-20px;">* indica camps que haurien de ser obligatoris</p>
 		      	
 		    	<p>Informació actual del nivell <strong>{{ info.nivell }}</strong> modificar per afegir un de nou.</p>
 		    	
 		    	<h5>Area d'identificació</h5>
 		    	
-		      	{% set len =  info.nivell | length%}
+		      	{% set len =  info.nivell | length %}
+		      	<input type="hidden" name="tam" value="{{ tam }}">
+		      	<input type="hidden" name="nivell" value="{{ info.nivell | slice(0, len-2) }}">
 		      	<div class="input-group">
-					<span class="input-group-addon">Nivell *<strong>{{ info.nivell | slice(0, len-2) }}</strong></span>
+					<span class="input-group-addon">Nivell *  <strong>{{ info.nivell | slice(0, len-2) }}</strong></span>
 					<input type="text" class="form-control" pattern="^([a-zA-Z0-9]*\.)$" 
 						title="Només pot tenir números i/o lletres i finalitzar amb un punt." 
-						value="{{ info.nivell | slice(len-2, len) }}" name="nivell" required>
+						value="{{ info.nivell | slice(len-2, len) }}" name="suffix" required>
 				</div><div class="space10"></div>
 				
 		      	<div class="input-group">

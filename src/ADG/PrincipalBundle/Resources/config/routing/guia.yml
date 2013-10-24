@@ -3,7 +3,7 @@ guia_nou:
     defaults: { _controller: "PrincipalBundle:AdminGuia:nou" }
     
 guia_nou_confirmar:
-    pattern:  /nou/confirmar
+    pattern:  /confirmar/nou
     defaults: { _controller: "PrincipalBundle:AdminGuia:nouConfirmar" }
     requirements: { _method: post }           
 
