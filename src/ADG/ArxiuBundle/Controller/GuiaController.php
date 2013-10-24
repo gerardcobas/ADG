@@ -38,7 +38,6 @@ class GuiaController extends Controller
 		//es divideix l'identificador indicat per saber a quin nivell es troba
     	$parts = explode('.', $id);
     	$tam=sizeof($parts);
-    	$info=null;
 
     	//obtenir continguts del desplegable, en el moment que s'han de ensenyar
     	if($tam >= 2){

@@ -4,6 +4,7 @@
 		    <h3 class="panel-title">Nivell de descripció {{ info.nivell }}</h3>
 		  </div>
 		  <div class="panel-body">
+		  
 		  	{% if info.titol is not null %}<h5 style="color: #3a87ad">Titol</h5><p>{{ info.titol }}</p>{% endif %}
 			{% if info.codi is not null %}<h5 style="color: #3a87ad">Codi de referencia</h5><p>{{ info.codi }}</p>{% endif %}
 		    {% if info.data is not null %}<h5 style="color: #3a87ad">Data</h5><p>{{ info.data }}</p>{% endif %}
@@ -38,13 +39,25 @@
 		    
 		  </div><!-- /.panel-body -->
 		  
+		  
 		  {% if is_granted('ROLE_ADMIN') %}         
 			  <div class="panel-footer">
-				  <input type="text" class="form-control" pattern="^([0-9]*\.)*$" title="Només pot tenir números, lletres i punts. Finalitzat amb un punt.">
-				  <div class="btn-group btn-group-justified">
-					  <a data-toggle="modal" href="{{ path('guia_afegir', { 'id': info.nivell }) }}" data-target="#afegirGuia" class="btn btn-success" type="button"><i class="icon-cog"></i>&nbsp;Afegir nou</a>
-                      <a data-toggle="modal" href="{{ path('guia_editar', { 'id': info.nivell }) }}" data-target="#editarGuia" class="btn btn-primary" type="button"><i class="icon-pencil"></i>&nbsp;Editar</a>
-                      <a data-toggle="modal" href="{{ path('guia_eliminar', { 'id': info.nivell }) }}" data-target="#eliminarGuia" class="btn btn-danger" type="button"><i class="icon-remove"></i>&nbsp;Eliminar</a>
+			  
+				  <h4>Administració:</h4>
+				  <div class="btn-group" style="margin-top:5px;margin-bottom:5px;">	
+				  	<a data-toggle="modal" href="{{ path('guia_nou', { 'id': info.nivell }) }}" data-target="#nouGuia" class="btn btn-success" type="button"><i class="icon-plus"></i>&nbsp;Afegir nou</a>
+	              </div>
+	              <!-- No mostrar si es l'ultim nivell -->
+	              {% if info.nivell |split('.')|length < 8 %}
+		              <div class="btn-group" style="margin-top:5px;margin-bottom:5px;">
+		              	<a data-toggle="modal" href="{{ path('guia_subnivell', { 'id': info.nivell }) }}" data-target="#subnivellGuia" class="btn btn-success" type="button"><i class="icon-plus"></i>&nbsp;Afegir subnivell</a>
+					  </div>
+				  {% endif %}
+	              <div class="btn-group" style="margin-top:5px;margin-bottom:5px;">
+	              	<a data-toggle="modal" href="{{ path('guia_editar', { 'id': info.nivell }) }}" data-target="#editarGuia" class="btn btn-primary" type="button"><i class="icon-pencil"></i>&nbsp;Editar</a>
+	              </div>
+	              <div class="btn-group" style="margin-top:5px;margin-bottom:5px;">
+	              	<a data-toggle="modal" href="{{ path('guia_eliminar', { 'id': info.nivell }) }}" data-target="#eliminarGuia" class="btn btn-danger" type="button"><i class="icon-remove"></i>&nbsp;Eliminar</a>
 				  </div>
 			  </div> 
 		 {% endif %}
@@ -52,9 +65,12 @@
 		</div>
 	</div>
 
-<div class="modal" id="afegirGuia" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal" id="nouGuia" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 </div><!-- /.modal -->
-	
+
+<div class="modal" id="subnivellGuia" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+</div><!-- /.modal -->
+
 <div class="modal" id="editarGuia" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 </div><!-- /.modal -->
 

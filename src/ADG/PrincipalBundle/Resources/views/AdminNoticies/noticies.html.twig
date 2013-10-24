@@ -56,7 +56,7 @@
 		            <button type="submit" class="btn btn-primary"><i class="icon-search"></i>&nbsp;Buscar</button>
 		        </div>
 		        <div class="form-group"> 
-		            <a data-toggle="modal" href="#crearNou" class="btn btn-success"><i class="icon-cog"></i>&nbsp;Afegir nou</a>
+		            <a data-toggle="modal" href="#crearNou" class="btn btn-success"><i class="icon-plus"></i>&nbsp;Afegir nou</a>
 		        </div>
             </div>
 		</form>    	
@@ -121,12 +121,12 @@
 		<form action="{{ path("noticies_crear") }}" method="post">
 	      	<div class="modal-body"> 	
 		      	<p>Per afegir una nova noticia cal introduir la següent informació:</p>
-		        <label for="username">Títol</label>
+		        <label>Títol</label>
 				<div class="form-group">
 				  <input type="text" class="form-control" name="titol" required="required">
 				</div>
 		        <div class="space10"></div>
-		        <label for="password">Contingut</label>
+		        <label">Contingut</label>
 		       	<div class="form-group">
 				  <input type="text" class="form-control" rows="3" name="contingut" required="required" >
 				</div>
