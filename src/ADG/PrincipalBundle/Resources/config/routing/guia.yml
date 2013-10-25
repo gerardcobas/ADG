@@ -12,7 +12,7 @@ guia_subnivell:
     defaults: { _controller: "PrincipalBundle:AdminGuia:subnivell" }
     
 guia_subnivell_confirmar:
-    pattern:  /subnivell/confirmar
+    pattern:  /confirmar/subnivell
     defaults: { _controller: "PrincipalBundle:AdminGuia:subnivellConfirmar" }
     requirements: { _method: post }        
 
