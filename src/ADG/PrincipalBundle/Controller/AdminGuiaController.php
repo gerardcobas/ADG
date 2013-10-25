@@ -78,7 +78,7 @@ class AdminGuiaController extends Controller
     			
     			$entity->setExistenciaOriginals($request->request->get('existenciaOriginals'));
     			$entity->setExistenciaReproduccions($request->request->get('existenciaReproduccio'));
-    			$entity->setDocumentaciot($request->request->get('documentacio'));
+    			$entity->setDocumentacio($request->request->get('documentacio'));
     			$entity->setBibliografia($request->request->get('bibliografia'));
     			
     			$entity->setNotes($request->request->get('notes'));

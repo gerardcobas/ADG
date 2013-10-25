@@ -64,4 +64,152 @@ class FonsArxius
     private $obs;
 
 
+
+    /**
+     * Get num
+     *
+     * @return string 
+     */
+    public function getNum()
+    {
+        return $this->num;
+    }
+
+    /**
+     * Set nodac
+     *
+     * @param string $nodac
+     * @return FonsArxius
+     */
+    public function setNodac($nodac)
+    {
+        $this->nodac = $nodac;
+
+        return $this;
+    }
+
+    /**
+     * Get nodac
+     *
+     * @return string 
+     */
+    public function getNodac()
+    {
+        return $this->nodac;
+    }
+
+    /**
+     * Set data
+     *
+     * @param string $data
+     * @return FonsArxius
+     */
+    public function setData($data)
+    {
+        $this->data = $data;
+
+        return $this;
+    }
+
+    /**
+     * Get data
+     *
+     * @return string 
+     */
+    public function getData()
+    {
+        return $this->data;
+    }
+
+    /**
+     * Set dades
+     *
+     * @param string $dades
+     * @return FonsArxius
+     */
+    public function setDades($dades)
+    {
+        $this->dades = $dades;
+
+        return $this;
+    }
+
+    /**
+     * Get dades
+     *
+     * @return string 
+     */
+    public function getDades()
+    {
+        return $this->dades;
+    }
+
+    /**
+     * Set notari
+     *
+     * @param string $notari
+     * @return FonsArxius
+     */
+    public function setNotari($notari)
+    {
+        $this->notari = $notari;
+
+        return $this;
+    }
+
+    /**
+     * Get notari
+     *
+     * @return string 
+     */
+    public function getNotari()
+    {
+        return $this->notari;
+    }
+
+    /**
+     * Set mides
+     *
+     * @param string $mides
+     * @return FonsArxius
+     */
+    public function setMides($mides)
+    {
+        $this->mides = $mides;
+
+        return $this;
+    }
+
+    /**
+     * Get mides
+     *
+     * @return string 
+     */
+    public function getMides()
+    {
+        return $this->mides;
+    }
+
+    /**
+     * Set obs
+     *
+     * @param string $obs
+     * @return FonsArxius
+     */
+    public function setObs($obs)
+    {
+        $this->obs = $obs;
+
+        return $this;
+    }
+
+    /**
+     * Get obs
+     *
+     * @return string 
+     */
+    public function getObs()
+    {
+        return $this->obs;
+    }
 }

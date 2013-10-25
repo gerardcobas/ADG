@@ -43,4 +43,83 @@ class FonsSeminaristes
     private $data;
 
 
+
+    /**
+     * Get num
+     *
+     * @return string 
+     */
+    public function getNum()
+    {
+        return $this->num;
+    }
+
+    /**
+     * Set nodac
+     *
+     * @param string $nodac
+     * @return FonsSeminaristes
+     */
+    public function setNodac($nodac)
+    {
+        $this->nodac = $nodac;
+
+        return $this;
+    }
+
+    /**
+     * Get nodac
+     *
+     * @return string 
+     */
+    public function getNodac()
+    {
+        return $this->nodac;
+    }
+
+    /**
+     * Set cognom
+     *
+     * @param string $cognom
+     * @return FonsSeminaristes
+     */
+    public function setCognom($cognom)
+    {
+        $this->cognom = $cognom;
+
+        return $this;
+    }
+
+    /**
+     * Get cognom
+     *
+     * @return string 
+     */
+    public function getCognom()
+    {
+        return $this->cognom;
+    }
+
+    /**
+     * Set data
+     *
+     * @param string $data
+     * @return FonsSeminaristes
+     */
+    public function setData($data)
+    {
+        $this->data = $data;
+
+        return $this;
+    }
+
+    /**
+     * Get data
+     *
+     * @return string 
+     */
+    public function getData()
+    {
+        return $this->data;
+    }
 }

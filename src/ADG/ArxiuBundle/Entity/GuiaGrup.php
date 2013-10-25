@@ -17,7 +17,6 @@ class GuiaGrup
      *
      * @ORM\Column(name="nivell", type="string", length=255, nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $nivell;
 
@@ -781,5 +780,19 @@ class GuiaGrup
     public function getRegles()
     {
         return $this->regles;
+    }
+
+    /**
+     * Set nivell
+     *
+     * @param string $nivell
+     *
+     * @return GuiaGrup
+     */
+    public function setNivell($nivell)
+    {
+        $this->nivell = $nivell;
+
+        return $this;
     }
 }

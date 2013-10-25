@@ -17,7 +17,6 @@ class GuiaSerie
      *
      * @ORM\Column(name="nivell", type="string", length=255, nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $nivell;
 
@@ -781,5 +780,19 @@ class GuiaSerie
     public function getRegles()
     {
         return $this->regles;
+    }
+
+    /**
+     * Set nivell
+     *
+     * @param string $nivell
+     *
+     * @return GuiaSerie
+     */
+    public function setNivell($nivell)
+    {
+        $this->nivell = $nivell;
+
+        return $this;
     }
 }

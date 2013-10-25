@@ -36,4 +36,60 @@ class IndexPersones
     private $nom;
 
 
+
+    /**
+     * Get num
+     *
+     * @return string 
+     */
+    public function getNum()
+    {
+        return $this->num;
+    }
+
+    /**
+     * Set nodac
+     *
+     * @param string $nodac
+     * @return IndexPersones
+     */
+    public function setNodac($nodac)
+    {
+        $this->nodac = $nodac;
+
+        return $this;
+    }
+
+    /**
+     * Get nodac
+     *
+     * @return string 
+     */
+    public function getNodac()
+    {
+        return $this->nodac;
+    }
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     * @return IndexPersones
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string 
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
 }
