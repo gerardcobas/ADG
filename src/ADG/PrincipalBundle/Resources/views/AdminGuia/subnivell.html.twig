@@ -1,27 +1,32 @@
-<div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title">Afegir nou</h4>
-        </div>
-		<form action="{{ path("guia_subnivell", { 'id': '3' }) }}" method="post">
-	      	<div class="modal-body"> 	
-		      	<p>Per afegir una nova noticia cal introduir la següent informació:</p>
-		        <label for="username">Títol</label>
-				<div class="form-group">
-				  <input type="text" class="form-control" name="titol" required="required">
-				</div>
-		        <div class="space10"></div>
-		        <label for="password">Contingut</label>
-		       	<div class="form-group">
-				  <input type="text" class="form-control" rows="3" name="contingut" required="required" >
-				</div>
-	        </div>
-	        <div class="modal-footer">
-	          <button class="btn btn-default" data-dismiss="modal">Tancar</button>
-	          <button class="btn btn-success" type="submit">Guardar</button>
-	        </div>
-		</form><!-- /.form -->
+{% extends 'PrincipalBundle:AdminGuia:baseModal.html.twig' %}
 
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
+{% block arxiuTitle %}
+          	{% if tam+1 is sameas(3) %} Afegir nou subfons
+          	{% elseif tam+1 is sameas(4) %} Afegir nou grup de series
+          	{% elseif tam+1 is sameas(5) %} Afegir nova serie
+          	{% elseif tam+1 is sameas(6) %} Afegir nova unitat documental composta
+          	{% elseif tam+1 is sameas(7) %} Afegir nova unitat documental simple
+          	{% elseif tam+1 is sameas(8) %} Afegir nova unitat d'instalació
+          	{% endif %}
+{% endblock %}
+
+
+{% block arxiuInfo %}
+	<p>Es mostra l'informació del nivell <strong>{{ info.nivell }}</strong> modificar per afegir el subnivell d'aquest.</p>
+{% endblock %}
+
+{% block arxiuFormPath %}
+	{{ path("guia_subnivell_confirmar") }}
+{% endblock %}
+
+{% block arxiuNivell %}
+      	<input type="hidden" name="nivell" value="{{ info.nivell }}">
+      	<div class="input-group">
+			<span class="input-group-addon">Nivell *  <strong>{{ info.nivell }}</strong></span>
+			<input type="text" class="form-control" pattern="^([a-zA-Z0-9]*\.)$" 
+				title="Només pot tenir números i/o lletres i finalitzar amb un punt." 
+				value="." name="suffix" required>
+		</div><div class="space10"></div>
+{% endblock %}				
+				
+    

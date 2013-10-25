@@ -22,8 +22,8 @@
 
 {% for flashMessage in app.session.flashbag.get('success') %}
 <div class="row" style="margin-left:0px ">
-	<div class="col-xs-9 col-sm-4 col-lg-4 col-lg-offset-2">
-	    <div class="alert alert-success alert-dismissable">
+	<div class="col-md-7 col-lg-7 " style="margin-left:-10px">
+	    <div class="alert alert-success alert-dismissable" style="margin-left:-10px ">
 	    	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 	        <strong>{{ flashMessage }}</strong>
 	    </div>
@@ -32,7 +32,7 @@
 {% endfor %}
 {% for flashMessage in app.session.flashbag.get('error') %}
 <div class="row" style="margin-left:0px ">
-	<div class="col-xs-9 col-sm-4 col-lg-4 col-lg-offset-2">
+	<div class="col-md-7 col-lg-7" style="margin-left:-10px ">
 	    <div class="alert alert-danger alert-dismissable">
 	    	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 	        <strong>{{ flashMessage }}</strong>

@@ -17,19 +17,19 @@ guia_subnivell_confirmar:
     requirements: { _method: post }        
 
 guia_editar:
-    pattern:  /{id}/editar
+    pattern:  /editar/{id}
     defaults: { _controller: "PrincipalBundle:AdminGuia:editar" }
     
-guia_actualitzar:
-    pattern:  /{id}/editar/actualitzar
-    defaults: { _controller: "PrincipalBundle:AdminGuia:actualitzar" }
+guia_editar_confirmar:
+    pattern:  /confirmar/editar
+    defaults: { _controller: "PrincipalBundle:AdminGuia:editarConfirmar" }
     requirements: { _method: post }        
     
 guia_eliminar:
     pattern:  /{id}/eliminar
     defaults: { _controller: "PrincipalBundle:AdminGuia:eliminar" }
     
-guia_confirmar:
-    pattern:  /{id}/editar/confirm
-    defaults: { _controller: "PrincipalBundle:AdminGuia:confirm" }
+guia_eliminar_confirmar:
+    pattern:  /eliminar/confirmar
+    defaults: { _controller: "PrincipalBundle:AdminGuia:eliminarConfirmar" }
     requirements: { _method: post }            
