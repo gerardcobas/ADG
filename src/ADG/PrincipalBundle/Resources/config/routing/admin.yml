@@ -9,5 +9,9 @@ noticies:
     
 admin_guia:
     resource: "@PrincipalBundle/Resources/config/routing/guia.yml"
-    prefix:   /guia                      
+    prefix:   /guia
+    
+admin_users:
+    resource: "@PrincipalBundle/Resources/config/routing/users.yml"
+    prefix:   /usuaris                          
         

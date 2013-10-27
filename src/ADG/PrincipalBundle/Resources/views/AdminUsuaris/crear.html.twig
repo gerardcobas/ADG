@@ -1,0 +1,30 @@
+ <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Afegir nou usuari</h4>
+        </div>
+		<form action="{{ path("usuaris_crear_confirmar") }}" method="post">
+	      	<div class="modal-body"> 	
+		      	<p>Cal afegir la següent informació:</p>
+		        <label>Nom d'usuari</label>
+				<div class="form-group">
+				  <input type="text" class="form-control" name="usuari" required>
+				</div>
+		        <label>Email</label>
+		       	<div class="form-group">
+				  <input type="email" class="form-control" name="email" required>
+				</div>
+				<label>Contrasenya</label>
+		       	<div class="form-group">
+				  <input type="text" class="form-control" name="contrasenya" required>
+				</div>
+	        </div>
+	        <div class="modal-footer">
+	          <button class="btn btn-default" data-dismiss="modal">Tancar</button>
+	          <button class="btn btn-success" type="submit"><i class="icon-pencil"></i>&nbsp;Crear</button>
+	        </div>
+		</form><!-- /.form -->
+
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->

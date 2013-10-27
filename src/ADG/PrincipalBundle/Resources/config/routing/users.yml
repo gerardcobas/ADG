@@ -1,0 +1,31 @@
+admin_usuaris:
+    pattern:  /
+    defaults: { _controller: "PrincipalBundle:AdminUsuaris:usuaris" }
+    
+usuaris_crear:
+    pattern:  /crear
+    defaults: { _controller: "PrincipalBundle:AdminUsuaris:crear" }
+    
+usuaris_crear_confirmar:
+    pattern:  /confirmar/crear
+    defaults: { _controller: "PrincipalBundle:AdminUsuaris:crearConfirmar" }
+    requirements: { _method: post }
+    
+usuaris_editar:
+    pattern:  /{id}/editar
+    defaults: { _controller: "PrincipalBundle:AdminUsuaris:editar" }
+    
+usuaris_editar_confirmar:
+    pattern:  /{id}/editar/confirmar
+    defaults: { _controller: "PrincipalBundle:AdminUsuaris:editarConfirmar" }
+    requirements: { _method: post }    
+    
+usuaris_eliminar:
+    pattern:  /{id}/eliminar
+    defaults: { _controller: "PrincipalBundle:AdminUsuaris:eliminar" }    
+
+usuaris_eliminar_confirmar:
+    pattern:  /{id}/eliminar/confirmar
+    defaults: { _controller: "PrincipalBundle:AdminUsuaris:eliminarConfirmar" }
+    requirements: { _method: post }    
+    

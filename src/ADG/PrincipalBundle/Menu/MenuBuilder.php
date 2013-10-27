@@ -45,6 +45,9 @@ class MenuBuilder extends ContainerAware
     		$menu['Admin']->addChild('Classificació', array('route' => 'guia'))
     		->setAttribute('icon', 'icon-edit');
     		
+    		$menu['Admin']->addChild('Usuaris', array('route' => 'admin_usuaris'))
+    		->setAttribute('icon', 'icon-edit');
+    		
     		$menu['Admin']->addChild('Logout')
     		->setAttribute('class', 'divider');
     		$menu['Admin']->addChild('Sortir', array('route' => 'fos_user_security_logout'))
