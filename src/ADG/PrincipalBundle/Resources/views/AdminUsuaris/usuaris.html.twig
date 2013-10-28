@@ -26,6 +26,11 @@
                 }
         })
 	} );
+
+	$(document).on('hidden.bs.modal', function (e) {
+	    $(e.target).removeData('bs.modal');
+	});
+	
 		</script>
 
     <script src="{{ asset('bundles/ADG/js/jquery.dataTables.js') }}" type="text/javascript"></script>
@@ -39,24 +44,28 @@
 	
 {# Crear #}
 <div class="row" style="margin-left:0px">	
-	<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 well">
-    	<h4>Afegir nou usuari</h4> 
-        <div class="form-group"> 
-            <a data-toggle="modal" data-target="#crearUsuari" href="{{ path("usuaris_crear") }}" class="btn btn-success"><i class="icon-plus"></i>&nbsp;Afegir</a>
+        <div class="form-group col-xs-5 col-sm-4 col-lg-3"> 
+            <a data-toggle="modal" data-target="#crearUsuari" href="{{ path("usuaris_crear") }}" class="btn btn-success" style="margin-left:-15px"><i class="icon-plus"></i>&nbsp;Afegir nou usuari</a>
         </div>
-	</div>
-	
+
 	{% for flashMessage in app.session.flashbag.get('success') %}
-	<div class="col-xs-9 col-sm-4 col-lg-4 col-lg-offset-2">
-	    <div class="alert alert-success alert-dismissable">
+	<div class="col-xs-10 col-sm-7 col-md-5 col-lg-5 col-sm-offset-1 col-md-offset-3 col-lg-offset-4">
+	    <div class="alert alert-success alert-dismissable" style="margin-left:-15px">
 	    	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 	        <strong>{{ flashMessage }}</strong>
 	    </div>
 	</div>
 	{% endfor %}
 	
+	{% for flashMessage in app.session.flashbag.get('error') %}
+	<div class="col-xs-10 col-sm-7 col-md-5 col-lg-5 col-sm-offset-1 col-md-offset-3 col-lg-offset-4">
+	    <div class="alert alert-danger alert-dismissable" style="margin-left:-15px">
+	    	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	        <strong>{{ flashMessage }}</strong>
+	    </div>
+	</div>
+	{% endfor %}
 </div>
-
 
 {# Taula #}
 <div class="row">
@@ -75,15 +84,17 @@
         </thead>
             <tbody>
                 {% for usuari in usuaris %}
+                {% if usuari.username is not sameas("admin") %}
                     <tr>
                         <td>{{ usuari.username }}</td>
                         <td>{{ usuari.email }}</td>
                         <td>****</td>
                         <td>
-                        	<a data-toggle="modal" href="{{ path("usuaris_editar", { 'id': usuari.id }) }}" data-target="#editarUsuari" class="btn btn-xs btn-primary" type="button"><i class="icon-pencil"></i></a>
-                        	<a data-toggle="modal" href="{{ path("usuaris_eliminar", { 'id': usuari.id }) }}" data-target="#eliminarUsuari" class="btn btn-xs btn-danger" type="button"><i class="icon-remove"></i></a>
+                        	<a data-toggle="modal" href="{{ path("usuaris_editar", { 'usuari': usuari.username }) }}" data-target="#editarUsuari" class="btn btn-xs btn-primary" type="button"><i class="icon-pencil"></i></a>
+                        	<a data-toggle="modal" href="{{ path("usuaris_eliminar", { 'usuari': usuari.username }) }}" data-target="#eliminarUsuari" class="btn btn-xs btn-danger" type="button"><i class="icon-remove"></i></a>
                         </td>
                     </tr>
+                    {% endif %}
                 {% endfor %}
             </tbody>
         </table>

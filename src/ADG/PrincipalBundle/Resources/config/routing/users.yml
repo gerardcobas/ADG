@@ -12,20 +12,20 @@ usuaris_crear_confirmar:
     requirements: { _method: post }
     
 usuaris_editar:
-    pattern:  /{id}/editar
+    pattern:  /{usuari}/editar
     defaults: { _controller: "PrincipalBundle:AdminUsuaris:editar" }
     
 usuaris_editar_confirmar:
-    pattern:  /{id}/editar/confirmar
+    pattern:  /editar/confirmar
     defaults: { _controller: "PrincipalBundle:AdminUsuaris:editarConfirmar" }
     requirements: { _method: post }    
     
 usuaris_eliminar:
-    pattern:  /{id}/eliminar
+    pattern:  /{usuari}/eliminar
     defaults: { _controller: "PrincipalBundle:AdminUsuaris:eliminar" }    
 
 usuaris_eliminar_confirmar:
-    pattern:  /{id}/eliminar/confirmar
+    pattern:  /eliminar/confirmar
     defaults: { _controller: "PrincipalBundle:AdminUsuaris:eliminarConfirmar" }
     requirements: { _method: post }    
     

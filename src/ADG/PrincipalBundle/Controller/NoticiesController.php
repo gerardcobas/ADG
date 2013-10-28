@@ -16,7 +16,7 @@ class NoticiesController extends Controller
     	$peticion = $this->getRequest();
     	$search = $peticion->query->get('search');
     	$param = $peticion->query->get('param');
-    	$em = $this->getDoctrine()->getEntityManager();
+    	$em = $this->getDoctrine()->getManager();
     	
     	$rep = $em->getRepository('PrincipalBundle:Noticies');
     	
@@ -77,10 +77,7 @@ class NoticiesController extends Controller
     	if (!$noticiaEditable) {
     		throw $this->createNotFoundException("No s'ha trobat");
     	}
-    	
-    	
-
-    	return $this->render('PrincipalBundle:AdminNoticies:editarNoticies.html.twig',
+		return $this->render('PrincipalBundle:AdminNoticies:editarNoticies.html.twig',
     			array('noticiaEditable' => $noticiaEditable));
     }
     

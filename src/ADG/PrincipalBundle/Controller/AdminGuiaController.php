@@ -191,7 +191,7 @@ class AdminGuiaController extends Controller
 	
 	
 	/**
-	 * Obre formulari per afegir editar el nivell indicat.
+	 * Obre formulari per editar el nivell indicat.
 	 */
 	public function editarAction($id)
 	{
