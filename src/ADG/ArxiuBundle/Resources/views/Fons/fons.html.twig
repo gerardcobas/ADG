@@ -58,6 +58,8 @@ a.actiu{
 
 <div class="row" style="margin-left:0px;margin-right:10px">
 	<div class="col-xs-11 col-sm-10 col-md-4 col-lg-4" style="margin-right:10px">
+	
+	<h4 style="margin-top:0px;">Continguts:</h4>
 		<div class="btn-group-vertical">
 		
 		
@@ -85,8 +87,23 @@ a.actiu{
 			      <a class="list-group-item lateral{% if seleccio is sameas("beneficis") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'beneficis' }) }}">Dotalies de beneficis</a>
 			      <a class="list-group-item lateral{% if seleccio is sameas("seu") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'seu' }) }}">Dotalies de fundacions de la Seu</a>
 			      <a class="list-group-item lateral{% if seleccio is sameas("patronat") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'patronat' }) }}">Processos sobre dret de patronat</a>
-			   
 			    </ul>
+			</div><!--/Manuals-->
+			
+			<button type="button" class="btn {% if seleccio is sameas("curia") or seleccio is sameas("almoina") or seleccio is sameas("stfeliu") or seleccio is sameas("besalu") or seleccio is sameas("llado") or seleccio is sameas("cadins") %}btn-primary{% else %}btn-default{% endif %}" 
+				data-toggle="collapse" data-target="#arxiusMenu" style="margin-bottom:-1px;">
+			 	Arxius incorporats&nbsp;
+			 	<i class="icon-chevron-down"></i>
+			</button>
+			<div id="arxiusMenu" class="collapse {% if seleccio is sameas("curia") or seleccio is sameas("almoina") or seleccio is sameas("stfeliu") or seleccio is sameas("besalu") or seleccio is sameas("llado") or seleccio is sameas("cadins") %}in{% endif %}" style="margin-left:15px;margin-right:15px">
+				<ul class="list-group" >
+			      <a class="list-group-item lateral{% if seleccio is sameas("curia") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'curia' }) }}">Pergamins de la cúria i diversos</a>
+			      <a class="list-group-item lateral{% if seleccio is sameas("almoina") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'almoina' }) }}">Pia Almoina</a>
+			      <a class="list-group-item lateral{% if seleccio is sameas("stfeliu") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'stfeliu' }) }}">Pergamins de St.Feliu de Girona</a>
+			      <a class="list-group-item lateral{% if seleccio is sameas("besalu") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'besalu' }) }}">Pergamins de Besalú</a>
+			      <a class="list-group-item lateral{% if seleccio is sameas("llado") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'llado' }) }}">Pergamins de Llado</a>
+			      <a class="list-group-item lateral{% if seleccio is sameas("cadins") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'cadins' }) }}">Pergamins de Cadins</a>
+				</ul>
 			</div><!--/Manuals-->
 		
 			 
