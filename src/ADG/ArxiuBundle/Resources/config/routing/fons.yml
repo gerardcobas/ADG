@@ -1,0 +1,9 @@
+fons:
+    pattern: /
+    defaults:
+        _controller: ArxiuBundle:Fons:fons
+
+fons_select:
+    pattern: /{seleccio}
+    defaults:
+        _controller: ArxiuBundle:Fons:select

@@ -112,10 +112,10 @@
 }
 
 /*------------------------------------------------------------------
-[2. Max Width: 964px]
+[2. Max Width: 966px]
 */
 
-@media (max-width: 964px) {
+@media (max-width: 966px) {
 
 	.subnavbar {
 	}
@@ -174,17 +174,26 @@
 [3. Max Width: 549px]
 */
 
-@media (max-width: 549px) {
+@media (max-width: 555px) {
 
 	.subnavbar-inner {
 		height: auto;
 
 	}
 	.subnavbar .container-sub > ul > li {
-		height: 95px;
+		height: 75px;
 		margin-bottom: -5px;
-	}
-	
-	
-	
+	}	
+}
+
+
+/*------------------------------------------------------------------
+[4. Max Width: 349px]
+*/
+
+@media (max-width: 349px) {
+
+	.subnavbar .container-sub > ul > li {
+		height: 95px;
+	}	
 }

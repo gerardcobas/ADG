@@ -1,0 +1,95 @@
+{% extends 'ArxiuBundle::base-arxiu.html.twig' %}
+
+{% block title %}Fons i series{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	
+<style>
+.lateral{
+	position: relative;
+	margin:0;
+	margin-bottom:8px;
+}
+</style>	
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+{% endblock %}
+
+
+
+{% block body %}
+
+	<div class="page-header">
+        <h1>Cerca per fons i series</h1>
+	</div>
+	
+	{% for flashMessage in app.session.flashbag.get('success') %}
+		<div class="row" style="margin-left:0px ">
+			<div class="col-md-7 col-lg-7 " style="margin-left:-5px">
+			    <div class="alert alert-success alert-dismissable" style="margin-left:-10px ">
+			    	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			        <strong>{{ flashMessage }}</strong>
+			    </div>
+			</div>
+		</div>
+	{% endfor %}
+	{% for flashMessage in app.session.flashbag.get('error') %}
+		<div class="row" style="margin-left:0px ">
+			<div class="col-md-7 col-lg-7" style="margin-left:-5px ">
+			    <div class="alert alert-danger alert-dismissable">
+			    	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			        <strong>{{ flashMessage }}</strong>
+			    </div>
+			</div>
+		</div>
+	{% endfor %}	
+
+<div class="row" style="margin-left:0px;margin-right:10px">
+        
+	<div class="col-xs-9 col-sm-7 col-md-4 col-lg-4 well" style="margin-right:10px">
+		
+		<div class="btn-group-vertical">
+			 <div class="btn-group {% if seleccio is sameas("lletres") %}open{% endif %}">
+				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> Lletres <span class="caret"></span> </button>
+			    <ul class="dropdown-menu lateral">
+			      <li class="{% if seleccio is sameas("lletres") %}active{% endif %}"><a href="{{ path('fons_select', { 'seleccio': 'lletres' }) }}">1294 - 1913</a></li>
+			      <li class="{% if seleccio is sameas("llicencies") %}active{% endif %}"><a href="{{ path('fons_select', { 'seleccio': 'llicencies' }) }}">Llicències per demanar caritat</a></li>
+			      <li class="{% if seleccio is sameas("registres") %}active{% endif %}"><a href="{{ path('fons_select', { 'seleccio': 'registres' }) }}">Registres Itineris</a></li>
+			    </ul>
+			 </div> <!--/Lletres-->
+			 
+			 <div class="btn-group">
+				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> Manual de col·lacions beneficials <span class="caret"></span> </button>
+			    <ul class="dropdown-menu lateral">
+			      <li class="{% if seleccio is sameas("lletres") %}active{% endif %}"><a href="{{ path('fons_select', { 'seleccio': 'lletres' }) }}">1294 - 1913</a></li>
+			      <li class="{% if seleccio is sameas("llicencies") %}active{% endif %}"><a href="{{ path('fons_select', { 'seleccio': 'llicencies' }) }}">Llicències per demanar caritat</a></li>
+			      <li class="{% if seleccio is sameas("registres") %}active{% endif %}"><a href="{{ path('fons_select', { 'seleccio': 'registres' }) }}">Registres Itineris</a></li>
+			    </ul>
+			 </div> <!--/Lletres-->
+			 
+		</div>
+		
+    	
+		
+    </div>
+    
+    <!--Cerca i taula-->
+    
+    <div class="col-xs-10 col-sm-10 col-md-8 col-lg-8 alert alert-info" style="margin-right:-10px">
+		Cerca
+		{% if info is not null  %}
+			{% include 'ArxiuBundle:Fons:info.html.twig' %}
+		{% endif %}	 
+	</div>   
+
+	
+	<!--/info ampliada en modal-->
+</div>
+	
+	
+
+{% endblock %}

@@ -17,7 +17,7 @@ class SubmenuBuilder extends ContainerAware
     	$menu->addChild('Dispenses matrimonials', array('route' => 'altre'))
     		->setAttribute('icon', 'icon-legal');
     	
-    	$menu->addChild('Recerca per fons i sèries', array('route' => 'altre'))
+    	$menu->addChild('Recerca per fons i sèries', array('route' => 'fons'))
     	->setAttribute('icon', 'icon-list');
 
     	$menu->addChild('Index de llocs i persones', array('route' => 'altre'))
