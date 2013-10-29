@@ -86,7 +86,7 @@ class AdminUsuarisController extends Controller
 
 
     /**
-     * Obre formulari per editar el nivell indicat.
+     * Obre formulari per editar l'usuari indicat.
      */
     public function editarAction($usuari)
     {
@@ -154,6 +154,42 @@ class AdminUsuarisController extends Controller
     	}
     	return $this->redirect($this->generateUrl('admin_usuaris'));
     }
+
+    /**
+     * Obre formulari per eliminar l'usuari indicat.
+     */
+    public function eliminarAction($usuari)
+    {
+    	$userManager = $this->container->get('fos_user.user_manager');
+    	$usuari = $userManager->findUserByUsername($usuari);
+    	return $this->render('PrincipalBundle:AdminUsuaris:eliminar.html.twig',
+    			array('usuari' => $usuari)
+    	);
+    }    
+    
+    /**
+     * Elimina l'usuari indicat.
+     */
+    public function eliminarConfirmarAction()
+    {
+    	$request = $this->getRequest();
+    	if ($request->isMethod('POST')) {
+    		 
+    		$usuari = $request->request->get('usuari');
+    
+    		$userManager = $this->container->get('fos_user.user_manager');
+    		$user = $userManager->findUserByUsername($usuari);
+    
+    		$userManager->deleteUser($user);
+    		$this->get('session')->getFlashBag()->add(
+    				'success',
+    				"Usuari \"".$usuari."\" eliminat correctament!"
+    		);
+    		 
+    	}
+    	return $this->redirect($this->generateUrl('admin_usuaris'));
+    }
+    
     
     /**
      * Comprova si existeix algun usuari amb el mateix nom d'usuari

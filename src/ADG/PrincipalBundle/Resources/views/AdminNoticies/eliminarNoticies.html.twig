@@ -2,11 +2,12 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title">Eliminar notícia</h4>
+          <h4 class="modal-title text-danger">Eliminar notícia</h4>
         </div>
 		<form action="{{ path("noticies_confirm", { 'id': noticia.id }) }}" method="post">
 	      	<div class="modal-body"> 	
-		      	<p>S'eliminarà la notícia amb la següent informació:</p>
+		      	<strong class="text-danger">S'eliminarà la notícia amb la següent informació:</strong>
+		      	<div class="space10"></div>
 		        <label>Títol</label>
 				<p>{{ noticia.titol }} </p>
 		        <div class="space10"></div>
