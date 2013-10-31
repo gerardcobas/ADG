@@ -1,53 +1,70 @@
-
+<div class="panel-heading"><h4 style="margin-top:-3px;margin-bottom:-3px">Cerca {{ seleccio }}</h4></div>
+<div class="panel-body">
 <form action="{{ path('fons_cercar', { 'seleccio': seleccio }) }}" method="post">
 	<!--/si es dels que te mes elements, llavors afegirlos-->
 	<!--/funcio sera mostrar -->
 	
-	
 	{% if tipus is sameas("arxius") %}
-		{# nom persona + paraula clau #}
 		<div class="row">
-		  <div class="col-lg-8 col-md-10 col-sm-10 col-xs-12">
+		  <div class="col-lg-8 col-md-10 col-sm-10 col-xs-10">
+		  	<h5 style="margin-top: -5px">Nom de persona</h5>
 		  	<div class="input-group">
-				<span class="input-group-addon">Nom de persona</span>
-				<input type="text" class="form-control search-query" name="cercaParaula" value="{{ cercaParaula }}">
+				<span class="input-group-addon"><i class="icon-male"></i></span>
+				<input type="text" class="form-control search-query" name="cercaNom" value="{{ cercaNom }}">
 			</div>
 			<div class="space10"></div>
+			<h5 style="margin-top: -5px">Paraules clau</h5>
 			<div class="input-group">
-				<span class="input-group-addon">Paraules clau</span>
+				<span class="input-group-addon"><i class="icon-flag"></i></span>
 				<input type="text" class="form-control search-query" name="cercaParaula" value="{{ cercaParaula }}">
 			</div>  
-			
 		  </div><!-- /.col -->
 		</div><!-- /.row -->
 		
 	{% elseif tipus is sameas("capellans") or tipus is sameas("monges") or tipus is sameas("seminaristes") %}
 		{# nom persona + lloc + data ordenacio #}
+		<div class="row">
+		  <div class="col-lg-8 col-md-10 col-sm-10 col-xs-10">
+		  	<h5 style="margin-top: -5px">Nom de persona</h5>
+		  	<div class="input-group">
+				<span class="input-group-addon"><i class="icon-male"></i></span>
+				<input type="text" class="form-control search-query" name="cercaNom" value="{{ cercaNom }}">
+			</div>
+			<div class="space10"></div>
+			<h5 style="margin-top: -5px">Lloc</h5>
+			<div class="input-group">
+				<span class="input-group-addon"><i class="icon-picture"></i></span>
+				<input type="text" class="form-control search-query" name="cercaLloc" value="{{ cercaLloc }}">
+			</div>
+			<div class="space10"></div>
+			<h5 style="margin-top: -5px">Data</h5>
+			<div class="input-group">
+				<span class="input-group-addon"><i class="icon-calendar"></i></span>
+				<input type="text" class="form-control search-query" name="cercaData" value="{{ cercaData }}">
+			</div>    
+		  </div><!-- /.col -->
+		</div><!-- /.row -->
+		
 	{% else %}
 		<div class="row">
-		  <div class="col-lg-8 col-md-10 col-sm-10 col-xs-12">
+		  <div class="col-lg-8 col-md-10 col-sm-10 col-xs-10">
+			<h5 style="margin-top: -5px">Paraules clau</h5>
 			<div class="input-group">
-				<span class="input-group-addon">Paraules clau</span>
+				<span class="input-group-addon"><i class="icon-flag"></i></span>
 				<input type="text" class="form-control search-query" name="cercaParaula" value="{{ cercaParaula }}">
 			</div>  
-			
 		  </div><!-- /.col -->
 		</div><!-- /.row -->
 	{% endif %}
+	
 	<div class="space10"></div>
-	<div class="row">
-	  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-5">
-		<div class="form-group"> 
-	    	<button type="submit" class="btn btn-primary"><i class="icon-search"></i>&nbsp;Buscar</button>
-	    </div>
-	  </div><!-- /.col-lg-2 -->
-	  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-5">
+	<div class="btn-group">
+		<button type="submit" class="btn btn-primary"><i class="icon-search"></i>&nbsp;Buscar</button>
 		{% if is_granted('ROLE_ADMIN') %}         
 			<div class="btn-group">	
 				<a data-toggle="modal" href="#" data-target="#nouFons" class="btn btn-success" type="button"><i class="icon-plus"></i>&nbsp;Afegir nou</a>
 		    </div>
 		{% endif %}
-	  </div><!-- /.col-lg-2 -->
-	</div><!-- /.row -->
-
+	</div>
+</div>
 </form>

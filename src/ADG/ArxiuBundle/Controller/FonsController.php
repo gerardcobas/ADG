@@ -16,16 +16,25 @@ class FonsController extends Controller
     public function selectAction($seleccio)
     {
     	$tipus=self::obteTipus($seleccio);
+    	
+    	//obtenir tota la taula en arxius / monges / capellans / seminas
+    	
     	return $this->render('ArxiuBundle:Fons:fons.html.twig',
-    			array('seleccio' => $seleccio, 'tipus' => $tipus, 'cercaParaula'=>null, 'info' => null)
+    			array('seleccio' => $seleccio, 'tipus' => $tipus, 'cercaParaula'=>null, 
+    					'cercaNom'=>null, 'cercaLloc'=>null,'cercaData'=>null,'info' => null)
     	);
     }
 
     public function cercarAction($seleccio)
     {
     	$tipus=self::obteTipus($seleccio);
+    	//select cercas i retornarles
+    	
+    	//mirar kines estan plenes i fer cerca a BD
+    	
     	return $this->render('ArxiuBundle:Fons:fons.html.twig',
-    			array('seleccio' => $seleccio, 'tipus' => $tipus, 'cercaParaula'=>null, 'info' => null)
+    			array('seleccio' => $seleccio, 'tipus' => $tipus, 'cercaParaula'=>null, 
+    					'cercaNom'=>null, 'cercaLloc'=>null,'cercaData'=>null, 'info' => null)
     	);
     }
     
