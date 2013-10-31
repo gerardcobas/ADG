@@ -12,4 +12,9 @@ fons_cercar:
     pattern: /{seleccio}/cercar
     defaults:
         _controller: ArxiuBundle:Fons:cercar
-    requirements: { _method: post }  
+    requirements: { _method: post }
+    
+fons_detall:
+    pattern: /{tipus}/detall/{id}
+    defaults:
+        _controller: ArxiuBundle:Fons:detall

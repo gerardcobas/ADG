@@ -1,0 +1,28 @@
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Informació completa</h4>
+        </div>
+      	<div class="modal-body">
+      		 <div class="space10"></div> 	
+      		 {% if tipus is sameas("arxius") %}
+			 	<label>Classificació de l'arxiu</label>
+				<p>bla</p>
+				<label>Data</label>
+				<p>asd</p>
+				<label>Dades</label>
+				<p>qq</p>
+			 	
+			 {% elseif tipus is sameas("capellans") %}
+			 	aa
+			 {% else %}
+			 	asd
+			 {% endif %}
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" data-dismiss="modal">Tancar</button>
+        </div>
+
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->

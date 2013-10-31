@@ -7,10 +7,10 @@
 	{% if tipus is sameas("arxius") %}
 		<div class="row">
 		  <div class="col-lg-8 col-md-10 col-sm-10 col-xs-10">
-		  	<h5 style="margin-top: -5px">Nom de persona</h5>
-		  	<div class="input-group">
-				<span class="input-group-addon"><i class="icon-male"></i></span>
-				<input type="text" class="form-control search-query" name="cercaNom" value="{{ cercaNom }}">
+			<h5 style="margin-top: -5px">Data</h5>
+			<div class="input-group">
+				<span class="input-group-addon"><i class="icon-calendar"></i></span>
+				<input type="text" class="form-control search-query" name="cercaData" value="{{ cercaData }}">
 			</div>
 			<div class="space10"></div>
 			<h5 style="margin-top: -5px">Paraules clau</h5>
@@ -22,7 +22,6 @@
 		</div><!-- /.row -->
 		
 	{% elseif tipus is sameas("capellans") or tipus is sameas("monges") or tipus is sameas("seminaristes") %}
-		{# nom persona + lloc + data ordenacio #}
 		<div class="row">
 		  <div class="col-lg-8 col-md-10 col-sm-10 col-xs-10">
 		  	<h5 style="margin-top: -5px">Nom de persona</h5>
@@ -30,18 +29,40 @@
 				<span class="input-group-addon"><i class="icon-male"></i></span>
 				<input type="text" class="form-control search-query" name="cercaNom" value="{{ cercaNom }}">
 			</div>
-			<div class="space10"></div>
-			<h5 style="margin-top: -5px">Lloc</h5>
-			<div class="input-group">
-				<span class="input-group-addon"><i class="icon-picture"></i></span>
-				<input type="text" class="form-control search-query" name="cercaLloc" value="{{ cercaLloc }}">
-			</div>
-			<div class="space10"></div>
-			<h5 style="margin-top: -5px">Data</h5>
-			<div class="input-group">
-				<span class="input-group-addon"><i class="icon-calendar"></i></span>
-				<input type="text" class="form-control search-query" name="cercaData" value="{{ cercaData }}">
-			</div>    
+			{% if tipus is sameas("capellans") %}
+				<div class="space10"></div>
+				<h5 style="margin-top: -5px">Lloc</h5>
+				<div class="input-group">
+					<span class="input-group-addon"><i class="icon-picture"></i></span>
+					<input type="text" class="form-control search-query" name="cercaLloc" value="{{ cercaLloc }}">
+				</div>
+				<div class="space10"></div>
+				<h5 style="margin-top: -5px">Data ordenació</h5>
+				<div class="input-group">
+					<span class="input-group-addon"><i class="icon-calendar"></i></span>
+					<input type="text" class="form-control search-query" name="cercaData" value="{{ cercaData }}">
+				</div>
+			{% elseif tipus is sameas("monges") %}
+				<div class="space10"></div>
+				<h5 style="margin-top: -5px">Lloc</h5>
+				<div class="input-group">
+					<span class="input-group-addon"><i class="icon-picture"></i></span>
+					<input type="text" class="form-control search-query" name="cercaLloc" value="{{ cercaLloc }}">
+				</div>
+				<div class="space10"></div>
+				<h5 style="margin-top: -5px">Congregació</h5>
+				<div class="input-group">
+					<span class="input-group-addon"><i class="icon-bookmark"></i></span>
+					<input type="text" class="form-control search-query" name="cercaCongregacio" value="{{ cercaCongregacio }}">
+				</div>
+			{% else %}
+				<div class="space10"></div>
+				<h5 style="margin-top: -5px">Data</h5>
+				<div class="input-group">
+					<span class="input-group-addon"><i class="icon-calendar"></i></span>
+					<input type="text" class="form-control search-query" name="cercaData" value="{{ cercaData }}">
+				</div>
+			{% endif %}    
 		  </div><!-- /.col -->
 		</div><!-- /.row -->
 		
