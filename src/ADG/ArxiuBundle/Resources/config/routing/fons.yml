@@ -7,3 +7,9 @@ fons_select:
     pattern: /{seleccio}
     defaults:
         _controller: ArxiuBundle:Fons:select
+        
+fons_cercar:
+    pattern: /{seleccio}/cercar
+    defaults:
+        _controller: ArxiuBundle:Fons:cercar
+    requirements: { _method: post }  

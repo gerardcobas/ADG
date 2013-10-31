@@ -55,7 +55,7 @@
 					</a>
 					
 					<!-- Subfons --> 
-					<div class="list-group" style="margin-left: 15px; margin-bottom: 0px;">
+					<div class="list-group" style="margin-left: 15px; margin-bottom: -1px;">
 						{% for sf in subFons %}
 							{% if currentId starts with sf.nivell %}
 								<a href="{{ path('search',{ 'id': sf.nivell }) }}" class="list-group-item {% if currentId is sameas(sf.nivell) %}active{% endif %}">
@@ -64,7 +64,7 @@
 								</a>
 								
 								<!-- Grup --> 
-								<div class="list-group" style="margin-left: 15px; margin-bottom: 0px;">
+								<div class="list-group" style="margin-left: 15px; margin-bottom: -1px;">
 									{% for g in grups %}
 										{% if currentId starts with g.nivell %}
 											<a href="{{ path('search',{ 'id': g.nivell }) }}" class="list-group-item {% if currentId is sameas(g.nivell) %}active{% endif %}">
@@ -73,7 +73,7 @@
 											</a>
 											
 											<!-- Serie --> 
-											<div class="list-group" style="margin-left: 15px; margin-bottom: 0px;">
+											<div class="list-group" style="margin-left: 15px; margin-bottom: -1px;">
 												{% for se in series %}
 													{% if currentId starts with se.nivell %}
 														<a href="{{ path('search',{ 'id': se.nivell }) }}" class="list-group-item {% if currentId is sameas(se.nivell) %}active{% endif %}">
@@ -82,7 +82,7 @@
 														</a>
 														
 														<!-- Ucomposta --> 
-														<div class="list-group" style="margin-left: 15px; margin-bottom: 0px;">
+														<div class="list-group" style="margin-left: 15px; margin-bottom: -1px;">
 															{% for uc in ucomps %}
 																{% if currentId starts with uc.nivell %}
 																	<a href="{{ path('search',{ 'id': uc.nivell }) }}" class="list-group-item {% if currentId is sameas(uc.nivell) %}active{% endif %}">
@@ -91,7 +91,7 @@
 																	</a>
 																	
 																	<!-- Usimple --> 
-																	<div class="list-group" style="margin-left: 15px; margin-bottom: 0px;">
+																	<div class="list-group" style="margin-left: 15px; margin-bottom: -1px;">
 																		{% for us in usims %}
 																			{% if currentId starts with us.nivell %}
 																				<a href="{{ path('search',{ 'id': us.nivell }) }}" class="list-group-item {% if currentId is sameas(us.nivell) %}active{% endif %}">
@@ -100,7 +100,7 @@
 																				</a>
 																				
 																				<!-- Uinstalacio --> 
-																				<div class="list-group" style="margin-left: 15px; margin-bottom: 0px;">
+																				<div class="list-group" style="margin-left: 15px; margin-bottom: -1px;">
 																					{% for ui in uinsts %}
 																						<a href="{{ path('search',{ 'id': ui.nivell }) }}" class="list-group-item {% if currentId is sameas(ui.nivell) %}active{% endif %}">
 																							<i class="icon-file-text"></i>

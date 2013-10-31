@@ -1,0 +1,110 @@
+<h4 style="margin-top:0px;">Continguts:</h4>
+		<div class="btn-group-vertical">
+				
+			<button type="button" class="btn {% if seleccio is sameas("lletres") or seleccio is sameas("llicencies") or seleccio is sameas("registres") %}btn-primary{% else %}btn-default{% endif %}" 
+				data-toggle="collapse" data-target="#lletresMenu" style="margin-bottom:-1px;">
+			 	Lletres&nbsp;
+			 	<i class="icon-chevron-down"></i>
+			</button>
+			<div id="lletresMenu" class="collapse {% if seleccio is sameas("lletres") or seleccio is sameas("llicencies") or seleccio is sameas("registres") %}in{% endif %}" style="margin-left:15px;margin-right:15px">
+				<ul class="list-group">
+			      <a class="list-group-item lateral{% if seleccio is sameas("lletres") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'lletres' }) }}">1294 - 1913</a>
+			      <a class="list-group-item lateral{% if seleccio is sameas("llicencies") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'llicencies' }) }}">Llicències per demanar caritat</a>
+			      <a class="list-group-item lateral{% if seleccio is sameas("registres") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'registres' }) }}">Registres Itineris</a>
+			    </ul>
+			</div><!--/Lletres-->
+		
+			<button type="button" class="btn {% if seleccio is sameas("manuals") or seleccio is sameas("beneficis") or seleccio is sameas("seu") or seleccio is sameas("patronat")%}btn-primary{% else %}btn-default{% endif %}" 
+				data-toggle="collapse" data-target="#manualsMenu" style="margin-bottom:-1px;">
+			 	Manuals de col·lacions beneficials&nbsp;
+			 	<i class="icon-chevron-down"></i>
+			</button>
+			<div id="manualsMenu" class="collapse {% if seleccio is sameas("manuals") or seleccio is sameas("beneficis") or seleccio is sameas("seu") or seleccio is sameas("patronat")%}in{% endif %}" style="margin-left:15px;margin-right:15px">
+				<ul class="list-group" >
+			      <a class="list-group-item lateral{% if seleccio is sameas("manuals") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'manuals' }) }}">Manuals 1271-1928</a>
+			      <a class="list-group-item lateral{% if seleccio is sameas("beneficis") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'beneficis' }) }}">Dotalies de beneficis</a>
+			      <a class="list-group-item lateral{% if seleccio is sameas("seu") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'seu' }) }}">Dotalies de fundacions de la Seu</a>
+			      <a class="list-group-item lateral{% if seleccio is sameas("patronat") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'patronat' }) }}">Processos sobre dret de patronat</a>
+			    </ul>
+			</div><!--/Manuals-->
+			
+			<button type="button" class="btn {% if seleccio is sameas("curia") or seleccio is sameas("almoina") or seleccio is sameas("stfeliu") or seleccio is sameas("besalu") or seleccio is sameas("llado") or seleccio is sameas("cadins") %}btn-primary{% else %}btn-default{% endif %}" 
+				data-toggle="collapse" data-target="#arxiusMenu" style="margin-bottom:-1px;">
+			 	Arxius incorporats&nbsp;
+			 	<i class="icon-chevron-down"></i>
+			</button>
+			<div id="arxiusMenu" class="collapse {% if seleccio is sameas("curia") or seleccio is sameas("almoina") or seleccio is sameas("stfeliu") or seleccio is sameas("besalu") or seleccio is sameas("llado") or seleccio is sameas("cadins") %}in{% endif %}" style="margin-left:15px;margin-right:15px">
+				<ul class="list-group" >
+			      <a class="list-group-item lateral{% if seleccio is sameas("curia") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'curia' }) }}">Pergamins de la cúria i diversos</a>
+			      <a class="list-group-item lateral{% if seleccio is sameas("almoina") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'almoina' }) }}">Pia Almoina</a>
+			      <a class="list-group-item lateral{% if seleccio is sameas("stfeliu") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'stfeliu' }) }}">Pergamins de St.Feliu de Girona</a>
+			      <a class="list-group-item lateral{% if seleccio is sameas("besalu") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'besalu' }) }}">Pergamins de Besalú</a>
+			      <a class="list-group-item lateral{% if seleccio is sameas("llado") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'llado' }) }}">Pergamins de Llado</a>
+			      <a class="list-group-item lateral{% if seleccio is sameas("cadins") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'cadins' }) }}">Pergamins de Cadins</a>
+				</ul>
+			</div><!--/Manuals-->
+		
+			<button type="button" class="btn {% if seleccio is sameas("notalarum") or seleccio is sameas("deposita") or seleccio is sameas("liberden") %}btn-primary{% else %}btn-default{% endif %}" 
+				data-toggle="collapse" data-target="#notariaMenu" style="margin-bottom:-1px;">
+			 	Notaria&nbsp;
+			 	<i class="icon-chevron-down"></i>
+			</button>
+			<div id="notariaMenu" class="collapse {% if seleccio is sameas("notalarum") or seleccio is sameas("deposita") or seleccio is sameas("liberden") %}in{% endif %}" style="margin-left:15px;margin-right:15px">
+				<ul class="list-group">
+			      <a class="list-group-item lateral{% if seleccio is sameas("notalarum") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'notalarum' }) }}">Notalarum 1924-1947 i suplement</a>
+			      <a class="list-group-item lateral{% if seleccio is sameas("deposita") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'deposita' }) }}">Deposita</a>
+			      <a class="list-group-item lateral{% if seleccio is sameas("liberden") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'liberden' }) }}">Liber denuntiationum</a>
+			    </ul>
+			</div><!--/Notaria-->
+			
+			<button type="button" class="btn {% if seleccio is sameas("capellans") or seleccio is sameas("monges") or seleccio is sameas("seminaristes") %}btn-primary{% else %}btn-default{% endif %}" 
+				data-toggle="collapse" data-target="#profesionsMenu" style="margin-bottom:-1px;">
+			 	Ordes i profesions&nbsp;
+			 	<i class="icon-chevron-down"></i>
+			</button>
+			<div id="profesionsMenu" class="collapse {% if seleccio is sameas("capellans") or seleccio is sameas("monges") or seleccio is sameas("seminaristes") %}in{% endif %}" style="margin-left:15px;margin-right:15px">
+				<ul class="list-group">
+			      <a class="list-group-item lateral{% if seleccio is sameas("capellans") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'capellans' }) }}">Capellans</a>
+			      <a class="list-group-item lateral{% if seleccio is sameas("monges") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'monges' }) }}">Monges</a>
+			      <a class="list-group-item lateral{% if seleccio is sameas("seminaristes") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'seminaristes' }) }}">Seminaristes</a>
+			    </ul>
+			</div><!--/Profesions-->
+			
+			<button type="button" class="btn {% if seleccio is sameas("instuicions") or seleccio is sameas("resolucions") or seleccio is sameas("definicions") or seleccio is sameas("testaments")%}btn-primary{% else %}btn-default{% endif %}" 
+				data-toggle="collapse" data-target="#testamentsMenu" style="margin-bottom:-1px;">
+			 	Testaments, definicions...&nbsp;
+			 	<i class="icon-chevron-down"></i>
+			</button>
+			<div id="testamentsMenu" class="collapse {% if seleccio is sameas("instuicions") or seleccio is sameas("resolucions") or seleccio is sameas("definicions") or seleccio is sameas("testaments")%}in{% endif %}" style="margin-left:15px;margin-right:15px">
+				<ul class="list-group" >
+			      <a class="list-group-item lateral{% if seleccio is sameas("testaments") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'testaments' }) }}">Testaments</a>
+			      <a class="list-group-item lateral{% if seleccio is sameas("definicions") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'definicions' }) }}">Definicions</a>
+			      <a class="list-group-item lateral{% if seleccio is sameas("resolucions") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'resolucions' }) }}">Resolucions de marmessories</a>
+			      <a class="list-group-item lateral{% if seleccio is sameas("instuicions") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'instuicions' }) }}">Instuicions de causes Pies</a>
+			    </ul>
+			</div><!--/Testaments-->
+			 
+			<button type="button" class="btn {% if seleccio is sameas("medievals") or seleccio is sameas("moderns") %}btn-primary{% else %}btn-default{% endif %}" 
+				data-toggle="collapse" data-target="#processosMenu" style="margin-bottom:-1px;">
+			 	Processos&nbsp;
+			 	<i class="icon-chevron-down"></i>
+			</button>
+			<div id="processosMenu" class="collapse {% if seleccio is sameas("medievals") or seleccio is sameas("moderns") %}in{% endif %}" style="margin-left:15px;margin-right:15px">
+				<ul class="list-group">
+			      <a class="list-group-item lateral{% if seleccio is sameas("medievals") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'medievals' }) }}">Processos medievals (1282-1500)</a>
+			      <a class="list-group-item lateral{% if seleccio is sameas("moderns") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'moderns' }) }}">Processos moderns (1585-1864)</a>
+			    </ul>
+			</div><!--/Processos--> 
+			
+			<button type="button" class="btn {% if seleccio is sameas("mitra") or seleccio is sameas("delmes") %}btn-primary{% else %}btn-default{% endif %}" 
+				data-toggle="collapse" data-target="#mitraMenu" style="margin-bottom:-1px;">
+			 	Mitra&nbsp;
+			 	<i class="icon-chevron-down"></i>
+			</button>
+			<div id="mitraMenu" class="collapse {% if seleccio is sameas("mitra") or seleccio is sameas("delmes") %}in{% endif %}" style="margin-left:15px;margin-right:15px">
+				<ul class="list-group">
+			      <a class="list-group-item lateral{% if seleccio is sameas("mitra") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'mitra' }) }}">Pergamins de la mitra</a>
+			      <a class="list-group-item lateral{% if seleccio is sameas("delmes") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'delmes' }) }}">Delmes</a>
+			    </ul>
+			</div><!--/Mitra--> 
+		</div>

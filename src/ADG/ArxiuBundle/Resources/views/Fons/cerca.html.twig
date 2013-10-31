@@ -1,0 +1,53 @@
+
+<form action="{{ path('fons_cercar', { 'seleccio': seleccio }) }}" method="post">
+	<!--/si es dels que te mes elements, llavors afegirlos-->
+	<!--/funcio sera mostrar -->
+	
+	
+	{% if tipus is sameas("arxius") %}
+		{# nom persona + paraula clau #}
+		<div class="row">
+		  <div class="col-lg-8 col-md-10 col-sm-10 col-xs-12">
+		  	<div class="input-group">
+				<span class="input-group-addon">Nom de persona</span>
+				<input type="text" class="form-control search-query" name="cercaParaula" value="{{ cercaParaula }}">
+			</div>
+			<div class="space10"></div>
+			<div class="input-group">
+				<span class="input-group-addon">Paraules clau</span>
+				<input type="text" class="form-control search-query" name="cercaParaula" value="{{ cercaParaula }}">
+			</div>  
+			
+		  </div><!-- /.col -->
+		</div><!-- /.row -->
+		
+	{% elseif tipus is sameas("capellans") or tipus is sameas("monges") or tipus is sameas("seminaristes") %}
+		{# nom persona + lloc + data ordenacio #}
+	{% else %}
+		<div class="row">
+		  <div class="col-lg-8 col-md-10 col-sm-10 col-xs-12">
+			<div class="input-group">
+				<span class="input-group-addon">Paraules clau</span>
+				<input type="text" class="form-control search-query" name="cercaParaula" value="{{ cercaParaula }}">
+			</div>  
+			
+		  </div><!-- /.col -->
+		</div><!-- /.row -->
+	{% endif %}
+	<div class="space10"></div>
+	<div class="row">
+	  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-5">
+		<div class="form-group"> 
+	    	<button type="submit" class="btn btn-primary"><i class="icon-search"></i>&nbsp;Buscar</button>
+	    </div>
+	  </div><!-- /.col-lg-2 -->
+	  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-5">
+		{% if is_granted('ROLE_ADMIN') %}         
+			<div class="btn-group">	
+				<a data-toggle="modal" href="#" data-target="#nouFons" class="btn btn-success" type="button"><i class="icon-plus"></i>&nbsp;Afegir nou</a>
+		    </div>
+		{% endif %}
+	  </div><!-- /.col-lg-2 -->
+	</div><!-- /.row -->
+
+</form>

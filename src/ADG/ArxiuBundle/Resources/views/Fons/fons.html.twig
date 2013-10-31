@@ -4,33 +4,19 @@
 
 {% block stylesheets %}
 	{{ parent() }}
-	
-<style>
-.lateral{
-	padding:2px 10px;
-	text-align: center;
-}
-
-.btn-lateral{
-	width:250px;
-}
-a.actiu{
-	background-color: gray;
-	border-color: gray;
-	color: white;
-}
-</style>	
+	<style>
+		.lateral{
+			padding:2px 10px;
+			text-align: center;
+		}
+	</style>	
 {% endblock %}
-
 
 {% block javascripts %}
 	{{ parent() }}
 {% endblock %}
 
-
-
 {% block body %}
-
 	<div class="page-header">
         <h1>Cerca per fons i series</h1>
 	</div>
@@ -58,70 +44,43 @@ a.actiu{
 
 <div class="row" style="margin-left:0px;margin-right:10px">
 	<div class="col-xs-11 col-sm-10 col-md-4 col-lg-4" style="margin-right:10px">
-	
-	<h4 style="margin-top:0px;">Continguts:</h4>
-		<div class="btn-group-vertical">
-		
-		
-			<button type="button" class="btn {% if seleccio is sameas("lletres") or seleccio is sameas("llicencies") or seleccio is sameas("registres") %}btn-primary{% else %}btn-default{% endif %}" 
-				data-toggle="collapse" data-target="#lletresMenu" style="margin-bottom:-1px;">
-			 	Lletres&nbsp;
-			 	<i class="icon-chevron-down"></i>
-			</button>
-			<div id="lletresMenu" class="collapse {% if seleccio is sameas("lletres") or seleccio is sameas("llicencies") or seleccio is sameas("registres") %}in{% endif %}" style="margin-left:15px;margin-right:15px">
-				<ul class="list-group">
-			      <a class="list-group-item lateral{% if seleccio is sameas("lletres") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'lletres' }) }}">1294 - 1913</a>
-			      <a class="list-group-item lateral{% if seleccio is sameas("llicencies") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'llicencies' }) }}">Llicències per demanar caritat</a>
-			      <a class="list-group-item lateral{% if seleccio is sameas("registres") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'registres' }) }}">Registres Itineris</a>
-			    </ul>
-			</div><!--/Lletres-->
-		
-			<button type="button" class="btn {% if seleccio is sameas("manuals") or seleccio is sameas("beneficis") or seleccio is sameas("seu") or seleccio is sameas("patronat")%}btn-primary{% else %}btn-default{% endif %}" 
-				data-toggle="collapse" data-target="#manualsMenu" style="margin-bottom:-1px;">
-			 	Manuals de col·lacions beneficials&nbsp;
-			 	<i class="icon-chevron-down"></i>
-			</button>
-			<div id="manualsMenu" class="collapse {% if seleccio is sameas("manuals") or seleccio is sameas("beneficis") or seleccio is sameas("seu") or seleccio is sameas("patronat")%}in{% endif %}" style="margin-left:15px;margin-right:15px">
-				<ul class="list-group" >
-			      <a class="list-group-item lateral{% if seleccio is sameas("manuals") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'manuals' }) }}">Manuals 1271-1928</a>
-			      <a class="list-group-item lateral{% if seleccio is sameas("beneficis") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'beneficis' }) }}">Dotalies de beneficis</a>
-			      <a class="list-group-item lateral{% if seleccio is sameas("seu") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'seu' }) }}">Dotalies de fundacions de la Seu</a>
-			      <a class="list-group-item lateral{% if seleccio is sameas("patronat") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'patronat' }) }}">Processos sobre dret de patronat</a>
-			    </ul>
-			</div><!--/Manuals-->
-			
-			<button type="button" class="btn {% if seleccio is sameas("curia") or seleccio is sameas("almoina") or seleccio is sameas("stfeliu") or seleccio is sameas("besalu") or seleccio is sameas("llado") or seleccio is sameas("cadins") %}btn-primary{% else %}btn-default{% endif %}" 
-				data-toggle="collapse" data-target="#arxiusMenu" style="margin-bottom:-1px;">
-			 	Arxius incorporats&nbsp;
-			 	<i class="icon-chevron-down"></i>
-			</button>
-			<div id="arxiusMenu" class="collapse {% if seleccio is sameas("curia") or seleccio is sameas("almoina") or seleccio is sameas("stfeliu") or seleccio is sameas("besalu") or seleccio is sameas("llado") or seleccio is sameas("cadins") %}in{% endif %}" style="margin-left:15px;margin-right:15px">
-				<ul class="list-group" >
-			      <a class="list-group-item lateral{% if seleccio is sameas("curia") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'curia' }) }}">Pergamins de la cúria i diversos</a>
-			      <a class="list-group-item lateral{% if seleccio is sameas("almoina") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'almoina' }) }}">Pia Almoina</a>
-			      <a class="list-group-item lateral{% if seleccio is sameas("stfeliu") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'stfeliu' }) }}">Pergamins de St.Feliu de Girona</a>
-			      <a class="list-group-item lateral{% if seleccio is sameas("besalu") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'besalu' }) }}">Pergamins de Besalú</a>
-			      <a class="list-group-item lateral{% if seleccio is sameas("llado") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'llado' }) }}">Pergamins de Llado</a>
-			      <a class="list-group-item lateral{% if seleccio is sameas("cadins") %} active{% endif %}" href="{{ path('fons_select', { 'seleccio': 'cadins' }) }}">Pergamins de Cadins</a>
-				</ul>
-			</div><!--/Manuals-->
-		
-			 
-			 
-		</div>
-		
-    	
-		
-    </div>
+		{% include 'ArxiuBundle:Fons:menuLateral.html.twig' %}		
+    </div><!--/menu-->
     
     <!--Cerca i taula-->
     
-    <div class="col-xs-10 col-sm-10 col-md-8 col-lg-8 alert alert-info" style="margin-right:-10px">
-		Cerca
-		{% if info is not null  %}
-			{% include 'ArxiuBundle:Fons:info.html.twig' %}
-		{% endif %}	 
+    <!--1 import per cada us de taula-->
+    <!--paraules clau=cerca general de taules, si el selecionat te altres opcions de cerca. filtrar-->
+    <!--fer servir substring en el sql per els camps de dades-->
+    
+{% if seleccio is not null %}
+    <div class="col-xs-11 col-sm-11 col-md-8 col-lg-8" style="margin-right:-10px;margin-top:29px">
+    	
+    	<!--formulari amb submit cap a /cerca, on el controlador mirara a kina taula ha dentrar i retornara info + variable indicant taula-->
+    	<!--Cerca-->
+		<div class="row well">
+			{% include 'ArxiuBundle:Fons:cerca.html.twig' %}
+		</div><!--/Cerca-->
+	
+	
+		<!--si cerca no esta buit llavors mostrar taula amb estructura feta i casos if segons la variable de la taula-->
+		<!--Taula-->
+		<div class="row alert alert-warning">
+			taula
+			{% if info is not null  %}
+				bla
+				<!--fer servir substring en el sql per els camps de dades-->
+			{% endif %}
+		</div><!--/Taula-->
 	</div>   
+{% else %}
+	<div class="col-xs-11 col-sm-11 col-md-8 col-lg-8 alert alert-info" style="margin-right:-10px;margin-top:29px">
+		Cal escollir el contingut de la cerca.
+	</div>   
+{% endif %}	
+		
+	
+	
 
 	
 	<!--/info ampliada en modal-->
