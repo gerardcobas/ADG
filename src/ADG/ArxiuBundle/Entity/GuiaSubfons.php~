@@ -781,4 +781,18 @@ class GuiaSubfons
     {
         return $this->regles;
     }
+
+    /**
+     * Set nivell
+     *
+     * @param string $nivell
+     *
+     * @return GuiaSubfons
+     */
+    public function setNivell($nivell)
+    {
+        $this->nivell = $nivell;
+
+        return $this;
+    }
 }

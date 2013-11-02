@@ -781,4 +781,18 @@ class GuiaUsimple
     {
         return $this->regles;
     }
+
+    /**
+     * Set nivell
+     *
+     * @param string $nivell
+     *
+     * @return GuiaUsimple
+     */
+    public function setNivell($nivell)
+    {
+        $this->nivell = $nivell;
+
+        return $this;
+    }
 }

@@ -781,4 +781,18 @@ class GuiaUinstalacio
     {
         return $this->regles;
     }
+
+    /**
+     * Set nivell
+     *
+     * @param string $nivell
+     *
+     * @return GuiaUinstalacio
+     */
+    public function setNivell($nivell)
+    {
+        $this->nivell = $nivell;
+
+        return $this;
+    }
 }

@@ -781,4 +781,18 @@ class GuiaSerie
     {
         return $this->regles;
     }
+
+    /**
+     * Set nivell
+     *
+     * @param string $nivell
+     *
+     * @return GuiaSerie
+     */
+    public function setNivell($nivell)
+    {
+        $this->nivell = $nivell;
+
+        return $this;
+    }
 }
