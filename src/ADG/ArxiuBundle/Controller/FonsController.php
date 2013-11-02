@@ -55,9 +55,22 @@ class FonsController extends Controller
     	}
     	
     	$info=null;
-    	//mirar kines estan plenes i fer cerca a BD
-    	if ($tipus=="arxiu") {
-    		//query amb data i paraula
+    	
+    	//mirar ifs de $tipus per escollir el repository
+    	//??dins irar kines estan plenes per fer cerca BD -> pot ferho repo ncara k el atribut sigui buit!
+    	//mirar ifs $seleccio per pasar a repo el format de num "P-001" que toki
+    	
+    	if ($tipus=="arxius") {
+    		//cerca amb data i paraula
+    		$em = $this->getDoctrine()->getManager();
+    		$rep = $em->getRepository('ArxiuBundle:FonsArxius');
+    		
+    		if($seleccio="curia") $info=$rep->findForArxius("P-001-", $cercaParaula, $cercaData);
+    		if($seleccio="almoina") $info=$rep->findForArxius("P-002-", $cercaParaula, $cercaData);
+    		if($seleccio="stfeliu") $info=$rep->findForArxius("P-003-", $cercaParaula, $cercaData);
+    		if($seleccio="besalu") $info=$rep->findForArxius("P-004-", $cercaParaula, $cercaData);
+    		if($seleccio="llado") $info=$rep->findForArxius("P-005-", $cercaParaula, $cercaData);
+    		if($seleccio="cadins") $info=$rep->findForArxius("P-006-", $cercaParaula, $cercaData);
     	}
     	else if($tipus=="capellans"){
     		//nom, lloc, data
@@ -69,6 +82,7 @@ class FonsController extends Controller
     		//nom, data
     	}    	    	
     	else{
+    		//fons
     		//paraula
     	}
     	
