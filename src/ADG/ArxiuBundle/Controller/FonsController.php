@@ -65,12 +65,12 @@ class FonsController extends Controller
     		$em = $this->getDoctrine()->getManager();
     		$rep = $em->getRepository('ArxiuBundle:FonsArxius');
     		
-    		if($seleccio="curia") $info=$rep->findForArxius("P-001-", $cercaParaula, $cercaData);
-    		if($seleccio="almoina") $info=$rep->findForArxius("P-002-", $cercaParaula, $cercaData);
-    		if($seleccio="stfeliu") $info=$rep->findForArxius("P-003-", $cercaParaula, $cercaData);
-    		if($seleccio="besalu") $info=$rep->findForArxius("P-004-", $cercaParaula, $cercaData);
-    		if($seleccio="llado") $info=$rep->findForArxius("P-005-", $cercaParaula, $cercaData);
-    		if($seleccio="cadins") $info=$rep->findForArxius("P-006-", $cercaParaula, $cercaData);
+    		if($seleccio=="curia") $info=$rep->findForArxius("P-001-", $cercaParaula, $cercaData);
+    		if($seleccio=="almoina") $info=$rep->findForArxius("P-002-", $cercaParaula, $cercaData);
+    		if($seleccio=="stfeliu") $info=$rep->findForArxius("P-003-", $cercaParaula, $cercaData);
+    		if($seleccio=="besalu") $info=$rep->findForArxius("P-004-", $cercaParaula, $cercaData);
+    		if($seleccio=="llado") $info=$rep->findForArxius("P-005-", $cercaParaula, $cercaData);
+    		if($seleccio=="cadins") $info=$rep->findForArxius("P-006-", $cercaParaula, $cercaData);
     	}
     	else if($tipus=="capellans"){
     		//nom, lloc, data
@@ -102,12 +102,45 @@ class FonsController extends Controller
     	}
     	else if($tipus=="mitra"){
     		//paraula
+    		$em = $this->getDoctrine()->getManager();
+    		$rep = $em->getRepository('ArxiuBundle:FonsMitra');
+    		
+    		$info=$rep->findForMitra($cercaParaula);
     	}
     	else if($tipus=="testaments"){
     		//paraula
+    		$em = $this->getDoctrine()->getManager();
+    		$rep = $em->getRepository('ArxiuBundle:FonsTestaments');
+    		
+    		if($seleccio=="testaments") $info=$rep->findForTestaments("T-001-", $cercaParaula);
+    		if($seleccio=="definicions") $info=$rep->findForTestaments("T-002-", $cercaParaula);
+    		if($seleccio=="resolucions") $info=$rep->findForTestaments("T-003-", $cercaParaula);
+    		if($seleccio=="instuicions") $info=$rep->findForTestaments("T-004-", $cercaParaula);
     	}
     	else if($tipus=="fons"){
     		//paraula
+    		
+    		$em = $this->getDoctrine()->getManager();
+    		$rep = $em->getRepository('ArxiuBundle:Fons');
+    		
+    		//Comprovar la seleccio i buscar en funcio del prefix fixat per l'arxiu
+    		if($seleccio=="lletres") $info=$rep->findForFons("U-001-", $cercaParaula);
+    		if($seleccio=="llicencies") $info=$rep->findForFons("Q-001-", $cercaParaula);
+    		if($seleccio=="registres") $info=$rep->findForFons("I-001-", $cercaParaula);
+    		
+    		if($seleccio=="manuals") $info=$rep->findForFons("D-1", $cercaParaula);
+    		if($seleccio=="beneficis") $info=$rep->findForFons("D-001-", $cercaParaula);
+    		if($seleccio=="seu") $info=$rep->findForFons("D-002-", $cercaParaula);
+    		if($seleccio=="patronat") $info=$rep->findForFons("A-", $cercaParaula);
+    		
+    		if($seleccio=="notalarum") $info=$rep->findForFons("G-001-", $cercaParaula);
+    		if($seleccio=="deposita") $info=$rep->findForFons("U-3", $cercaParaula);
+    		
+    		if($seleccio=="medievals") $info=$rep->findForFons("C-000-", $cercaParaula);
+    		if($seleccio=="moderns") $info=$rep->findForFons("C-001-", $cercaParaula);
+    		
+    		if($seleccio=="delmes") $info=$rep->findForFons("R-000-", $cercaParaula);
+    		
     	}
     	
     	return $this->render('ArxiuBundle:Fons:fons.html.twig',
