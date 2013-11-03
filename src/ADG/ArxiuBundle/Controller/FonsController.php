@@ -74,15 +74,39 @@ class FonsController extends Controller
     	}
     	else if($tipus=="capellans"){
     		//nom, lloc, data
+    		$em = $this->getDoctrine()->getManager();
+    		$rep = $em->getRepository('ArxiuBundle:FonsCapellans');
+    		
+    		$info=$rep->findForCapellans($cercaNom, $cercaLloc, $cercaData);
     	}    	
     	else if($tipus=="monges"){
     		//nom, lloc, congregacio
+    		$em = $this->getDoctrine()->getManager();
+    		$rep = $em->getRepository('ArxiuBundle:FonsMonges');
+    		
+    		$info=$rep->findForMonges($cercaNom, $cercaLloc, $cercaCongregacio);
     	}
     	else if($tipus=="seminaristes"){
     		//nom, data
+    		$em = $this->getDoctrine()->getManager();
+    		$rep = $em->getRepository('ArxiuBundle:FonsSeminaristes');
+    		
+    		$info=$rep->findForSeminaristes($cercaNom, $cercaData);
     	}    	    	
-    	else{
-    		//fons
+    	else if($tipus=="liberden"){
+    		//paraula
+    		$em = $this->getDoctrine()->getManager();
+    		$rep = $em->getRepository('ArxiuBundle:FonsLiberden');
+    		
+    		$info=$rep->findForLiberden($cercaParaula);
+    	}
+    	else if($tipus=="mitra"){
+    		//paraula
+    	}
+    	else if($tipus=="testaments"){
+    		//paraula
+    	}
+    	else if($tipus=="fons"){
     		//paraula
     	}
     	

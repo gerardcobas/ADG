@@ -5,18 +5,6 @@ use Doctrine\ORM\EntityRepository;
 
 class FonsArxiusRepository extends EntityRepository
 {
-	public function findAllByPrefix($prefix){
-		$em = $this->getEntityManager();
-		$qb = $em->createQueryBuilder();
-		
-		// Build the query
-		$qb->select('fa.num, fa.nodac, fa.data, fa.dades')->from('ArxiuBundle:FonsArxius', 'fa');
-		$qb->where('fa.num LIKE :prefix');
-		$qb->setParameter('prefix', $prefix . '%');
-		$q = $qb->getQuery();
-		
-		return $q->getResult();
-	}
 	
 	public function findForArxius($prefix, $paraula, $data){
 		$em = $this->getEntityManager();

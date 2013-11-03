@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * FonsCapellans
  *
  * @ORM\Table(name="fons_capellans")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="ADG\ArxiuBundle\Entity\FonsCapellansRepository")
  */
 class FonsCapellans
 {
