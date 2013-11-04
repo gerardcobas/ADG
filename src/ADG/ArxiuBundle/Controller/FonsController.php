@@ -149,12 +149,48 @@ class FonsController extends Controller
     	);
     }
     
-    public function detallAction($tipus, $id)
+    public function detallAction($seleccio, $id)
     {
-    	
+    	$tipus=self::obteTipus($seleccio);
+    	$info=null;
+    	$em = $this->getDoctrine()->getManager();
+    	if($tipus=="fons"){
+    		$rep = $em->getRepository('ArxiuBundle:Fons');
+    		$info=$rep->find($id);
+		}
+		else if($tipus=="arxius"){
+			$rep = $em->getRepository('ArxiuBundle:FonsArxius');
+			$info=$rep->find($id);
+		}
+		else if($tipus=="mitra"){
+			$rep = $em->getRepository('ArxiuBundle:FonsMitra');
+			$info=$rep->find($id);
+		}
+		else if($tipus=="monges"){
+			$rep = $em->getRepository('ArxiuBundle:FonsMonges');
+			$info=$rep->find($id);
+		}
+		else if($tipus=="capellans"){
+			$rep = $em->getRepository('ArxiuBundle:FonsCapellans');
+			$info=$rep->find($id);
+		}
+		else if($tipus=="seminaristes"){
+			$rep = $em->getRepository('ArxiuBundle:FonsSeminaristes');
+			$info=$rep->find($id);
+		}
+		else if($tipus=="liberden"){
+			$rep = $em->getRepository('ArxiuBundle:FonsLiberden');
+			$info=$rep->find($id);
+		}
+		else if($tipus=="testaments"){
+			$rep = $em->getRepository('ArxiuBundle:FonsTestaments');
+			$info=$rep->find($id);
+		}
+		
+		
     	//obtindra el tipus i el num o id en cas de liberden per pasar la info a mostrar
     	return $this->render('ArxiuBundle:Fons:detall.html.twig',
-    			array('tipus' => $tipus, 'info' => null)
+    			array('seleccio' => $seleccio,  'tipus' => $tipus, 'info' => $info)
     	);
     }
     

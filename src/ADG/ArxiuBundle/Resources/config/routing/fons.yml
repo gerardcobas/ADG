@@ -15,6 +15,6 @@ fons_cercar:
     requirements: { _method: post }
     
 fons_detall:
-    pattern: /{tipus}/detall/{id}
+    pattern: /{seleccio}/detall/{id}
     defaults:
         _controller: ArxiuBundle:Fons:detall

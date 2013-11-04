@@ -2,22 +2,59 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title">Informació completa</h4>
+          <h4 class="modal-title" style="color: #3a87ad">Informació completa - {{ seleccio }}</h4>
         </div>
       	<div class="modal-body">
-      		 <div class="space10"></div> 	
+      	
+      		 {% if info.nodac is not null and info.nodac is not empty %}<h5 style="color: #3a87ad">Classificació de l'arxiu</h5><p>{{ info.nodac }}</p>{% endif %}
+			 		
       		 {% if tipus is sameas("arxius") %}
-			 	<label>Classificació de l'arxiu</label>
-				<p>bla</p>
-				<label>Data</label>
-				<p>asd</p>
-				<label>Dades</label>
-				<p>qq</p>
+      		 	{% if info.data is not null and info.data is not empty %}<h5 style="color: #3a87ad">Data</h5><p>{{ info.data }}</p>{% endif %}
+			 	{% if info.dades is not null and info.dades is not empty %}<h5 style="color: #3a87ad">Dades</h5><p>{{ info.dades }}</p>{% endif %}
+			 	{% if info.notari is not null and info.notari is not empty %}<h5 style="color: #3a87ad">Notari</h5><p>{{ info.notari }}</p>{% endif %}
+			 	{% if info.mides is not null and info.mides is not empty %}<h5 style="color: #3a87ad">Mides</h5><p>{{ info.mides }}</p>{% endif %}
+			 	{% if info.obs is not null and info.obs is not empty %}<h5 style="color: #3a87ad">Observacions</h5><p>{{ info.obs }}</p>{% endif %}
 			 	
+			 {% elseif tipus is sameas("fons") %}
+			 	{% if info.dades is not null and info.dades is not empty %}<h5 style="color: #3a87ad">Dades</h5><p>{{ info.dades }}</p>{% endif %}
+			 	{% if info.llibre is not null and info.llibre is not empty %}<h5 style="color: #3a87ad">Llibre</h5><p>{{ info.llibre }}</p>{% endif %}
+			 	{% if info.full is not null and info.full is not empty %}<h5 style="color: #3a87ad">Full</h5><p>{{ info.full }}</p>{% endif %}
+			 	
+			 {% elseif tipus is sameas("mitra") %}
+			 	{% if info.data is not null and info.data is not empty %}<h5 style="color: #3a87ad">Data</h5><p>{{ info.data }}</p>{% endif %}
+			 	{% if info.dades is not null and info.dades is not empty %}<h5 style="color: #3a87ad">Dades</h5><p>{{ info.dades }}</p>{% endif %}
+			 	{% if info.notari is not null and info.notari is not empty %}<h5 style="color: #3a87ad">Notari</h5><p>{{ info.notari }}</p>{% endif %}
+			 	{% if info.mides is not null and info.mides is not empty %}<h5 style="color: #3a87ad">Mides</h5><p>{{ info.mides }}</p>{% endif %}
+			 	{% if info.obs is not null and info.obs is not empty %}<h5 style="color: #3a87ad">Observacions</h5><p>{{ info.obs }}</p>{% endif %}
+			 	
+			 {% elseif tipus is sameas("monges") %}	
+			 	{% if info.data is not null and info.data is not empty %}<h5 style="color: #3a87ad">Data</h5><p>{{ info.data }}</p>{% endif %}
+			 	{% if info.cognom is not null and info.cognom is not empty %}<h5 style="color: #3a87ad">Cognom, Nom</h5><p>{{ info.cognom }}</p>{% endif %}
+			 	{% if info.natural is not null and info.natural is not empty %}<h5 style="color: #3a87ad">Natural</h5><p>{{ info.natural }}</p>{% endif %}
+			 	{% if info.congregacio is not null and info.congregacio is not empty %}<h5 style="color: #3a87ad">Congregació</h5><p>{{ info.congregacio }}</p>{% endif %}
+			 	{% if info.llocCongregacio is not null and info.llocCongregacio is not empty %}<h5 style="color: #3a87ad">Lloc de congregació</h5><p>{{ info.llocCongregacio }}</p>{% endif %}
+			 	{% if info.fitxa is not null and info.fitxa is not empty %}<h5 style="color: #3a87ad">Fitxa</h5><p>{{ info.fitxa }}</p>{% endif %}
+			
 			 {% elseif tipus is sameas("capellans") %}
-			 	aa
-			 {% else %}
-			 	asd
+			 	{% if info.dataNaixement is not null and info.dataNaixement is not empty %}<h5 style="color: #3a87ad">Data de naixement</h5><p>{{ info.dataNaixement }}</p>{% endif %}
+			 	{% if info.cognom is not null and info.cognom is not empty %}<h5 style="color: #3a87ad">Cognom, Nom</h5><p>{{ info.cognom }}</p>{% endif %}
+			 	{% if info.natural is not null and info.natural is not empty %}<h5 style="color: #3a87ad">Natural</h5><p>{{ info.natural }}</p>{% endif %}
+			 	{% if info.ordenacio is not null and info.ordenacio is not empty %}<h5 style="color: #3a87ad">Ordenació</h5><p>{{ info.ordenacio }}</p>{% endif %}
+			 	{% if info.dataObit is not null and info.dataObit is not empty %}<h5 style="color: #3a87ad">Data óbit</h5><p>{{ info.dataObit }}</p>{% endif %}
+			 	{% if info.fitxa is not null and info.fitxa is not empty %}<h5 style="color: #3a87ad">Fitxa</h5><p>{{ info.fitxa }}</p>{% endif %}	
+			 	{% if info.altres is not null and info.altres is not empty %}<h5 style="color: #3a87ad">Altres</h5><p>{{ info.altres }}</p>{% endif %}
+			 
+			 {% elseif tipus is sameas("seminaristes") %}
+			 	{% if info.data is not null and info.data is not empty %}<h5 style="color: #3a87ad">Data</h5><p>{{ info.data }}</p>{% endif %}
+			 	{% if info.cognom is not null and info.cognom is not empty %}<h5 style="color: #3a87ad">Cognom, Nom</h5><p>{{ info.cognom }}</p>{% endif %}	
+			 	
+			 {% elseif tipus is sameas("liberden") %}	
+			 	{% if info.institucio is not null and info.institucio is not empty %}<h5 style="color: #3a87ad">Data</h5><p>{{ info.institucio }}</p>{% endif %}
+			 	{% if info.foli is not null and info.foli is not empty %}<h5 style="color: #3a87ad">Cognom, Nom</h5><p>{{ info.foli }}</p>{% endif %}
+			 	
+			 {% elseif tipus is sameas("testaments") %}	
+				{% if info.dades is not null and info.dades is not empty %}<h5 style="color: #3a87ad">Dades</h5><p>{{ info.dades }}</p>{% endif %}
+			 
 			 {% endif %}
         </div>
         <div class="modal-footer">
