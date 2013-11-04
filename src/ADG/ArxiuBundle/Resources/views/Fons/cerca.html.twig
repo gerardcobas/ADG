@@ -83,7 +83,7 @@
 		<button type="submit" class="btn btn-primary"><i class="icon-search"></i>&nbsp;Buscar</button>
 		{% if is_granted('ROLE_ADMIN') %}         
 			<div class="btn-group">	
-				<a data-toggle="modal" href="#" data-target="#nouFons" class="btn btn-success" type="button"><i class="icon-plus"></i>&nbsp;Afegir nou</a>
+				<a data-toggle="modal" href="{{ path('fons_nou', { 'seleccio': seleccio }) }}" data-target="#nouFons" class="btn btn-success" type="button"><i class="icon-plus"></i>&nbsp;Afegir nou</a>
 		    </div>
 		{% endif %}
 	</div>

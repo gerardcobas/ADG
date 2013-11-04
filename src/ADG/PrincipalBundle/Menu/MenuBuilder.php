@@ -36,13 +36,26 @@ class MenuBuilder extends ContainerAware
     		$menu['Admin']->addChild('General', array('route' => 'admin'))
     		->setAttribute('icon', 'icon-edit-sign');
     		
-    		$menu['Admin']->addChild('Separador')
+    		$menu['Admin']->addChild('arxiu_divider')
     		->setAttribute('class', 'divider');
+    		$menu['Admin']->addChild('Arxiu')
+    		->setAttribute('class', 'dropdown-header');
     		
-    		$menu['Admin']->addChild('Notícies', array('route' => 'noticies_index'))
-    		->setAttribute('icon', 'icon-edit');
     		
     		$menu['Admin']->addChild('Classificació', array('route' => 'guia'))
+    		->setAttribute('icon', 'icon-edit');
+    		
+    		$menu['Admin']->addChild('Fons i series', array('route' => 'fons'))
+    		->setAttribute('icon', 'icon-edit');
+    		
+    		
+    		$menu['Admin']->addChild('altres_divider')
+    		->setAttribute('class', 'divider');
+    		$menu['Admin']->addChild('Altres')
+    		->setAttribute('class', 'dropdown-header');
+    		
+    		
+    		$menu['Admin']->addChild('Notícies', array('route' => 'noticies_index'))
     		->setAttribute('icon', 'icon-edit');
     		
     		$menu['Admin']->addChild('Usuaris', array('route' => 'admin_usuaris'))

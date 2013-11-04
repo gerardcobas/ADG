@@ -13,5 +13,9 @@ admin_guia:
     
 admin_users:
     resource: "@PrincipalBundle/Resources/config/routing/users.yml"
-    prefix:   /usuaris                          
+    prefix:   /usuaris 
+    
+admin_fons:
+    resource: "@PrincipalBundle/Resources/config/routing/fons.yml"
+    prefix:   /fons/{seleccio}                                        
         

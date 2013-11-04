@@ -142,9 +142,14 @@
 	                        			<a data-toggle="modal" href="{{ path('fons_detall', { 'seleccio': seleccio, 'id':i.num }) }}" data-target="#ampliarInfo" class="btn btn-sm btn-info" type="button"><i class="icon-info"></i></a>
 	                        		{% endif %}
 				                	{% if is_granted('ROLE_ADMIN') %}
-		                        		<a data-toggle="modal" href="#" data-target="#editarFons" class="btn btn-xs btn-primary" type="button"><i class="icon-pencil"></i></a>
-		                        		<a data-toggle="modal" href="#" data-target="#eliminarFons" class="btn btn-xs btn-danger" type="button"><i class="icon-remove"></i></a>
-	                        		{% endif %}
+					                	{% if tipus is sameas("liberden") %}
+		                        			<a data-toggle="modal" href="{{ path('fons_editar', { 'seleccio': seleccio, 'id':i.id }) }}" data-target="#editarFons" class="btn btn-xs btn-primary" type="button"><i class="icon-pencil"></i></a>
+		                        			<a data-toggle="modal" href="{{ path('fons_eliminar', { 'seleccio': seleccio, 'id':i.id }) }}" data-target="#eliminarFons" class="btn btn-xs btn-danger" type="button"><i class="icon-remove"></i></a>
+	                        			{% else %}
+		                        			<a data-toggle="modal" href="{{ path('fons_editar', { 'seleccio': seleccio, 'id':i.num }) }}" data-target="#editarFons" class="btn btn-xs btn-primary" type="button"><i class="icon-pencil"></i></a>
+		                        			<a data-toggle="modal" href="{{ path('fons_eliminar', { 'seleccio': seleccio, 'id':i.num }) }}" data-target="#eliminarFons" class="btn btn-xs btn-danger" type="button"><i class="icon-remove"></i></a>
+	                        			{% endif %}
+		                        	{% endif %}
 	                        	</td>
 		                    </tr>
 		                {% endfor %}
