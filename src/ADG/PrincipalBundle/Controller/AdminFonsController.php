@@ -30,6 +30,9 @@ class AdminFonsController extends Controller
     	);
     }
     
+    /**
+     * Crea la nova entrada a partir de l'informacio del formulari.
+     */
     public function nouConfirmarAction($seleccio)
     {
     	$tipus=self::obteTipus($seleccio);
@@ -110,24 +113,130 @@ class AdminFonsController extends Controller
     	return $this->redirect($this->generateUrl('fons_select', array('seleccio' => $seleccio)));
     }
 
+    /**
+     * Obre formulari per editar el fons seleccoionat.
+     */
     public function editarAction($seleccio, $id)
     {
     	$tipus=self::obteTipus($seleccio);
-    	$info=null;
+    	$info=self::obteInfo($id, $tipus);
     	 
     	return $this->render('PrincipalBundle:AdminFons:editar.html.twig',
-    			array('info' => $info, 'seleccio'=> $seleccio)
+    			array('info' => $info, 'seleccio'=> $seleccio, 'tipus'=>$tipus)
     	);
     }
     
+    /**
+     * Crea la nova entrada a partir de l'informacio del formulari.
+     */
+    public function editarConfirmarAction($seleccio)
+    {
+    	$tipus=self::obteTipus($seleccio);
+
+    	$request = $this->getRequest();
+    	if ($request->isMethod('POST')) {
+    
+    		$id = $request->request->get('id');
+    		$entity=self::obteInfo($id, $tipus);
+    		
+    		$entity->setNodac($request->request->get('inputNodac'));
+    
+    		//atributs segons el tipus
+    		if ($tipus=="arxius") {
+    			$entity->setData($request->request->get('inputData'));
+    			$entity->setDades($request->request->get('inputDades'));
+    			$entity->setNotari($request->request->get('inputNotari'));
+    			$entity->setMides($request->request->get('inputMides'));
+    			$entity->setObs($request->request->get('inputObs'));
+    		}
+    		else if($tipus=="capellans"){
+    			$entity->setDataNaixement($request->request->get('inputData'));
+    			$entity->setCognom($request->request->get('inputNom'));
+    			$entity->setNaturalDe($request->request->get('inputNatural'));
+    			$entity->setOrdenacio($request->request->get('inputOrdenacio'));
+    			$entity->setDataObit($request->request->get('inputDataObit'));
+    			$entity->setAltres($request->request->get('inputAltres'));
+    			$entity->setFitxa($request->request->get('inputFitxa'));
+    		}
+    		else if($tipus=="monges"){
+    			$entity->setData($request->request->get('inputData'));
+    			$entity->setCognom($request->request->get('inputNom'));
+    			$entity->setNaturalDe($request->request->get('inputNatural'));
+    			$entity->setCongregacio($request->request->get('inputCongregacio'));
+    			$entity->setLlocCongregacio($request->request->get('inputLloc'));
+    			$entity->setFitxa($request->request->get('inputFitxa'));
+    		}
+    		else if($tipus=="seminaristes"){
+    			$entity->setData($request->request->get('inputData'));
+    			$entity->setCognom($request->request->get('inputNom'));
+    		}
+    		else if($tipus=="liberden"){
+    			$entity->setInstitucio($request->request->get('inputInstitucio'));
+    			$entity->setFoli($request->request->get('inputFoli'));
+    		}
+    		else if($tipus=="mitra"){
+    			$entity->setData($request->request->get('inputData'));
+    			$entity->setDades($request->request->get('inputDades'));
+    			$entity->setNotari($request->request->get('inputNotari'));
+    			$entity->setMides($request->request->get('inputMides'));
+    			$entity->setObs($request->request->get('inputObs'));
+    		}
+    		else if($tipus=="testaments"){
+    			$entity->setDades($request->request->get('inputDades'));
+    		}
+    		else if($tipus=="fons"){
+    			$entity->setDades($request->request->get('inputDades'));
+    			$entity->setLlibre($request->request->get('inputLlibre'));
+    			$entity->setFull($request->request->get('inputFull'));
+    		}
+    
+    		$em = $this->getDoctrine()->getManager();
+    		$em->persist($entity);
+    		$em->flush();
+    
+    		$this->get('session')->getFlashBag()->add(
+    				'success',
+    				"S'ha editat correctament!"
+    		);
+    	}
+    	return $this->redirect($this->generateUrl('fons_select', array('seleccio' => $seleccio)));
+    }
+    
+    
+    
+    /**
+     * Obre formulari per eliminar el fons seleccoionat.
+     */
     public function eliminarAction($seleccio, $id)
     {
     	$tipus=self::obteTipus($seleccio);
-    	$info=null;
+    	$info=self::obteInfo($id, $tipus);
     	
     	return $this->render('PrincipalBundle:AdminFons:eliminar.html.twig',
-    		array('info' => $info, 'seleccio'=> $seleccio)
+    		array('info' => $info, 'seleccio'=> $seleccio, 'tipus'=>$tipus)
     	);
+    }
+    
+    public function eliminarConfirmarAction($seleccio)
+    {
+    	$tipus=self::obteTipus($seleccio);
+    	$request = $this->getRequest();
+    	
+    	if ($request->isMethod('POST')) {
+    
+    		$id = $request->request->get('id');
+    		$info=self::obteInfo($id, $tipus);
+    			
+    		$em = $this->getDoctrine()->getManager();
+    		$em->remove($entity);
+    		$em->flush();
+    			
+    		$this->get('session')->getFlashBag()->add(
+    				'success',
+    				"S'ha eliminat correctament!"
+    		);
+    	}
+    	return $this->redirect($this->generateUrl('fons_select', array('seleccio' => $seleccio)));
     }
     
     
@@ -245,6 +354,45 @@ class AdminFonsController extends Controller
     	if($seleccio=="delmes") $nouId=$rep->findNewId("R-000-");
     	
     	return $nouId;
+    }
+    
+    
+    private function obteInfo($id, $tipus){
+    	$info = null;
+    	$em = $this->getDoctrine()->getManager();
+    	if($tipus=="fons"){
+    		$rep = $em->getRepository('ArxiuBundle:Fons');
+    		$info=$rep->find($id);
+    	}
+    	else if($tipus=="arxius"){
+    		$rep = $em->getRepository('ArxiuBundle:FonsArxius');
+    		$info=$rep->find($id);
+    	}
+    	else if($tipus=="mitra"){
+    		$rep = $em->getRepository('ArxiuBundle:FonsMitra');
+    		$info=$rep->find($id);
+    	}
+    	else if($tipus=="monges"){
+    		$rep = $em->getRepository('ArxiuBundle:FonsMonges');
+    		$info=$rep->find($id);
+    	}
+    	else if($tipus=="capellans"){
+    		$rep = $em->getRepository('ArxiuBundle:FonsCapellans');
+    		$info=$rep->find($id);
+    	}
+    	else if($tipus=="seminaristes"){
+    		$rep = $em->getRepository('ArxiuBundle:FonsSeminaristes');
+    		$info=$rep->find($id);
+    	}
+    	else if($tipus=="liberden"){
+    		$rep = $em->getRepository('ArxiuBundle:FonsLiberden');
+    		$info=$rep->find($id);
+    	}
+    	else if($tipus=="testaments"){
+    		$rep = $em->getRepository('ArxiuBundle:FonsTestaments');
+    		$info=$rep->find($id);
+    	}
+    	return $info;
     }
     
 }

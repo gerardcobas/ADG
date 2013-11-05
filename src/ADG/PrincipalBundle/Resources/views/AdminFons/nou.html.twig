@@ -2,7 +2,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title">Informació completa - {{ seleccio }}</h4>
+          <h4 class="modal-title">Afegir nou - {{ seleccio }}</h4>
         </div>
       <form action="{{ path("fons_nou_confirmar", { 'seleccio': seleccio }) }}" method="post">
 	      	<div class="modal-body"> 
@@ -14,7 +14,7 @@
 					<input type="text" class="form-control" pattern="^([a-zA-Z0-9]*\.)*$" name="inputNodac" >
 				</div><div class="space10"></div>
 				 		
-	      		 {% if tipus is sameas("arxius") %}
+	      		 {% if tipus is sameas("arxius") or tipus is sameas("mitra") %}
 	      		 
 	      		 	<div class="input-group">
 						<span class="input-group-addon">Data</span>
@@ -23,7 +23,7 @@
 
 				 	<div class="input-group">
 						<span class="input-group-addon">Dades</span>
-						<input type="text" class="form-control" name="inputDades" >
+						<textarea type="text" class="form-control"  rows="2" name="inputDades" ></textarea>
 					</div><div class="space10"></div>
 
 				 	<div class="input-group">
@@ -44,7 +44,7 @@
 				 {% elseif tipus is sameas("fons") %}
 				 	<div class="input-group">
 						<span class="input-group-addon">Dades</span>
-						<input type="text" class="form-control" name="inputDades" >
+						<textarea type="text" class="form-control"  rows="2" name="inputDades" ></textarea>
 					</div><div class="space10"></div>
 
 				 	<div class="input-group">
@@ -55,32 +55,6 @@
 				 	<div class="input-group">
 						<span class="input-group-addon">Full</span>
 						<input type="text" class="form-control" name="inputFull" >
-					</div><div class="space10"></div>
-				 	
-				 {% elseif tipus is sameas("mitra") %}
-				 	<div class="input-group">
-						<span class="input-group-addon">Data</span>
-						<input type="text" class="form-control" name="inputData" >
-					</div><div class="space10"></div>
-
-				 	<div class="input-group">
-						<span class="input-group-addon">Dades</span>
-						<input type="text" class="form-control" name="inputDades" >
-					</div><div class="space10"></div>
-
-				 	<div class="input-group">
-						<span class="input-group-addon">Notari</span>
-						<input type="text" class="form-control" name="inputNotari" >
-					</div><div class="space10"></div>
-
-				 	<div class="input-group">
-						<span class="input-group-addon">Mides</span>
-						<input type="text" class="form-control" name="inputMides" >
-					</div><div class="space10"></div>
-
-				 	<div class="input-group">
-						<span class="input-group-addon">Observacions</span>
-						<input type="text" class="form-control" name="inputObs" >
 					</div><div class="space10"></div>
 				 	
 				 {% elseif tipus is sameas("monges") %}	
@@ -175,7 +149,7 @@
 				 {% elseif tipus is sameas("testaments") %}	
 					<div class="input-group">
 						<span class="input-group-addon">Dades</span>
-						<input type="text" class="form-control" name="inputDades" >
+						<textarea type="text" class="form-control"  rows="2" name="inputDades" ></textarea>
 					</div><div class="space10"></div>
 	      		
 	      		{% endif %}
