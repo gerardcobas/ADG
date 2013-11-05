@@ -1,0 +1,3 @@
+biblioteca:
+    pattern:  /
+    defaults: { _controller: "ADGBibliotecaBundle:Default:index" } 

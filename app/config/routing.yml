@@ -1,3 +1,7 @@
+adg_biblioteca:
+    resource: "@ADGBibliotecaBundle/Resources/config/routing.yml"
+    prefix:   /biblioteca
+
 arrel:
     pattern: /
     defaults:

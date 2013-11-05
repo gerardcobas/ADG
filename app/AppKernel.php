@@ -25,6 +25,7 @@ class AppKernel extends Kernel
         		
             new ADG\PrincipalBundle\PrincipalBundle(),
             new ADG\ArxiuBundle\ArxiuBundle(),
+            new ADG\BibliotecaBundle\ADGBibliotecaBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
