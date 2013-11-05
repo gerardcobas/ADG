@@ -2,15 +2,189 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" style="color: #3a87ad">Informació completa</h4>
+          <h4 class="modal-title">Informació completa - {{ seleccio }}</h4>
         </div>
-      	<div class="modal-body">
-      	
-      		
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-default" data-dismiss="modal">Tancar</button>
-        </div>
+      <form action="{{ path("fons_nou_confirmar", { 'seleccio': seleccio }) }}" method="post">
+	      	<div class="modal-body"> 
+	      		
+	      		<p>Cal afegir la següent informació:</p>
+	      		<div class="space10"></div>
+		      	<div class="input-group">
+					<span class="input-group-addon">Classificació de l'arxiu</span>
+					<input type="text" class="form-control" pattern="^([a-zA-Z0-9]*\.)*$" name="inputNodac" >
+				</div><div class="space10"></div>
+				 		
+	      		 {% if tipus is sameas("arxius") %}
+	      		 
+	      		 	<div class="input-group">
+						<span class="input-group-addon">Data</span>
+						<input type="text" class="form-control" name="inputData" >
+					</div><div class="space10"></div>
 
+				 	<div class="input-group">
+						<span class="input-group-addon">Dades</span>
+						<input type="text" class="form-control" name="inputDades" >
+					</div><div class="space10"></div>
+
+				 	<div class="input-group">
+						<span class="input-group-addon">Notari</span>
+						<input type="text" class="form-control" name="inputNotari" >
+					</div><div class="space10"></div>
+
+				 	<div class="input-group">
+						<span class="input-group-addon">Mides</span>
+						<input type="text" class="form-control" name="inputMides" >
+					</div><div class="space10"></div>
+
+				 	<div class="input-group">
+						<span class="input-group-addon">Observacions</span>
+						<input type="text" class="form-control" name="inputObs" >
+					</div><div class="space10"></div>
+				 	
+				 {% elseif tipus is sameas("fons") %}
+				 	<div class="input-group">
+						<span class="input-group-addon">Dades</span>
+						<input type="text" class="form-control" name="inputDades" >
+					</div><div class="space10"></div>
+
+				 	<div class="input-group">
+						<span class="input-group-addon">Llibre</span>
+						<input type="text" class="form-control" name="inputLlibre" >
+					</div><div class="space10"></div>
+
+				 	<div class="input-group">
+						<span class="input-group-addon">Full</span>
+						<input type="text" class="form-control" name="inputFull" >
+					</div><div class="space10"></div>
+				 	
+				 {% elseif tipus is sameas("mitra") %}
+				 	<div class="input-group">
+						<span class="input-group-addon">Data</span>
+						<input type="text" class="form-control" name="inputData" >
+					</div><div class="space10"></div>
+
+				 	<div class="input-group">
+						<span class="input-group-addon">Dades</span>
+						<input type="text" class="form-control" name="inputDades" >
+					</div><div class="space10"></div>
+
+				 	<div class="input-group">
+						<span class="input-group-addon">Notari</span>
+						<input type="text" class="form-control" name="inputNotari" >
+					</div><div class="space10"></div>
+
+				 	<div class="input-group">
+						<span class="input-group-addon">Mides</span>
+						<input type="text" class="form-control" name="inputMides" >
+					</div><div class="space10"></div>
+
+				 	<div class="input-group">
+						<span class="input-group-addon">Observacions</span>
+						<input type="text" class="form-control" name="inputObs" >
+					</div><div class="space10"></div>
+				 	
+				 {% elseif tipus is sameas("monges") %}	
+				 	<div class="input-group">
+						<span class="input-group-addon">Data</span>
+						<input type="text" class="form-control" name="inputData" >
+					</div><div class="space10"></div>
+
+				 	<div class="input-group">
+						<span class="input-group-addon">Cognom, Nom</span>
+						<input type="text" class="form-control" name="inputNom" >
+					</div><div class="space10"></div>
+
+				 	<div class="input-group">
+						<span class="input-group-addon">Natural</span>
+						<input type="text" class="form-control" name="inputNatural" >
+					</div><div class="space10"></div>
+
+				 	<div class="input-group">
+						<span class="input-group-addon">Congregació</span>
+						<input type="text" class="form-control" name="inputCongregacio" >
+					</div><div class="space10"></div>
+
+				 	<div class="input-group">
+						<span class="input-group-addon">Lloc de congregació</span>
+						<input type="text" class="form-control" name="inputLloc" >
+					</div><div class="space10"></div>
+
+				 	<div class="input-group">
+						<span class="input-group-addon">Fitxa</span>
+						<input type="text" class="form-control" name="inputFitxa" >
+					</div><div class="space10"></div>
+				
+				 {% elseif tipus is sameas("capellans") %}
+				 	<div class="input-group">
+						<span class="input-group-addon">Data de naixement</span>
+						<input type="text" class="form-control" name="inputData" >
+					</div><div class="space10"></div>
+
+				 	<div class="input-group">
+						<span class="input-group-addon">Cognom, Nom</span>
+						<input type="text" class="form-control" name="inputNom" >
+					</div><div class="space10"></div>
+
+				 	<div class="input-group">
+						<span class="input-group-addon">Natural</span>
+						<input type="text" class="form-control" name="inputNatural" >
+					</div><div class="space10"></div>
+
+				 	<div class="input-group">
+						<span class="input-group-addon">Ordenació</span>
+						<input type="text" class="form-control" name="inputOrdenacio" >
+					</div><div class="space10"></div>
+
+				 	<div class="input-group">
+						<span class="input-group-addon">Data óbit</span>
+						<input type="text" class="form-control" name="inputDataObit" >
+					</div><div class="space10"></div>
+
+				 	<div class="input-group">
+						<span class="input-group-addon">Fitxa</span>
+						<input type="text" class="form-control" name="inputFitxa" >
+					</div><div class="space10"></div>
+	
+				 	<div class="input-group">
+						<span class="input-group-addon">Altres</span>
+						<input type="text" class="form-control" name="inputAltres" >
+					</div><div class="space10"></div>
+				 
+				 {% elseif tipus is sameas("seminaristes") %}
+				 	<div class="input-group">
+						<span class="input-group-addon">Data</span>
+						<input type="text" class="form-control" name="inputData" >
+					</div><div class="space10"></div>
+
+				 	<div class="input-group">
+						<span class="input-group-addon">Cognom, Nom</span>
+						<input type="text" class="form-control" name="inputNom" >
+					</div><div class="space10"></div>
+				 	
+				 {% elseif tipus is sameas("liberden") %}	
+				 	<div class="input-group">
+						<span class="input-group-addon">Data</span>
+						<input type="text" class="form-control" name="inputData" >
+					</div><div class="space10"></div>
+
+				 	<div class="input-group">
+						<span class="input-group-addon">Cognom, Nom</span>
+						<input type="text" class="form-control" name="inputNom" >
+					</div><div class="space10"></div>
+				 	
+				 {% elseif tipus is sameas("testaments") %}	
+					<div class="input-group">
+						<span class="input-group-addon">Dades</span>
+						<input type="text" class="form-control" name="inputDades" >
+					</div><div class="space10"></div>
+	      		
+	      		{% endif %}
+	        </div>
+	        
+	        <div class="modal-footer">
+	          <button class="btn btn-default" data-dismiss="modal">Tancar</button>
+	          <button class="btn btn-success" type="submit"><i class="icon-plus"></i>&nbsp;Nou</button>
+	        </div>
+		</form><!-- /.form -->
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
