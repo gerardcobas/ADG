@@ -17,7 +17,6 @@ class FonsCapellans
      *
      * @ORM\Column(name="num", type="string", length=255, nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $num;
 
@@ -271,5 +270,19 @@ class FonsCapellans
     public function getAltres()
     {
         return $this->altres;
+    }
+
+    /**
+     * Set num
+     *
+     * @param string $num
+     *
+     * @return FonsCapellans
+     */
+    public function setNum($num)
+    {
+        $this->num = $num;
+
+        return $this;
     }
 }

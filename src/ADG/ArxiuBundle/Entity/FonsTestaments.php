@@ -17,7 +17,6 @@ class FonsTestaments
      *
      * @ORM\Column(name="num", type="string", length=255, nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $num;
 
@@ -91,5 +90,19 @@ class FonsTestaments
     public function getDades()
     {
         return $this->dades;
+    }
+
+    /**
+     * Set num
+     *
+     * @param string $num
+     *
+     * @return FonsTestaments
+     */
+    public function setNum($num)
+    {
+        $this->num = $num;
+
+        return $this;
     }
 }

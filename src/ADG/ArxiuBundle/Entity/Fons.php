@@ -17,7 +17,6 @@ class Fons
      *
      * @ORM\Column(name="num", type="string", length=255, nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $num;
 
@@ -155,5 +154,19 @@ class Fons
     public function getFull()
     {
         return $this->full;
+    }
+
+    /**
+     * Set num
+     *
+     * @param string $num
+     *
+     * @return Fons
+     */
+    public function setNum($num)
+    {
+        $this->num = $num;
+
+        return $this;
     }
 }

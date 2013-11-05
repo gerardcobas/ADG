@@ -17,7 +17,6 @@ class FonsMonges
      *
      * @ORM\Column(name="num", type="string", length=255, nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $num;
 
@@ -241,5 +240,19 @@ class FonsMonges
     public function getFitxa()
     {
         return $this->fitxa;
+    }
+
+    /**
+     * Set num
+     *
+     * @param string $num
+     *
+     * @return FonsMonges
+     */
+    public function setNum($num)
+    {
+        $this->num = $num;
+
+        return $this;
     }
 }

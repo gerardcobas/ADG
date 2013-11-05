@@ -17,7 +17,6 @@ class FonsSeminaristes
      *
      * @ORM\Column(name="num", type="string", length=255, nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $num;
 
@@ -121,5 +120,19 @@ class FonsSeminaristes
     public function getData()
     {
         return $this->data;
+    }
+
+    /**
+     * Set num
+     *
+     * @param string $num
+     *
+     * @return FonsSeminaristes
+     */
+    public function setNum($num)
+    {
+        $this->num = $num;
+
+        return $this;
     }
 }

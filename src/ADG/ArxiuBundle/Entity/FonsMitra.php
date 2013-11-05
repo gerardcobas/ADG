@@ -17,7 +17,6 @@ class FonsMitra
      *
      * @ORM\Column(name="num", type="string", length=255, nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $num;
 
@@ -211,5 +210,19 @@ class FonsMitra
     public function getObs()
     {
         return $this->obs;
+    }
+
+    /**
+     * Set num
+     *
+     * @param string $num
+     *
+     * @return FonsMitra
+     */
+    public function setNum($num)
+    {
+        $this->num = $num;
+
+        return $this;
     }
 }

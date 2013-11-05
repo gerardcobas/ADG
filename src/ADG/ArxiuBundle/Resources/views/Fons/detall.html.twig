@@ -49,8 +49,8 @@
 			 	{% if info.cognom is not null and info.cognom is not empty %}<h5 style="color: #3a87ad">Cognom, Nom</h5><p>{{ info.cognom }}</p>{% endif %}	
 			 	
 			 {% elseif tipus is sameas("liberden") %}	
-			 	{% if info.institucio is not null and info.institucio is not empty %}<h5 style="color: #3a87ad">Data</h5><p>{{ info.institucio }}</p>{% endif %}
-			 	{% if info.foli is not null and info.foli is not empty %}<h5 style="color: #3a87ad">Cognom, Nom</h5><p>{{ info.foli }}</p>{% endif %}
+			 	{% if info.institucio is not null and info.institucio is not empty %}<h5 style="color: #3a87ad">Institucio</h5><p>{{ info.institucio }}</p>{% endif %}
+			 	{% if info.foli is not null and info.foli is not empty %}<h5 style="color: #3a87ad">Foli</h5><p>{{ info.foli }}</p>{% endif %}
 			 	
 			 {% elseif tipus is sameas("testaments") %}	
 				{% if info.dades is not null and info.dades is not empty %}<h5 style="color: #3a87ad">Dades</h5><p>{{ info.dades }}</p>{% endif %}

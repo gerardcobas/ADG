@@ -9,6 +9,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\SecurityContext;
 use Adg\ArxiuBundle\Entity\Fons;
 use Adg\ArxiuBundle\Entity\FonsArxius;
+use Adg\ArxiuBundle\Entity\FonsCapellans;
+use Adg\ArxiuBundle\Entity\FonsMitra;
+use Adg\ArxiuBundle\Entity\FonsLiberden;
+use Adg\ArxiuBundle\Entity\FonsMonges;
+use Adg\ArxiuBundle\Entity\FonsSeminaristes;
+use Adg\ArxiuBundle\Entity\FonsTestaments;
 
 
 class AdminFonsController extends Controller
@@ -34,12 +40,62 @@ class AdminFonsController extends Controller
     		
     		$em = $this->getDoctrine()->getManager();
     		$entity= self::creaEntitat($tipus);
+    		
+    		//atributs comuns
+    		if ($tipus!="liberden") {
+	    		$nouId= self::obteNouId($seleccio);
+	    		$entity->setNum($nouId);
+    		}
     		$nodac = $request->request->get('inputNodac');
     		$entity->setNodac($nodac);
     		
+    		//atributs segons el tipus
     		if ($tipus=="arxius") {
-    			$nouId= self::obteNouId($seleccio);
-    			$entity->setNum($nouId);
+    			$entity->setData($request->request->get('inputData'));
+    			$entity->setDades($request->request->get('inputDades'));
+    			$entity->setNotari($request->request->get('inputNotari'));
+    			$entity->setMides($request->request->get('inputMides'));
+    			$entity->setObs($request->request->get('inputObs'));
+    		}
+    		else if($tipus=="capellans"){
+    			$entity->setDataNaixement($request->request->get('inputData'));
+    			$entity->setCognom($request->request->get('inputNom'));
+    			$entity->setNatural($request->request->get('inputNatural'));
+    			$entity->setOrdenacio($request->request->get('inputOrdenacio'));
+    			$entity->setDataObit($request->request->get('inputDataObit'));
+    			$entity->setAltres($request->request->get('inputAltres'));
+    			$entity->setFitxa($request->request->get('inputFitxa'));
+    		}
+    		else if($tipus=="monges"){
+    			$entity->setData($request->request->get('inputData'));
+    			$entity->setCognom($request->request->get('inputNom'));
+    			$entity->setNatural($request->request->get('inputNatural'));
+    			$entity->setCongregacio($request->request->get('inputCongregacio'));
+    			$entity->setLlocCongregacio($request->request->get('inputLloc'));
+    			$entity->setFitxa($request->request->get('inputFitxa'));
+    		}
+    		else if($tipus=="seminaristes"){
+    			$entity->setData($request->request->get('inputData'));
+    			$entity->setCognom($request->request->get('inputNom'));
+    		}
+    		else if($tipus=="liberden"){
+    			$entity->setInstitucio($request->request->get('inputInstitucio'));
+    			$entity->setFoli($request->request->get('inputFoli'));
+    		}
+    		else if($tipus=="mitra"){
+    			$entity->setData($request->request->get('inputData'));
+    			$entity->setDades($request->request->get('inputDades'));
+    			$entity->setNotari($request->request->get('inputNotari'));
+    			$entity->setMides($request->request->get('inputMides'));
+    			$entity->setObs($request->request->get('inputObs'));
+    		}
+    		else if($tipus=="testaments"){
+    			$entity->setDades($request->request->get('inputDades'));
+    		}
+    		else if($tipus=="fons"){
+    			$entity->setDades($request->request->get('inputDades'));
+    			$entity->setLlibre($request->request->get('inputLlibre'));
+    			$entity->setFull($request->request->get('inputFull'));
     		}
     
     		$em = $this->getDoctrine()->getManager();
@@ -75,6 +131,7 @@ class AdminFonsController extends Controller
     }
     
     
+/** --------- Privades ---------- */
     
     /**
      * Calcula el tipus a partir de la seleccio
