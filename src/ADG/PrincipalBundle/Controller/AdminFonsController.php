@@ -127,7 +127,7 @@ class AdminFonsController extends Controller
     }
     
     /**
-     * Crea la nova entrada a partir de l'informacio del formulari.
+     * Edita l'entrada seleccionada partir de l'informacio del formulari.
      */
     public function editarConfirmarAction($seleccio)
     {
@@ -217,6 +217,10 @@ class AdminFonsController extends Controller
     	);
     }
     
+    
+    /**
+     * Elimina l'entrada seleccionada.
+     */
     public function eliminarConfirmarAction($seleccio)
     {
     	$tipus=self::obteTipus($seleccio);
@@ -225,7 +229,7 @@ class AdminFonsController extends Controller
     	if ($request->isMethod('POST')) {
     
     		$id = $request->request->get('id');
-    		$info=self::obteInfo($id, $tipus);
+    		$entity=self::obteInfo($id, $tipus);
     			
     		$em = $this->getDoctrine()->getManager();
     		$em->remove($entity);
