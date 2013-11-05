@@ -91,4 +91,18 @@ class FonsTestaments
     {
         return $this->dades;
     }
+
+    /**
+     * Set num
+     *
+     * @param string $num
+     *
+     * @return FonsTestaments
+     */
+    public function setNum($num)
+    {
+        $this->num = $num;
+
+        return $this;
+    }
 }

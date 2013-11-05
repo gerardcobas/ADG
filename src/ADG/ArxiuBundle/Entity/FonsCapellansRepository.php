@@ -14,7 +14,7 @@ class FonsCapellansRepository extends EntityRepository
 		$qb->select('fc.num, fc.nodac, fc.cognom, fc.fitxa')->from('ArxiuBundle:FonsCapellans', 'fc');
 		
 		$qb->where('fc.cognom LIKE :nom');
-		$qb->andWhere('fc.natural LIKE :lloc');
+		$qb->andWhere('fc.naturalDe LIKE :lloc');
 		$qb->andWhere('fc.ordenacio LIKE :data');
 		
 		$qb->setParameter('nom', '%'. $nom . '%');

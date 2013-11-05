@@ -121,4 +121,18 @@ class FonsSeminaristes
     {
         return $this->data;
     }
+
+    /**
+     * Set num
+     *
+     * @param string $num
+     *
+     * @return FonsSeminaristes
+     */
+    public function setNum($num)
+    {
+        $this->num = $num;
+
+        return $this;
+    }
 }

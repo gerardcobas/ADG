@@ -44,9 +44,9 @@ class FonsMonges
     /**
      * @var string
      *
-     * @ORM\Column(name="natural", type="text", nullable=true)
+     * @ORM\Column(name="naturalDe", type="text", nullable=true)
      */
-    private $natural;
+    private $naturalDe;
 
     /**
      * @var string
@@ -240,5 +240,19 @@ class FonsMonges
     public function getFitxa()
     {
         return $this->fitxa;
+    }
+
+    /**
+     * Set num
+     *
+     * @param string $num
+     *
+     * @return FonsMonges
+     */
+    public function setNum($num)
+    {
+        $this->num = $num;
+
+        return $this;
     }
 }

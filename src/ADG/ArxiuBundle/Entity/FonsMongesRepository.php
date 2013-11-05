@@ -14,7 +14,7 @@ class FonsMongesRepository extends EntityRepository
 		$qb->select('fm.num, fm.nodac, fm.cognom, fm.fitxa')->from('ArxiuBundle:FonsMonges', 'fm');
 		
 		$qb->where('fm.cognom LIKE :nom');
-		$qb->andWhere('fm.natural LIKE :lloc');
+		$qb->andWhere('fm.naturalDe LIKE :lloc');
 		$qb->andWhere('fm.congregacio LIKE :congregacio');
 		
 		$qb->setParameter('nom', '%'. $nom . '%');

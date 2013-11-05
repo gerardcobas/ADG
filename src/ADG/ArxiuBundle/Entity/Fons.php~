@@ -155,4 +155,18 @@ class Fons
     {
         return $this->full;
     }
+
+    /**
+     * Set num
+     *
+     * @param string $num
+     *
+     * @return Fons
+     */
+    public function setNum($num)
+    {
+        $this->num = $num;
+
+        return $this;
+    }
 }

@@ -43,7 +43,7 @@ class AdminFonsController extends Controller
     		
     		//atributs comuns
     		if ($tipus!="liberden") {
-	    		$nouId= self::obteNouId($seleccio);
+	    		$nouId= self::obteNouId($seleccio, $tipus);
 	    		$entity->setNum($nouId);
     		}
     		$nodac = $request->request->get('inputNodac');
@@ -60,7 +60,7 @@ class AdminFonsController extends Controller
     		else if($tipus=="capellans"){
     			$entity->setDataNaixement($request->request->get('inputData'));
     			$entity->setCognom($request->request->get('inputNom'));
-    			$entity->setNatural($request->request->get('inputNatural'));
+    			$entity->setNaturalDe($request->request->get('inputNatural'));
     			$entity->setOrdenacio($request->request->get('inputOrdenacio'));
     			$entity->setDataObit($request->request->get('inputDataObit'));
     			$entity->setAltres($request->request->get('inputAltres'));
@@ -69,7 +69,7 @@ class AdminFonsController extends Controller
     		else if($tipus=="monges"){
     			$entity->setData($request->request->get('inputData'));
     			$entity->setCognom($request->request->get('inputNom'));
-    			$entity->setNatural($request->request->get('inputNatural'));
+    			$entity->setNaturalDe($request->request->get('inputNatural'));
     			$entity->setCongregacio($request->request->get('inputCongregacio'));
     			$entity->setLlocCongregacio($request->request->get('inputLloc'));
     			$entity->setFitxa($request->request->get('inputFitxa'));
@@ -170,43 +170,80 @@ class AdminFonsController extends Controller
      */
     private function creaEntitat($tipus){
     	$entitat=null;
-    	if($tipus=="fons"){
-			$entitat = new Fons();
-		}
-		else if($tipus=="arxius"){
-			$entitat = new FonsArxius();
-		}
-		else if($tipus=="mitra"){
-			$entitat = new FonsMitra();
-		}
-		else if($tipus=="monges"){
-			$entitat = new FonsMonges();
-		}
-		else if($tipus=="capellans"){
-			$entitat = new FonsCapellans();
-		}
-		else if($tipus=="seminaristes"){
-			$entitat = new FonsSeminaristes();
-		}
-		else if($tipus=="liberden"){
-			$entitat = new FonsLiberden();
-		}
-		else if($tipus=="testaments"){
-			$entitat = new FonsTestaments();
-		}
+    	
+    	if($tipus=="fons") $entitat = new Fons();
+		else if($tipus=="arxius") $entitat = new FonsArxius();
+		else if($tipus=="mitra") $entitat = new FonsMitra();
+		else if($tipus=="monges") $entitat = new FonsMonges();
+		else if($tipus=="capellans") $entitat = new FonsCapellans();
+		else if($tipus=="seminaristes") $entitat = new FonsSeminaristes();
+		else if($tipus=="liberden") $entitat = new FonsLiberden();
+		else if($tipus=="testaments") $entitat = new FonsTestaments();
+		
     	return $entitat;
     }
     
     /**
      * Crea una entitat buida com la del indentificador donat.
      */
-    private function obteNouId($seleccio){
+    private function obteNouId($seleccio, $tipus){
     	$em = $this->getDoctrine()->getManager();
+    	
     	$nouId=null;
-    	if($seleccio=="curia") {
-    		$rep = $em->getRepository('ArxiuBundle:FonsArxius');
-    		$nouId=$rep->findNewId("P-001-");
-    	}
+    	$rep = null;
+    	
+    	//obtenir repositoris
+    	if($tipus=="fons") $rep = $em->getRepository('ArxiuBundle:Fons');
+		else if($tipus=="arxius") $rep = $em->getRepository('ArxiuBundle:FonsArxius');
+		else if($tipus=="mitra") $rep = $em->getRepository('ArxiuBundle:FonsMitra');
+		else if($tipus=="monges") $rep = $em->getRepository('ArxiuBundle:FonsMonges');
+		else if($tipus=="capellans") $rep = $em->getRepository('ArxiuBundle:FonsCapellans');
+		else if($tipus=="seminaristes")$rep = $em->getRepository('ArxiuBundle:FonsSeminaristes');
+		else if($tipus=="testaments") $rep = $em->getRepository('ArxiuBundle:FonsTestaments');
+    	
+		//obte ids
+    	//lletres
+    	if($seleccio=="lletres") $nouId=$rep->findNewId("U-001-"); 
+    	if($seleccio=="llicencies") $nouId=$rep->findNewId("Q-001-");
+    	if($seleccio=="registres") $nouId=$rep->findNewId("I-001-");
+    	
+    	//manuals
+    	if($seleccio=="manuals") $nouId=$rep->findNewId("D-1");
+    	if($seleccio=="beneficis") $nouId=$rep->findNewId("D-001-");
+    	if($seleccio=="seu") $nouId=$rep->findNewId("D-002-"); 
+    	if($seleccio=="patronat") $nouId=$rep->findNewId("A-");
+    	    	
+    	//arxius
+    	if($seleccio=="curia") $nouId=$rep->findNewId("P-001-");
+    	if($seleccio=="almoina") $nouId=$rep->findNewId("P-002-");
+    	if($seleccio=="stfeliu") $nouId=$rep->findNewId("P-003-");
+    	if($seleccio=="besalu") $nouId=$rep->findNewId("P-004-");
+    	if($seleccio=="llado") $nouId=$rep->findNewId("P-005-");
+    	if($seleccio=="cadins") $nouId=$rep->findNewId("P-006-");
+    	
+    	//notaria
+    	if($seleccio=="notalarum") $nouId=$rep->findNewId("G-001-"); 
+    	if($seleccio=="deposita") $nouId=$rep->findNewId("U-3");
+    	 
+    	//ordes
+    	if($seleccio=="capellans") $nouId=$rep->findNewId("R-001-"); 
+    	if($seleccio=="monges") $nouId=$rep->findNewId("R-002-"); 
+    	if($seleccio=="seminaristes") $nouId=$rep->findNewId("R-003-"); 
+
+    	//testaments
+    	if($seleccio=="testaments") $nouId=$rep->findNewId("T-001-"); 
+    	if($seleccio=="definicions")$nouId=$rep->findNewId("T-002-");
+    	if($seleccio=="resolucions") $nouId=$rep->findNewId("T-003-");
+    	if($seleccio=="instuicions") $nouId=$rep->findNewId("T-004-");
+    	
+    	//processos
+    	if($seleccio=="medievals") $nouId=$rep->findNewId("C-000-");
+    	if($seleccio=="moderns") $nouId=$rep->findNewId("C-001-");
+    	
+    	//mitra
+    	if($seleccio=="mitra") $nouId=$rep->findNewId("P-004-");
+    	if($seleccio=="delmes") $nouId=$rep->findNewId("R-000-");
+    	
     	return $nouId;
     }
     

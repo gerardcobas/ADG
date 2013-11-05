@@ -44,9 +44,9 @@ class FonsCapellans
     /**
      * @var string
      *
-     * @ORM\Column(name="natural", type="text", nullable=true)
+     * @ORM\Column(name="naturalDe", type="text", nullable=true)
      */
-    private $natural;
+    private $naturalDe;
 
     /**
      * @var string
@@ -284,5 +284,29 @@ class FonsCapellans
         $this->num = $num;
 
         return $this;
+    }
+
+    /**
+     * Set naturalDe
+     *
+     * @param string $naturalDe
+     *
+     * @return FonsCapellans
+     */
+    public function setNaturalDe($naturalDe)
+    {
+        $this->naturalDe = $naturalDe;
+
+        return $this;
+    }
+
+    /**
+     * Get naturalDe
+     *
+     * @return string 
+     */
+    public function getNaturalDe()
+    {
+        return $this->naturalDe;
     }
 }
