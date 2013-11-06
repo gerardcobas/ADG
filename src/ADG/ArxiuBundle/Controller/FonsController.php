@@ -17,22 +17,6 @@ class FonsController extends Controller
     {
     	$tipus=self::obteTipus($seleccio);
     	$info=null;
-    	//obtenir tota la taula de monges / capellans / seminaristes
-    	if ($tipus=="capellans") {
-    		$em = $this->getDoctrine()->getManager();
-    		$rep = $em->getRepository('ArxiuBundle:FonsCapellans');
-    		$info=$rep->findAll();
-    	}
-    	elseif ($tipus=="monges") {
-    		$em = $this->getDoctrine()->getManager();
-    		$rep = $em->getRepository('ArxiuBundle:FonsMonges');
-    		$info=$rep->findAll();
-    	}
-    	elseif ($tipus=="seminaristes") {
-    		$em = $this->getDoctrine()->getManager();
-    		$rep = $em->getRepository('ArxiuBundle:FonsSeminaristes');
-    		$info=$rep->findAll();
-    	}
     	
     	return $this->render('ArxiuBundle:Fons:fons.html.twig',
     			array('seleccio' => $seleccio, 'tipus' => $tipus, 'cercaParaula'=>null, 
@@ -52,6 +36,7 @@ class FonsController extends Controller
     		$cercaLloc = $request->request->get('cercaLloc');
     		$cercaData = $request->request->get('cercaData');
     		$cercaCongregacio = $request->request->get('cercaCongregacio');
+    		$cercaTipus = $request->request->get('cercaTipus');
     	}
     	
     	$info=null;
@@ -74,8 +59,24 @@ class FonsController extends Controller
     	}
     	else if($tipus=="capellans"){
     		//nom, lloc, data
+    		
+    		if ($cercaTipus=="relaxada") {
+    			$this->get('session')->getFlashBag()->add(
+    				'success',
+    				"relaxada!!"
+    			);
+    			return $this->redirect($this->generateUrl('fons_select', array('seleccio' => $seleccio)));
+    		}
+    		else{
+    			$this->get('session')->getFlashBag()->add(
+    					'success',
+    					"estricta!!"
+    			);
+    			return $this->redirect($this->generateUrl('fons_select', array('seleccio' => $seleccio)));
+    		}
     		$em = $this->getDoctrine()->getManager();
     		$rep = $em->getRepository('ArxiuBundle:FonsCapellans');
+    		
     		
     		$info=$rep->findForCapellans($cercaNom, $cercaLloc, $cercaData);
     	}    	

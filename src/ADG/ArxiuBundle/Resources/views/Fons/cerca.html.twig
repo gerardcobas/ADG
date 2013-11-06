@@ -24,6 +24,7 @@
 	{% elseif tipus is sameas("capellans") or tipus is sameas("monges") or tipus is sameas("seminaristes") %}
 		<div class="row">
 		  <div class="col-lg-8 col-md-10 col-sm-10 col-xs-10">
+		  	
 		  	<h5 style="margin-top: -5px">Nom de persona</h5>
 		  	<div class="input-group">
 				<span class="input-group-addon"><i class="icon-male"></i></span>
@@ -42,6 +43,7 @@
 					<span class="input-group-addon"><i class="icon-calendar"></i></span>
 					<input type="text" class="form-control search-query" name="cercaData" value="{{ cercaData }}">
 				</div>
+				
 			{% elseif tipus is sameas("monges") %}
 				<div class="space10"></div>
 				<h5 style="margin-top: -5px">Lloc</h5>
@@ -62,7 +64,19 @@
 					<span class="input-group-addon"><i class="icon-calendar"></i></span>
 					<input type="text" class="form-control search-query" name="cercaData" value="{{ cercaData }}">
 				</div>
-			{% endif %}    
+			{% endif %}
+			
+			<div class="space10"></div>
+			<div class="input-group">
+		  		<span style="margin-right: 10px;font-weight:500;font-size:14px;">Tipus de cerca:</span>	
+		    	<span class="radio-inline">
+		        	<input type="radio" name="cercaTipus" id="cercaTipus1" value="relaxada" checked>Relaxada
+		      	</span>
+		    	<span class="radio-inline">
+		        	<input type="radio" name="cercaTipus" id="cercaTipus2" value="estricta">Estricte
+		      	</span>
+		    </div><!-- /radio-group -->
+		        
 		  </div><!-- /.col -->
 		</div><!-- /.row -->
 		
