@@ -25,6 +25,31 @@ class FonsCapellansRepository extends EntityRepository
 	
 		return $q->getResult();
 	}
+	
+	public function findForCapellansEstricta($nom, $lloc, $data){
+		$em = $this->getEntityManager();
+		$qb = $em->createQueryBuilder();
+	
+		// Build the query
+		$qb->select('fc.num, fc.nodac, fc.cognom, fc.fitxa')->from('ArxiuBundle:FonsCapellans', 'fc');
+	
+		if ($nom!=null && $nom !="") {
+			$qb->where('fc.cognom = :nom');
+			$qb->setParameter('nom', $nom );
+		}
+		if ($lloc!=null && $lloc !="") {
+			$qb->andWhere('fc.naturalDe = :lloc');
+			$qb->setParameter('lloc', $lloc);
+		}
+		if ($data!=null && $data !="") {
+			$qb->andWhere('fc.ordenacio = :data');
+			$qb->setParameter('data', $data);
+		}
+		$q = $qb->getQuery();
+	
+		return $q->getResult();
+	}
+	
 	/*
 	 * Retorna un nou identificador, calculat a partir del ultim segons els prefix donat.
 	*/

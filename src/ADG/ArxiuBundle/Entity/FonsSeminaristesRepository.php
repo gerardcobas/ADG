@@ -23,6 +23,26 @@ class FonsSeminaristesRepository extends EntityRepository
 	
 		return $q->getResult();
 	}
+	
+	public function findForSeminaristesEstricta($nom, $data){
+		$em = $this->getEntityManager();
+		$qb = $em->createQueryBuilder();
+	
+		// Build the query
+		$qb->select('fs.num, fs.nodac, fs.cognom')->from('ArxiuBundle:FonsSeminaristes', 'fs');
+	
+		if ($nom!=null && $nom !="") {
+			$qb->where('fs.cognom = :nom');
+			$qb->setParameter('nom', $nom );
+		}
+		if ($data!=null && $data !="") {
+			$qb->andWhere('fs.ordenacio = :data');
+			$qb->setParameter('data', $data);
+		}
+		$q = $qb->getQuery();
+	
+		return $q->getResult();
+	}
 	/*
 	 * Retorna un nou identificador, calculat a partir del ultim segons els prefix donat.
 	*/

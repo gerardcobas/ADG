@@ -60,39 +60,51 @@ class FonsController extends Controller
     	else if($tipus=="capellans"){
     		//nom, lloc, data
     		
-    		if ($cercaTipus=="relaxada") {
-    			$this->get('session')->getFlashBag()->add(
-    				'success',
-    				"relaxada!!"
-    			);
-    			return $this->redirect($this->generateUrl('fons_select', array('seleccio' => $seleccio)));
+    		if ($cercaTipus=="relaxada" || ($cercaNom=="" && $cercaLloc=="" && $cercaData=="")) {
+    			$em = $this->getDoctrine()->getManager();
+    			$rep = $em->getRepository('ArxiuBundle:FonsCapellans');
+    		
+    			$info=$rep->findForCapellans($cercaNom, $cercaLloc, $cercaData);
     		}
     		else{
-    			$this->get('session')->getFlashBag()->add(
-    					'success',
-    					"estricta!!"
-    			);
-    			return $this->redirect($this->generateUrl('fons_select', array('seleccio' => $seleccio)));
+    			$em = $this->getDoctrine()->getManager();
+    			$rep = $em->getRepository('ArxiuBundle:FonsCapellans');
+    		
+    			$info=$rep->findForCapellansEstricta($cercaNom, $cercaLloc, $cercaData);
     		}
-    		$em = $this->getDoctrine()->getManager();
-    		$rep = $em->getRepository('ArxiuBundle:FonsCapellans');
-    		
-    		
-    		$info=$rep->findForCapellans($cercaNom, $cercaLloc, $cercaData);
     	}    	
     	else if($tipus=="monges"){
     		//nom, lloc, congregacio
-    		$em = $this->getDoctrine()->getManager();
-    		$rep = $em->getRepository('ArxiuBundle:FonsMonges');
     		
-    		$info=$rep->findForMonges($cercaNom, $cercaLloc, $cercaCongregacio);
+    		if ($cercaTipus=="relaxada" || ($cercaNom=="" && $cercaLloc=="" && $cercaCongregacio=="")) {
+    			$em = $this->getDoctrine()->getManager();
+    			$rep = $em->getRepository('ArxiuBundle:FonsMonges');
+    		
+    			$info=$rep->findForMonges($cercaNom, $cercaLloc, $cercaCongregacio);
+    		}
+    		else{
+    			$em = $this->getDoctrine()->getManager();
+    			$rep = $em->getRepository('ArxiuBundle:FonsMonges');
+    		
+    			$info=$rep->findForMongesEstricta($cercaNom, $cercaLloc, $cercaCongregacio);
+    		}
+    		
     	}
     	else if($tipus=="seminaristes"){
     		//nom, data
-    		$em = $this->getDoctrine()->getManager();
-    		$rep = $em->getRepository('ArxiuBundle:FonsSeminaristes');
     		
-    		$info=$rep->findForSeminaristes($cercaNom, $cercaData);
+    		if ($cercaTipus=="relaxada" || ($cercaNom=="" && $cercaData=="")) {
+    			$em = $this->getDoctrine()->getManager();
+    			$rep = $em->getRepository('ArxiuBundle:FonsSeminaristes');
+    		
+    			$info=$rep->findForSeminaristes($cercaNom, $cercaData);
+    		}
+    		else{
+    			$em = $this->getDoctrine()->getManager();
+    			$rep = $em->getRepository('ArxiuBundle:FonsSeminaristes');
+    		
+    			$info=$rep->findForSeminaristesEstricta($cercaNom, $cercaData);
+    		}
     	}    	    	
     	else if($tipus=="liberden"){
     		//paraula

@@ -25,6 +25,31 @@ class FonsMongesRepository extends EntityRepository
 	
 		return $q->getResult();
 	}
+	
+	public function findForMongesEstricta($nom, $lloc, $congregacio){
+		$em = $this->getEntityManager();
+		$qb = $em->createQueryBuilder();
+	
+		// Build the query
+		$qb->select('fm.num, fm.nodac, fm.cognom, fm.fitxa')->from('ArxiuBundle:FonsMonges', 'fm');
+	
+		if ($nom!=null && $nom !="") {
+			$qb->where('fm.cognom = :nom');
+			$qb->setParameter('nom', $nom );
+		}
+		if ($lloc!=null && $lloc !="") {
+			$qb->andWhere('fm.naturalDe = :lloc');
+			$qb->setParameter('lloc', $lloc);
+		}
+		if ($congregacio!=null && $congregacio !="") {
+			$qb->andWhere('fm.congregacio = :congregacio');
+			$qb->setParameter('congregacio', $congregacio);
+		}
+		$q = $qb->getQuery();
+	
+		return $q->getResult();
+	}
+	
 	/*
 	 * Retorna un nou identificador, calculat a partir del ultim segons els prefix donat.
 	*/
