@@ -29,7 +29,10 @@
          
         <label class="checkbox">
         	<input type="checkbox" value="remember-me" id="remember_me" name="_remember_me" checked>Recordar
-        	<button class="btn btn-lg btn-success pull-right" id="_submit" name="_submit" type="submit">Entrar</button>
+        	<div class="btn-group pull-right">
+	        	<a class="btn btn-lg btn-default" href="{{ path('index') }}"><i class="icon-home"></i></a>   
+	        	<button class="btn btn-lg btn-success" id="_submit" name="_submit" type="submit">Entrar</button>
+	        </div>
         </label>
 
          <div class="space10"></div>
@@ -42,7 +45,7 @@
 	          {{ error | trans }}
 	        </div>
          {% endif %}
-      </form>    
+      </form>
 	</div>
 </div>
 {% endblock fos_user_content %}
