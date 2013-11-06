@@ -75,6 +75,7 @@
             <tr>
                 <th class="centered-text" id="idHeader" title="Tooltip!">Nom d'usuari</th>
                 <th class="centered-text">Email</th>
+                <th class="centered-text">Permis</th>
                 <th class="centered-text">Contrasenya</th>
                 {% if is_granted('ROLE_ADMIN') %}
 			    	<th class="centered-text">Operacions</th>            
@@ -87,6 +88,12 @@
                     <tr>
                         <td>{{ usuari.username }}</td>
                         <td>{{ usuari.email }}</td>
+
+                        {% set permis = '' %} 
+                        {% for rol in usuari.roles if rol is sameas("ROLE_ADMIN") %} {% set permis = 'Gestor' %} 
+                       	{% else %} {% set permis = 'Usuari' %} 
+                        {% endfor  %}
+						<td>{{ permis }}</td>
                         <td>****</td>
                         <td>
                         	<a data-toggle="modal" href="{{ path("usuaris_editar", { 'usuari': usuari.username }) }}" data-target="#editarUsuari" class="btn btn-xs btn-primary" type="button"><i class="icon-pencil"></i></a>

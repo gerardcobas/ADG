@@ -68,6 +68,13 @@ class AdminUsuarisController extends Controller
     		$user->setUsername($usuari);
     		$user->setEmail($email);
     		$user->setPlainPassword($request->request->get('contrasenya'));
+    		$permis=$request->request->get('permis');
+    		if ($permis == "gestor") {
+    			$user->addRole("ROLE_ADMIN");
+    		}
+    		else{
+    			$user->addRole("ROLE_USER");
+    		}
     		$user->setEnabled(true);
     		
     		$userManager->updateCanonicalFields($user);
@@ -140,6 +147,13 @@ class AdminUsuarisController extends Controller
     		if($contrasenya!="" && $contrasenya!=null) $user->setPlainPassword($contrasenya);
     		
     		$user->setEnabled(true);
+    		$permis=$request->request->get('permis');
+    		if ($permis == "gestor") {
+    			$user->addRole("ROLE_ADMIN");
+    		}
+    		else if($permis == "usuari"){
+    			$user->setRoles(array("ROLE_USER"));
+    		}
     	
     		$userManager->updateCanonicalFields($user);
     		$userManager->updatePassword($user);
