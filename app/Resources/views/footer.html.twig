@@ -10,20 +10,18 @@
 						<i class="icon-file-text-alt"></i>
 						Normativa
 					</a>
+					
+					<a class="foot" href="{{ path('info_web') }}">
+						<i class="icon-info-sign"></i>
+						Web
+					</a>
+					
             		{% if is_granted("ROLE_ADMIN") %}
 						<a class="foot" href=" {{ path('admin') }}">
 							<i class="icon-user"></i>
 							Administrar
 						</a>
-						<a class="foot" href="{{ path('fos_user_security_logout') }}">
-							<i class="icon-signout"></i>
-							Sortir
-						</a>
            			{% elseif is_granted("ROLE_USER") %}
-           				<a class="foot" href="{{ path('fos_user_security_logout') }}">
-							<i class="icon-signout"></i>
-							Sortir
-						</a>
 					{% else %}
 					    <a class="foot" href="{{ path('fos_user_security_login') }}">
 							<i class="icon-signin"></i>

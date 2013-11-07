@@ -31,6 +31,10 @@ class DefaultController extends Controller
     	return $this->render('PrincipalBundle:Default:capitular.html.twig');
     }
     
+    public function webAction() {
+    	return $this->render('PrincipalBundle:Default:web.html.twig');
+    }
+    
     public function loginAction() {
     	$peticion = $this->getRequest();
     	$sesion = $peticion->getSession();

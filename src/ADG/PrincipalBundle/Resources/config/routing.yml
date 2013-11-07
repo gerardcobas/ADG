@@ -17,6 +17,11 @@ capitular:
     pattern: /capitular
     defaults:
         _controller: PrincipalBundle:Default:capitular
+
+info_web:
+    pattern: /web
+    defaults:
+        _controller: PrincipalBundle:Default:web  
         
 admin_routes:
     resource: "@PrincipalBundle/Resources/config/routing/admin.yml"
