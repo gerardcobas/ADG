@@ -50,6 +50,16 @@ class AdminFonsController extends Controller
 	    		$entity->setNum($nouId);
     		}
     		$nodac = $request->request->get('inputNodac');
+    		
+    		$b=self::comprovaExistencia($nodac);
+    		if ($b === false) {
+    			$this->get('session')->getFlashBag()->add(
+						'error',
+						"Error! El numero de classificació ".$nodac." no existeix a l'arxiu!"
+				);
+    			return $this->redirect($this->generateUrl('fons_select', array('seleccio' => $seleccio)));
+    		}
+    		
     		$entity->setNodac($nodac);
     		
     		//atributs segons el tipus
@@ -110,7 +120,10 @@ class AdminFonsController extends Controller
     				"Entrada afegida correctament!"
     		);
     	}
-    	return $this->redirect($this->generateUrl('fons_select', array('seleccio' => $seleccio)));
+    	return $this->render('ArxiuBundle:Fons:fons.html.twig',
+    		array('seleccio' => $seleccio, 'tipus' => $tipus, 'cercaParaula'=>"",
+    			'cercaNom'=>"", 'cercaLloc'=>"",'cercaData'=>"", 'cercaCongregacio'=>"", 'info' => array($entity))
+    	);
     }
 
     /**
@@ -139,7 +152,17 @@ class AdminFonsController extends Controller
     		$id = $request->request->get('id');
     		$entity=self::obteInfo($id, $tipus);
     		
-    		$entity->setNodac($request->request->get('inputNodac'));
+    		$nodac=$request->request->get('inputNodac');
+    		
+    		$b=self::comprovaExistencia($nodac);
+    		if ($b === false) {
+    			$this->get('session')->getFlashBag()->add(
+    					'error',
+    					"Error! El numero de classificació ".$nodac." no existeix a l'arxiu!"
+    			);
+    			return $this->redirect($this->generateUrl('fons_select', array('seleccio' => $seleccio)));
+    		}
+    		$entity->setNodac($nodac);
     
     		//atributs segons el tipus
     		if ($tipus=="arxius") {
@@ -199,7 +222,10 @@ class AdminFonsController extends Controller
     				"S'ha editat correctament!"
     		);
     	}
-    	return $this->redirect($this->generateUrl('fons_select', array('seleccio' => $seleccio)));
+    	return $this->render('ArxiuBundle:Fons:fons.html.twig',
+    		array('seleccio' => $seleccio, 'tipus' => $tipus, 'cercaParaula'=>"",
+    			'cercaNom'=>"", 'cercaLloc'=>"",'cercaData'=>"", 'cercaCongregacio'=>"", 'info' => array($entity))
+    	);
     }
     
     
@@ -397,6 +423,57 @@ class AdminFonsController extends Controller
     		$info=$rep->find($id);
     	}
     	return $info;
+    }
+    
+    /**
+     * Comprova l'existencia del corresponent identificador
+     */
+    private function comprovaExistencia($id){
+    
+    	$em = $this->getDoctrine()->getManager();
+    	//es divideix l'identificador indicat per saber a quin nivell es troba
+    	$parts = explode('.', $id);
+    	$tam=sizeof($parts);
+    	$info=null;
+    
+    	//obtenir la informacio del identificador indicat
+    	if($tam==2){
+    		$repFons = $em->getRepository('ArxiuBundle:GuiaFons');
+    		$info=$repFons->findOneByNivell($id);
+    	}
+    	else if($tam==3){
+    		$repSub = $em->getRepository('ArxiuBundle:GuiaSubfons');
+    		$info=$repSub->findOneByNivell($id);
+    	}
+    	else if($tam==4){
+    		$repGrup = $em->getRepository('ArxiuBundle:GuiaGrup');
+    		$info=$repGrup->findOneByNivell($id);
+    	}
+    	else if($tam==5){
+    		$repSerie = $em->getRepository('ArxiuBundle:GuiaSerie');
+    		$info=$repSerie->findOneByNivell($id);
+    	}
+    	else if($tam==6){
+    		$repUcomp = $em->getRepository('ArxiuBundle:GuiaUcomposta');
+    		$info=$repUcomp->findOneByNivell($id);
+    	}
+    	else if($tam==7){
+    		$repUsim = $em->getRepository('ArxiuBundle:GuiaUsimple');
+    		$info=$repUsim->findOneByNivell($id);
+    	}
+    	else if($tam==8){
+    		$repUinst = $em->getRepository('ArxiuBundle:GuiaUinstalacio');
+    		$info=$repUinst->findOneByNivell($id);
+    	}
+    
+    	if($info === null){
+    		return false;
+    	}
+    	else{
+    		return true;
+    	}
+    
+    	return false;
     }
     
 }

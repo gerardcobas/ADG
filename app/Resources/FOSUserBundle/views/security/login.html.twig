@@ -10,7 +10,7 @@
       <form action="{{ path("fos_user_security_check") }}" method="post">
       
        <h1>Autentificació</h1>
-       <p>Sisplau proporcioni les seves credencials</p>
+       <p>Sisplau proporcioni les seves credencials, si no en té, <a href="javascript:history.back()" style="color: #999">torni enrere.</a></p>
       <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
         
         <label for="username">Nom d'usuari</label>
@@ -30,7 +30,6 @@
         <label class="checkbox">
         	<input type="checkbox" value="remember-me" id="remember_me" name="_remember_me" checked>Recordar
         	<div class="btn-group pull-right">
-	        	<a class="btn btn-lg btn-default" href="{{ path('index') }}"><i class="icon-home"></i></a>   
 	        	<button class="btn btn-lg btn-success" id="_submit" name="_submit" type="submit">Entrar</button>
 	        </div>
         </label>
