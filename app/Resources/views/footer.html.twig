@@ -1,33 +1,75 @@
 		    <div class="footer-wrapper">
 		    	<footer>
-					<h4>Arxiu diocesà de Girona</h4>
-					<a class="foot" href="{{ path('contacte') }}">
-						<i class="icon-envelope"></i>
-						Contacte
-					</a>
+		    		
+					<h4>{{ 'base.title' | trans }}</h4>
 					
-					<a class="foot" href="{{ path('normativa') }}">
-						<i class="icon-file-text-alt"></i>
-						Normativa
-					</a>
-					
-					<a class="foot" href="{{ path('info_web') }}">
-						<i class="icon-info-sign"></i>
-						Web
-					</a>
-					
-            		{% if is_granted("ROLE_ADMIN") %}
-						<a class="foot" href=" {{ path('admin') }}">
-							<i class="icon-user"></i>
-							Administrar
+					<div class="row" style="margin-bottom: 5px">
+						<a class="foot" href="{{ path('contacte') }}">
+							<i class="icon-envelope"></i>
+							{{ 'base.contacte' | trans }}
 						</a>
-           			{% elseif is_granted("ROLE_USER") %}
-					{% else %}
-					    <a class="foot" href="{{ path('fos_user_security_login') }}">
-							<i class="icon-signin"></i>
-							Autentificació
+						
+						<a class="foot" href="{{ path('normativa') }}">
+							<i class="icon-file-text-alt"></i>
+							{{ 'base.normativa' | trans }}
 						</a>
-					{% endif %}
+						
+						<a class="foot" href="{{ path('info_web') }}">
+							<i class="icon-info-sign"></i>
+							Web
+						</a>
+						
+						{% if is_granted("ROLE_ADMIN") %}
+							<a class="foot" href=" {{ path('admin') }}">
+								<i class="icon-user"></i>
+								{{ 'base.administracio' | trans }}
+							</a>
+	           			{% elseif is_granted("ROLE_USER") %}
+						{% else %}
+						    <a class="foot" href="{{ path('fos_user_security_login') }}">
+								<i class="icon-signin"></i>
+								{{ 'base.autentificacio' | trans }}
+							</a>
+						{% endif %}
+					</div>
+					
+					<div class="row">
+				        {% set locale = app.request.locale %}
+				       
+				        {% if locale == 'ca' %}
+				            <strong>Català</strong>
+				             - 
+				            <a class="foot"  style="margin: 0px" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'es'})) }}">
+				            	Castellà
+				            </a>
+				             - 
+				            <a class="foot"  style="margin: 0px" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr'})) }}">
+				            	Francès
+				            </a>
+				        {% elseif locale == 'es' %}
+				            <a class="foot" style="margin: 0px" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'ca'})) }}">
+				            	Catalán
+				            </a>
+				             - 
+				            <strong>Castellano</strong>
+				             - 
+				            <a class="foot"  style="margin: 0px" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr'})) }}">
+				            	Francès
+				            </a>
+				        {% elseif locale == 'fr' %}
+				        	<a class="foot" style="margin: 0px" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'ca'})) }}">
+				            	Catalan
+				            </a>
+				             - 
+				        	<a class="foot"  style="margin: 0px" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'es'})) }}">
+				            	Espagnol
+				            </a>
+				             - 
+				            <strong>Français</strong>
+				        {% endif %}
+			       </div>
+			        
+            		
 				</footer><!-- /.footer -->
 			</div>
 		  </div>

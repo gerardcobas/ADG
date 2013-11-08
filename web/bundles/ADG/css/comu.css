@@ -30,16 +30,16 @@ html, body, .container, .content {
     min-height: 100%;
     height: auto !important;
     height: 100%;
-    margin: 0 auto -70px; /* same as the footer */
+    margin: 0 auto -90px; /* same as the footer */
 }
  
 .push {
-    height: 70px; /* same as the footer */
+    height: 90px; /* same as the footer */
 }
 
 .footer-wrapper {
     position: relative;
-    height: 70px;
+    height: 90px;
     text-align: center;
     background-color: #222222;
   	border-color: #080808;
@@ -149,8 +149,8 @@ article {
 * Can't get smaller than 308 px;
 */
 
-@media (max-width: 308px) {
+@media (max-width: 345px) {
 	body, .navbar {
-		min-width: 308px;
+		min-width: 345px;
 	}
 }

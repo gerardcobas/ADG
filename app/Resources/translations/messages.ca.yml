@@ -1,0 +1,24 @@
+#Resources\translations\messages.ca.yml
+base:
+    title: Arxiu diocesà de Girona
+    contacte: Contacte
+    normativa: Normativa
+    administrar: Administrar
+    autentificacio: Autentificació
+    
+menu:
+    principal: Principal
+    diocesa: Arxiu diocesà
+    capitular: Arxiu capitular
+    biblioteca: Biblioteca
+    
+    administrar: Administrar
+    general: General
+    arxiu: Arxiu
+    classificacio: Classificació
+    fons: Fons i series
+    altres: Altres
+    noticies: Notícies
+    usuaris: Usuaris
+    sortir: Sortir
+    autentificat: Autentificat

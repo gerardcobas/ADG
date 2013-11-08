@@ -12,10 +12,10 @@ class MenuBuilder extends ContainerAware
 		$menu = $factory->createItem('root');
 		$menu->setChildrenAttribute('class', 'nav navbar-nav');
 
-        $menu->addChild('Principal', array('route' => 'index'))->setAttribute('icon', 'icon-home');
-        $menu->addChild('Arxiu diocesà', array('route' => 'arxiu'))->setAttribute('icon', 'icon-folder-close');
-        $menu->addChild('Arxiu capitular', array('route' => 'capitular'))->setAttribute('icon', 'icon-folder-close-alt');
-        $menu->addChild('Biblioteca', array('route' => 'biblioteca'))->setAttribute('icon', 'icon-book');
+        $menu->addChild('menu.principal', array('route' => 'index'))->setAttribute('icon', 'icon-home');
+        $menu->addChild('menu.diocesa', array('route' => 'arxiu'))->setAttribute('icon', 'icon-folder-close');
+        $menu->addChild('menu.capitular', array('route' => 'capitular'))->setAttribute('icon', 'icon-folder-close-alt');
+        $menu->addChild('menu.biblioteca', array('route' => 'biblioteca'))->setAttribute('icon', 'icon-book');
 
         return $menu;
     }
@@ -29,46 +29,46 @@ class MenuBuilder extends ContainerAware
     	$securityContext = $this->container->get('security.context');
     	
     	if ($securityContext->isGranted(array('ROLE_ADMIN'))) {
-    		$menu->addChild('Admin', array('label' => 'Administrar'))
+    		$menu->addChild('Admin', array('label' => 'menu.administrar'))
     		->setAttribute('dropdown', true)
     		->setAttribute('icon', 'icon-user');
     		
-    		$menu['Admin']->addChild('General', array('route' => 'admin'))
+    		$menu['Admin']->addChild('menu.general', array('route' => 'admin'))
     		->setAttribute('icon', 'icon-edit-sign');
     		
     		$menu['Admin']->addChild('arxiu_divider')
     		->setAttribute('class', 'divider');
-    		$menu['Admin']->addChild('Arxiu')
+    		$menu['Admin']->addChild('menu.arxiu')
     		->setAttribute('class', 'dropdown-header');
     		
     		
-    		$menu['Admin']->addChild('Classificació', array('route' => 'guia'))
+    		$menu['Admin']->addChild('menu.classificacio', array('route' => 'guia'))
     		->setAttribute('icon', 'icon-edit');
     		
-    		$menu['Admin']->addChild('Fons i series', array('route' => 'fons'))
+    		$menu['Admin']->addChild('menu.fons', array('route' => 'fons'))
     		->setAttribute('icon', 'icon-edit');
     		
     		
     		$menu['Admin']->addChild('altres_divider')
     		->setAttribute('class', 'divider');
-    		$menu['Admin']->addChild('Altres')
+    		$menu['Admin']->addChild('menu.altres')
     		->setAttribute('class', 'dropdown-header');
     		
     		
-    		$menu['Admin']->addChild('Notícies', array('route' => 'noticies_index'))
+    		$menu['Admin']->addChild('menu.noticies', array('route' => 'noticies_index'))
     		->setAttribute('icon', 'icon-edit');
     		
-    		$menu['Admin']->addChild('Usuaris', array('route' => 'admin_usuaris'))
+    		$menu['Admin']->addChild('menu.usuaris', array('route' => 'admin_usuaris'))
     		->setAttribute('icon', 'icon-edit');
     		
     		$menu['Admin']->addChild('Logout')
     		->setAttribute('class', 'divider');
-    		$menu['Admin']->addChild('Sortir', array('route' => 'fos_user_security_logout'))
+    		$menu['Admin']->addChild('menu.sortir', array('route' => 'fos_user_security_logout'))
     		->setAttribute('icon', 'icon-signout');
 
     	} else if ($securityContext->isGranted(array('ROLE_USER'))) {
     	
-    		$menu->addChild('User', array('label' => 'Autentificat'))
+    		$menu->addChild('User', array('label' => 'menu.autentificat'))
     		->setAttribute('dropdown', true)
     		->setAttribute('icon', 'icon-user');
     	

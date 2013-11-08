@@ -9,6 +9,6 @@ parameters:
     mailer_host: localhost
     mailer_user: ADG
     mailer_password: ADG
-    locale: en
+    locale: ca
     secret: 13c3733a023c5e77a36bae6dff90b679
     database_path: null

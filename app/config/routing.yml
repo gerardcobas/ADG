@@ -1,20 +1,31 @@
 adg_biblioteca:
     resource: "@ADGBibliotecaBundle/Resources/config/routing.yml"
-    prefix:   /biblioteca
-
+    prefix:   /{_locale}/biblioteca
+    requirements:
+        _locale: es|ca|fr
+    defaults:
+        _locale: ca
+         
 arrel:
     pattern: /
     defaults:
-        _controller:  PrincipalBundle:Default:index 
+        _controller:  PrincipalBundle:Default:index
 
 arxiu:
     resource: "@ArxiuBundle/Resources/config/routing.yml"
-    prefix:   /arxiu
+    prefix:   /{_locale}/arxiu
+    requirements:
+        _locale: es|ca|fr
+    defaults:
+        _locale: ca    
 
 principal:
     resource: "@PrincipalBundle/Resources/config/routing.yml"
-    prefix:   /
-    pattern:  
+    prefix:   /{_locale}
+    requirements:
+        _locale: es|ca|fr
+    defaults:
+        _locale: ca    
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
