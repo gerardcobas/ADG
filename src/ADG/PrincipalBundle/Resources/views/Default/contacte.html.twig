@@ -1,11 +1,11 @@
 {% extends '::base.html.twig' %}
 
-{% block title %}Contacte{% endblock %}
+{% block title %}{{ 'contacte.title' | trans }}{% endblock %}
 
 {% block body %}
 
         <div class="page-header">
-          <h1>Contacte</h1>
+          <h1>{{ 'contacte.head' | trans }}</h1>
         </div>
 
         <div class="row">
@@ -30,7 +30,7 @@
 	            info@arxiuadg.org</address>
 	
 	            <address><strong>Biblioteca:</strong>
-	            bsg@telefonica.net</address>
+	            biblioteca@bisbatgirona.cat</address>
 	
 	            <address><strong>Director</strong>
 	            Llic. Joan Naspleda</address>
@@ -45,14 +45,20 @@
 	            Llic. Anna Bancells</address>
 	
 	            <p><strong>Horari</strong><br>
-	            Matins: de dimarts a dijous
-	            de 10h a 14h<br>
-	            Tardes: de dilluns a dijous de 16h a 20h</p>
+	            De dilluns a dijous, de 16 h a 20 h<br>
+				Consultes convingudes: dijous de 10 h a 14 h<br>
+				Tancat: Juliol i agost / 24 desembre a 6 gener</p>
 	            
-	            <br>
-	            <div class="alert alert-info">
-	                Per a la consulta d'arxius digitalitzats, és oportú de fer la reserva per telèfon o correu electrònic.
+	            <div class="alert alert-warning">
+	            	<strong>Genealogia</strong><br>
+	                {{ 'contacte.alerta.warning' | trans }}
 	            </div>
+
+	            <div class="alert alert-info">
+	                {{ 'contacte.alerta.info' | trans }}
+	            </div>
+	            
+	           
 	      </div>
    	  </div>
 {% endblock %}

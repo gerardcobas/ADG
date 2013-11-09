@@ -4,6 +4,7 @@ base:
     contacte: Contacte
     normativa: Normativa
     administrar: Administrar
+    administracio: Administració
     autentificacio: Autentificació
     
 menu:
@@ -22,3 +23,35 @@ menu:
     usuaris: Usuaris
     sortir: Sortir
     autentificat: Autentificat
+    
+index:    
+    inici: Inici
+    propietat: És propietat del Bisbat de Girona.
+    colaborador: Amb la col·laboració de la Diputació de Girona.
+    noticies:
+        title: Notícies
+        no: No hi han notícies recents.
+        
+web:
+    title: Informació web
+    head: Informació sobre aquesta web
+    creacio: Creació web
+    colaboradors: Col·laboradors arxiu
+    equip:
+        title: Equip desenvolupador
+        cap: Cap de projecte
+        desenvolupador: Desenvolupador
+        contacte: Contactar amb
+        
+normativa: Normativa
+
+contacte:
+    title: Contacte
+    head: Contacte 
+    alerta:
+        info: Per a la consulta d'arxius digitalitzats, és oportú de fer la reserva per telèfon o correu electrònic.
+        warning: L'Arxiu Diocesà no realitza cap mena de recerca genealògica, a excepció d'aquelles que tinguin una finalitat administrativa (exclosos els arbres familiars) i, en tot cas, previa facilitació de les dades precises per a dur a terme la cerca.
+
+capitular:
+    title: Arxiu capitular
+    avis: En construcció...

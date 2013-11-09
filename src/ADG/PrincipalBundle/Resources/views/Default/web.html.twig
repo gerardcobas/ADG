@@ -1,17 +1,17 @@
 {% extends '::base.html.twig' %}
 
-{% block title %}Informació web{% endblock %}
+{% block title %}{{ 'web.title' | trans }}{% endblock %}
 
 {% block body %}
 
         <div class="page-header">
-          <h1>Informació sobre aquesta web</h1>
+          <h1>{{ 'web.head' | trans }}</h1>
         </div>
 
         <div class="row">
         	
 	        <div class="col-md-10 col-lg-10">
-		        <h3>Creació web</h3>
+		        <h3>{{ 'web.creacio' | trans }}</h3>
 	
 				<a href="#marques" data-toggle="collapse" data-target="#marques" style="color:black">Dr. Josep Maria Marquès (1939-2007)</a>
 				
@@ -274,16 +274,16 @@
 					</div>
 				</div>
 	
-				<h3>Col·laboradors arxiu</h3>
+				<h3>{{ 'web.colaboradors' | trans }}</h3>
 				
 				<p>Pere Trijueque i Fonalleras</p>
 				<p>Albert Serrat</p>
 				<p>Alfons Martinell</p>
 				
 				
-				<h3>Equip desenvolupador</h3>
+				<h3>{{ 'web.equip.title' | trans }}</h3>
 				
-				<p><strong>Cap Projecte:</strong> <a href="#mayol" data-toggle="collapse" data-target="#mayol" style="color:black">Enric Mayol Sarroca</a></p>
+				<p><strong>{{ 'web.equip.cap' | trans }}:</strong> <a href="#mayol" data-toggle="collapse" data-target="#mayol" style="color:black">Enric Mayol Sarroca</a></p>
 				<div id="mayol" class="collapse">
 					<div class="space5"></div>
 					<div class="alert alert-info">
@@ -297,7 +297,7 @@
 					</div>
 				</div>
 				
-				<p><strong>Desenvolupador:</strong> <a href="#cobas" data-toggle="collapse" data-target="#cobas" style="color:black">Gerard Cobas Bussot</a></p>
+				<p><strong>{{ 'web.equip.desenvolupador' | trans }}:</strong> <a href="#cobas" data-toggle="collapse" data-target="#cobas" style="color:black">Gerard Cobas Bussot</a></p>
 				<div id="cobas" class="collapse">
 					<div class="space5"></div>
 					<div class="alert alert-info">
@@ -311,9 +311,7 @@
 					</div>
 				</div>
 
-	        	<div class="space10"></div>
-	        	<h3>Contacte</h3>
-	        	<a href="mailto:webmaster@arxiuadg.org">webmaster@arxiuadg.org</a>
+	        	<p>{{ 'web.equip.contacte' | trans }} <a href="mailto:webmaster@arxiuadg.org">webmaster@arxiuadg.org</a></p>
 	        	<div class="space10"></div>
 	        </div>
 
