@@ -1,7 +1,57 @@
 #Resources\translations\messages.es.yml
 base:
-    title: Arxivo diocesano de Girona
+    title: Archivo diocesano de Girona
     contacte: Contacto
     normativa: Normativa
     administrar: Administrar
-    autentificacio: Autentificacion
+    administracio: Administración
+    autentificacio: Autentificación
+    
+menu:
+    principal: Principal
+    diocesa: Archivo diocesano
+    capitular: Archivo capitular
+    biblioteca: Biblioteca
+    
+    administrar: Administrar
+    general: General
+    arxiu: Arxivo
+    classificacio: Classificación
+    fons: Fondo y series
+    altres: Otros
+    noticies: Noticias
+    usuaris: Usuarios
+    sortir: Salir
+    autentificat: Autentificado
+    autentificacio: Entrar
+    
+index:    
+    inici: Inicip
+    propietat: Es propiedad del Obispado de Gerona.
+    colaborador: Con la colaboración de la Diputación de Gerona.
+    noticies:
+        title: Noticias
+        no: No hay noticias recientes.
+        
+web:
+    title: Información web
+    head: Información sobre esta web
+    creacio: Creación web
+    colaboradors: Colaboradores del archivo
+    equip:
+        title: Equipo desenvolupador
+        cap: Jefe de proyecto
+        desenvolupador: Desenvolupador
+        contacte: Contactar con
+        
+normativa: Normativa
+
+contacte:
+    title: Contacto
+    head: Contacto
+    alerta:
+        info: Para la consulta de archivos digitalizados, es oportuno hacer la reserva por teléfono o por correo electrónico.
+        warning: El Archivo Diocesano no realiza ningún tipo de investigación genealógica, a excepción de aquellas que tengan una finalidad administrativa (excluidos los árboles familiares) y, en todo caso, previa facilitación de los datos precisos para llevar a cabo la búsqueda.
+capitular:
+    title: Arxivo capitular
+    avis: En construcción...    

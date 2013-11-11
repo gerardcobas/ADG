@@ -113,8 +113,7 @@ article {
 
 
 /*------------------------------------------------------------------
-[1. Max Width: 308px]
-* Can't get smaller than 308 px;
+[1. Max Width: 400px]
 */
 
 @media (max-width: 400px) {
@@ -145,8 +144,8 @@ article {
 
 
 /*------------------------------------------------------------------
-[1. Max Width: 308px]
-* Can't get smaller than 308 px;
+[2. Max Width: 345px]
+* Can't get smaller than 345 px;
 */
 
 @media (max-width: 345px) {

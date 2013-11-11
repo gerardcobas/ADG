@@ -1,7 +1,57 @@
 #Resources\translations\messages.fr.yml
 base:
-    title: Archives du diocèse de Gérone
+    title: Archives diocésain de Gérone
     contacte: Contactez
     normativa: Règlements
     administrar: Gérer
+    administracio: Administration
     autentificacio: Authentification
+
+menu:
+    principal: Accueil
+    diocesa: Archive diocésain
+    capitular: Chapitre
+    biblioteca: Bibliothèque
+    
+    administrar: Gérer
+    general: Général
+    arxiu: Archive
+    classificacio: Classement
+    fons: Contexte et série
+    altres: Autres
+    noticies: Nouvelles
+    usuaris: Utilisateurs
+    sortir: Sortie
+    autentificat: Authentifier
+    autentificacio: Connectez
+    
+index:    
+    inici: Accueil
+    propietat: La propriété est détenue par le diocèse de Gérone.
+    colaborador: Avec la collaboration du Conseil de Gérone.
+    noticies:
+        title: Nouvelles
+        no: Pas de nouvelles récentes .
+        
+web:
+    title: Information sur le site
+    head: Informations sur ce site
+    creacio: Création web
+    colaboradors: Collaborateurs
+    equip:
+        title: Team Developer
+        cap: Chef de projet
+        desenvolupador: Développeur
+        contacte: Contactez
+        
+normativa: Règlements
+
+contacte:
+    title: Contact
+    head: Contact 
+    alerta:
+        info: Pour consulter les archives numérisées, il est approprié de faire une réservation par téléphone ou par courriel.
+        warning: La diocésain pas fait de recherche généalogique, à l'exception de ceux qui ont des fins administratives (sauf les arbres de la famille) et , en tout cas, après avoir fourni les données requises pour effectuer la recherche.
+capitular:
+    title: Archive chapitre
+    avis: En cours de construction...    

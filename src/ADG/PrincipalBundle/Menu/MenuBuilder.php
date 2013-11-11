@@ -75,7 +75,7 @@ class MenuBuilder extends ContainerAware
     		$menu['User']->addChild('Sortir', array('route' => 'fos_user_security_logout'))->setAttribute('icon', 'icon-signout');
     	}
     	else {
-    		$menu->addChild('Autentificació', array('route' => 'fos_user_security_login'))->setAttribute('icon', 'icon-signin');
+    		$menu->addChild('menu.autentificacio', array('route' => 'fos_user_security_login'))->setAttribute('icon', 'icon-signin');
     		
     	}
 
