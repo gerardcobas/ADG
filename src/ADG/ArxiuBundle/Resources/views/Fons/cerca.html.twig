@@ -7,13 +7,13 @@
 	{% if tipus is sameas("arxius") %}
 		<div class="row">
 		  <div class="col-lg-8 col-md-10 col-sm-10 col-xs-10">
-			<h5 style="margin-top: -5px">Data</h5>
+			<h5 style="margin-top: -5px">{{ 'fons.cerca.data' | trans }}</h5>
 			<div class="input-group">
 				<span class="input-group-addon"><i class="icon-calendar"></i></span>
 				<input type="text" class="form-control search-query" name="cercaData" value="{{ cercaData }}">
 			</div>
 			<div class="space10"></div>
-			<h5 style="margin-top: -5px">Paraules clau</h5>
+			<h5 style="margin-top: -5px">{{ 'fons.cerca.clau' | trans }}</h5>
 			<div class="input-group">
 				<span class="input-group-addon"><i class="icon-flag"></i></span>
 				<input type="text" class="form-control search-query" name="cercaParaula" value="{{ cercaParaula }}">
@@ -25,20 +25,20 @@
 		<div class="row">
 		  <div class="col-lg-8 col-md-10 col-sm-10 col-xs-10">
 		  	
-		  	<h5 style="margin-top: -5px">Nom de persona</h5>
+		  	<h5 style="margin-top: -5px">{{ 'fons.cerca.nom' | trans }}</h5>
 		  	<div class="input-group">
 				<span class="input-group-addon"><i class="icon-male"></i></span>
 				<input type="text" class="form-control search-query" name="cercaNom" value="{{ cercaNom }}">
 			</div>
 			{% if tipus is sameas("capellans") %}
 				<div class="space10"></div>
-				<h5 style="margin-top: -5px">Lloc</h5>
+				<h5 style="margin-top: -5px">{{ 'fons.cerca.lloc' | trans }}</h5>
 				<div class="input-group">
 					<span class="input-group-addon"><i class="icon-picture"></i></span>
 					<input type="text" class="form-control search-query" name="cercaLloc" value="{{ cercaLloc }}">
 				</div>
 				<div class="space10"></div>
-				<h5 style="margin-top: -5px">Data ordenació</h5>
+				<h5 style="margin-top: -5px">{{ 'fons.cerca.dataOrd' | trans }}</h5>
 				<div class="input-group">
 					<span class="input-group-addon"><i class="icon-calendar"></i></span>
 					<input type="text" class="form-control search-query" name="cercaData" value="{{ cercaData }}">
@@ -46,20 +46,20 @@
 				
 			{% elseif tipus is sameas("monges") %}
 				<div class="space10"></div>
-				<h5 style="margin-top: -5px">Lloc</h5>
+				<h5 style="margin-top: -5px">{{ 'fons.cerca.lloc' | trans }}</h5>
 				<div class="input-group">
 					<span class="input-group-addon"><i class="icon-picture"></i></span>
 					<input type="text" class="form-control search-query" name="cercaLloc" value="{{ cercaLloc }}">
 				</div>
 				<div class="space10"></div>
-				<h5 style="margin-top: -5px">Congregació</h5>
+				<h5 style="margin-top: -5px">{{ 'fons.cerca.congregacio' | trans }}</h5>
 				<div class="input-group">
 					<span class="input-group-addon"><i class="icon-bookmark"></i></span>
 					<input type="text" class="form-control search-query" name="cercaCongregacio" value="{{ cercaCongregacio }}">
 				</div>
 			{% else %}
 				<div class="space10"></div>
-				<h5 style="margin-top: -5px">Data</h5>
+				<h5 style="margin-top: -5px">{{ 'fons.cerca.data' | trans }}</h5>
 				<div class="input-group">
 					<span class="input-group-addon"><i class="icon-calendar"></i></span>
 					<input type="text" class="form-control search-query" name="cercaData" value="{{ cercaData }}">
@@ -68,12 +68,12 @@
 			
 			<div class="space10"></div>
 			<div class="input-group">
-		  		<span style="margin-right: 10px;font-weight:500;font-size:14px;">Tipus de cerca:</span>	
+		  		<span style="margin-right: 10px;font-weight:500;font-size:14px;">{{ 'fons.cerca.tipus' | trans }}:</span>	
 		    	<span class="radio-inline">
-		        	<input type="radio" name="cercaTipus" id="cercaTipus1" value="relaxada" checked>Relaxada
+		        	<input type="radio" name="cercaTipus" id="cercaTipus1" value="relaxada" checked>{{ 'fons.cerca.relaxada' | trans }}
 		      	</span>
 		    	<span class="radio-inline">
-		        	<input type="radio" name="cercaTipus" id="cercaTipus2" value="estricta">Estricte
+		        	<input type="radio" name="cercaTipus" id="cercaTipus2" value="estricta">{{ 'fons.cerca.estricte' | trans }}
 		      	</span>
 		    </div><!-- /radio-group -->
 		        
@@ -83,7 +83,7 @@
 	{% else %}
 		<div class="row">
 		  <div class="col-lg-8 col-md-10 col-sm-10 col-xs-10">
-			<h5 style="margin-top: -5px">Paraules clau</h5>
+			<h5 style="margin-top: -5px">{{ 'fons.cerca.clau' | trans }}</h5>
 			<div class="input-group">
 				<span class="input-group-addon"><i class="icon-flag"></i></span>
 				<input type="text" class="form-control search-query" name="cercaParaula" value="{{ cercaParaula }}">
@@ -94,7 +94,7 @@
 	
 	<div class="space10"></div>
 	<div class="btn-group">
-		<button type="submit" class="btn btn-primary"><i class="icon-search"></i>&nbsp;Buscar</button>
+		<button type="submit" class="btn btn-primary"><i class="icon-search"></i>&nbsp;{{ 'fons.cerca.buscar' | trans }}</button>
 		{% if is_granted('ROLE_ADMIN') %}         
 			<div class="btn-group">	
 				<a data-toggle="modal" href="{{ path('fons_nou', { 'seleccio': seleccio }) }}" data-target="#nouFons" class="btn btn-success" type="button"><i class="icon-plus"></i>&nbsp;Afegir nou</a>

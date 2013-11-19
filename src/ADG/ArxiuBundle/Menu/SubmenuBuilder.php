@@ -11,22 +11,22 @@ class SubmenuBuilder extends ContainerAware
     {
     	$menu = $factory->createItem('root');
 
-    	$menu->addChild("Classificació de l'arxiu", array('route' => 'guia'))
+    	$menu->addChild("submenu.classificacio", array('route' => 'guia'))
     		->setAttribute('icon', 'icon-archive');
     		
-    	$menu->addChild('Dispenses matrimonials', array('route' => 'altre'))
+    	$menu->addChild('submenu.dispenses', array('route' => 'altre'))
     		->setAttribute('icon', 'icon-legal');
     	
-    	$menu->addChild('Recerca per fons i sèries', array('route' => 'fons'))
+    	$menu->addChild('submenu.recerca', array('route' => 'fons'))
     	->setAttribute('icon', 'icon-list');
 
-    	$menu->addChild('Index de llocs i persones', array('route' => 'altre'))
+    	$menu->addChild('submenu.index', array('route' => 'altre'))
     	->setAttribute('icon', 'icon-group');
     	
-    	$menu->addChild('Documents i textos', array('route' => 'altre'))
+    	$menu->addChild('submenu.documents', array('route' => 'altre'))
     	->setAttribute('icon', 'icon-file-text');
 
-    	$menu->addChild('Parròquies', array('route' => 'altre'))
+    	$menu->addChild('submenu.parroquies', array('route' => 'altre'))
     	->setAttribute('icon', 'icon-bell-alt')->setAttribute('class', 'last');
     	
     	return $menu;

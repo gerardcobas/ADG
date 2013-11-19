@@ -1,0 +1,151 @@
+#ArxiuBundle\Resources\translations\messages.ca.yml
+
+submenu:
+    classificacio: Classificació de l'arxiu
+    dispenses: Dispenses matrimonials
+    recerca: Recerca per fons i sèries
+    index: Index de llocs i persones
+    documents: Documents i textos
+    parroquies: Parròquies
+
+fons:
+    #fons
+    titol: Fons i series
+    header: Cerca per fons i series
+    datatable:
+        entrades: _MENU_ entrades per pàgina
+        zero: No s'ha trobat res
+        info: Trobades _TOTAL_ entrades
+        empty: 0 entrades trobades
+        filtrades: (filtrades desde _MAX_ entrades totals)
+        seguent: Següent
+        anterior: Anterior
+        general: Cerca general
+    taula:
+        classificacio: Classificació
+        operacions: Operacions
+        dades: Dades
+        data: Data
+        nom: Nom
+        fitxa: Fitxa
+        institucio: Institució
+        foli: Foli
+    alerta: Els resultats es mostraran al realitzar la cerca.
+    alerta2: Cal escollir el contingut de la cerca.
+    #cerca
+    cerca:
+        data: Data
+        clau: Paraules clau
+        nom: Nom de persona
+        lloc: Lloc
+        dataOrd: Data d'ordenació
+        congregacio: Congregació
+        tipus: Tipus de cerca
+        relaxada: Relaxada
+        estricte: Estricte
+        buscar: Cercar    
+    #detall
+    detall:
+        info: Informació completa
+        classificacio: Classificació de l'arxiu
+        dades: Dades
+        data: Data
+        notari: Notari
+        mides: Mides
+        obs: Observacions
+        llibre: Llibre
+        full: Full
+        cognom: Cognom, Nom
+        natural: Natural
+        congregacio: Congregació
+        llocCong: Lloc de congregació
+        fitxa: Fitxa
+        dataNaix: Data de naixement
+        natural: Natural
+        ordenacio: Ordenació
+        obit: Data óbit
+        altre: Altres
+        institucio: Institució
+        foli: Foli
+        tancar: Tancar
+    #menuLateral
+    continguts: Continguts
+    lletres:
+        titol: Lletres
+        llicencies: Llicències per demanar caritat
+        registres: Registres Itineris
+    manuals:
+        titol: Manuals de col·lacions beneficials
+        manuals: Manuals 1271-1928
+        beneficis: Dotalies de beneficis
+        seu: Dotalies de fundacions de la Seu
+        patronat: Processos sobre dret de patronat
+    arxius:
+        titol: Arxius incorporats
+        curia: Pergamins de la cúria i diversos
+        almoina: Pia Almoina
+        stfeliu: Pergamins de St.Feliu de Girona
+        besalu: Pergamins de Besalú
+        llado: Pergamins de Llado
+        cadins: Pergamins de Cadins
+    notaria:
+        titol: Notaria
+        notalarum: Notalarum 1924-1947 i suplement
+    ordes:
+        titol: Ordes i professions
+        capellans: Capellans
+        monges: Monges
+        seminaristes: Seminaristes
+    testaments:
+        titol: Testaments, definicions...
+        testaments: Testaments
+        definicions: Definicions
+        resolucions: Resolucions de marmessories
+        instuicions: Instuicions de causes Pies
+    processos:
+        titol: Processos
+        medievals: Processos medievals (1282-1500)
+        moderns: Processos moderns (1585-1864)   
+    mitra:
+        titol: Mitra
+        mitra: Pergamins de la mitra
+        delmes: Delmes   
+    
+guia:    
+    title: Classificació
+    header: Classificació de l'arxiu
+    fi: No hi ha més contingut
+    
+    info: Nivell de descripció
+    
+    titol: Titol
+    codi: Codi de referencia
+    data: Data
+    volum: Volum i suport
+    
+    nomProductor: Nom del productor
+    historiaProductor: Historia del productor
+    historiaArxivistica: Historia arxivistica
+    dadesIngres: Dades sobre l'ingrés
+    
+    abast: Abast i contingut    
+    organitzacio: Sistema d'organització    
+    informacioUtilitzacio: Informació sobre la valoració, selecció i eliminació
+    increments: Increments
+    
+    condicionsAcces: Condicions d'accés
+    condicionsReproduccio: Condicions de reproducció
+    llengues: Llengues i escriptures dels documents
+    caracteristiques: Caracteristiques físiques i requisits técnics
+    instruments: Instruments de descripció
+    
+    existenciaOriginals: Existencia i localització dels originals
+    existenciaReproduccions: Existencia i localització de les reproduccions
+    documentacio: Documentació relacionada
+    bibliografia: Bibliografia
+    
+    notes: Notes
+    
+    autoria: Autoría i dates
+    fonts: Fonts
+    regles: Regles i convencions

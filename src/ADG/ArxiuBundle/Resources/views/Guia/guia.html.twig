@@ -1,6 +1,6 @@
 {% extends 'ArxiuBundle::base-arxiu.html.twig' %}
 
-{% block title %}Classificació{% endblock %}
+{% block title %}{{ 'guia.title' | trans }}{% endblock %}
 
 {% block stylesheets %}
 	{{ parent() }}
@@ -16,7 +16,7 @@
 {% block body %}
 
 	<div class="page-header">
-        <h1>Classificació de l'arxiu</h1>
+        <h1>{{ 'guia.header' | trans }}</h1>
 	</div>
 
 
@@ -107,7 +107,7 @@
 																							{{ ui.nivell }} {{ ui.titol }}
 																						</a>
 																					{% else %}
-																						<p style="margin: 10px;">No hi ha més contingut</p>
+																						<p style="margin: 10px;">{{ 'guia.fi' | trans }}</p>
 																					{% endfor %}
 																				</div><!-- /.Uinstalacio --> 
 																				
@@ -118,7 +118,7 @@
 																				</a>
 																			{% endif %}
 																		{% else %}
-																			<p style="margin: 10px;">No hi ha més contingut</p>
+																			<p style="margin: 10px;">{{ 'guia.fi' | trans }}</p>
 																		{% endfor %}
 																	</div><!-- /.Usimple --> 
 																	
@@ -129,7 +129,7 @@
 																	</a>
 																{% endif %}
 															{% else %}
-																<p style="margin: 10px;">No hi ha més contingut</p>
+																<p style="margin: 10px;">{{ 'guia.fi' | trans }}</p>
 															{% endfor %}
 														</div><!-- /.Ucomposta --> 
 														
@@ -140,7 +140,7 @@
 														</a>
 													{% endif %}
 												{% else %}
-													<p style="margin: 10px;">No hi ha més contingut</p>
+													<p style="margin: 10px;">{{ 'guia.fi' | trans }}</p>
 												{% endfor %}
 											</div><!-- /.Serie --> 
 											
@@ -151,7 +151,7 @@
 											</a>
 										{% endif %}
 									{% else %}
-										<p style="margin: 10px;">No hi ha més contingut</p>
+										<p style="margin: 10px;">{{ 'guia.fi' | trans }}</p>
 									{% endfor %}
 								</div><!-- /.Grup --> 
 								
@@ -162,7 +162,7 @@
 								</a>
 							{% endif %}
 						{% else %}
-							<p style="margin: 10px;">No hi ha més contingut</p>
+							<p style="margin: 10px;">{{ 'guia.fi' | trans }}</p>
 						{% endfor %}
 					</div><!-- /.subFons --> 
 					
@@ -173,7 +173,7 @@
 					</a>
 				{% endif %}
 			{% else %}
-				<p style="margin: 10px;">No hi ha més contingut</p>
+				<p style="margin: 10px;">{{ 'guia.fi' | trans }}</p>
 			{% endfor %}
 		</div><!-- /.Fons --> 
 	</div>
