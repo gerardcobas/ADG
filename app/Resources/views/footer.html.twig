@@ -3,7 +3,7 @@
 		    		
 					<h4>{{ 'base.title' | trans }}</h4>
 					
-					<div class="row" style="margin-bottom: 5px">
+					<div class="row" style="margin-bottom: 5px;margin-left: 0px;margin-right: 0px">
 						<a class="foot" href="{{ path('contacte') }}">
 							<i class="icon-envelope"></i>
 							{{ 'base.contacte' | trans }}
@@ -33,7 +33,7 @@
 						{% endif %}
 					</div>
 					
-					<div class="row">
+					<div class="row" style="margin-left: 0px;margin-right: 0px">
 				        {% set locale = app.request.locale %}
 				       
 				        {% if locale == 'ca' %}
