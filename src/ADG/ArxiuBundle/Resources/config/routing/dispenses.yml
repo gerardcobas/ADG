@@ -1,0 +1,4 @@
+dispenses:
+    pattern: /
+    defaults:
+        _controller: ArxiuBundle:Dispenses:dispenses

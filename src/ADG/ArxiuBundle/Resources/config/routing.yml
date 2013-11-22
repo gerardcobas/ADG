@@ -16,3 +16,6 @@ fons_routes:
     resource: "@ArxiuBundle/Resources/config/routing/fons.yml"
     prefix:   /fons                      
         
+dispenses_routes:
+    resource: "@ArxiuBundle/Resources/config/routing/dispenses.yml"
+    prefix:   /dispenses           

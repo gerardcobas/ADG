@@ -7,11 +7,9 @@ submenu:
     index: Index de llocs i persones
     documents: Documents i textos
     parroquies: Parròquies
-
-fons:
-    #fons
-    titol: Fons i series
-    header: Cerca per fons i series
+    
+#general 
+general:
     datatable:
         entrades: _MENU_ entrades per pàgina
         zero: No s'ha trobat res
@@ -21,6 +19,12 @@ fons:
         seguent: Següent
         anterior: Anterior
         general: Cerca general
+      
+        
+fons:
+    #fons
+    titol: Fons i series
+    header: Cerca per fons i series
     taula:
         classificacio: Classificació
         operacions: Operacions
@@ -149,3 +153,9 @@ guia:
     autoria: Autoría i dates
     fonts: Fonts
     regles: Regles i convencions
+    
+
+#dispenses matrimonials    
+dispenses:
+    titol: Dispenses matrimonials
+    header: Dispenses matrimonials

@@ -14,7 +14,7 @@ class SubmenuBuilder extends ContainerAware
     	$menu->addChild("submenu.classificacio", array('route' => 'guia'))
     		->setAttribute('icon', 'icon-archive');
     		
-    	$menu->addChild('submenu.dispenses', array('route' => 'altre'))
+    	$menu->addChild('submenu.dispenses', array('route' => 'dispenses'))
     		->setAttribute('icon', 'icon-legal');
     	
     	$menu->addChild('submenu.recerca', array('route' => 'fons'))
