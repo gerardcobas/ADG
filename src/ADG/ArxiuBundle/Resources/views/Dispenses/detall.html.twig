@@ -1,0 +1,42 @@
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" style="color: #3a87ad">{{ 'dispenses.detall.info' | trans }}</h4>
+        </div>
+      	<div class="modal-body">
+      	
+      		<h4>General</h4>
+      		{% if info.nodac is not null and info.nodac is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.classificacio' | trans }}</h5><p>{{ info.nodac }}</p>{% endif %}
+      		{% if info.data is not null and info.data is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.data' | trans }}</h5><p>{{ info.data }}</p>{% endif %}
+      		{% if info.any is not null and info.any is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.any' | trans }}</h5><p>{{ info.any }}</p>{% endif %}
+      		{% if info.tipus is not null and info.tipus is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.tipus' | trans }}</h5><p>{{ info.tipus }}</p>{% endif %}
+      		{% if info.control is not null and info.control is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.control' | trans }}</h5><p>{{ info.control }}</p>{% endif %}
+      		
+      		<h4>Marit</h4>
+      		{% if info.maritNom is not null and info.maritNom is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.nom' | trans }}</h5><p>{{ info.maritNom }}</p>{% endif %}
+      		{% if info.maritCognom1 is not null and info.maritCognom1 is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.cog' | trans }}</h5><p>{{ info.maritCognom1 }}</p>{% endif %}
+      		{% if info.maritCognom2 is not null and info.maritCognom2 is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.cog2' | trans }}</h5><p>{{ info.maritCognom2 }}</p>{% endif %}
+      		{% if info.maritEstatCivil is not null and info.maritEstatCivil is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.EstatCivil' | trans }}</h5><p>{{ info.maritEstatCivil }}</p>{% endif %}
+      		{% if info.maritOfici is not null and info.maritOfici is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.Ofici' | trans }}</h5><p>{{ info.maritOfici }}</p>{% endif %}
+      		{% if info.maritNacionalitat is not null and info.maritNacionalitat is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.Nacionalitat' | trans }}</h5><p>{{ info.maritNacionalitat }}</p>{% endif %}
+      		{% if info.maritLlocNaixement is not null and info.maritLlocNaixement is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.LlocNaixement' | trans }}</h5><p>{{ info.maritLlocNaixement }}</p>{% endif %}
+      		{% if info.maritVeinatge is not null and info.maritVeinatge is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.Veinatge' | trans }}</h5><p>{{ info.maritVeinatge }}</p>{% endif %}
+
+      		<h4>Muller</h4>
+			{% if info.mullerNom is not null and info.mullerNom is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.nom' | trans }}</h5><p>{{ info.mullerNom }}</p>{% endif %}
+            {% if info.mullerCognom1 is not null and info.mullerCognom1 is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.cog' | trans }}</h5><p>{{ info.mullerCognom1 }}</p>{% endif %}
+            {% if info.mullerCognom2 is not null and info.mullerCognom2 is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.cog2' | trans }}</h5><p>{{ info.mullerCognom2 }}</p>{% endif %}
+            {% if info.mullerEstatCivil is not null and info.mullerEstatCivil is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.EstatCivil' | trans }}</h5><p>{{ info.mullerEstatCivil }}</p>{% endif %}
+            {% if info.mullerOfici is not null and info.mullerOfici is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.Ofici' | trans }}</h5><p>{{ info.mullerOfici }}</p>{% endif %}
+            {% if info.mullerNacionalitat is not null and info.mullerNacionalitat is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.Nacionalitat' | trans }}</h5><p>{{ info.mullerNacionalitat }}</p>{% endif %}
+            {% if info.mullerLlocNaixement is not null and info.mullerLlocNaixement is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.LlocNaixement' | trans }}</h5><p>{{ info.mullerLlocNaixement }}</p>{% endif %}
+            {% if info.mullerVeinatge is not null and info.mullerVeinatge is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.Veinatge' | trans }}</h5><p>{{ info.mullerVeinatge }}</p>{% endif %}
+      		
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" data-dismiss="modal">{{ 'dispenses.detall.tancar' | trans }}</button>
+        </div>
+
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->

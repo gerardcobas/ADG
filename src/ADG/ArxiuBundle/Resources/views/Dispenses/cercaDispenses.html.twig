@@ -1,0 +1,144 @@
+<div class="panel-heading"><h4 style="margin-top:-3px;margin-bottom:-3px">Cerca de dispenses matrimonials</h4></div>
+
+<div class="panel-body">
+	<form action="{{ path('cerca_dispenses') }}" method="post">
+	
+	<!--tipus-->
+		<div class="row">
+			<div class="col-lg-12 ">
+				<div class="input-group">
+			  		<span style="margin-right: 10px;font-weight:500;font-size:14px;">{{ 'fons.cerca.tipus' | trans }}:</span>	
+			    	<span class="radio-inline">
+			        	<input type="radio" name="cercaTipus" id="cercaTipus1" value="relaxada" checked>{{ 'fons.cerca.relaxada' | trans }}
+			      	</span>
+			    	<span class="radio-inline">
+			        	<input type="radio" name="cercaTipus" id="cercaTipus2" value="estricta">{{ 'fons.cerca.estricte' | trans }}
+			      	</span>
+			    </div><!-- /radio-group -->
+		    	<div class="space10" style="border-bottom: 1px solid #eeeeee;"></div>
+		    </div> 
+		    <div class="space10"></div>
+		</div><!--/tipus-->
+
+		<div class="row">
+			<!--marit-->
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+				<h4 style="margin-bottom:15px">{{ 'dispenses.cerca.ma' | trans }}</h4>
+			  	<h5>{{ 'dispenses.cerca.nom' | trans }}</h5>
+			  	<div class="input-group">
+					<span class="input-group-addon"><i class="icon-male"></i></span>
+					<input type="text" class="form-control search-query" name="maNom" value="{{ maNom }}">
+				</div>
+				<h5>{{ 'dispenses.cerca.cog' | trans }}</h5>
+				<div class="input-group">
+					<span class="input-group-addon"><i class="icon-male"></i></span>
+					<input type="text" class="form-control search-query" name="maCog" value="{{ maCog }}">
+				</div>
+				<h5>{{ 'dispenses.cerca.cog2' | trans }}</h5>
+				<div class="input-group">
+					<span class="input-group-addon"><i class="icon-male"></i></span>
+					<input type="text" class="form-control search-query" name="maCog2" value="{{ maCog2 }}">
+				</div>
+				<h5>{{ 'dispenses.cerca.naix' | trans }}</h5>
+				<div class="input-group">
+					<span class="input-group-addon"><i class="icon-picture"></i></span>
+					<input type="text" class="form-control search-query" name="maNaix" value="{{ maNaix }}">
+				</div>
+				<h5>{{ 'dispenses.cerca.res' | trans }}</h5>
+				<div class="input-group">
+					<span class="input-group-addon"><i class="icon-picture"></i></span>
+					<input type="text" class="form-control search-query" name="maRes" value="{{ maRes }}">
+				</div>
+				<div class="space10"></div>
+		  	</div> <!--/marit-->
+
+		<!--muller-->
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+				<h4 style="margin-bottom:15px">{{ 'dispenses.cerca.mu' | trans }}</h4>
+			  	<h5>{{ 'dispenses.cerca.nom' | trans }}</h5>
+			  	<div class="input-group">
+					<span class="input-group-addon"><i class="icon-female"></i></span>
+					<input type="text" class="form-control search-query" name="muNom" value="{{ muNom }}">
+				</div>
+				<h5>{{ 'dispenses.cerca.cog' | trans }}</h5>
+				<div class="input-group">
+					<span class="input-group-addon"><i class="icon-female"></i></span>
+					<input type="text" class="form-control search-query" name="muCog" value="{{ muCog }}">
+				</div>
+				<h5>{{ 'dispenses.cerca.cog2' | trans }}</h5>
+				<div class="input-group">
+					<span class="input-group-addon"><i class="icon-female"></i></span>
+					<input type="text" class="form-control search-query" name="muCog2" value="{{ muCog2 }}">
+				</div>
+				<h5>{{ 'dispenses.cerca.naix' | trans }}</h5>
+				<div class="input-group">
+					<span class="input-group-addon"><i class="icon-picture"></i></span>
+					<input type="text" class="form-control search-query" name="muNaix" value="{{ muNaix }}">
+				</div>
+				<h5>{{ 'dispenses.cerca.res' | trans }}</h5>
+				<div class="input-group">
+					<span class="input-group-addon"><i class="icon-picture"></i></span>
+					<input type="text" class="form-control search-query" name="muRes" value="{{ muRes }}">
+				</div>
+				<div class="space10"></div>
+		  	</div><!--/muller-->
+		    <div class="space10"></div>
+		</div><!-- /.row -->
+		
+	<!--any-->
+		<div class="row">
+			<h5 style="margin-left:16px">{{ 'dispenses.cerca.any' | trans }}</h5>
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="icon-calendar"></i></span>
+					<input type="text" class="form-control search-query" name="any" value="{{ any }}">
+				</div>
+				<div class="space10"></div>
+	       	</div>
+	       	
+	       	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+	        	<select class="form-control" name="param">
+	                <option value="exacte">Any exacte</option>
+	                <option value="2">±2</option>
+	                <option value="5">±5</option>
+	                <option value="10">±10</option>
+	                <option value="20">±20</option>
+	                <option value="abans">Abans de</option>
+	                <option value="despres">Després de</option>
+	            </select>
+	       	</div>
+	    	<div class="space10"></div>
+	    </div> <!--/any-->
+	    
+	    <!--interval-->
+		<div class="row">
+			<h5 style="margin-left:16px">{{ 'dispenses.cerca.interval' | trans }}</h5>
+			
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+				<div class="input-group">
+					<span class="input-group-addon">Inici</span>
+					<input type="text" class="form-control search-query" name="interval1" value="{{ interval1 }}">
+				</div>
+				<div class="space10"></div>
+	       	</div>
+	       	
+	       	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+				<div class="input-group">
+					<span class="input-group-addon">&nbsp;&nbsp;Fi&nbsp;&nbsp;</span>
+					<input type="text" class="form-control search-query" name="interval2" value="{{ interval2 }}">
+				</div>
+	       	</div>
+	    	<div class="space10"></div>
+	    </div> <!--/interval-->
+	    
+		<div class="space10"></div>
+		<div class="btn-group">
+			<button type="submit" class="btn btn-primary"><i class="icon-search"></i>&nbsp;{{ 'dispenses.cerca.buscar' | trans }}</button>
+			{% if is_granted('ROLE_ADMIN') %}         
+				<div class="btn-group">	
+					<a data-toggle="modal" href="{{ path('dispenses') }}" data-target="#nouDispenses" class="btn btn-success" type="button"><i class="icon-plus"></i>&nbsp;Afegir nou</a>
+			    </div>
+			{% endif %}
+		</div>
+	</form>
+</div>

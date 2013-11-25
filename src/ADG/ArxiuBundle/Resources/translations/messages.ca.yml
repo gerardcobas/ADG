@@ -36,6 +36,7 @@ fons:
         foli: Foli
     alerta: Els resultats es mostraran al realitzar la cerca.
     alerta2: Cal escollir el contingut de la cerca.
+    
     #cerca
     cerca:
         data: Data
@@ -159,3 +160,39 @@ guia:
 dispenses:
     titol: Dispenses matrimonials
     header: Dispenses matrimonials
+    alerta: Els resultats es mostraran al realitzar la cerca.
+    cerca:
+        ma: Marit
+        mu: Muller
+        nom: Nom
+        cog: Primer cognom
+        cog2: Segon cognom
+        naix: Població de naixement
+        res: Població de residencia
+        buscar: Cercar
+        any: Any
+        interval: Interval d'anys
+    taula:
+        classificacio: Classificació de l'arxiu
+        operacions: Operacions
+        any: Any
+        manom: Nom marit
+        macog: Cognom marit
+        munom: Nom muller
+        mucog: Cognom muller
+    detall:
+       info: Informació detallada 
+       classificacio: Classificació de l'arxiu
+       tancar: Tancar
+       data: Data
+       any: Any
+       tipus: Tipus
+       control: Control
+       nom: Nom
+       cog: Primer cognom
+       cog2: Segon cognom
+       EstatCivil: Estat civil
+       Ofici: Ofici
+       Nacionalitat: Nacionalitat
+       LlocNaixement: Lloc de naixement
+       Veinatge: Lloc de residencia        

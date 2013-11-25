@@ -9,10 +9,98 @@ class DispensesController extends Controller
     public function dispensesAction()
     {
         return $this->render('ArxiuBundle:Dispenses:dispenses.html.twig',
-    		array('seleccio'=>'dispenses')	
+    		array('seleccio'=>'dispenses', 'info'=>null,'maNom'=>'', 'maCog'=>'','maCog2'=>'','maNaix'=>'','maRes'=>'',
+    			'muNom'=>'', 'muCog'=>'','muCog2'=>'','muNaix'=>'','muRes'=>'',
+    			'any'=>'', 'interval1'=>'', 'interval2'=>'','param'=>'')	
         );
     }
     
+    public function cognomsAction()
+    {
+    	return $this->render('ArxiuBundle:Dispenses:dispenses.html.twig',
+    			array('seleccio'=>'cognoms', 'info'=>null)
+    	);
+    }
+
+    public function cercaDispensesAction()
+    {
+    	$request = $this->getRequest();
+    	$info=null;
+    	
+    	if ($request->isMethod('POST')) {
+    				$cercaTipus=$request->request->get('cercaTipus');
+    		
+    				$maNom=$request->request->get('maNom');
+    				$maCog=$request->request->get('maCog');
+    				$maCog2=$request->request->get('maCog2');
+    				$maNaix=$request->request->get('maNaix');
+    				$maRes=$request->request->get('maRes');
+    				
+    				$muNom=$request->request->get('muNom');
+    				$muCog=$request->request->get('muCog');
+    				$muCog2=$request->request->get('muCog2');
+    				$muNaix=$request->request->get('muNaix');
+    				$muRes=$request->request->get('muRes');
+    				
+    				$any=$request->request->get('any');
+    				$interval1=$request->request->get('interval1');
+    				$interval2=$request->request->get('interval2');
+    				$param=$request->request->get('param');
+    		
+    				$em = $this->getDoctrine()->getManager();
+    				$rep = $em->getRepository('ArxiuBundle:Dispenses');
+    				
+    				if ($cercaTipus=="relaxada") {
+    					$info=$rep->findTot(
+    							$maNom, $maCog, $maCog2, $maNaix, $maRes,
+    							$muNom, $muCog, $muCog2, $muNaix, $muRes,
+    							$any, $interval1, $interval2, $param
+    					);
+    				}
+    				else{
+    					$info=$rep->findTotEstricta(
+    							$maNom, $maCog, $maCog2, $maNaix, $maRes,
+    							$muNom, $muCog, $muCog2, $muNaix, $muRes,
+    							$any, $interval1, $interval2, $param
+    					);
+    				}
+    	}
+    	
+    	
+    	return $this->render('ArxiuBundle:Dispenses:dispenses.html.twig',
+    			array('seleccio'=>'dispenses', 'info'=>$info,'maNom'=>$maNom, 'maCog'=>$maCog,'maCog2'=>$maCog2,'maNaix'=>$maNaix,'maRes'=>$maRes,
+    			'muNom'=>$muNom, 'muCog'=>$muCog,'muCog2'=>$muCog2,'muNaix'=>$muNaix,'muRes'=>$muRes,
+    			'any'=>$any, 'interval1'=>$interval1, 'interval2'=>$interval2, 'param'=>$param)
+    	);
+    }
+    
+    public function detallAction($id)
+    {
+    	$info=null;
+    	$em = $this->getDoctrine()->getManager();
+    	$rep = $em->getRepository('ArxiuBundle:Dispenses');
+    	$info=$rep->find($id);
+
+    	return $this->render('ArxiuBundle:Dispenses:detall.html.twig',
+    			array('info' => $info)
+    	);
+
+    }
     
     
+    private function valorsCercaBuit(){
+    	return array('maNom'=>'', 'maCog'=>'','maCog2'=>'','maNaix'=>'','maRes'=>'',
+    			'muNom'=>'', 'muCog'=>'','muCog2'=>'','muNaix'=>'','muRes'=>'',
+    			'any'=>'', 'interval1'=>'', 'interval2'=>'','param'=>''
+    	);
+    }
+    
+    private function valorsCerca($maNom, $maCog, $maCog2, $maNaix, $maRes,
+    		 $muNom, $muCog, $muCog2, $muNaix, $muRes,
+    		 $any, $interval1, $interval2, $param){
+    	return array('maNom'=>$maNom, 'maCog'=>$maCog,'maCog2'=>$maCog2,'maNaix'=>$maNaix,'maRes'=>$maRes,
+    			'muNom'=>$muNom, 'muCog'=>$muCog,'muCog2'=>$muCog2,'muNaix'=>$muNaix,'muRes'=>$muRes,
+    			'any'=>$any, 'interval1'=>$interval1, 'interval2'=>$interval2, 'param'=>$param
+    	);
+    }
 }

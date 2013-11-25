@@ -2,3 +2,20 @@ dispenses:
     pattern: /
     defaults:
         _controller: ArxiuBundle:Dispenses:dispenses
+        
+cognoms:
+    pattern: /cognoms/
+    defaults:
+        _controller: ArxiuBundle:Dispenses:cognoms 
+        
+cerca_dispenses:
+    pattern: /cerca/
+    defaults:
+        _controller: ArxiuBundle:Dispenses:cercaDispenses         
+    requirements: { _method: post }
+    
+    
+dispenses_detall:
+    pattern: /detall/{id}
+    defaults:
+        _controller: ArxiuBundle:Dispenses:detall    
