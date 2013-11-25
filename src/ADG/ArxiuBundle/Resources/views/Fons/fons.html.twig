@@ -164,10 +164,11 @@
 </div>
 
 {# Modals #}
-{% if is_granted('ROLE_ADMIN') %}  
 	<div class="modal" id="ampliarInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	</div><!-- /.modal -->
 	
+{% if is_granted('ROLE_ADMIN') %}  
+
 	<div class="modal" id="nouFons" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	</div><!-- /.modal -->
 	
