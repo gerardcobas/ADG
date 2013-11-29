@@ -33,6 +33,21 @@
             {% if info.mullerLlocNaixement is not null and info.mullerLlocNaixement is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.LlocNaixement' | trans }}</h5><p>{{ info.mullerLlocNaixement }}</p>{% endif %}
             {% if info.mullerVeinatge is not null and info.mullerVeinatge is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.Veinatge' | trans }}</h5><p>{{ info.mullerVeinatge }}</p>{% endif %}
       		
+      		{% if is_granted('ROLE_USER') %} 
+      			{% if document is not null and document is not empty %}
+      				<a  class="btn btn-info" type="button" href="{{ document }}"><img src="{{ asset('bundles/adg/img/pdf-icon.gif') }}"/>&nbsp;Veure document&nbsp;</a>
+      			{% else %}
+      				<div class="alert alert-warning">
+	            		La imatge digitalitzada d'aquest document no està disponible.
+	            	</div>
+      			{% endif %} 
+				
+      		{% else %}
+      			<div class="alert alert-warning">
+	            	La imatge digitalitzada d'aquest document és consultable a l'Arxiu Diocesà. 
+	            </div>
+      		{% endif %}
+      		
         </div>
         <div class="modal-footer">
           <button class="btn btn-default" data-dismiss="modal">{{ 'dispenses.detall.tancar' | trans }}</button>

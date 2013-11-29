@@ -80,9 +80,12 @@ class DispensesController extends Controller
     	$em = $this->getDoctrine()->getManager();
     	$rep = $em->getRepository('ArxiuBundle:Dispenses');
     	$info=$rep->find($id);
+    	
+    	//calcular link pdf y retornarlo
+    	$document="http://10.0.0.1/arxiu/Dispenses_Impediment/directori/001.pdf";
 
     	return $this->render('ArxiuBundle:Dispenses:detall.html.twig',
-    			array('info' => $info)
+    			array('info' => $info, 'document' => $document)
     	);
 
     }
