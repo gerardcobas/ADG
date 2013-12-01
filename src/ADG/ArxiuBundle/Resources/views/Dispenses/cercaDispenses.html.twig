@@ -9,10 +9,10 @@
 				<div class="input-group">
 			  		<span style="margin-right: 10px;font-weight:500;font-size:14px;">{{ 'fons.cerca.tipus' | trans }}:</span>	
 			    	<span class="radio-inline">
-			        	<input type="radio" name="cercaTipus" id="cercaTipus1" value="relaxada" checked>{{ 'fons.cerca.relaxada' | trans }}
+			        	<input type="radio" name="cercaTipus" id="cercaTipus1" value="relaxada" {% if tipus is sameas('relaxada') %}checked{% endif %}>{{ 'fons.cerca.relaxada' | trans }}
 			      	</span>
 			    	<span class="radio-inline">
-			        	<input type="radio" name="cercaTipus" id="cercaTipus2" value="estricta">{{ 'fons.cerca.estricte' | trans }}
+			        	<input type="radio" name="cercaTipus" id="cercaTipus2" value="estricta" {% if tipus is sameas('estricta') %}checked{% endif %}>{{ 'fons.cerca.estricte' | trans }}
 			      	</span>
 			    </div><!-- /radio-group -->
 		    	<div class="space10" style="border-bottom: 1px solid #eeeeee;"></div>
@@ -132,13 +132,15 @@
 	    </div> <!--/interval-->
 	    
 		<div class="space10"></div>
+	
 		<div class="btn-group">
 			<button type="submit" class="btn btn-primary"><i class="icon-search"></i>&nbsp;{{ 'dispenses.cerca.buscar' | trans }}</button>
-			{% if is_granted('ROLE_ADMIN') %}         
-				<div class="btn-group">	
-					<a data-toggle="modal" href="{{ path('dispenses') }}" data-target="#nouDispenses" class="btn btn-success" type="button"><i class="icon-plus"></i>&nbsp;Afegir nou</a>
-			    </div>
-			{% endif %}
 		</div>
+		{% if is_granted('ROLE_ADMIN') %}
+			<div class="btn-group">	
+				<a data-toggle="modal" href="{{ path('dispenses') }}" data-target="#nouDispenses" class="btn btn-success" type="button"><i class="icon-plus"></i>&nbsp;Afegir nou</a>
+		    </div>
+		{% endif %}
+
 	</form>
 </div>

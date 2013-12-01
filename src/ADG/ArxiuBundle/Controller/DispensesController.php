@@ -11,7 +11,7 @@ class DispensesController extends Controller
         return $this->render('ArxiuBundle:Dispenses:dispenses.html.twig',
     		array('seleccio'=>'dispenses', 'info'=>null,'maNom'=>'', 'maCog'=>'','maCog2'=>'','maNaix'=>'','maRes'=>'',
     			'muNom'=>'', 'muCog'=>'','muCog2'=>'','muNaix'=>'','muRes'=>'',
-    			'any'=>'', 'interval1'=>'', 'interval2'=>'','param'=>'')	
+    			'any'=>'', 'interval1'=>'', 'interval2'=>'','param'=>'', 'tipus'=>'relaxada')	
         );
     }
     
@@ -46,6 +46,7 @@ class DispensesController extends Controller
     				$interval1=$request->request->get('interval1');
     				$interval2=$request->request->get('interval2');
     				$param=$request->request->get('param');
+    				
     		
     				$em = $this->getDoctrine()->getManager();
     				$rep = $em->getRepository('ArxiuBundle:Dispenses');
@@ -56,6 +57,7 @@ class DispensesController extends Controller
     							$muNom, $muCog, $muCog2, $muNaix, $muRes,
     							$any, $interval1, $interval2, $param
     					);
+    					$tipus='relaxada';
     				}
     				else{
     					$info=$rep->findTotEstricta(
@@ -63,6 +65,7 @@ class DispensesController extends Controller
     							$muNom, $muCog, $muCog2, $muNaix, $muRes,
     							$any, $interval1, $interval2, $param
     					);
+    					$tipus='estricta';
     				}
     	}
     	
@@ -70,7 +73,7 @@ class DispensesController extends Controller
     	return $this->render('ArxiuBundle:Dispenses:dispenses.html.twig',
     			array('seleccio'=>'dispenses', 'info'=>$info,'maNom'=>$maNom, 'maCog'=>$maCog,'maCog2'=>$maCog2,'maNaix'=>$maNaix,'maRes'=>$maRes,
     			'muNom'=>$muNom, 'muCog'=>$muCog,'muCog2'=>$muCog2,'muNaix'=>$muNaix,'muRes'=>$muRes,
-    			'any'=>$any, 'interval1'=>$interval1, 'interval2'=>$interval2, 'param'=>$param)
+    			'any'=>$any, 'interval1'=>$interval1, 'interval2'=>$interval2, 'param'=>$param, 'tipus'=>$tipus)
     	);
     }
     
@@ -90,20 +93,4 @@ class DispensesController extends Controller
 
     }
     
-    
-    private function valorsCercaBuit(){
-    	return array('maNom'=>'', 'maCog'=>'','maCog2'=>'','maNaix'=>'','maRes'=>'',
-    			'muNom'=>'', 'muCog'=>'','muCog2'=>'','muNaix'=>'','muRes'=>'',
-    			'any'=>'', 'interval1'=>'', 'interval2'=>'','param'=>''
-    	);
-    }
-    
-    private function valorsCerca($maNom, $maCog, $maCog2, $maNaix, $maRes,
-    		 $muNom, $muCog, $muCog2, $muNaix, $muRes,
-    		 $any, $interval1, $interval2, $param){
-    	return array('maNom'=>$maNom, 'maCog'=>$maCog,'maCog2'=>$maCog2,'maNaix'=>$maNaix,'maRes'=>$maRes,
-    			'muNom'=>$muNom, 'muCog'=>$muCog,'muCog2'=>$muCog2,'muNaix'=>$muNaix,'muRes'=>$muRes,
-    			'any'=>$any, 'interval1'=>$interval1, 'interval2'=>$interval2, 'param'=>$param
-    	);
-    }
 }
