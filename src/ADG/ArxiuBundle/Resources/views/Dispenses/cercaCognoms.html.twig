@@ -3,78 +3,52 @@
 <div class="panel-body">
 	<div id='content' class="tab-content">
 		<div class="tab-pane active" id="dispenses">
-			<form action="{{ path('dispenses') }}" method="post">
-				<div class="row">
-					 <!--tipus-->
-					<div class="col-lg-12 ">
+			<form action="{{ path('cerca_cognoms') }}" method="post">
+				<!--cognoms-->
+				<div class="row" style="border-bottom: 1px solid #eeeeee;">
+				
+					<h4 style="margin-left:16px; margin-bottom:5px">Semblança fonética</h4>
+					
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+						<h5>Cognom</h5>
 						<div class="input-group">
-					  		<span style="margin-right: 10px;font-weight:500;font-size:14px;">{{ 'fons.cerca.tipus' | trans }}:</span>	
-					    	<span class="radio-inline">
-					        	<input type="radio" name="cercaTipus" id="cercaTipus1" value="relaxada" checked>{{ 'fons.cerca.relaxada' | trans }}
-					      	</span>
-					    	<span class="radio-inline">
-					        	<input type="radio" name="cercaTipus" id="cercaTipus2" value="estricta">{{ 'fons.cerca.estricte' | trans }}
-					      	</span>
-					    </div><!-- /radio-group -->
-				    
-				    	<div class="space10" style="border-bottom: 1px solid #eeeeee;"></div>
-				    </div> <!--/tipus-->
-				    
-				    <div class="space10"></div>
-				    
-				    <!--marit-->
-					<div class="col-lg-5 col-md-5 col-sm-10 col-xs-10">
-						<h4 style="margin-bottom:15px">Marit</h4>
-					  	<h5 style="margin-top: -5px">{{ 'fons.cerca.nom' | trans }}</h5>
-					  	<div class="input-group">
 							<span class="input-group-addon"><i class="icon-male"></i></span>
-							<input type="text" class="form-control search-query" name="cercaNom" value="">
+							<input type="text" class="form-control search-query" name="cognom" value="{{ cognom }}">
 						</div>
 						<div class="space10"></div>
-						<h5 style="margin-top: -5px">{{ 'fons.cerca.lloc' | trans }}</h5>
-						<div class="input-group">
-							<span class="input-group-addon"><i class="icon-picture"></i></span>
-							<input type="text" class="form-control search-query" name="cercaLloc" value="">
-						</div>
-						<div class="space10"></div>
-						<h5 style="margin-top: -5px">{{ 'fons.cerca.dataOrd' | trans }}</h5>
-						<div class="input-group">
-							<span class="input-group-addon"><i class="icon-calendar"></i></span>
-							<input type="text" class="form-control search-query" name="cercaData" value="">
-						</div>
-						<div class="space10"></div>
-				  	</div> <!--/marit-->
-				  	
-				  
-				  	
-				  	<!--muller-->
-					<div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-10 col-xs-10">
-						<h4 style="margin-bottom:15px">Muller</h4>
-						<h5 style="margin-top: -5px">{{ 'fons.cerca.nom' | trans }}</h5>
-					  	<div class="input-group">
-							<span class="input-group-addon"><i class="icon-male"></i></span>
-							<input type="text" class="form-control search-query" name="cercaNom" value="">
-						</div>
-						<div class="space10"></div>
-						<h5 style="margin-top: -5px">{{ 'fons.cerca.lloc' | trans }}</h5>
-						<div class="input-group">
-							<span class="input-group-addon"><i class="icon-picture"></i></span>
-							<input type="text" class="form-control search-query" name="cercaLloc" value="">
-						</div>
-						<div class="space10"></div>
-				  	</div><!--/muller-->
-				  	
-				  	
-				</div><!-- /.row -->
-			
+			       	</div>
+			       	
+			       	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+			       		<h5>Grau de semblança</h5>
+			        	<select class="form-control" name="param">
+			                <option value="baixa" {% if grau is sameas("baixa") %} selected {% endif %}>Baixa</option>
+			                <option value="mitjana" {% if grau is sameas("mitjana") %} selected {% endif %}>Mitjana</option>
+			                <option value="alta" {% if grau is sameas("alta") %} selected {% endif %}>Alta</option>
+			            </select>
+			       	</div>
+			    	
+			    </div> <!--/fonetic-->
+			    
 				<div class="space10"></div>
+				
+				<div class="row">
+				
+					<h4 style="margin-left:16px; margin-bottom:5px">Contenen la paraula</h4>
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+						<h5>Paraula</h5>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="icon-flag"></i></span>
+							<input type="text" class="form-control search-query" name="paraula" value="{{ paraula }}">
+						</div>
+						<div class="space10"></div>
+			       	</div>
+			    	<div class="space10"></div>
+			    </div> <!--/conte-->
+			    
+				<div class="space10"></div>
+				
 				<div class="btn-group">
-					<button type="submit" class="btn btn-primary"><i class="icon-search"></i>&nbsp;{{ 'fons.cerca.buscar' | trans }}</button>
-					{% if is_granted('ROLE_ADMIN') %}         
-						<div class="btn-group">	
-							<a data-toggle="modal" href="{{ path('dispenses') }}" data-target="#nouDispenses" class="btn btn-success" type="button"><i class="icon-plus"></i>&nbsp;Afegir nou</a>
-					    </div>
-					{% endif %}
+					<button type="submit" class="btn btn-primary"><i class="icon-search"></i>&nbsp;Cercar</button>
 				</div>
 			</form>
 		</div><!--/dispenses-->

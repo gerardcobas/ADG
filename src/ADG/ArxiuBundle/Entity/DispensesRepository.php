@@ -200,5 +200,74 @@ class DispensesRepository extends EntityRepository
 		return $q->getResult();
 	}
 	
+	public function findTotCognom($paraula, $cognom, $grau){
+	
+		$em = $this->getEntityManager();
+		$qb = $em->createQueryBuilder();
+		$info=array();
+	
+		// part1
+		$qb->select('d.maritCognom1 as cognom')->from('ArxiuBundle:Dispenses', 'd');
+		$qb->andWhere('d.maritCognom1 LIKE :maCog');
+		$qb->setParameter('maCog', '%'.  $paraula . '%');
+		$q = $qb->getQuery();
+		$r1=$q->getResult();
+		foreach ($r1 as $row){
+			foreach ($row as $valor){
+				$info[]=$valor;
+			}
+		}
+		// part2
+		$qb->select('d2.maritCognom2 as cognom')->from('ArxiuBundle:Dispenses', 'd2');
+		$qb->andWhere('d2.maritCognom2 LIKE :maCog2');
+		$qb->setParameter('maCog2', '%'.  $paraula . '%');
+		$q = $qb->getQuery();
+		$r2=$q->getResult();
+		foreach ($r2 as $row){
+			foreach ($row as $valor){
+				$info[]=$valor;
+			}
+		}
+		// part3
+		$qb->select('d3.mullerCognom1 as cognom')->from('ArxiuBundle:Dispenses', 'd3');
+		$qb->andWhere('d3.mullerCognom1 LIKE :muCog');
+		$qb->setParameter('muCog', '%'.  $paraula . '%');
+		$q = $qb->getQuery();
+		$r3=$q->getResult();
+		foreach ($r3 as $row){
+			foreach ($row as $valor){
+				$info[]=$valor;
+			}
+		}
+		// part4
+		$qb->select('d4.mullerCognom2 as cognom')->from('ArxiuBundle:Dispenses', 'd4');
+		$qb->andWhere('d4.mullerCognom2 LIKE :muCog2');
+		$qb->setParameter('muCog2', '%'.  $paraula . '%');
+		$q = $qb->getQuery();
+		$r4=$q->getResult();
+		foreach ($r4 as $row){
+			foreach ($row as $valor){
+				$info[]=$valor;
+			}
+		}
+		$result = array_unique($info);
+		
+		if($cognom!=null && $cognom !="") {
+			$semblants=array();
+			foreach ($info as $i){
+				$g=3;
+				if($grau=="baixa") $g=4;
+				else if($grau=="mitjana") $g=3;
+				else if($grau=="alta") $g=2;	
+			
+				if (levenshtein($i, $cognom) < $g && $i != $cognom) {
+					$semblants[] = $i;
+				}
+			}
+			return array_unique($semblants);
+		}
+		
+		return $result;
+	}
 	
 }

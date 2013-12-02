@@ -14,6 +14,11 @@ cerca_dispenses:
         _controller: ArxiuBundle:Dispenses:cercaDispenses         
     requirements: { _method: post }
     
+cerca_cognoms:
+    pattern: /cognoms/cerca/
+    defaults:
+        _controller: ArxiuBundle:Dispenses:cercaCognoms      
+    requirements: { _method: post }    
     
 dispenses_detall:
     pattern: /detall/{id}

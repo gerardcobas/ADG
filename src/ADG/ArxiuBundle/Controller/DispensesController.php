@@ -18,7 +18,7 @@ class DispensesController extends Controller
     public function cognomsAction()
     {
     	return $this->render('ArxiuBundle:Dispenses:dispenses.html.twig',
-    			array('seleccio'=>'cognoms', 'info'=>null)
+    			array('seleccio'=>'cognoms', 'info'=>null, 'cognom'=>'','paraula'=>'','grau'=>'mitjana')
     	);
     }
 
@@ -74,6 +74,26 @@ class DispensesController extends Controller
     			array('seleccio'=>'dispenses', 'info'=>$info,'maNom'=>$maNom, 'maCog'=>$maCog,'maCog2'=>$maCog2,'maNaix'=>$maNaix,'maRes'=>$maRes,
     			'muNom'=>$muNom, 'muCog'=>$muCog,'muCog2'=>$muCog2,'muNaix'=>$muNaix,'muRes'=>$muRes,
     			'any'=>$any, 'interval1'=>$interval1, 'interval2'=>$interval2, 'param'=>$param, 'tipus'=>$tipus)
+    	);
+    }
+    
+    public function cercaCognomsAction()
+    {
+    	$request = $this->getRequest();
+    	$info=null;
+    	 
+    	if ($request->isMethod('POST')) {
+    		$cognom=$request->request->get('cognom');
+    		$grau=$request->request->get('param');
+    		$paraula=$request->request->get('paraula');
+    		
+    		$em = $this->getDoctrine()->getManager();
+    		$rep = $em->getRepository('ArxiuBundle:Dispenses');
+    		$info=$rep->findTotCognom($paraula, $cognom, $grau);
+    	}
+    	
+    	return $this->render('ArxiuBundle:Dispenses:dispenses.html.twig',
+    			array('seleccio'=>'cognoms', 'info'=>$info, 'cognom'=>$cognom,'paraula'=>$paraula, 'grau'=>$grau)
     	);
     }
     
