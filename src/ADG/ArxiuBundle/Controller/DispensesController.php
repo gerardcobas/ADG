@@ -104,7 +104,7 @@ class DispensesController extends Controller
     	$rep = $em->getRepository('ArxiuBundle:Dispenses');
     	$info=$rep->find($id);
     	
-    	//calcular link pdf y retornarlo
+    	//TODO calcular link pdf y retornarlo
     	$document="http://10.0.0.1/arxiu/Dispenses_Impediment/directori/001.pdf";
 
     	return $this->render('ArxiuBundle:Dispenses:detall.html.twig',

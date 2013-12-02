@@ -162,6 +162,7 @@ dispenses:
     header: Dispenses matrimonials
     alerta: Els resultats es mostraran al realitzar la cerca.
     cerca:
+        titol: Cerca de dispenses matrimonials
         ma: Marit
         mu: Muller
         nom: Nom
@@ -195,4 +196,17 @@ dispenses:
        Ofici: Ofici
        Nacionalitat: Nacionalitat
        LlocNaixement: Lloc de naixement
-       Veinatge: Lloc de residencia        
+       Veinatge: Lloc de residencia
+    cognom: Cognom
+    cognoms:
+       titol: Cerca de cognoms semblants
+       fonetica: Semblança fonética
+       grau: Grau de semblança
+       baixa: Baixa
+       mitjana: Mitjana
+       alta: Alta
+       contenen: Contenen la paraula
+       paraula: Paraula
+       cercar: Cercar
+       
+               

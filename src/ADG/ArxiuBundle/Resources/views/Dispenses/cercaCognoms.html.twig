@@ -1,4 +1,4 @@
-<div class="panel-heading"><h4 style="margin-top:-3px;margin-bottom:-3px">Cerca</h4></div>
+<div class="panel-heading"><h4 style="margin-top:-3px;margin-bottom:-3px">{{ 'dispenses.cognoms.titol' | trans }}</h4></div>
 
 <div class="panel-body">
 	<div id='content' class="tab-content">
@@ -7,10 +7,10 @@
 				<!--cognoms-->
 				<div class="row" style="border-bottom: 1px solid #eeeeee;">
 				
-					<h4 style="margin-left:16px; margin-bottom:5px">Semblança fonética</h4>
+					<h4 style="margin-left:16px; margin-bottom:5px">{{ 'dispenses.cognoms.fonetica' | trans }}</h4>
 					
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-						<h5>Cognom</h5>
+						<h5>{{ 'dispenses.cognom' | trans }}</h5>
 						<div class="input-group">
 							<span class="input-group-addon"><i class="icon-male"></i></span>
 							<input type="text" class="form-control search-query" name="cognom" value="{{ cognom }}">
@@ -19,11 +19,11 @@
 			       	</div>
 			       	
 			       	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-			       		<h5>Grau de semblança</h5>
+			       		<h5>{{ 'dispenses.cognoms.grau' | trans }}</h5>
 			        	<select class="form-control" name="param">
-			                <option value="baixa" {% if grau is sameas("baixa") %} selected {% endif %}>Baixa</option>
-			                <option value="mitjana" {% if grau is sameas("mitjana") %} selected {% endif %}>Mitjana</option>
-			                <option value="alta" {% if grau is sameas("alta") %} selected {% endif %}>Alta</option>
+			                <option value="baixa" {% if grau is sameas("baixa") %} selected {% endif %}>{{ 'dispenses.cognoms.baixa' | trans }}</option>
+			                <option value="mitjana" {% if grau is sameas("mitjana") %} selected {% endif %}>{{ 'dispenses.cognoms.mitjana' | trans }}</option>
+			                <option value="alta" {% if grau is sameas("alta") %} selected {% endif %}>{{ 'dispenses.cognoms.alta' | trans }}</option>
 			            </select>
 			       	</div>
 			    	
@@ -33,9 +33,9 @@
 				
 				<div class="row">
 				
-					<h4 style="margin-left:16px; margin-bottom:5px">Contenen la paraula</h4>
+					<h4 style="margin-left:16px; margin-bottom:5px">{{ 'dispenses.cognoms.contenen' | trans }}</h4>
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-						<h5>Paraula</h5>
+						<h5>{{ 'dispenses.cognoms.paraula' | trans }}</h5>
 						<div class="input-group">
 							<span class="input-group-addon"><i class="icon-flag"></i></span>
 							<input type="text" class="form-control search-query" name="paraula" value="{{ paraula }}">
@@ -48,7 +48,7 @@
 				<div class="space10"></div>
 				
 				<div class="btn-group">
-					<button type="submit" class="btn btn-primary"><i class="icon-search"></i>&nbsp;Cercar</button>
+					<button type="submit" class="btn btn-primary"><i class="icon-search"></i>&nbsp;{{ 'dispenses.cognoms.cercar' | trans }}</button>
 				</div>
 			</form>
 		</div><!--/dispenses-->
