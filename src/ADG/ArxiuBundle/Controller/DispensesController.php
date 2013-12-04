@@ -105,12 +105,41 @@ class DispensesController extends Controller
     	$info=$rep->find($id);
     	
     	//TODO calcular link pdf y retornarlo
-    	$document="http://10.0.0.1/arxiu/Dispenses_Impediment/directori/001.pdf";
+    	$document=self::obtePath($id);
 
     	return $this->render('ArxiuBundle:Dispenses:detall.html.twig',
     			array('info' => $info, 'document' => $document)
     	);
 
+    }
+    
+    
+    /**
+     * Calcula el path del document
+     */
+    private function obtePath($id){
+    	$resultat=array();
+    	
+    	$em = $this->getDoctrine()->getManager();
+    	$rep = $em->getRepository('ArxiuBundle:Dispenses');
+    	list($any, $document)=$rep->findForDocument($id);
+
+    	/*
+    	 * TODO ALGORITME
+    	 *  
+		 * problema: al migrar bd cal invertir atribut control amb numref, ja que numref esta buit a vegades
+		 * 
+		 *	si bd te atribut document ple, fer servir akest path
+		 *	sino:
+		 *		si control(el nou) buit llavors es dispensa d'impediment
+		 *		sino dispensa proclama
+		 *
+    	 */
+    	
+    	
+    	$resultat[]="http://10.0.0.1/arxiu/Dispenses_Impediment/directori/001.pdf";
+    	$resultat[]="http://10.0.0.1/arxiu/Dispenses_Impediment/directori/002.pdf";
+    	return $resultat;
     }
     
 }

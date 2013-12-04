@@ -270,4 +270,38 @@ class DispensesRepository extends EntityRepository
 		return $result;
 	}
 	
+	public function findForDocument($id){
+		$result=array();
+		$any="";
+		$document="";
+		
+		$em = $this->getEntityManager();
+		$qb = $em->createQueryBuilder();
+		// any
+		$qb->select('d.any')->from('ArxiuBundle:Dispenses', 'd');
+		$qb->andWhere('d.numref = :numref');
+		$qb->setParameter('numref', $id);
+		$q = $qb->getQuery();
+		$r=$q->getResult();
+		foreach ($r as $row){
+			foreach ($row as $valor){
+				$any=$valor;
+			}
+		}
+		// document
+		$qb->select('d2.document')->from('ArxiuBundle:Dispenses', 'd2');
+		$qb->andWhere('d2.numref = :numref');
+		$qb->setParameter('numref', $id);
+		$q = $qb->getQuery();
+		$r=$q->getResult();
+		foreach ($r as $row){
+			foreach ($row as $valor){
+				$document=$valor;
+			}
+		}
+		
+		return array($any,$document);
+	}	
+	
+	
 }
