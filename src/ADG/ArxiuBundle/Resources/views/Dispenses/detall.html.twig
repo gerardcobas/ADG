@@ -5,7 +5,7 @@
           <h4 class="modal-title" style="color: #3a87ad">{{ 'dispenses.detall.info' | trans }}</h4>
         </div>
       	<div class="modal-body">
-      	
+      		<div class="imprimir" id="detall-dispenses">
       		<h4>General</h4>
       		{% if info.nodac is not null and info.nodac is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.classificacio' | trans }}</h5><p>{{ info.nodac }}</p>{% endif %}
       		{% if info.data is not null and info.data is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.data' | trans }}</h5><p>{{ info.data }}</p>{% endif %}
@@ -32,6 +32,8 @@
             {% if info.mullerLlocNaixement is not null and info.mullerLlocNaixement is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.LlocNaixement' | trans }}</h5><p>{{ info.mullerLlocNaixement }}</p>{% endif %}
             {% if info.mullerVeinatge is not null and info.mullerVeinatge is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.Veinatge' | trans }}</h5><p>{{ info.mullerVeinatge }}</p>{% endif %}
       		
+      		</div>
+      		
       		{% if is_granted('ROLE_USER') %} 
       			{% for d in document %}
       				{% if d is not null and d is not empty %}
@@ -55,8 +57,10 @@
 	            </div>
       		{% endif %}
         </div>
+        
         <div class="modal-footer">
-          <button class="btn btn-default" data-dismiss="modal">{{ 'dispenses.detall.tancar' | trans }}</button>
+        	<button class="btn btn-default" onclick="imprimir('#detall-dispenses')" ><i class="icon-print"></i>&nbsp;Imprimir</button>
+          	<button class="btn btn-default" data-dismiss="modal">{{ 'dispenses.detall.tancar' | trans }}</button>
         </div>
 
       </div><!-- /.modal-content -->

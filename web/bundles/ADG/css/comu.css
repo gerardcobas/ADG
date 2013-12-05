@@ -110,7 +110,20 @@ article {
 }
 
 
+/*------------------------------------------------------------------
+Format per imprimir
+*/
 
+@media print
+{
+  .imprimir{
+  	padding-left:15px;
+  }
+  .noimprimir, noimprimir *
+    {
+        display: none !important;
+    }
+}
 
 /*------------------------------------------------------------------
 [1. Max Width: 400px]

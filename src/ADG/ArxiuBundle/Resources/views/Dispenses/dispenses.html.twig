@@ -98,7 +98,8 @@
 			{% if info is not null %}
 				{% if seleccio is sameas('dispenses') %}
 					<!-- taula dispenes -->
-					<table class="table table-striped table-bordered table-hover" id="dispenses_table">
+					<div class="row" >
+					<table class="table table-striped table-bordered table-hover imprimir" id="dispenses_table">
 				        <thead>
 				            <tr>
 				                <th class="centered-text" id="idHeader" title="Tooltip!">{{ 'dispenses.taula.classificacio' | trans }}</th>
@@ -107,7 +108,7 @@
 				                <th class="centered-text">{{ 'dispenses.taula.macog' | trans }}</th>
 				                <th class="centered-text">{{ 'dispenses.taula.munom' | trans }}</th>
 				                <th class="centered-text">{{ 'dispenses.taula.mucog' | trans }}</th>
-							    <th class="centered-text">{{ 'dispenses.taula.operacions' | trans }}</th>            
+							    <th class="centered-text noimprimir">{{ 'dispenses.taula.operacions' | trans }}</th>            
 				            </tr>
 				        </thead>
 			            <tbody>
@@ -119,7 +120,7 @@
 					                <td>{{ i.maritCognom1 }}</td>
 					                <td>{{ i.mullerNom }}</td>
 					                <td>{{ i.mullerCognom1 }}</td>
-		                        	<td>
+		                        	<td class="noimprimir">
 		                        		<a data-toggle="modal" href="{{  path('dispenses_detall', {'id':i.numref }) }}" data-target="#ampliarInfo" class="btn btn-sm btn-info" type="button"><i class="icon-info"></i></a>
 		                        		
 			                			{% if is_granted('ROLE_ADMIN') %}
@@ -131,9 +132,15 @@
 			                 
 			                {% endfor %}
 			            </tbody>
+			            
 			        </table>
+			        </div>
+			        <div class="row">
+			        	<button style="float: right;" class="btn btn-default" onclick="imprimir('#dispenses_table')" ><i class="icon-print"></i></button>
+			        </div>
 				{% else %}
 					<!-- taula cognoms -->
+					<div class="row" >
 					<table class="table table-striped table-bordered table-hover" id="cognoms_table">
 				        <thead>
 				            <tr>
@@ -148,6 +155,10 @@
 			                {% endfor %}
 			            </tbody>
 			        </table>
+			        </div>
+			        <div class="row">
+			        	<button style="float: right;" class="btn btn-default" onclick="imprimir('#cognoms_table')" ><i class="icon-print"></i></button>
+			        </div>
 				{% endif %}
 				
 			{% else %}
