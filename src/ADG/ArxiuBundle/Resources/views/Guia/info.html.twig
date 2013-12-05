@@ -4,7 +4,7 @@
 		    <h3 class="panel-title">{{ 'guia.info' | trans }} {{ info.nivell }}</h3>
 		  </div>
 		  <div class="panel-body">
-		  
+		  	<div class="imprimir" id="imprimir-info">
 		  	{% if info.titol is not null and info.titol is not empty %}<h5 style="color: #3a87ad">{{ 'guia.titol' | trans }}</h5><p>{{ info.titol }}</p>{% endif %}
 			{% if info.codi is not null and info.codi is not empty %}<h5 style="color: #3a87ad">{{ 'guia.codi' | trans }}</h5><p>{{ info.codi }}</p>{% endif %}
 		    {% if info.data is not null and info.data is not empty %}<h5 style="color: #3a87ad">{{ 'guia.data' | trans }}</h5><p>{{ info.data }}</p>{% endif %}
@@ -36,7 +36,10 @@
 		    {% if info.autoria is not null and info.autoria is not empty %}<h5 style="color: #3a87ad">{{ 'guia.autoria' | trans }}</h5><p>{{ info.autoria }}</p>{% endif %}
 		    {% if info.fonts is not null and info.fonts is not empty %}<h5 style="color: #3a87ad">{{ 'guia.fonts' | trans }}</h5><p>{{ info.fonts }}</p>{% endif %}
 		    {% if info.regles is not null and info.regles is not empty %}<h5 style="color: #3a87ad">{{ 'guia.regles' | trans }}</h5><p>{{ info.regles }}</p>{% endif %}
-		    
+		    </div>
+		    <div class="row" style="padding-right: 10px;">
+				<button style="float: right;" class="btn btn-default" onclick="imprimir('#imprimir-info')" ><i class="icon-print"></i></button>
+			</div>
 		  </div><!-- /.panel-body -->
 		  
 		  
