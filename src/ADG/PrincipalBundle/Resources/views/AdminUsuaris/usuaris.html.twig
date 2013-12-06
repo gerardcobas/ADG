@@ -45,6 +45,7 @@
 <div class="row" style="margin-left:0px">	
         <div class="form-group col-xs-5 col-sm-4 col-lg-3"> 
             <a data-toggle="modal" data-target="#crearUsuari" href="{{ path("usuaris_crear") }}" class="btn btn-success" style="margin-left:-15px"><i class="icon-plus"></i>&nbsp;Afegir nou usuari</a>
+        	<button class="btn btn-default" onclick="imprimir('#usuaris_table')" ><i class="icon-print"></i></button>
         </div>
 
 	{% for flashMessage in app.session.flashbag.get('success') %}
@@ -78,7 +79,7 @@
                 <th class="centered-text">Permis</th>
                 <th class="centered-text">Contrasenya</th>
                 {% if is_granted('ROLE_ADMIN') %}
-			    	<th class="centered-text">Operacions</th>            
+			    	<th class="centered-text noimprimir">Operacions</th>            
            	   	{% endif %}
             </tr>
         </thead>
@@ -95,7 +96,7 @@
                         {% endfor  %}
 						<td>{{ permis }}</td>
                         <td>****</td>
-                        <td>
+                        <td class="noimprimir">
                         	<a data-toggle="modal" href="{{ path("usuaris_editar", { 'usuari': usuari.username }) }}" data-target="#editarUsuari" class="btn btn-xs btn-primary" type="button"><i class="icon-pencil"></i></a>
                         	<a data-toggle="modal" href="{{ path("usuaris_eliminar", { 'usuari': usuari.username }) }}" data-target="#eliminarUsuari" class="btn btn-xs btn-danger" type="button"><i class="icon-remove"></i></a>
                         </td>

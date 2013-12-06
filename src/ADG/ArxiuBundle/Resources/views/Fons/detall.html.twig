@@ -4,8 +4,8 @@
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           <h4 class="modal-title" style="color: #3a87ad">{{ 'fons.detall.info' | trans }} - {{ seleccio }}</h4>
         </div>
-      	<div class="modal-body">
-      	
+      	<div class="modal-body imprimir" id="detall-fons">
+
       		 {% if info.nodac is not null and info.nodac is not empty %}<h5 style="color: #3a87ad">{{ 'fons.detall.classificacio' | trans }}</h5><p>{{ info.nodac }}</p>{% endif %}
 			 		
       		 {% if tipus is sameas("arxius") %}
@@ -58,7 +58,8 @@
 			 {% endif %}
         </div>
         <div class="modal-footer">
-          <button class="btn btn-default" data-dismiss="modal">{{ 'fons.detall.tancar' | trans }}</button>
+        	<button class="btn btn-default" onclick="imprimir('#detall-fons')" ><i class="icon-print"></i>&nbsp;Imprimir</button>
+          	<button class="btn btn-default" data-dismiss="modal">{{ 'fons.detall.tancar' | trans }}</button>
         </div>
 
       </div><!-- /.modal-content -->
