@@ -7,7 +7,9 @@
       	<div class="modal-body imprimir" id="detall-fons">
       		{% for i in info %}
 	      		{% for key, i2 in i %}
-	      		<p><strong>{{ key }}:</strong> {{ i2 }}</p>
+	      			{% if i2 is not null and i2 is not empty %}
+	      				<p><strong>{{ key }}:</strong> {{ i2 }}</p>
+	      			{% endif %}
 	      		{% endfor %}
 	      	{% else %}
 	      		No s'ha trobat més informació.	

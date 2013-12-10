@@ -24,7 +24,7 @@ class IndexPersonesRepository extends EntityRepository
 		$em = $this->getEntityManager();
 		$qb = $em->createQueryBuilder();
 	
-		$qb->select('i.nodac, i.num')->from('ArxiuBundle:IndexPersones', 'i');
+		$qb->select('i.nodac, i.num, i.nom')->from('ArxiuBundle:IndexPersones', 'i');
 		$qb->andWhere('i.nom = :nom');
 		$qb->setParameter('nom', $nom);
 		$q = $qb->getQuery();

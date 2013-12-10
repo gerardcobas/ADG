@@ -226,6 +226,7 @@ llistat:
     taula:
         nodac: Classificació
         num: Número
-        nom: Nom    
+        nom: Nom
+        operacions: Operacions    
    
          

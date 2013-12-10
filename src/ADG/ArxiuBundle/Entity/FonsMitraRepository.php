@@ -49,4 +49,20 @@ class FonsMitraRepository extends EntityRepository
 	
 		return $resultat;
 	}
+	
+	public function findDetalls($num , $nodac){
+		$em = $this->getEntityManager();
+		$qb = $em->createQueryBuilder();
+		$qb->select('i.nodac, i.data, i.dades, i.notari, i.mides, i.obs')
+		->from('ArxiuBundle:FonsMitra', 'i');
+	
+		$qb->where('i.num = :num');
+		$qb->setParameter('num', $num);
+		$qb->orWhere('i.nodac = :nodac');
+		$qb->setParameter('nodac', $nodac);
+		$qb->setMaxResults(1);
+		$q = $qb->getQuery();
+	
+		return $q->getResult();
+	}
 }

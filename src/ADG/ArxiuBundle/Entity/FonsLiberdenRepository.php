@@ -20,4 +20,21 @@ class FonsLiberdenRepository extends EntityRepository
 		return $q->getResult();
 	}
 	
+	
+	public function findDetalls($num , $nodac){
+		$em = $this->getEntityManager();
+		$qb = $em->createQueryBuilder();
+		$qb->select('i.nodac, i.institucio, i.foli')
+		->from('ArxiuBundle:FonsLiberden', 'i');
+	
+		$qb->where('i.id = :num');
+		$qb->setParameter('num', $num);
+		$qb->orWhere('i.nodac = :nodac');
+		$qb->setParameter('nodac', $nodac);
+		$qb->setMaxResults(1);
+		$q = $qb->getQuery();
+	
+		return $q->getResult();
+	}
+	
 }

@@ -55,5 +55,21 @@ class FonsRepository extends EntityRepository
 		return $resultat;
 	}
 	
+	public function findDetalls($num , $nodac){
+		$em = $this->getEntityManager();
+		$qb = $em->createQueryBuilder();
+		$qb->select('i.nodac, i.dades, i.llibre, i.full')
+					->from('ArxiuBundle:Fons', 'i');
+	
+		$qb->where('i.num = :num');
+		$qb->setParameter('num', $num);
+		$qb->orWhere('i.nodac = :nodac');
+		$qb->setParameter('nodac', $nodac);
+		$qb->setMaxResults(1);
+		$q = $qb->getQuery();
+	
+		return $q->getResult();
+	}
+	
 	
 }

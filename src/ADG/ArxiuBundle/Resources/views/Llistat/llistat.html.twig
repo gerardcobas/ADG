@@ -78,7 +78,7 @@
 			<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
 				{% if noms is not null %}
 					<!-- taula links -->
-					<div class="row" >
+					<div class="row" style="margin-left:0px;margin-right:0px;">
 					<table class="table table-striped table-bordered table-hover imprimir" id="llistat_noms">
 				        <thead>
 				            <tr>
@@ -98,7 +98,7 @@
 			            </tbody>
 			        </table>
 			        </div>
-			        <div class="row">
+			        <div class="row" style="margin-left:0px;margin-right:0px;">
 			        	<button style="float: right;" class="btn btn-default" onclick="imprimir('#llistat_noms')" ><i class="icon-print"></i></button>
 			        </div>
 				{% else %}
@@ -113,18 +113,20 @@
 			<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 table-responsive">
 				{% if info is not null %}
 					<!-- taula links -->
-					<div class="row" >
+					<div class="row" style="margin-left:0px;margin-right:0px;">
 					<table class="table table-striped table-bordered table-hover imprimir" id="llistat_table">
 				        <thead>
 				            <tr>
+				            	<th class="centered-text">{{ 'llistat.taula.nom' | trans }}</th>       
 				                <th class="centered-text" id="idHeader" title="Tooltip!">{{ 'llistat.taula.nodac' | trans }}</th>
-							    <th class="centered-text noimprimir">{{ 'dispenses.taula.operacions' | trans }}</th>            
+							    <th class="centered-text noimprimir">{{ 'llistat.taula.operacions' | trans }}</th>            
 				            </tr>
 				        </thead>
 			            <tbody>
 			                {% for i in info %}
 			                    <tr>
-			                        <td style="min-width: 100px">{{ i.nodac }}</td>
+			                    	<td style="min-width: 100px">{{ i.nom }}</td>
+			                        <td >{{ i.nodac }}</td>
 		                        	<td class="noimprimir">
 		                        		<a data-toggle="modal" href="{{  path('llistat_detall', {'id':i.num}) }}" data-target="#ampliarInfo" class="btn btn-sm btn-info" type="button"><i class="icon-info"></i></a>
 			                			{% if is_granted('ROLE_ADMIN') %}
@@ -138,7 +140,7 @@
 			        </table>
 			        </div>
 			        
-			        <div class="row">
+			        <div class="row" style="margin-left:0px;margin-right:0px;">
 			        	<a style="float: left;" class="btn btn-default" href="javascript:history.back()"><i class="icon-rotate-left"></i></a>
 			        	<button style="float: right;" class="btn btn-default" onclick="imprimir('#llistat_table')" ><i class="icon-print"></i></button>
 			        </div>

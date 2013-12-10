@@ -80,4 +80,21 @@ class FonsCapellansRepository extends EntityRepository
 	
 		return $resultat;
 	}
+	
+	public function findDetalls($num , $nodac){
+		$em = $this->getEntityManager();
+		$qb = $em->createQueryBuilder();
+		$qb->select('i.nodac, i.dataNaixement, i.cognom, i.naturalDe, i.ordenacio, i.dataObit, i.fitxa, i.altres')
+		->from('ArxiuBundle:FonsCapellans', 'i');
+	
+		$qb->where('i.num = :num');
+		$qb->setParameter('num', $num);
+		$qb->orWhere('i.nodac = :nodac');
+		$qb->setParameter('nodac', $nodac);
+		$qb->setMaxResults(1);
+		$q = $qb->getQuery();
+	
+		return $q->getResult();
+	}
+	
 }

@@ -71,14 +71,15 @@ class LlistatController extends Controller
     	 */
     	
     	/* OPCIO 2: Buscar en totes les taules fins trobat coincidencia, si no hi ha, dir que no s'ha trobat.
+    	 * Donar prioritat al nodac nou.
     	 */
     	
-    	$guiaNodac=array("GuiaFons", "GuiaSubfons", "GuiaGrup", "GuiaSerie", "GuiaUcomposta", "GuiaUsimple", "GuiaUinstalacio");
+    	$guiaNodac=array("GuiaFons", "GuiaSubfons", "GuiaGrup", "GuiaSerie", "GuiaUcomposta", "GuiaUsimple", "GuiaUinstalacio", 
+    			"Documents", "DocumentsAdlimina");
+		//afegir parroquies!!
     	
-    	$ambNodac=array("Documents", "DocumentsAdlimina"); //afegir parroquies!!
-    	
-    	$ambTot=array("Dispenses", "Fons", "FonsArxius", "FonsCapellans", "FonsLiberden", "FonsMitra", "FonsMonges", 
-    			"FonsSeminaristes", "FonsTestaments", "IndexLlocs", "IndexPersones"); //index llocs i persones l'ultim per mostrar algo sempre
+    	$ambTot=array("Dispenses", "Fons", "FonsArxius", "FonsCapellans", "FonsMitra", "FonsMonges", 
+    			"FonsSeminaristes", "FonsTestaments", "FonsLiberden", "IndexLlocs", "IndexPersones"); //index llocs i persones l'ultim per mostrar algo sempre
 
     	$info=null;
     	$em = $this->getDoctrine()->getManager();
@@ -89,17 +90,24 @@ class LlistatController extends Controller
     		$nodac = $em->getRepository('ArxiuBundle:IndexLlocs')->findNodac($id);
     	}
     	
-    	$test=array("IndexLlocs","IndexPersones");
-    	//busca en el primer array
-    	foreach ($test as $g){
-    		$info = $em->getRepository('ArxiuBundle:'.$g)->findDetalls($id, $nodac);
+    	if ($nodac != null and $nodac!="") {
+    		//comprova els de nodac
+    	    foreach ($guiaNodac as $g){
+	    		$info = $em->getRepository('ArxiuBundle:'.$g)->findDetalls($nodac);
+	    		if ($info != null and $info !="") {
+	    			return $this->render('ArxiuBundle:Llistat:detall.html.twig', array('info'=>$info));
+	    		}
+    		}
+    	}
+
+    	//busca per num antic i per nodac
+    	foreach ($ambTot as $t){
+    		$info = $em->getRepository('ArxiuBundle:'.$t)->findDetalls($id, $nodac);
     		if ($info != null and $info !="") {
     			return $this->render('ArxiuBundle:Llistat:detall.html.twig', array('info'=>$info));
     		}
     	}
 		    	
-
-    	
     	return $this->render('ArxiuBundle:Llistat:detall.html.twig',
     			array('info'=>$info)
     	);
