@@ -1,0 +1,22 @@
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" style="color: #3a87ad">Detall</h4>
+        </div>
+      	<div class="modal-body imprimir" id="detall-fons">
+      		{% for i in info %}
+	      		{% for key, i2 in i %}
+	      		<p><strong>{{ key }}:</strong> {{ i2 }}</p>
+	      		{% endfor %}
+	      	{% else %}
+	      		No s'ha trobat més informació.	
+      		{% endfor %}
+        </div>
+        <div class="modal-footer">
+        	<button class="btn btn-default" onclick="imprimir('#detall-fons')" ><i class="icon-print"></i>&nbsp;Imprimir</button>
+          	<button class="btn btn-default" data-dismiss="modal">Tancar</button>
+        </div>
+
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->

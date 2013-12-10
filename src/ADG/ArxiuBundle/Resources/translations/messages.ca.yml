@@ -11,7 +11,7 @@ submenu:
 #general 
 general:
     datatable:
-        entrades: _MENU_ entrades per pàgina
+        entrades: _MENU_ per pàgina
         zero: No s'ha trobat res
         info: Trobades _TOTAL_ entrades
         empty: 0 entrades trobades
@@ -209,4 +209,23 @@ dispenses:
        paraula: Paraula
        cercar: Cercar
        
-               
+#index llocs i persones
+llistat:
+    titol: Index de llocs i persones
+    header: Index de llocs i persones
+    alerta: Els resultats es mostraran al realitzar la cerca.
+    alerta2: Seleccionar un nom per veure les seves opcions.
+    alerta3: No s'han trobat resultats.
+    cerca:
+        titol: Cerca per llocs o persones
+        tipus: Cercar per
+        persona: Persona
+        lloc: Localitat
+        paraula: Paraules clau
+        buscar: Cercar
+    taula:
+        nodac: Classificació
+        num: Número
+        nom: Nom    
+   
+         

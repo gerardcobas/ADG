@@ -18,4 +18,9 @@ fons_routes:
         
 dispenses_routes:
     resource: "@ArxiuBundle/Resources/config/routing/dispenses.yml"
-    prefix:   /dispenses           
+    prefix:   /dispenses
+    
+llistat_routes:
+    resource: "@ArxiuBundle/Resources/config/routing/llistat.yml"
+    prefix:   /llistat        
+               

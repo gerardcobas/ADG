@@ -1,0 +1,25 @@
+llistat:
+    pattern: /
+    defaults:
+        _controller: ArxiuBundle:Llistat:llistat
+    
+cerca_llistat:
+    pattern: /cerca/
+    defaults:
+        _controller: ArxiuBundle:Llistat:cerca
+    requirements: { _method: post }
+    
+veure_persona:
+    pattern: /veure/persona/{nom}
+    defaults:
+        _controller: ArxiuBundle:Llistat:veurePersona
+        
+veure_lloc:
+    pattern: /veure/lloc/{nom}
+    defaults:
+        _controller: ArxiuBundle:Llistat:veureLloc    
+        
+llistat_detall:
+    pattern: /detall/{id}
+    defaults:
+        _controller: ArxiuBundle:Llistat:detall    

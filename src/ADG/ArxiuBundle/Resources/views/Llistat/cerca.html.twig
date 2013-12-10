@@ -1,0 +1,45 @@
+<div class="panel-heading"><h4 style="margin-top:-3px;margin-bottom:-3px">{{ 'llistat.cerca.titol' | trans }}</h4></div>
+
+<div class="panel-body">
+	<form action="{{ path('cerca_llistat') }}" method="post">
+	
+	<!--tipus-->
+		<div class="row">
+			<div class="col-lg-12 ">
+				<div class="input-group">
+			  		<span style="margin-right: 10px;font-weight:500;font-size:14px;">{{ 'llistat.cerca.tipus' | trans }}:</span>
+			  		<span class="radio-inline">
+			        	<input type="radio" name="cercaTipus" id="cercaTipus2" value="persona" {% if tipus is sameas('persona') %}checked{% endif %}>{{ 'llistat.cerca.persona' | trans }}
+			      	</span>	
+			    	<span class="radio-inline">
+			        	<input type="radio" name="cercaTipus" id="cercaTipus1" value="lloc" {% if tipus is sameas('lloc') %}checked{% endif %}>{{ 'llistat.cerca.lloc' | trans }}
+			      	</span>
+			    </div><!-- /radio-group -->
+		    	<div class="space10" style="border-bottom: 1px solid #eeeeee;"></div>
+		    </div> 
+		    <div class="space10"></div>
+		</div><!--/tipus-->
+
+		<div class="row">
+			<!--marit-->
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-8">
+			  	<h5>{{ 'llistat.cerca.paraula' | trans }}</h5>
+			  	<div class="input-group">
+					<span class="input-group-addon"><i class="icon-male"></i></span>
+					<input type="text" class="form-control search-query" name="paraula" value="{{ paraula }}">
+				</div>
+			</div>
+		</div>	
+		<div class="space10"></div>
+	
+		<div class="btn-group">
+			<button type="submit" class="btn btn-primary"><i class="icon-search"></i>&nbsp;{{ 'llistat.cerca.buscar' | trans }}</button>
+		</div>
+		{% if is_granted('ROLE_ADMIN') %}
+			<div class="btn-group">	
+				<a data-toggle="modal" href="{{ path('llistat') }}" data-target="#nouLlistat" class="btn btn-success" type="button"><i class="icon-plus"></i>&nbsp;Afegir nou</a>
+		    </div>
+		{% endif %}
+
+	</form>
+</div>

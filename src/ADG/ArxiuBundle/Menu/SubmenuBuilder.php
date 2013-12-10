@@ -20,7 +20,7 @@ class SubmenuBuilder extends ContainerAware
     	$menu->addChild('submenu.recerca', array('route' => 'fons'))
     	->setAttribute('icon', 'icon-list');
 
-    	$menu->addChild('submenu.index', array('route' => 'altre'))
+    	$menu->addChild('submenu.index', array('route' => 'llistat'))
     	->setAttribute('icon', 'icon-group');
     	
     	$menu->addChild('submenu.documents', array('route' => 'altre'))
