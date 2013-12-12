@@ -23,7 +23,7 @@ class SubmenuBuilder extends ContainerAware
     	$menu->addChild('submenu.index', array('route' => 'llistat'))
     	->setAttribute('icon', 'icon-group');
     	
-    	$menu->addChild('submenu.documents', array('route' => 'altre'))
+    	$menu->addChild('submenu.documents', array('route' => 'documents'))
     	->setAttribute('icon', 'icon-file-text');
 
     	$menu->addChild('submenu.parroquies', array('route' => 'altre'))

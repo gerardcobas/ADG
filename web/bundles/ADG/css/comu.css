@@ -87,6 +87,10 @@ article {
 	padding-right: 10px;
 	padding-left: 10px;
 }
+.lessMarginBot{
+	margin-bottom:-1px;
+}
+
 
 /* Vertical spacers */
 .space50 {

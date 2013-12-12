@@ -1,0 +1,32 @@
+		{% if info is not empty %}
+			<div class="panel panel-info">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Resultats de la cerca</h3>
+			  </div>
+			  <div class="panel-body">
+			  	<div class="imprimir" id="adlimina">
+			  		{% for i in info %}
+						<h4>{{ i.nodac }} - {{ i.titol }}</h4>
+						<p>{{ i.texte }}</p>
+						{% if is_granted('ROLE_ADMIN') %}
+						    <div class="row noimprimir">     
+				              	<div class="btn-group" style="margin-right:15px;float:right;">
+				              		<a data-toggle="modal" href="{{ path('adlimina_editar', { 'seleccio': seleccio,'id': i.id }) }}" data-target="#editarDocuments" class="btn btn-sm btn-primary" type="button"><i class="icon-pencil"></i></a>
+				              		<a data-toggle="modal" href="{{ path('adlimina_eliminar', { 'seleccio': seleccio,'id': i.id }) }}" data-target="#eliminarDocuments" class="btn btn-sm btn-danger" type="button"><i class="icon-remove"></i></a>
+				              	</div>
+							</div>
+				 		{% endif %}
+						<div class="space10" style="border-bottom: 1px solid #eeeeee;"></div>
+		            {% endfor %}
+				</div>
+				<div class="space10"></div>
+			    <div class="row" style="padding-right: 10px;">
+					<button style="float: right;" class="btn btn-default" onclick="imprimir('#adlimina')" ><i class="icon-print"></i></button>
+				</div>
+			  </div><!-- /.panel-body -->
+			</div>
+		{% else %}
+	    	<div class="alert alert-warning" style="margin-top:10px">
+				{{ 'documents.alerta3' | trans }}
+			</div>   
+		{% endif %}

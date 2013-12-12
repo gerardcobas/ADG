@@ -1,0 +1,57 @@
+documents:
+    pattern: /
+    defaults:
+        _controller: ArxiuBundle:Documents:documents
+
+documents_select:
+    pattern: /{seleccio}
+    defaults:
+        _controller: ArxiuBundle:Documents:select
+        
+documents_cercar:
+    pattern: /cercar/{seleccio}
+    defaults:
+        _controller: ArxiuBundle:Documents:cercar
+    requirements: { _method: post }
+
+documents_cercarAdlimina:
+    pattern: /cercar/adlimina/{seleccio}
+    defaults:
+        _controller: ArxiuBundle:Documents:cercarAdlimina
+    requirements: { _method: post }    
+    
+documents_detall:
+    pattern: /detall/{id}
+    defaults:
+        _controller: ArxiuBundle:Documents:detall
+
+#admin        
+documents_nou:
+    pattern: /crear
+    defaults:
+        _controller: ArxiuBundle:Documents:detall
+        
+documents_editar:
+    pattern: /editar/{id}
+    defaults:
+        _controller: ArxiuBundle:Documents:detall    
+        
+documents_eliminar:        
+    pattern: /eliminar/{id}
+    defaults:
+        _controller: ArxiuBundle:Documents:detall
+      
+adlimina_nou:
+    pattern: /{seleccio}/crear
+    defaults:
+        _controller: ArxiuBundle:Documents:detall
+        
+adlimina_editar:
+    pattern: /{seleccio}/editar/{id}
+    defaults:
+        _controller: ArxiuBundle:Documents:detall    
+        
+adlimina_eliminar:        
+    pattern: /{seleccio}/eliminar/{id}
+    defaults:
+        _controller: ArxiuBundle:Documents:detall                

@@ -1,0 +1,79 @@
+<h4 style="margin-top:0px;">{{ 'documents.continguts' | trans }}:</h4>
+		<div class="btn-group-vertical">
+				
+			<button type="button" 
+				class="lessMarginBot btn 
+					{% if seleccio is sameas("ager") 
+						or seleccio is sameas("barcelona") 
+						or seleccio is sameas("girona")
+						or seleccio is sameas("lleida")
+						or seleccio is sameas("solsona")
+						or seleccio is sameas("tarragona")
+						or seleccio is sameas("tortosa")
+						or seleccio is sameas("urgell")
+						or seleccio is sameas("vic") 
+					%}
+					btn-primary{% else %}btn-default{% endif %}
+				" data-toggle="collapse" data-target="#adliminaMenu">
+				
+			 	Ad limina&nbsp;
+			 	<i class="icon-chevron-down"></i>
+			</button>
+			
+			<div id="adliminaMenu" class="collapse 
+					{% if seleccio is sameas("ager") 
+						or seleccio is sameas("barcelona") 
+						or seleccio is sameas("girona")
+						or seleccio is sameas("lleida")
+						or seleccio is sameas("solsona")
+						or seleccio is sameas("tarragona")
+						or seleccio is sameas("tortosa")
+						or seleccio is sameas("urgell")
+						or seleccio is sameas("vic") 
+					%}
+			 	in{% endif %}" style="margin-left:15px;margin-right:15px">
+				<ul class="list-group">
+			      	<a class="list-group-item lateral{% if seleccio is sameas("ager") %} active{% endif %}" href="{{ path('documents_select', { 'seleccio': 'ager' }) }}">Ager</a>
+			      	<a class="list-group-item lateral{% if seleccio is sameas("barcelona") %} active{% endif %}" href="{{ path('documents_select', { 'seleccio': 'barcelona' }) }}">Barcelona</a>
+			      	<a class="list-group-item lateral{% if seleccio is sameas("girona") %} active{% endif %}" href="{{ path('documents_select', { 'seleccio': 'girona' }) }}">Girona</a>
+			      	<a class="list-group-item lateral{% if seleccio is sameas("lleida") %} active{% endif %}" href="{{ path('documents_select', { 'seleccio': 'lleida' }) }}">Lleida</a>
+			      	<a class="list-group-item lateral{% if seleccio is sameas("solsona") %} active{% endif %}" href="{{ path('documents_select', { 'seleccio': 'solsona' }) }}">Solsona</a>
+			      	<a class="list-group-item lateral{% if seleccio is sameas("tarragona") %} active{% endif %}" href="{{ path('documents_select', { 'seleccio': 'tarragona' }) }}">Tarragona</a>
+			      	<a class="list-group-item lateral{% if seleccio is sameas("urgell") %} active{% endif %}" href="{{ path('documents_select', { 'seleccio': 'urgell' }) }}">Urgell</a>
+			      	<a class="list-group-item lateral{% if seleccio is sameas("vic") %} active{% endif %}" href="{{ path('documents_select', { 'seleccio': 'vic' }) }}">Vic</a>
+			    </ul>
+			</div><!--/Lletres-->
+			
+			<a type="button" 
+				class="lessMarginBot btn {% if seleccio is sameas("carlemany") %}btn-primary{% else %}btn-default{% endif %}"
+				href="{{ path('documents_select', { 'seleccio': 'carlemany' }) }}">
+			 	Cartoral de Carlemany&nbsp;
+			</a>
+			
+			<a type="button" 
+				class="lessMarginBot btn {% if seleccio is sameas("organya") %}btn-primary{% else %}btn-default{% endif %}"
+				href="{{ path('documents_select', { 'seleccio': 'organya' }) }}">
+			 	Organyà&nbsp;
+			</a>
+			<a type="button" 
+				class="lessMarginBot btn {% if seleccio is sameas("vilabertran") %}btn-primary{% else %}btn-default{% endif %}"
+				href="{{ path('documents_select', { 'seleccio': 'vilabertran' }) }}">
+			 	Vilabertran&nbsp;
+			</a>			
+			<a type="button" 
+				class="lessMarginBot btn {% if seleccio is sameas("diplomatari") %}btn-primary{% else %}btn-default{% endif %}"
+				href="{{ path('documents_select', { 'seleccio': 'diplomatari' }) }}">
+			 	Diplomatari de St. Feliu de Girona&nbsp;
+			</a>			
+			<a type="button" 
+				class="lessMarginBot btn {% if seleccio is sameas("rubriques") %}btn-primary{% else %}btn-default{% endif %}"
+				href="{{ path('documents_select', { 'seleccio': 'rubriques' }) }}">
+			 	Rubriques Vermelles&nbsp;
+			</a>					
+			<a type="button" 
+				class="lessMarginBot btn {% if seleccio is sameas("roses") %}btn-primary{% else %}btn-default{% endif %}"
+				href="{{ path('documents_select', { 'seleccio': 'roses' }) }}">
+			 	Cartoral de Roses&nbsp;
+			</a>	
+			
+		</div>

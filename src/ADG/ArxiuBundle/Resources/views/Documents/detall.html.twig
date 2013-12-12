@@ -1,0 +1,55 @@
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" style="color: #3a87ad">{{ 'documents.detall.info' | trans }}</h4>
+        </div>
+      	<div class="modal-body imprimir" id="detall-doc">
+			{% if info.nodac is not null and info.nodac is not empty %}
+				<h5 style="color: #3a87ad">
+					{{ 'documents.detall.classificacio' | trans }}
+				</h5>
+				<p>
+					{{ info.nodac }}
+				</p>
+			{% endif %}
+			{% if info.data is not null and info.data is not empty %}
+				<h5 style="color: #3a87ad">
+					{{ 'documents.detall.data' | trans }}
+				</h5>
+				<p>
+					{{ info.data }}
+				</p>
+			{% endif %}
+			{% if info.descripcio is not null and info.descripcio is not empty %}
+				<h5 style="color: #3a87ad">
+					{{ 'documents.detall.descripcio' | trans }}
+				</h5>
+				<p>
+					{{ info.descripcio }}
+				</p>
+			{% endif %}
+			{% if info.texte is not null and info.texte is not empty %}
+				<h5 style="color: #3a87ad">
+					{{ 'documents.detall.texte' | trans }}
+				</h5>
+				<p>
+					{{ info.texte }}
+				</p>
+			{% endif %}
+			{% if info.referencia is not null and info.referencia is not empty %}
+				<h5 style="color: #3a87ad">
+					{{ 'documents.detall.referencia' | trans }}
+				</h5>
+				<p>
+					{{ info.referencia }}
+				</p>
+			{% endif %}			      				      				      		
+        </div>
+        <div class="modal-footer">
+        	<button class="btn btn-default" onclick="imprimir('#detall-doc')" ><i class="icon-print"></i>&nbsp;Imprimir</button>
+          	<button class="btn btn-default" data-dismiss="modal">Tancar</button>
+        </div>
+
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->

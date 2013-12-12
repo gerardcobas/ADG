@@ -24,3 +24,6 @@ llistat_routes:
     resource: "@ArxiuBundle/Resources/config/routing/llistat.yml"
     prefix:   /llistat        
                
+documents_routes:
+    resource: "@ArxiuBundle/Resources/config/routing/documents.yml"
+    prefix:   /documents

@@ -227,6 +227,25 @@ llistat:
         nodac: Classificació
         num: Número
         nom: Nom
-        operacions: Operacions    
-   
+        operacions: Operacions
+        
+#documents i textos        
+documents:
+    titol: Documents i textos
+    header: Documents i textos
+    alerta: Els resultats es mostraran al realitzar la cerca.
+    alerta2: Cal escollir el contingut de la cerca.
+    alerta3: No s'han trobat resultats.
+    continguts: Continguts
+    cerca:
+        titol: Cerca
+    taula:            
+    detall:
+       info: Informació detallada 
+       classificacio: Classificació de l'arxiu
+       data: Data
+       descripcio: Descripció
+       texte: Texte
+       referencia: Referencia
+      
          
