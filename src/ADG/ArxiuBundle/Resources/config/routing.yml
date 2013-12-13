@@ -27,3 +27,7 @@ llistat_routes:
 documents_routes:
     resource: "@ArxiuBundle/Resources/config/routing/documents.yml"
     prefix:   /documents
+    
+guia_antiga_routes:
+    resource: "@ArxiuBundle/Resources/config/routing/guiaAntiga.yml"
+    prefix:   /guia/antiga

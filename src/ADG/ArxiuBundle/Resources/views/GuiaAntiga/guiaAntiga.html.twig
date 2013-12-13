@@ -1,0 +1,94 @@
+{% extends 'ArxiuBundle::base-arxiu.html.twig' %}
+
+{% block title %}Guia Antiga{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<style>
+		.lateral{
+			padding:2px 10px;
+			text-align: center;
+		}
+	</style>
+{% endblock %}
+
+{% block body %}
+	<div class="page-header">
+        <h1>Guia Antiga</h1>
+	</div>	
+	
+
+<div class="row" style="margin-left:0px;margin-right:10px;margin-bottom:10px;">
+	<div class="col-xs-11 col-sm-10 col-md-4 col-lg-4" style="margin-right:10px">
+		{% include 'ArxiuBundle:GuiaAntiga:menuLateral.html.twig' %}		
+    </div><!--/menu-->
+
+    <div class="col-xs-11 col-sm-11 col-md-8 col-lg-8 table-responsive" style="margin-right:-10px;">
+    	<div style="margin-right:-15px; margin-top:15px;max-height: 1730px;overflow: scroll;">
+	    	<div style="margin-right:10px;" id="new_section_content">
+				{% if seleccio starts with "repertoris_anitcs" %}
+					{% include 'ArxiuBundle:GuiaAntiga:repertoris_anitcs.html.twig' %}	
+					
+				{% elseif seleccio starts with "actes_episcopals" %}	
+					{% include 'ArxiuBundle:GuiaAntiga:actes_episcopals.html.twig' %}	
+					
+				{% elseif seleccio starts with "notularum" %}	
+					{% include 'ArxiuBundle:GuiaAntiga:notularum.html.twig' %}
+					
+				{% elseif seleccio starts with "beneficis" %}	
+					{% include 'ArxiuBundle:GuiaAntiga:beneficis.html.twig' %}
+					
+				{% elseif seleccio starts with "matrimonials" %}	
+					{% include 'ArxiuBundle:GuiaAntiga:matrimonials.html.twig' %}
+					
+				{% elseif seleccio starts with "testaments_causes" %}	
+					{% include 'ArxiuBundle:GuiaAntiga:testaments_causes.html.twig' %}
+					
+				{% elseif seleccio starts with "tribunal_eclesiastic" %}	
+					{% include 'ArxiuBundle:GuiaAntiga:tribunal_eclesiastic.html.twig' %}
+					
+				{% elseif seleccio starts with "expedients_correspondencia" %}	
+					{% include 'ArxiuBundle:GuiaAntiga:expedients_correspondencia.html.twig' %}
+					
+				{% elseif seleccio starts with "registre_segell" %}	
+					{% include 'ArxiuBundle:GuiaAntiga:registre_segell.html.twig' %}
+					
+				{% elseif seleccio starts with "secretaria_cambra" %}	
+					{% include 'ArxiuBundle:GuiaAntiga:secretaria_cambra.html.twig' %}
+					
+				{% elseif seleccio starts with "administracio_economica" %}	
+					{% include 'ArxiuBundle:GuiaAntiga:administracio_economica.html.twig' %}
+					
+				{% elseif seleccio starts with "arxius_incorporats" %}	
+					{% include 'ArxiuBundle:GuiaAntiga:arxius_incorporats.html.twig' %}		
+					
+				{% elseif seleccio starts with "monestirs_esglesies" %}	
+					{% include 'ArxiuBundle:GuiaAntiga:monestirs_esglesies.html.twig' %}		
+				
+				{% elseif seleccio starts with "arxius_dipositats" %}	
+					{% include 'ArxiuBundle:GuiaAntiga:arxius_dipositats.html.twig' %}		
+					
+				{% elseif seleccio starts with "manuscrits_impresos" %}	
+					<div id="new_section_content">	
+						<h1 style="padding-top:0;margin-top:0;">7. Manuscrits i impresos</h1>
+						<p>Microfilms.<br></p>
+					  	<p>729 rotlles que comprenen 5.504 llibres, amb un total de 782.784 fotogrames. Contenen la majoria dels 
+						    llibres de Baptismes, Matrimonis, Òbits i Testaments de les parròquies, 
+						    i, a més, dispenses matrimonials de l'Arxiu Diocesà fins al 
+						    1830.<br>
+					    </p>
+					 </div>
+																			
+				{% else %}
+					No s'ha trobat la informació				
+				{% endif %}
+	    	</div>
+	    </div>
+		<div class="row">
+			<button style="float: right;" class="btn btn-default" onclick="imprimir('#new_section_content')" ><i class="icon-print"></i></button>
+		</div>
+	</div>
+
+</div>	
+	
+{% endblock %}

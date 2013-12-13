@@ -43,8 +43,16 @@
 	
 <div class="row" style="margin-left:0px ">
 	<div class="col-md-7 col-lg-7 well">
-    	<h4>Continguts:</h4>
-    	
+		<div class="row" style="padding-left:5px;padding-right: 10px;">
+			<div class="col-sm-6 col-md-6 col-lg-6">
+				<h4>Continguts:</h4>
+			</div>
+			<div class="col-sm-6 col-md-6 col-lg-6">
+				<a style="float:right;margin-top: 10px;margin-bottom: 10px;" class="btn btn-default" href="{{ path('antiga', { 'seleccio': 'repertoris_anitcs' }) }}">
+					<i class="icon-list"></i>&nbsp;Veure guia antiga
+				</a>
+			</div>
+		</div>
     	<!-- Fons --> 
     	<div class="list-group">
 			{% for f in allFons %}

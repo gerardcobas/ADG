@@ -1,0 +1,5 @@
+antiga:
+    pattern: /{seleccio}
+    defaults:
+        _controller: ArxiuBundle:GuiaAntiga:guiaAntiga
+ 
