@@ -1,0 +1,15 @@
+parroquies:
+    pattern: /
+    defaults:
+        _controller: ArxiuBundle:Parroquies:parroquies
+        
+parroquies_cerca:
+    pattern: /cerca/
+    defaults:
+        _controller: ArxiuBundle:Parroquies:cercaParroquies
+    requirements: { _method: post }
+
+parroquies_detall:
+    pattern: /detall/{id}
+    defaults:
+        _controller: ArxiuBundle:Parroquies:detall    
