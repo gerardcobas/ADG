@@ -72,7 +72,7 @@
 					                <td>{{ i.nom }}</td>
 					                <td>{{ i.titol }}</td>
 		                        	<td class="noimprimir">
-		                        		<a data-toggle="modal" href="{{  path('parroquies') }}" data-target="#ampliarInfo" class="btn btn-sm btn-info" type="button"><i class="icon-info"></i></a>
+		                        		<a data-toggle="modal" href="{{  path('parroquies_detall', {'id':i.id }) }}" data-target="#ampliarInfo" class="btn btn-sm btn-info" type="button"><i class="icon-info"></i></a>
 		                        		
 			                			{% if is_granted('ROLE_ADMIN') %}
 			                        		<a data-toggle="modal" href="{{ path('parroquies') }}" data-target="#editarDispenses" class="btn btn-xs btn-primary" type="button"><i class="icon-pencil"></i></a>

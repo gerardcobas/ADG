@@ -142,6 +142,7 @@ class Parroquies
     
 
     
+
     /**
      * Get id
      *
@@ -150,6 +151,29 @@ class Parroquies
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set nodac
+     *
+     * @param string $nodac
+     * @return Parroquies
+     */
+    public function setNodac($nodac)
+    {
+        $this->nodac = $nodac;
+
+        return $this;
+    }
+
+    /**
+     * Get nodac
+     *
+     * @return string 
+     */
+    public function getNodac()
+    {
+        return $this->nodac;
     }
 
     /**
@@ -176,71 +200,347 @@ class Parroquies
     }
 
     /**
-     * Set imatge
+     * Set data
      *
-     * @param string $imatge
+     * @param string $data
      * @return Parroquies
      */
-    public function setImatge($imatge)
+    public function setData($data)
     {
-        $this->imatge = $imatge;
+        $this->data = $data;
 
         return $this;
     }
 
     /**
-     * Get imatge
+     * Get data
      *
      * @return string 
      */
-    public function getImatge()
+    public function getData()
     {
-        return $this->imatge;
+        return $this->data;
     }
 
     /**
-     * Set descripcio
+     * Set titol
      *
-     * @param string $descripcio
+     * @param string $titol
      * @return Parroquies
      */
-    public function setDescripcio($descripcio)
+    public function setTitol($titol)
     {
-        $this->descripcio = $descripcio;
+        $this->titol = $titol;
 
         return $this;
     }
 
     /**
-     * Get descripcio
+     * Get titol
      *
      * @return string 
      */
-    public function getDescripcio()
+    public function getTitol()
     {
-        return $this->descripcio;
+        return $this->titol;
     }
 
     /**
-     * Set arxius
+     * Set unitat
      *
-     * @param string $arxius
+     * @param string $unitat
      * @return Parroquies
      */
-    public function setArxius($arxius)
+    public function setUnitat($unitat)
     {
-        $this->arxius = $arxius;
+        $this->unitat = $unitat;
 
         return $this;
     }
 
     /**
-     * Get arxius
+     * Get unitat
      *
      * @return string 
      */
-    public function getArxius()
+    public function getUnitat()
     {
-        return $this->arxius;
+        return $this->unitat;
+    }
+
+    /**
+     * Set volum
+     *
+     * @param string $volum
+     * @return Parroquies
+     */
+    public function setVolum($volum)
+    {
+        $this->volum = $volum;
+
+        return $this;
+    }
+
+    /**
+     * Get volum
+     *
+     * @return string 
+     */
+    public function getVolum()
+    {
+        return $this->volum;
+    }
+
+    /**
+     * Set mides
+     *
+     * @param string $mides
+     * @return Parroquies
+     */
+    public function setMides($mides)
+    {
+        $this->mides = $mides;
+
+        return $this;
+    }
+
+    /**
+     * Get mides
+     *
+     * @return string 
+     */
+    public function getMides()
+    {
+        return $this->mides;
+    }
+
+    /**
+     * Set cobertes
+     *
+     * @param string $cobertes
+     * @return Parroquies
+     */
+    public function setCobertes($cobertes)
+    {
+        $this->cobertes = $cobertes;
+
+        return $this;
+    }
+
+    /**
+     * Get cobertes
+     *
+     * @return string 
+     */
+    public function getCobertes()
+    {
+        return $this->cobertes;
+    }
+
+    /**
+     * Set pagines
+     *
+     * @param string $pagines
+     * @return Parroquies
+     */
+    public function setPagines($pagines)
+    {
+        $this->pagines = $pagines;
+
+        return $this;
+    }
+
+    /**
+     * Get pagines
+     *
+     * @return string 
+     */
+    public function getPagines()
+    {
+        return $this->pagines;
+    }
+
+    /**
+     * Set ambIndex
+     *
+     * @param string $ambIndex
+     * @return Parroquies
+     */
+    public function setAmbIndex($ambIndex)
+    {
+        $this->ambIndex = $ambIndex;
+
+        return $this;
+    }
+
+    /**
+     * Get ambIndex
+     *
+     * @return string 
+     */
+    public function getAmbIndex()
+    {
+        return $this->ambIndex;
+    }
+
+    /**
+     * Set acces
+     *
+     * @param string $acces
+     * @return Parroquies
+     */
+    public function setAcces($acces)
+    {
+        $this->acces = $acces;
+
+        return $this;
+    }
+
+    /**
+     * Get acces
+     *
+     * @return string 
+     */
+    public function getAcces()
+    {
+        return $this->acces;
+    }
+
+    /**
+     * Set notes
+     *
+     * @param string $notes
+     * @return Parroquies
+     */
+    public function setNotes($notes)
+    {
+        $this->notes = $notes;
+
+        return $this;
+    }
+
+    /**
+     * Get notes
+     *
+     * @return string 
+     */
+    public function getNotes()
+    {
+        return $this->notes;
+    }
+
+    /**
+     * Set estat
+     *
+     * @param string $estat
+     * @return Parroquies
+     */
+    public function setEstat($estat)
+    {
+        $this->estat = $estat;
+
+        return $this;
+    }
+
+    /**
+     * Get estat
+     *
+     * @return string 
+     */
+    public function getEstat()
+    {
+        return $this->estat;
+    }
+
+    /**
+     * Set llengua
+     *
+     * @param string $llengua
+     * @return Parroquies
+     */
+    public function setLlengua($llengua)
+    {
+        $this->llengua = $llengua;
+
+        return $this;
+    }
+
+    /**
+     * Get llengua
+     *
+     * @return string 
+     */
+    public function getLlengua()
+    {
+        return $this->llengua;
+    }
+
+    /**
+     * Set autors
+     *
+     * @param string $autors
+     * @return Parroquies
+     */
+    public function setAutors($autors)
+    {
+        $this->autors = $autors;
+
+        return $this;
+    }
+
+    /**
+     * Get autors
+     *
+     * @return string 
+     */
+    public function getAutors()
+    {
+        return $this->autors;
+    }
+
+    /**
+     * Set fitxa
+     *
+     * @param string $fitxa
+     * @return Parroquies
+     */
+    public function setFitxa($fitxa)
+    {
+        $this->fitxa = $fitxa;
+
+        return $this;
+    }
+
+    /**
+     * Get fitxa
+     *
+     * @return string 
+     */
+    public function getFitxa()
+    {
+        return $this->fitxa;
+    }
+
+    /**
+     * Set dataIngres
+     *
+     * @param string $dataIngres
+     * @return Parroquies
+     */
+    public function setDataIngres($dataIngres)
+    {
+        $this->dataIngres = $dataIngres;
+
+        return $this;
+    }
+
+    /**
+     * Get dataIngres
+     *
+     * @return string 
+     */
+    public function getDataIngres()
+    {
+        return $this->dataIngres;
     }
 }

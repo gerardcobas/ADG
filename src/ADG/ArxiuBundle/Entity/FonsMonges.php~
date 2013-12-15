@@ -255,4 +255,28 @@ class FonsMonges
 
         return $this;
     }
+
+    /**
+     * Set naturalDe
+     *
+     * @param string $naturalDe
+     *
+     * @return FonsMonges
+     */
+    public function setNaturalDe($naturalDe)
+    {
+        $this->naturalDe = $naturalDe;
+
+        return $this;
+    }
+
+    /**
+     * Get naturalDe
+     *
+     * @return string 
+     */
+    public function getNaturalDe()
+    {
+        return $this->naturalDe;
+    }
 }

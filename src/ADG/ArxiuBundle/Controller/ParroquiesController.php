@@ -35,5 +35,18 @@ class ParroquiesController extends Controller
     		array('info'=>$info, 'nodac'=>$nodac, 'data'=>$data, 'nom'=>$nom, 'paraula'=>$paraula)	
         );
     }
+    
+    
+    public function detallAction($id)
+    {
+    	$info=null;
+    	$em = $this->getDoctrine()->getManager();
+    	$rep = $em->getRepository('ArxiuBundle:Parroquies');
+    	$info=$rep->find($id);
+    	 
+    	return $this->render('ArxiuBundle:Parroquies:detall.html.twig',
+    			array('info'=>$info)
+    	);
+    }
   
 }

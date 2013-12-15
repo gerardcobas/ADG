@@ -11,7 +11,7 @@ class ParroquiesRepository extends EntityRepository
 		$em = $this->getEntityManager();
 		$qb = $em->createQueryBuilder();
 		
-		$qb->select('p.nodac,p.data,p.nom,p.titol')->from('ArxiuBundle:Parroquies', 'p');
+		$qb->select('p.id,p.nodac,p.data,p.nom,p.titol')->from('ArxiuBundle:Parroquies', 'p');
 		$qb->where('p.nom LIKE :nom');
 		$qb->setParameter('nom', '%'.$nom.'%');
 		$qb->andWhere('p.nodac LIKE :nodac');
@@ -19,7 +19,8 @@ class ParroquiesRepository extends EntityRepository
 		$qb->andWhere('p.data LIKE :data');
 		$qb->setParameter('data', '%'.$data.'%');
 		
-		$qb->andWhere('(p.titol LIKE :paraula OR p.autors LIKE :paraula OR p.unitat LIKE :paraula OR p.volum LIKE :paraula OR p.notes LIKE :paraula)');
+		$qb->andWhere('(p.titol LIKE :paraula OR p.autors LIKE :paraula OR p.unitat LIKE :paraula OR p.volum LIKE :paraula OR p.notes LIKE :paraula 
+				OR p.fitxa LIKE :paraula OR p.dataIngres LIKE :paraula)');
 		$qb->setParameter('paraula', '%'.$paraula.'%');
 		$q = $qb->getQuery();
 
