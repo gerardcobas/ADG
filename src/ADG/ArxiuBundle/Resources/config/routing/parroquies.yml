@@ -7,9 +7,43 @@ parroquies_cerca:
     pattern: /cerca/
     defaults:
         _controller: ArxiuBundle:Parroquies:cercaParroquies
-    requirements: { _method: post }
-
+    requirements: { _method: post }     
+    
 parroquies_detall:
     pattern: /detall/{id}
     defaults:
+        _controller: ArxiuBundle:Parroquies:detall       
+        
+parroquies_arxius:
+    pattern: /arxius
+    defaults:
+        _controller: ArxiuBundle:Parroquies:parroquiesArxius        
+        
+parroquies_arxius_cerca:
+    pattern: /arxius/cerca/
+    defaults:
+        _controller: ArxiuBundle:Parroquies:cercaParroquiesArxius
+    requirements: { _method: post }
+
+parroquies_arxius_detall:
+    pattern: /arxius/detall/{id}
+    defaults:
+        _controller: ArxiuBundle:Parroquies:detallArxius    
+        
+        
+#admin        
+parroquies_nou:
+    pattern: /crear
+    defaults:
+        _controller: ArxiuBundle:Parroquies:detall
+        
+parroquies_editar:
+    pattern: /editar/{id}
+    defaults:
         _controller: ArxiuBundle:Parroquies:detall    
+        
+parroquies_eliminar:        
+    pattern: /eliminar/{id}
+    defaults:
+        _controller: ArxiuBundle:Parroquies:detall
+              

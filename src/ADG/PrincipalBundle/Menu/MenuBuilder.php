@@ -44,8 +44,15 @@ class MenuBuilder extends ContainerAware
     		
     		$menu['Admin']->addChild('menu.classificacio', array('route' => 'guia'))
     		->setAttribute('icon', 'icon-edit');
-    		
+    		$menu['Admin']->addChild('menu.dispenses', array('route' => 'dispenses'))
+    		->setAttribute('icon', 'icon-edit');
     		$menu['Admin']->addChild('menu.fons', array('route' => 'fons'))
+    		->setAttribute('icon', 'icon-edit');
+    		$menu['Admin']->addChild('menu.llistat', array('route' => 'llistat'))
+    		->setAttribute('icon', 'icon-edit');
+    		$menu['Admin']->addChild('menu.documents', array('route' => 'documents'))
+    		->setAttribute('icon', 'icon-edit');
+    		$menu['Admin']->addChild('menu.parroquies', array('route' => 'parroquies'))
     		->setAttribute('icon', 'icon-edit');
     		
     		

@@ -6,40 +6,32 @@
         </div>
       	<div class="modal-body">
       		<div class="imprimir" id="detall-parroquies">
-      		
-      		<h4>General</h4>
-      		{% if info.nom is not null and info.nom is not empty %}<h5 style="color: #3a87ad">Nom de la parròquia</h5><p>{{ info.nom }}</p>{% endif %}
-      		{% if info.data is not null and info.data is not empty %}<h5 style="color: #3a87ad">Data</h5><p>{{ info.data }}</p>{% endif %}
-      		{% if info.titol is not null and info.titol is not empty %}<h5 style="color: #3a87ad">Títol</h5><p>{{ info.titol }}</p>{% endif %}
-      		{% if info.llengua is not null and info.llengua is not empty %}<h5 style="color: #3a87ad">Llengua</h5><p>{{ info.llengua }}</p>{% endif %}
-      		{% if info.autors is not null and info.autors is not empty %}<h5 style="color: #3a87ad">Autors</h5><p>{{ info.autors }}</p>{% endif %}
-      		
-      		<div class="space10"></div>
-      		<h4>Classificació</h4>
-      		{% if info.nodac is not null and info.nodac is not empty %}<h5 style="color: #3a87ad">Classificació</h5><p>{{ info.nodac }}</p>{% endif %}
-      		{% if info.unitat is not null and info.unitat is not empty %}<h5 style="color: #3a87ad">Unitat</h5><p>{{ info.unitat }}</p>{% endif %}
-      		{% if info.volum is not null and info.volum is not empty %}<h5 style="color: #3a87ad">Volum</h5><p>{{ info.Volum }}</p>{% endif %}
-      		
-      		<div class="space10"></div>
-      		<h4>Característiques físiques</h4>
-      		{% if info.mides is not null and info.mides is not empty %}<h5 style="color: #3a87ad">Mides</h5><p>{{ info.mides }}</p>{% endif %}
-      		{% if info.cobertes is not null and info.cobertes is not empty %}<h5 style="color: #3a87ad">Cobertes</h5><p>{{ info.cobertes }}</p>{% endif %}
-      		{% if info.pagines is not null and info.pagines is not empty %}<h5 style="color: #3a87ad">Número de pàgines</h5><p>{{ info.pagines }}</p>{% endif %}
-      		{% if info.ambIndex is not null and info.ambIndex is not empty %}<h5 style="color: #3a87ad">Disposa d'index?</h5><p>{{ info.ambIndex }}</p>{% endif %}
-      		{% if info.estat is not null and info.estat is not empty %}<h5 style="color: #3a87ad">Estat del document</h5><p>{{ info.estat }}</p>{% endif %}
-      		
-      		<div class="space10"></div>
-      		<h4>Altres</h4>
-      		{% if info.acces is not null and info.acces is not empty %}<h5 style="color: #3a87ad">Condicions d'accés</h5><p>{{ info.acces }}</p>{% endif %}
-      		{% if info.notes is not null and info.notes is not empty %}<h5 style="color: #3a87ad">Notes</h5><p>{{ info.notes }}</p>{% endif %}
-      		{% if info.fitxa is not null and info.fitxa is not empty %}<h5 style="color: #3a87ad">Fitxa</h5><p>{{ info.fitxa }}</p>{% endif %}
-      		{% if info.dataIngres is not null and info.dataIngres is not empty %}<h5 style="color: #3a87ad">Data d'ingrés</h5><p>{{ info.dataIngres }}</p>{% endif %}
+	      		<h4>Parròquia</h4>
+	      		{% if info.nom is not null and info.nom is not empty %}<h5 style="color: #3a87ad">Nom de la parròquia</h5><p>{{ info.nom }}</p>{% endif %}
+	      		{% if info.descripcio is not null and info.descripcio is not empty %}<h5 style="color: #3a87ad">Descripció</h5><p>{{ info.descripcio }}</p>{% endif %}
+	      		{% if info.bibliografia is not null and info.bibliografia is not empty %}<h5 style="color: #3a87ad">Nom de la parròquia</h5><p>{{ info.bibliografia }}</p>{% endif %}
+	
+	      		<div class="space10"></div>
+	      		<h4>Arxius dipositats</h4>
+	      		
+	      		<ul class="list-group">
+					{% for a in arxius %}
+						<li class="list-group-item">
+						    <h5 class="list-group-item-heading">{{ a.nodac }}</h5>
+						    {{ a.titol }}
+						</li>
+					{% else %}	
+						<div class="alert alert-warning" style="margin-top:10px">
+							{{ 'parroquies.avis' | trans }}
+						</div>   
+		            {% endfor %}
+				</ul>
       		</div>
         </div>
         
         <div class="modal-footer">
         	<button class="btn btn-default" onclick="imprimir('#detall-parroquies')" ><i class="icon-print"></i>&nbsp;Imprimir</button>
-          	<button class="btn btn-default" data-dismiss="modal">{{ 'dispenses.detall.tancar' | trans }}</button>
+          	<button class="btn btn-default" data-dismiss="modal">Tancar</button>
         </div>
 
       </div><!-- /.modal-content -->

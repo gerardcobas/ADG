@@ -75,7 +75,7 @@ class LlistatController extends Controller
     	 */
     	
     	$guiaNodac=array("GuiaFons", "GuiaSubfons", "GuiaGrup", "GuiaSerie", "GuiaUcomposta", "GuiaUsimple", "GuiaUinstalacio", 
-    			"Documents", "DocumentsAdlimina", "Parroquies");
+    			"Documents", "DocumentsAdlimina", "ParroquiesArxius");
     	
     	$ambTot=array("Dispenses", "Fons", "FonsArxius", "FonsCapellans", "FonsMitra", "FonsMonges", 
     			"FonsSeminaristes", "FonsTestaments", "FonsLiberden", "IndexLlocs", "IndexPersones"); //index llocs i persones l'ultim per mostrar algo sempre

@@ -24,124 +24,32 @@ class Parroquies
     /**
      * @var string
      *
-     * @ORM\Column(name="nodac", type="string", length=255, nullable=true)
+     * @ORM\Column(name="num", type="text", nullable=true)
      */
-    private $nodac;
+    private $num;
     
     /**
      * @var string
      *
-     * @ORM\Column(name="nom", type="text", length=255, nullable=true)
+     * @ORM\Column(name="nom", type="text", nullable=true)
      */
     private $nom;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="data", type="string", length=255, nullable=true)
+     * @ORM\Column(name="descripcio", type="text", nullable=true)
      */
-    private $data;
+    private $descripcio;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="titol", type="text", nullable=true)
+     * @ORM\Column(name="bibliografia", type="string", nullable=true)
      */
-    private $titol;
+    private $bibliografia;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="unitat", type="string", length=255, nullable=true)
-     */
-    private $unitat;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="volum", type="string", length=255, nullable=true)
-     */
-    private $volum;
-    
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="mides", type="string", length=255, nullable=true)
-     */
-    private $mides;
-    
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="cobertes", type="string", length=255, nullable=true)
-     */
-    private $cobertes;
-    
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="pagines", type="string", length=255, nullable=true)
-     */
-    private $pagines;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="ambIndex", type="string", length=255, nullable=true)
-     */
-    private $ambIndex;
-    
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="acces", type="string", length=255, nullable=true)
-     */
-    private $acces;
-    
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="notes", type="string", nullable=true)
-     */
-    private $notes;
-    
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="estat", type="string", length=255, nullable=true)
-     */
-    private $estat;
-    
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="llengua", type="string", length=255, nullable=true)
-     */
-    private $llengua;
-    
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="autors", type="string", length=255, nullable=true)
-     */
-    private $autors;
-    
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="fitxa", type="string", length=255, nullable=true)
-     */
-    private $fitxa;
-    
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="dataIngres", type="string", length=255, nullable=true)
-     */
-    private $dataIngres;
-    
-
-    
 
     /**
      * Get id
@@ -151,29 +59,6 @@ class Parroquies
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set nodac
-     *
-     * @param string $nodac
-     * @return Parroquies
-     */
-    public function setNodac($nodac)
-    {
-        $this->nodac = $nodac;
-
-        return $this;
-    }
-
-    /**
-     * Get nodac
-     *
-     * @return string 
-     */
-    public function getNodac()
-    {
-        return $this->nodac;
     }
 
     /**
@@ -200,347 +85,117 @@ class Parroquies
     }
 
     /**
-     * Set data
+     * Set imatge
      *
-     * @param string $data
+     * @param string $imatge
      * @return Parroquies
      */
-    public function setData($data)
+    public function setImatge($imatge)
     {
-        $this->data = $data;
+        $this->imatge = $imatge;
 
         return $this;
     }
 
     /**
-     * Get data
+     * Get imatge
      *
      * @return string 
      */
-    public function getData()
+    public function getImatge()
     {
-        return $this->data;
+        return $this->imatge;
     }
 
     /**
-     * Set titol
+     * Set descripcio
      *
-     * @param string $titol
+     * @param string $descripcio
      * @return Parroquies
      */
-    public function setTitol($titol)
+    public function setDescripcio($descripcio)
     {
-        $this->titol = $titol;
+        $this->descripcio = $descripcio;
 
         return $this;
     }
 
     /**
-     * Get titol
+     * Get descripcio
      *
      * @return string 
      */
-    public function getTitol()
+    public function getDescripcio()
     {
-        return $this->titol;
+        return $this->descripcio;
     }
 
     /**
-     * Set unitat
+     * Set arxius
      *
-     * @param string $unitat
+     * @param string $arxius
      * @return Parroquies
      */
-    public function setUnitat($unitat)
+    public function setArxius($arxius)
     {
-        $this->unitat = $unitat;
+        $this->arxius = $arxius;
 
         return $this;
     }
 
     /**
-     * Get unitat
+     * Get arxius
      *
      * @return string 
      */
-    public function getUnitat()
+    public function getArxius()
     {
-        return $this->unitat;
+        return $this->arxius;
     }
 
     /**
-     * Set volum
+     * Set num
      *
-     * @param string $volum
+     * @param string $num
      * @return Parroquies
      */
-    public function setVolum($volum)
+    public function setNum($num)
     {
-        $this->volum = $volum;
+        $this->num = $num;
 
         return $this;
     }
 
     /**
-     * Get volum
+     * Get num
      *
      * @return string 
      */
-    public function getVolum()
+    public function getNum()
     {
-        return $this->volum;
+        return $this->num;
     }
 
     /**
-     * Set mides
+     * Set bibliografia
      *
-     * @param string $mides
+     * @param string $bibliografia
      * @return Parroquies
      */
-    public function setMides($mides)
+    public function setBibliografia($bibliografia)
     {
-        $this->mides = $mides;
+        $this->bibliografia = $bibliografia;
 
         return $this;
     }
 
     /**
-     * Get mides
+     * Get bibliografia
      *
      * @return string 
      */
-    public function getMides()
+    public function getBibliografia()
     {
-        return $this->mides;
-    }
-
-    /**
-     * Set cobertes
-     *
-     * @param string $cobertes
-     * @return Parroquies
-     */
-    public function setCobertes($cobertes)
-    {
-        $this->cobertes = $cobertes;
-
-        return $this;
-    }
-
-    /**
-     * Get cobertes
-     *
-     * @return string 
-     */
-    public function getCobertes()
-    {
-        return $this->cobertes;
-    }
-
-    /**
-     * Set pagines
-     *
-     * @param string $pagines
-     * @return Parroquies
-     */
-    public function setPagines($pagines)
-    {
-        $this->pagines = $pagines;
-
-        return $this;
-    }
-
-    /**
-     * Get pagines
-     *
-     * @return string 
-     */
-    public function getPagines()
-    {
-        return $this->pagines;
-    }
-
-    /**
-     * Set ambIndex
-     *
-     * @param string $ambIndex
-     * @return Parroquies
-     */
-    public function setAmbIndex($ambIndex)
-    {
-        $this->ambIndex = $ambIndex;
-
-        return $this;
-    }
-
-    /**
-     * Get ambIndex
-     *
-     * @return string 
-     */
-    public function getAmbIndex()
-    {
-        return $this->ambIndex;
-    }
-
-    /**
-     * Set acces
-     *
-     * @param string $acces
-     * @return Parroquies
-     */
-    public function setAcces($acces)
-    {
-        $this->acces = $acces;
-
-        return $this;
-    }
-
-    /**
-     * Get acces
-     *
-     * @return string 
-     */
-    public function getAcces()
-    {
-        return $this->acces;
-    }
-
-    /**
-     * Set notes
-     *
-     * @param string $notes
-     * @return Parroquies
-     */
-    public function setNotes($notes)
-    {
-        $this->notes = $notes;
-
-        return $this;
-    }
-
-    /**
-     * Get notes
-     *
-     * @return string 
-     */
-    public function getNotes()
-    {
-        return $this->notes;
-    }
-
-    /**
-     * Set estat
-     *
-     * @param string $estat
-     * @return Parroquies
-     */
-    public function setEstat($estat)
-    {
-        $this->estat = $estat;
-
-        return $this;
-    }
-
-    /**
-     * Get estat
-     *
-     * @return string 
-     */
-    public function getEstat()
-    {
-        return $this->estat;
-    }
-
-    /**
-     * Set llengua
-     *
-     * @param string $llengua
-     * @return Parroquies
-     */
-    public function setLlengua($llengua)
-    {
-        $this->llengua = $llengua;
-
-        return $this;
-    }
-
-    /**
-     * Get llengua
-     *
-     * @return string 
-     */
-    public function getLlengua()
-    {
-        return $this->llengua;
-    }
-
-    /**
-     * Set autors
-     *
-     * @param string $autors
-     * @return Parroquies
-     */
-    public function setAutors($autors)
-    {
-        $this->autors = $autors;
-
-        return $this;
-    }
-
-    /**
-     * Get autors
-     *
-     * @return string 
-     */
-    public function getAutors()
-    {
-        return $this->autors;
-    }
-
-    /**
-     * Set fitxa
-     *
-     * @param string $fitxa
-     * @return Parroquies
-     */
-    public function setFitxa($fitxa)
-    {
-        $this->fitxa = $fitxa;
-
-        return $this;
-    }
-
-    /**
-     * Get fitxa
-     *
-     * @return string 
-     */
-    public function getFitxa()
-    {
-        return $this->fitxa;
-    }
-
-    /**
-     * Set dataIngres
-     *
-     * @param string $dataIngres
-     * @return Parroquies
-     */
-    public function setDataIngres($dataIngres)
-    {
-        $this->dataIngres = $dataIngres;
-
-        return $this;
-    }
-
-    /**
-     * Get dataIngres
-     *
-     * @return string 
-     */
-    public function getDataIngres()
-    {
-        return $this->dataIngres;
+        return $this->bibliografia;
     }
 }

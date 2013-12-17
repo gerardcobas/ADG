@@ -19,7 +19,6 @@ general:
         seguent: Següent
         anterior: Anterior
         general: Cerca general
-      
         
 fons:
     #fons
@@ -115,14 +114,13 @@ fons:
         titol: Mitra
         mitra: Pergamins de la mitra
         delmes: Delmes   
-    
+
+#guia    
 guia:    
     title: Classificació
     header: Classificació de l'arxiu
     fi: No hi ha més contingut
-    
     info: Nivell de descripció
-    
     titol: Titol
     codi: Codi de referencia
     data: Data
@@ -238,8 +236,7 @@ documents:
     alerta3: No s'han trobat resultats.
     continguts: Continguts
     cerca:
-        titol: Cerca
-    taula:            
+        titol: Cerca  
     detall:
        info: Informació detallada 
        classificacio: Classificació de l'arxiu
@@ -247,5 +244,15 @@ documents:
        descripcio: Descripció
        texte: Texte
        referencia: Referencia
+       
+#parroquies
+parroquies:
+    titol: Parròquies
+    header: Parròquies
+    cercar1: Cercar parròquies
+    cercar2: Cercar arxius dipositats
+    resultats: Resultats de la cerca
+    avis: No s'han trobat arxius dipositats per aquesta parròquia.       
+       
       
          

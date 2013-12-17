@@ -3,29 +3,11 @@
 <div class="panel-body">
 	<form action="{{ path('parroquies_cerca') }}" method="post">
 		<div class="row">
-			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-			  	<h5>Classificació</h5>
-			  	<div class="input-group">
-					<span class="input-group-addon"><i class="icon-archive"></i></span>
-					<input type="text" class="form-control search-query" name="nodac" value="{{ nodac }}">
-				</div>
-				<h5>Data</h5>
-				<div class="input-group">
-					<span class="input-group-addon"><i class="icon-calendar"></i></span>
-					<input type="text" class="form-control search-query" name="data" value="{{ data }}">
-				</div>
-				<div class="space10"></div>
-		  	</div>
-			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-			  	<h5>Nom</h5>
+			<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+			  	<h5>Nom de parròquia</h5>
 			  	<div class="input-group">
 					<span class="input-group-addon"><i class="icon-picture"></i></span>
 					<input type="text" class="form-control search-query" name="nom" value="{{ nom }}">
-				</div>
-				<h5>Paraula clau</h5>
-				<div class="input-group">
-					<span class="input-group-addon"><i class="icon-flag"></i></span>
-					<input type="text" class="form-control search-query" name="paraula" value="{{ paraula }}">
 				</div>
 				<div class="space10"></div>
 		  	</div>
@@ -37,7 +19,7 @@
 		</div>
 		{% if is_granted('ROLE_ADMIN') %}
 			<div class="btn-group">	
-				<a data-toggle="modal" href="{{ path('parroquies') }}" data-target="#nouParroquies" class="btn btn-success" type="button"><i class="icon-plus"></i>&nbsp;Afegir nou</a>
+				<a data-toggle="modal" href="{{ path('parroquies_nou') }}" data-target="#nouParroquies" class="btn btn-success" type="button"><i class="icon-plus"></i>&nbsp;Afegir nou</a>
 		    </div>
 		{% endif %}
 
