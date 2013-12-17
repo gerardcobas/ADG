@@ -1,0 +1,91 @@
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Afegir nou</h4>
+        </div>
+      <form action="{{ path("parroquies_arxius_editar_confirmar") }}" method="post">
+	      	<div class="modal-body"> 
+	      		<p>Es pot modificar següent informació:</p>
+	      		<div class="space10"></div>
+	      		<input type="hidden" name="id" value="{{ info.id }}">
+	      		
+	      		<div class="input-group">
+					<span class="input-group-addon">Classificació de l'arxiu</span>
+					<input type="text" class="form-control" pattern="^([a-zA-Z0-9]*\.)*$" name="inputNodac" 
+					title="Només pot tenir números i/o lletres i finalitzar amb un punt." value="{{ info.nodac }}">
+				</div><div class="space10"></div>
+	      		<div class="input-group">
+						<span class="input-group-addon">Nom</span>
+						<input type="text" class="form-control" name="inputNom" value="{{ info.nom }}">
+				</div><div class="space10"></div>
+	      		<div class="input-group">
+						<span class="input-group-addon">Data</span>
+						<input type="text" class="form-control" name="inputData" value="{{ info.data }}">
+				</div><div class="space10"></div>
+	      		<div class="input-group">
+						<span class="input-group-addon">Titol</span>
+						<input type="text" class="form-control" name="inputTitol" value="{{ info.titol }}">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Unitat</span>
+						<input type="text" class="form-control" name="inputUnitat" value="{{ info.unitat }}">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Volum</span>
+						<input type="text" class="form-control" name="inputVolum" value="{{ info.volum }}">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Mides</span>
+						<input type="text" class="form-control" name="inputMides" value="{{ info.mides }}">
+				</div><div class="space10"></div>	
+				<div class="input-group">
+						<span class="input-group-addon">Cobertes</span>
+						<input type="text" class="form-control" name="inputCobertes" value="{{ info.cobertes }}">
+				</div><div class="space10"></div>	
+				<div class="input-group">
+						<span class="input-group-addon">Pàgines</span>
+						<input type="text" class="form-control" name="inputPagines" value="{{ info.pagines }}">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Té index?</span>
+						<input type="text" class="form-control" name="inputAmbIndex" value="{{ info.ambIndex }}">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Condicions accès</span>
+						<input type="text" class="form-control" name="inputAcces" value="{{ info.acces }}">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Notes</span>
+						<input type="text" class="form-control" name="inputNotes" value="{{ info.notes }}">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Estat</span>
+						<input type="text" class="form-control" name="inputEstat" value="{{ info.estat }}">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Llengua</span>
+						<input type="text" class="form-control" name="inputLlengua" value="{{ info.llengua }}">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Autors</span>
+						<input type="text" class="form-control" name="inputAutors" value="{{ info.autors }}">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Fitxa</span>
+						<input type="text" class="form-control" name="inputFitxa" value="{{ info.fitxa }}">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Data d'ingrès</span>
+						<input type="text" class="form-control" name="inputDataIngres" value="{{ info.dataIngres }}">
+				</div><div class="space10"></div>	
+	      		
+	        </div>
+	        
+	        <div class="modal-footer">
+	          <button class="btn btn-default" data-dismiss="modal">Tancar</button>
+	          <button class="btn btn-success" type="submit"><i class="icon-pencil"></i>&nbsp;Editar</button>
+	        </div>
+		</form><!-- /.form -->
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->

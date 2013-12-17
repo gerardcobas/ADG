@@ -16,6 +16,28 @@
 	<div class="page-header">
         <h1>{{ 'parroquies.titol' | trans }}</h1>
 	</div>
+	
+	{% for flashMessage in app.session.flashbag.get('success') %}
+		<div class="row" style="margin-left:0px ">
+			<div class="col-md-7 col-lg-7 " style="margin-left:-5px">
+			    <div class="alert alert-success alert-dismissable">
+			    	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			        <strong>{{ flashMessage }}</strong>
+			    </div>
+			</div>
+		</div>
+	{% endfor %}
+	{% for flashMessage in app.session.flashbag.get('error') %}
+		<div class="row" style="margin-left:0px ">
+			<div class="col-md-7 col-lg-7" style="margin-left:-5px ">
+			    <div class="alert alert-danger alert-dismissable">
+			    	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			        <strong>{{ flashMessage }}</strong>
+			    </div>
+			</div>
+		</div>
+	{% endfor %}	
+	
 		<div class="row" style="margin-bottom: 5px;margin-left: 15px;margin-right: 0px">
 		<div class="btn-group" style="margin-top:5px;margin-bottom:5px;">
 			<a type="button" class="btn {% if seleccio is sameas("parroquies") %}btn-primary{% else %}btn-default{% endif %}" 

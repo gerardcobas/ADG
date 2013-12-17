@@ -1,0 +1,55 @@
+#parroquies        
+parroquies_nou:
+    pattern: /nou
+    defaults: { _controller: "PrincipalBundle:AdminParroquies:nou" }
+        
+parroquies_editar:
+    pattern: /{id}/editar
+    defaults: { _controller: "PrincipalBundle:AdminParroquies:editar" }  
+        
+parroquies_eliminar:        
+    pattern: /{id}/eliminar
+    defaults: { _controller: "PrincipalBundle:AdminParroquies:eliminar" }  
+    
+parroquies_nou_confirmar:
+    pattern:  /confirmar/nou
+    defaults: { _controller: "PrincipalBundle:AdminParroquies:nouConfirmar" }
+    requirements: { _method: post }
+    
+parroquies_editar_confirmar:
+    pattern:  /editar/confirmar
+    defaults: { _controller: "PrincipalBundle:AdminParroquies:editarConfirmar" }
+    requirements: { _method: post }    
+
+parroquies_eliminar_confirmar:
+    pattern:  /eliminar/confirmar
+    defaults: { _controller: "PrincipalBundle:AdminParroquies:eliminarConfirmar" }
+    requirements: { _method: post }    
+    
+#arxius dipositats   
+parroquies_arxius_nou:
+    pattern: /arxius/nou
+    defaults: { _controller: "PrincipalBundle:AdminParroquies:nouArxius" }
+        
+parroquies_arxius_editar:
+    pattern: /arxius/{id}/editar
+    defaults: { _controller: "PrincipalBundle:AdminParroquies:editarArxius" }  
+        
+parroquies_arxius_eliminar:        
+    pattern: /arxius/{id}/eliminar
+    defaults: { _controller: "PrincipalBundle:AdminParroquies:eliminarArxius" }  
+    
+parroquies_arxius_nou_confirmar:
+    pattern:  /arxius/confirmar/nou
+    defaults: { _controller: "PrincipalBundle:AdminParroquies:nouConfirmarArxius" }
+    requirements: { _method: post }
+    
+parroquies_arxius_editar_confirmar:
+    pattern:  /arxius/editar/confirmar
+    defaults: { _controller: "PrincipalBundle:AdminParroquies:editarConfirmarArxius" }
+    requirements: { _method: post }    
+
+parroquies_arxius_eliminar_confirmar:
+    pattern:  /arxius/eliminar/confirmar
+    defaults: { _controller: "PrincipalBundle:AdminParroquies:eliminarConfirmarArxius" }
+    requirements: { _method: post }    

@@ -1,0 +1,37 @@
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Afegir nou</h4>
+        </div>
+      <form action="{{ path("parroquies_nou_confirmar") }}" method="post">
+	      	<div class="modal-body"> 
+	      		<p>Cal afegir la següent informació:</p>
+	      		<div class="space10"></div>
+	      		
+	      		<div class="input-group">
+						<span class="input-group-addon">Nom</span>
+						<input type="text" class="form-control" name="inputNom" >
+				</div><div class="space10"></div>
+	      		<div class="input-group">
+						<span class="input-group-addon">Número</span>
+						<input type="text" class="form-control" name="inputNum" >
+				</div><div class="space10"></div>
+	      		<div class="input-group">
+						<span class="input-group-addon">Descripció</span>
+						<input type="text" class="form-control" name="inputDescripcio" >
+				</div><div class="space10"></div>
+				
+				<div class="input-group">
+						<span class="input-group-addon">Bibliografia</span>
+						<input type="text" class="form-control" name="inputBibliografia" >
+				</div><div class="space10"></div>	
+	        </div>
+	        
+	        <div class="modal-footer">
+	          <button class="btn btn-default" data-dismiss="modal">Tancar</button>
+	          <button class="btn btn-success" type="submit"><i class="icon-plus"></i>&nbsp;Afegir</button>
+	        </div>
+		</form><!-- /.form -->
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->

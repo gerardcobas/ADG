@@ -17,5 +17,10 @@ admin_users:
     
 admin_fons:
     resource: "@PrincipalBundle/Resources/config/routing/fons.yml"
-    prefix:   /fons/{seleccio}                                        
+    prefix:   /fons/{seleccio}
+    
+admin_parroquies:
+    resource: "@PrincipalBundle/Resources/config/routing/parroquies.yml"
+    prefix:   /parroquies  
+                                            
         

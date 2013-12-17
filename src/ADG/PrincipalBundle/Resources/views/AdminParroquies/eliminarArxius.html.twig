@@ -1,0 +1,37 @@
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title text-danger">Eliminar</h4>
+        </div>
+      <form action="{{ path("parroquies_arxius_eliminar_confirmar") }}" method="post">
+	      	<div class="modal-body"> 
+	      		<strong class="text-danger">S'eliminarà l'entrada amb la següent informació:</strong>
+	      		
+	      		<input type="hidden" name="id" value="{{ info.id }}">
+	      		<h5 style="color: #d9534f">Classificació de l'arxiu</h5><p>{{ info.nodac }}</p>
+				<h5 style="color: #d9534f">Nom de la parròquia</h5><p>{{ info.nom }}</p>
+				<h5 style="color: #d9534f">Data</h5><p>{{ info.data }}</p>
+				<h5 style="color: #d9534f">Titol</h5><p>{{ info.titol }}</p>
+				<h5 style="color: #d9534f">Unitat</h5><p>{{ info.unitat }}</p>
+				<h5 style="color: #d9534f">Volum</h5><p>{{ info.volum }}</p>
+				<h5 style="color: #d9534f">Mides</h5><p>{{ info.mides }}</p>
+				<h5 style="color: #d9534f">Cobertes</h5><p>{{ info.cobertes }}</p>
+				<h5 style="color: #d9534f">Pàgines</h5><p>{{ info.pagines }}</p>
+				<h5 style="color: #d9534f">Té index?</h5><p>{{ info.ambIndex }}</p>
+				<h5 style="color: #d9534f">Condicions d'acces</h5><p>{{ info.acces }}</p>
+				<h5 style="color: #d9534f">Notes</h5><p>{{ info.notes }}</p>
+				<h5 style="color: #d9534f">Estat</h5><p>{{ info.estat }}</p>
+				<h5 style="color: #d9534f">Llengua</h5><p>{{ info.llengua }}</p>
+				<h5 style="color: #d9534f">Autors</h5><p>{{ info.autors }}</p>
+				<h5 style="color: #d9534f">Fitxa</h5><p>{{ info.fitxa }}</p>
+				<h5 style="color: #d9534f">Data d'ingrès</h5><p>{{ info.dataIngres }}</p>
+			 		
+	        </div>
+	        <div class="modal-footer">
+	          <button class="btn btn-default" data-dismiss="modal">Tancar</button>
+	          <button class="btn btn-danger" type="submit"><i class="icon-remove"></i>&nbsp;Eliminar</button>
+	        </div>
+		</form><!-- /.form -->
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->

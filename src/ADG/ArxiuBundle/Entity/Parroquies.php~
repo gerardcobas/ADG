@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Parroquies
  *
  * @ORM\Table(name="parroquies")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="ADG\ArxiuBundle\Entity\ParroquiesRepository")
  */
 class Parroquies
 {
@@ -151,5 +151,51 @@ class Parroquies
     public function getArxius()
     {
         return $this->arxius;
+    }
+
+    /**
+     * Set num
+     *
+     * @param string $num
+     * @return Parroquies
+     */
+    public function setNum($num)
+    {
+        $this->num = $num;
+
+        return $this;
+    }
+
+    /**
+     * Get num
+     *
+     * @return string 
+     */
+    public function getNum()
+    {
+        return $this->num;
+    }
+
+    /**
+     * Set bibliografia
+     *
+     * @param string $bibliografia
+     * @return Parroquies
+     */
+    public function setBibliografia($bibliografia)
+    {
+        $this->bibliografia = $bibliografia;
+
+        return $this;
+    }
+
+    /**
+     * Get bibliografia
+     *
+     * @return string 
+     */
+    public function getBibliografia()
+    {
+        return $this->bibliografia;
     }
 }

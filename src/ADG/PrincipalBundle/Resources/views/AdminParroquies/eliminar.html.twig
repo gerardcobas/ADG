@@ -1,0 +1,24 @@
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title text-danger">Eliminar</h4>
+        </div>
+      <form action="{{ path("parroquies_eliminar_confirmar") }}" method="post">
+	      	<div class="modal-body"> 
+	      		<strong class="text-danger">S'eliminarà l'entrada amb la següent informació:</strong>
+	      		
+	      		<input type="hidden" name="id" value="{{ info.id }}">
+				<h5 style="color: #d9534f">Nom de la parròquia</h5><p>{{ info.nom }}</p>
+				<h5 style="color: #d9534f">Número</h5><p>{{ info.num }}</p>
+				<h5 style="color: #d9534f">Descripció</h5><p>{{ info.descripcio }}</p>
+				<h5 style="color: #d9534f">Bibliografia</h5><p>{{ info.bibliografia }}</p>
+			 		
+	        </div>
+	        <div class="modal-footer">
+	          <button class="btn btn-default" data-dismiss="modal">Tancar</button>
+	          <button class="btn btn-danger" type="submit"><i class="icon-remove"></i>&nbsp;Eliminar</button>
+	        </div>
+		</form><!-- /.form -->
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->

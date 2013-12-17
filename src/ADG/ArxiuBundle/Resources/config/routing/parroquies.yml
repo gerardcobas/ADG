@@ -29,21 +29,4 @@ parroquies_arxius_detall:
     pattern: /arxius/detall/{id}
     defaults:
         _controller: ArxiuBundle:Parroquies:detallArxius    
-        
-        
-#admin        
-parroquies_nou:
-    pattern: /crear
-    defaults:
-        _controller: ArxiuBundle:Parroquies:detall
-        
-parroquies_editar:
-    pattern: /editar/{id}
-    defaults:
-        _controller: ArxiuBundle:Parroquies:detall    
-        
-parroquies_eliminar:        
-    pattern: /eliminar/{id}
-    defaults:
-        _controller: ArxiuBundle:Parroquies:detall
               

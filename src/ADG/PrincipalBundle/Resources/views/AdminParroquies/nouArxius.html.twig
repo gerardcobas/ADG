@@ -1,0 +1,89 @@
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Afegir nou</h4>
+        </div>
+      <form action="{{ path("parroquies_arxius_nou_confirmar") }}" method="post">
+	      	<div class="modal-body"> 
+	      		<p>Cal afegir la següent informació:</p>
+	      		<div class="space10"></div>
+	      		
+	      		<div class="input-group">
+					<span class="input-group-addon">Classificació de l'arxiu</span>
+					<input type="text" class="form-control" pattern="^([a-zA-Z0-9]*\.)*$" name="inputNodac" 
+					title="Només pot tenir números i/o lletres i finalitzar amb un punt." >
+				</div><div class="space10"></div>
+	      		<div class="input-group">
+						<span class="input-group-addon">Nom</span>
+						<input type="text" class="form-control" name="inputNom" >
+				</div><div class="space10"></div>
+	      		<div class="input-group">
+						<span class="input-group-addon">Data</span>
+						<input type="text" class="form-control" name="inputData" >
+				</div><div class="space10"></div>
+	      		<div class="input-group">
+						<span class="input-group-addon">Titol</span>
+						<input type="text" class="form-control" name="inputTitol" >
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Unitat</span>
+						<input type="text" class="form-control" name="inputUnitat" >
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Volum</span>
+						<input type="text" class="form-control" name="inputVolum" >
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Mides</span>
+						<input type="text" class="form-control" name="inputMides" >
+				</div><div class="space10"></div>	
+				<div class="input-group">
+						<span class="input-group-addon">Cobertes</span>
+						<input type="text" class="form-control" name="inputCobertes" >
+				</div><div class="space10"></div>	
+				<div class="input-group">
+						<span class="input-group-addon">Pàgines</span>
+						<input type="text" class="form-control" name="inputPagines">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Té index?</span>
+						<input type="text" class="form-control" name="inputAmbIndex" >
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Condicions accès</span>
+						<input type="text" class="form-control" name="inputAcces" >
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Notes</span>
+						<input type="text" class="form-control" name="inputNotes" >
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Estat</span>
+						<input type="text" class="form-control" name="inputEstat" >
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Llengua</span>
+						<input type="text" class="form-control" name="inputLlengua" >
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Autors</span>
+						<input type="text" class="form-control" name="inputAutors" >
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Fitxa</span>
+						<input type="text" class="form-control" name="inputFitxa" >
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Data d'ingrès</span>
+						<input type="text" class="form-control" name="inputDataIngres" >
+				</div><div class="space10"></div>	
+	        </div>
+	        
+	        <div class="modal-footer">
+	          <button class="btn btn-default" data-dismiss="modal">Tancar</button>
+	          <button class="btn btn-success" type="submit"><i class="icon-plus"></i>&nbsp;Afegir</button>
+	        </div>
+		</form><!-- /.form -->
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
