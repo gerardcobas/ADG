@@ -2,30 +2,28 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title">Modificar - </h4>
+          <h4 class="modal-title">Modificar entrada de {{ seleccio |capitalize}}</h4>
         </div>
-      <form action="{{ path("parroquies_editar_confirmar") }}" method="post">
+      <form action="{{ path("adlimina_editar_confirmar") }}" method="post">
 	      	<div class="modal-body"> 
 	      		<p>Es pot modificar següent informació:</p>
 	      		<div class="space10"></div>
 	      		<input type="hidden" name="id" value="{{ info.id }}">
+	      		<input type="hidden" name="inputSeleccio" value="{{ seleccio }}">
+	      		
 	      		<div class="input-group">
-						<span class="input-group-addon">Nom</span>
-						<input type="text" class="form-control" value="{{ info.nom }}" name="inputNom" >
+						<span class="input-group-addon">Classificació de l'arxiu</span>
+						<input type="text" class="form-control" pattern="^([a-zA-Z0-9]*\.)*$" name="inputNodac" 
+					title="Només pot tenir números i/o lletres i finalitzar amb un punt." value="{{ info.nodac }}">
 				</div><div class="space10"></div>
-	      		<div class="input-group">
-						<span class="input-group-addon">Número</span>
-						<input type="text" class="form-control" value="{{ info.num }}" name="inputNum" >
-				</div><div class="space10"></div>
-	      		<div class="input-group">
-						<span class="input-group-addon">Descripció</span>
-						<input type="text" class="form-control"  value="{{ info.descripcio }}" name="inputDescripcio" >
-				</div><div class="space10"></div>
-				
 				<div class="input-group">
-						<span class="input-group-addon">Bibliografia</span>
-						<input type="text" class="form-control"  value="{{ info.bibliografia }}" name="inputBibliografia" >
-				</div><div class="space10"></div>	
+						<span class="input-group-addon">Titol</span>
+						<textarea type="text" class="form-control"  rows="3" name="inputTitol" >{{ info.titol }}</textarea>
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Texte</span>
+						<textarea type="text" class="form-control"  rows="5" name="inputTexte" >{{ info.texte }}</textarea>
+				</div><div class="space10"></div>					
 	        </div>
 	        
 	        <div class="modal-footer">

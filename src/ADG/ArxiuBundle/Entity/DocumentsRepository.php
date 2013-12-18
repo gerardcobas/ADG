@@ -17,7 +17,7 @@ class DocumentsRepository extends EntityRepository
 		elseif ($poblacio == "organya") $p = "Organya";
 		elseif ($poblacio == "vilabertran") $p = "Vilabertran";
 		elseif ($poblacio == "diplomatari") $p = "Diplomatari de Sant Feliu";
-		elseif ($poblacio == "rubriques") $p = "Diplomatari de Sant Feliu";
+		elseif ($poblacio == "rubriques") $p = "Rubriques vermelles";
 		elseif ($poblacio == "roses") $p = "Roses";
 			
 		$qb->where('t.poblacio = :poblacio');

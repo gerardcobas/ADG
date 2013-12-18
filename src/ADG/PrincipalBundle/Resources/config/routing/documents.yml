@@ -1,0 +1,55 @@
+#documents        
+documents_nou:
+    pattern: /{seleccio}/nou
+    defaults: { _controller: "PrincipalBundle:AdminDocuments:nou" }
+        
+documents_editar:
+    pattern: /{seleccio}/{id}/editar
+    defaults: { _controller: "PrincipalBundle:AdminDocuments:editar" }  
+        
+documents_eliminar:        
+    pattern: /{seleccio}/{id}/eliminar
+    defaults: { _controller: "PrincipalBundle:AdminDocuments:eliminar" }  
+    
+documents_nou_confirmar:
+    pattern:  /nou/confirmar
+    defaults: { _controller: "PrincipalBundle:AdminDocuments:nouConfirmar" }
+    requirements: { _method: post }
+    
+documents_editar_confirmar:
+    pattern:  /editar/confirmar
+    defaults: { _controller: "PrincipalBundle:AdminDocuments:editarConfirmar" }
+    requirements: { _method: post }    
+
+documents_eliminar_confirmar:
+    pattern:  /eliminar/confirmar
+    defaults: { _controller: "PrincipalBundle:AdminDocuments:eliminarConfirmar" }
+    requirements: { _method: post }
+
+#adlimina        
+adlimina_nou:
+    pattern: /adlimina/{seleccio}/nou
+    defaults: { _controller: "PrincipalBundle:AdminDocuments:nouAdlimina" }
+        
+adlimina_editar:
+    pattern: /adlimina/{seleccio}/{id}/editar
+    defaults: { _controller: "PrincipalBundle:AdminDocuments:editarAdlimina" }  
+        
+adlimina_eliminar:        
+    pattern: /adlimina/{seleccio}/{id}/eliminar
+    defaults: { _controller: "PrincipalBundle:AdminDocuments:eliminarAdlimina" }  
+    
+adlimina_nou_confirmar:
+    pattern:  /adlimina/nou/confirmar
+    defaults: { _controller: "PrincipalBundle:AdminDocuments:nouConfirmarAdlimina" }
+    requirements: { _method: post }
+    
+adlimina_editar_confirmar:
+    pattern:  /adlimina/editar/confirmar
+    defaults: { _controller: "PrincipalBundle:AdminDocuments:editarConfirmarAdlimina" }
+    requirements: { _method: post }    
+
+adlimina_eliminar_confirmar:
+    pattern:  /adlimina/eliminar/confirmar
+    defaults: { _controller: "PrincipalBundle:AdminDocuments:eliminarConfirmarAdlimina" }
+    requirements: { _method: post }    

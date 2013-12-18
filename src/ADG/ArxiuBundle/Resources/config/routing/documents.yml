@@ -24,34 +24,3 @@ documents_detall:
     pattern: /detall/{id}
     defaults:
         _controller: ArxiuBundle:Documents:detall
-
-#admin        
-documents_nou:
-    pattern: /crear
-    defaults:
-        _controller: ArxiuBundle:Documents:detall
-        
-documents_editar:
-    pattern: /editar/{id}
-    defaults:
-        _controller: ArxiuBundle:Documents:detall    
-        
-documents_eliminar:        
-    pattern: /eliminar/{id}
-    defaults:
-        _controller: ArxiuBundle:Documents:detall
-      
-adlimina_nou:
-    pattern: /{seleccio}/crear
-    defaults:
-        _controller: ArxiuBundle:Documents:detall
-        
-adlimina_editar:
-    pattern: /{seleccio}/editar/{id}
-    defaults:
-        _controller: ArxiuBundle:Documents:detall    
-        
-adlimina_eliminar:        
-    pattern: /{seleccio}/eliminar/{id}
-    defaults:
-        _controller: ArxiuBundle:Documents:detall                

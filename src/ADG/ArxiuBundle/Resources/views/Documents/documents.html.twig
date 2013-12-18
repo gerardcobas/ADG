@@ -48,6 +48,30 @@
 	<div class="page-header">
         <h1>{{ 'documents.header' | trans }}</h1>
 	</div>
+	
+	
+	{% for flashMessage in app.session.flashbag.get('success') %}
+		<div class="row" style="margin-left:0px ">
+			<div class="col-md-7 col-lg-7 " style="margin-left:-5px">
+			    <div class="alert alert-success alert-dismissable">
+			    	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			        <strong>{{ flashMessage }}</strong>
+			    </div>
+			</div>
+		</div>
+	{% endfor %}
+	{% for flashMessage in app.session.flashbag.get('error') %}
+		<div class="row" style="margin-left:0px ">
+			<div class="col-md-7 col-lg-7" style="margin-left:-5px ">
+			    <div class="alert alert-danger alert-dismissable">
+			    	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			        <strong>{{ flashMessage }}</strong>
+			    </div>
+			</div>
+		</div>
+	{% endfor %}	
+	
+	
 
 <div class="row" style="margin-left:0px;margin-right:10px">
 	<div class="col-xs-11 col-sm-10 col-md-4 col-lg-4" style="margin-right:10px">
@@ -86,6 +110,10 @@
 				                	<td>{{ i.descripcio }}</td>
 	                        	<td class="noimprimir">
 	                        		<a data-toggle="modal" href="{{ path('documents_detall', { 'id':i.codiDoc }) }}" data-target="#ampliarInfo" class="btn btn-sm btn-info" type="button"><i class="icon-info"></i></a>
+	                        		{% if is_granted('ROLE_ADMIN') %}
+	                        			<a data-toggle="modal" href="{{ path('documents_editar', { 'seleccio':seleccio, 'id':i.codiDoc }) }}" data-target="#editarDocuments" class="btn btn-xs btn-primary" type="button"><i class="icon-pencil"></i></a>
+	                        			<a data-toggle="modal" href="{{ path('documents_eliminar', { 'seleccio':seleccio,'id':i.codiDoc }) }}" data-target="#eliminarDocuments" class="btn btn-xs btn-danger" type="button"><i class="icon-remove"></i></a>
+		                        	{% endif %}
 	                        	</td>
 		                    </tr>
 		                {% endfor %}

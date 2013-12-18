@@ -1,0 +1,35 @@
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Afegir nova entrada a {{ seleccio |capitalize }}
+          </h4>
+        </div>
+      <form action="{{ path("adlimina_nou_confirmar") }}" method="post">
+	      	<div class="modal-body"> 
+	      		<p>Cal afegir la següent informació:</p>
+	      		<div class="space10"></div>
+	      		<input type="hidden" name="inputSeleccio" value="{{ seleccio }}">
+	      		
+	      		<div class="input-group">
+						<span class="input-group-addon">Classificació de l'arxiu</span>
+						<input type="text" class="form-control" pattern="^([a-zA-Z0-9]*\.)*$" name="inputNodac" 
+					title="Només pot tenir números i/o lletres i finalitzar amb un punt." >
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Titol</span>
+						<textarea type="text" class="form-control"  rows="3" name="inputTitol" ></textarea>
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Texte</span>
+						<textarea type="text" class="form-control"  rows="5" name="inputTexte" ></textarea>
+				</div><div class="space10"></div>							
+	        </div>
+	        
+	        <div class="modal-footer">
+	          <button class="btn btn-default" data-dismiss="modal">Tancar</button>
+	          <button class="btn btn-success" type="submit"><i class="icon-plus"></i>&nbsp;Afegir</button>
+	        </div>
+		</form><!-- /.form -->
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->

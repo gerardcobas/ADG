@@ -33,7 +33,7 @@
 	</div>
 	{% if is_granted('ROLE_ADMIN') %}         
 		<div class="btn-group">	
-			<a data-toggle="modal" href="{{ path('documents_nou') }}" data-target="#nouDocuments" class="btn btn-success" type="button"><i class="icon-plus"></i>&nbsp;Afegir nou</a>
+			<a data-toggle="modal" href="{{ path('documents_nou', { 'seleccio':seleccio }) }}" data-target="#nouDocuments" class="btn btn-success" type="button"><i class="icon-plus"></i>&nbsp;Afegir nou</a>
 	    </div>
 	{% endif %}
 </div>

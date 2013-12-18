@@ -1,0 +1,50 @@
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Afegir nou -
+	      		{% if seleccio is sameas('carlemany') %} Cartoral de Carlemany
+	      		{% elseif seleccio is sameas('organya') %} Organyà
+	      		{% elseif seleccio is sameas('volabertran') %} Vilabertran
+	      		{% elseif seleccio is sameas('diplomatari') %} Diplomatari de Sant Feliu
+	      		{% elseif seleccio is sameas('rubriques') %} Rubriques vermelles
+	      		{% elseif seleccio is sameas('roses') %} Roses	
+	      		{% endif %}
+          </h4>
+        </div>
+      <form action="{{ path("documents_nou_confirmar") }}" method="post">
+	      	<div class="modal-body"> 
+	      		<p>Cal afegir la següent informació:</p>
+	      		<div class="space10"></div>
+	      		<input type="hidden" name="inputSeleccio" value="{{ seleccio }}">
+	      		
+	      		<div class="input-group">
+						<span class="input-group-addon">Classificació de l'arxiu</span>
+						<input type="text" class="form-control" pattern="^([a-zA-Z0-9]*\.)*$" name="inputNodac" 
+					title="Només pot tenir números i/o lletres i finalitzar amb un punt." >
+				</div><div class="space10"></div>
+	      		<div class="input-group">
+						<span class="input-group-addon">Referencia</span>
+						<input type="text" class="form-control" name="inputReferencia" >
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Data</span>
+						<input type="text" class="form-control" name="inputData" >
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Descripció</span>
+						<textarea type="text" class="form-control"  rows="2" name="inputDescripcio" ></textarea>
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Texte</span>
+						<textarea type="text" class="form-control"  rows="3" name="inputTexte" ></textarea>
+				</div><div class="space10"></div>							
+	        </div>
+	        
+	        <div class="modal-footer">
+	          <button class="btn btn-default" data-dismiss="modal">Tancar</button>
+	          <button class="btn btn-success" type="submit"><i class="icon-plus"></i>&nbsp;Afegir</button>
+	        </div>
+		</form><!-- /.form -->
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->

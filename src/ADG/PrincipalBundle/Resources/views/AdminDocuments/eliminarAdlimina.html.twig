@@ -1,0 +1,25 @@
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title text-danger">Eliminar entrada de {{ seleccio |capitalize}}
+          </h4>
+        </div>
+      <form action="{{ path("adlimina_eliminar_confirmar") }}" method="post">
+	      	<div class="modal-body"> 
+	      		<strong class="text-danger">S'eliminarà l'entrada amb la següent informació:</strong>
+	      		
+	      		<input type="hidden" name="id" value="{{ info.id }}">
+	      		<input type="hidden" name="inputSeleccio" value="{{ seleccio }}">
+				<h5 style="color: #d9534f">Classificació de l'arxiu</h5><p>{{ info.nodac }}</p>
+				<h5 style="color: #d9534f">Títol</h5><p>{{ info.titol }}</p>
+				<h5 style="color: #d9534f">Texte</h5><p>{{ info.texte }}</p>
+			 		
+	        </div>
+	        <div class="modal-footer">
+	          <button class="btn btn-default" data-dismiss="modal">Tancar</button>
+	          <button class="btn btn-danger" type="submit"><i class="icon-remove"></i>&nbsp;Eliminar</button>
+	        </div>
+		</form><!-- /.form -->
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
