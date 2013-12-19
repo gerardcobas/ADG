@@ -37,17 +37,20 @@ class FonsMitraRepository extends EntityRepository
 		$q = $qb->getQuery();
 	
 		$r=$q->getResult();
-		foreach ($r as $valor1){
-			foreach ($valor1 as $valor2){
-				$qr=$valor2;
-			}
+		if(empty($r)) {
+			$resultat=$prefix.'1';
 		}
-		$parts = explode('-', $qr);
-	
-		$afegit= intval($parts[2])+1;
-		$resultat=$parts[0].'-'.$parts[1].'-'.$afegit;
-	
-		return $resultat;
+		else{
+			foreach ($r as $valor1){
+				foreach ($valor1 as $valor2){
+					$qr=$valor2;
+				}
+			}
+			$parts = explode('-', $qr);
+			
+			$afegit= intval($parts[2])+1;
+			$resultat=$parts[0].'-'.$parts[1].'-'.$afegit;
+		}
 	}
 	
 	public function findDetalls($num , $nodac){
