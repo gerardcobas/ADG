@@ -67,6 +67,28 @@
         <h1>{{ 'llistat.header' | trans }}</h1>
 	</div>	
 	
+		
+	{% for flashMessage in app.session.flashbag.get('success') %}
+		<div class="row" style="margin-left:0px ">
+			<div class="col-md-7 col-lg-7 " style="margin-left:-5px">
+			    <div class="alert alert-success alert-dismissable">
+			    	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			        <strong>{{ flashMessage }}</strong>
+			    </div>
+			</div>
+		</div>
+	{% endfor %}
+	{% for flashMessage in app.session.flashbag.get('error') %}
+		<div class="row" style="margin-left:0px ">
+			<div class="col-md-7 col-lg-7" style="margin-left:-5px ">
+			    <div class="alert alert-danger alert-dismissable">
+			    	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			        <strong>{{ flashMessage }}</strong>
+			    </div>
+			</div>
+		</div>
+	{% endfor %}	
+	
 	<div class="row" style="margin-bottom: 5px;margin-left: 0px;margin-right: 0px">
 		<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
 			<div class="panel panel-default">
@@ -130,8 +152,8 @@
 		                        	<td class="noimprimir">
 		                        		<a data-toggle="modal" href="{{  path('llistat_detall', {'id':i.num}) }}" data-target="#ampliarInfo" class="btn btn-sm btn-info" type="button"><i class="icon-info"></i></a>
 			                			{% if is_granted('ROLE_ADMIN') %}
-			                        		<a data-toggle="modal" href="{{ path('llistat') }}" data-target="#editarLlistat" class="btn btn-xs btn-primary" type="button"><i class="icon-pencil"></i></a>
-			                        		<a data-toggle="modal" href="{{ path('llistat') }}" data-target="#eliminarLlistat" class="btn btn-xs btn-danger" type="button"><i class="icon-remove"></i></a>
+			                        		<a data-toggle="modal" href="{{ path('llistat_editar', { 'tipus': tipus, 'id':i.num }) }}" data-target="#editarLlistat" class="btn btn-xs btn-primary" type="button"><i class="icon-pencil"></i></a>
+			                        		<a data-toggle="modal" href="{{ path('llistat_eliminar', { 'tipus': tipus, 'id':i.num }) }}" data-target="#eliminarLlistat" class="btn btn-xs btn-danger" type="button"><i class="icon-remove"></i></a>
 			                        	{% endif %}
 		                        	</td>
 			                    </tr>

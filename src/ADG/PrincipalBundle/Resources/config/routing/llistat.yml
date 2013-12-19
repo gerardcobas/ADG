@@ -1,0 +1,29 @@
+#llistat        
+llistat_nou:
+    pattern: /{tipus}/nou
+    defaults: { _controller: "PrincipalBundle:AdminLlistat:nou" }
+
+llistat_nou_confirmar:
+    pattern:  /nou/confirmar
+    defaults: { _controller: "PrincipalBundle:AdminLlistat:nouConfirmar" }
+    requirements: { _method: post }
+
+llistat_editar:
+    pattern: /{tipus}/{id}/editar
+    defaults: { _controller: "PrincipalBundle:AdminLlistat:editar" }  
+        
+llistat_eliminar:        
+    pattern: /{tipus}/{id}/eliminar
+    defaults: { _controller: "PrincipalBundle:AdminLlistat:eliminar" }  
+
+llistat_editar_confirmar:
+    pattern:  /editar/confirmar
+    defaults: { _controller: "PrincipalBundle:AdminLlistat:editarConfirmar" }
+    requirements: { _method: post }    
+
+llistat_eliminar_confirmar:
+    pattern:  /eliminar/confirmar
+    defaults: { _controller: "PrincipalBundle:AdminLlistat:eliminarConfirmar" }
+    requirements: { _method: post }
+
+    

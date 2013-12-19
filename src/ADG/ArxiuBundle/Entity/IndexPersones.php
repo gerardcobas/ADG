@@ -17,7 +17,6 @@ class IndexPersones
      *
      * @ORM\Column(name="num", type="string", length=255, nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $num;
 
@@ -91,5 +90,18 @@ class IndexPersones
     public function getNom()
     {
         return $this->nom;
+    }
+
+    /**
+     * Set num
+     *
+     * @param string $num
+     * @return IndexPersones
+     */
+    public function setNum($num)
+    {
+        $this->num = $num;
+
+        return $this;
     }
 }

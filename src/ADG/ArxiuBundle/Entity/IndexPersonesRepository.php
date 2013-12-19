@@ -12,7 +12,7 @@ class IndexPersonesRepository extends EntityRepository
 		$qb = $em->createQueryBuilder();
 		
 		$qb->select('DISTINCT i.nom')->from('ArxiuBundle:IndexPersones', 'i');
-		$qb->andWhere('i.nom LIKE :nom');
+		$qb->andWhere('i.nom LIKE :nom OR i.nodac LIKE :nom');
 		$qb->setParameter('nom', '%'.$nom.'%');
 		$q = $qb->getQuery();
 
@@ -68,6 +68,41 @@ class IndexPersonesRepository extends EntityRepository
 		return $resultat;
 	}
 	
+	/*
+	 * Retorna un nou identificador, calculat a partir del ultim segons els prefix donat.
+	*/
+	public function findNewId($prefix){
+		$em = $this->getEntityManager();
+		$qb = $em->createQueryBuilder();
+	
+		// Build the query
+		$qb->select('f.num')->from('ArxiuBundle:IndexPersones', 'f');
+	
+		$qb->where('f.num LIKE :prefix');
+	
+		$qb->setParameter('prefix', $prefix . '%');
+		$qb->orderBy('f.num', 'DESC');
+		$qb->setMaxResults(1);
+		$q = $qb->getQuery();
+	
+		$r=$q->getResult();
+		foreach ($r as $valor1){
+			foreach ($valor1 as $valor2){
+				$qr=$valor2;
+			}
+		}
+		$parts = explode('-', $qr);
+	
+		$afegit= intval($parts[2])+1;
+		
+		$p0='Per';
+		$p1='001';
+		if ($parts[0] != null and $parts[0] != '') $p0=$parts[0];
+		if ($parts[1] != null and $parts[1] != '') $p1=$parts[1];
 
+		$resultat=$p0.'-'.$p1.'-'.$afegit;
+	
+		return $resultat;
+	}
 
 }

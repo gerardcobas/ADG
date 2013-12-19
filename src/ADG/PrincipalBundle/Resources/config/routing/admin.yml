@@ -26,3 +26,7 @@ admin_parroquies:
 admin_documents:
     resource: "@PrincipalBundle/Resources/config/routing/documents.yml"
     prefix:   /documents        
+    
+admin_llistat:
+    resource: "@PrincipalBundle/Resources/config/routing/llistat.yml"
+    prefix:   /llistat         

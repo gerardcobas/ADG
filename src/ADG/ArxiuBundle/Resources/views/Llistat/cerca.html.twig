@@ -36,7 +36,7 @@
 		</div>
 		{% if is_granted('ROLE_ADMIN') %}
 			<div class="btn-group">	
-				<a data-toggle="modal" href="{{ path('llistat') }}" data-target="#nouLlistat" class="btn btn-success" type="button"><i class="icon-plus"></i>&nbsp;Afegir nou</a>
+				<a data-toggle="modal" href="{{ path('llistat_nou', {'tipus':tipus}) }}" data-target="#nouLlistat" class="btn btn-success" type="button"><i class="icon-plus"></i>&nbsp;Afegir nou</a>
 		    </div>
 		{% endif %}
 

@@ -1,0 +1,34 @@
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Modificar - {{ tipus | capitalize }}
+          </h4>
+        </div>
+      <form action="{{ path("llistat_editar_confirmar") }}" method="post">
+	      	<div class="modal-body"> 
+	      		<p>Es pot modificar següent informació:</p>
+	      		<div class="space10"></div>
+	      		<input type="hidden" name="num" value="{{ info.num }}">
+	      		<input type="hidden" name="tipus" value="{{ tipus }}">
+	      		
+      			
+	      		<div class="input-group">
+						<span class="input-group-addon">Classificació de l'arxiu</span>
+						<input type="text" class="form-control" pattern="^([a-zA-Z0-9]*\.)*$" name="inputNodac" 
+					title="Només pot tenir números i/o lletres i finalitzar amb un punt." value="{{ info.nodac }}" required>
+				</div><div class="space10"></div>
+	      		<div class="input-group">
+						<span class="input-group-addon">Nom de {{ tipus }}</span>
+						<input type="text" class="form-control" name="inputNom" value="{{ info.nom }}" required>
+				</div><div class="space10"></div>
+				
+	        </div>
+	        
+	        <div class="modal-footer">
+	          <button class="btn btn-default" data-dismiss="modal">Tancar</button>
+	          <button class="btn btn-success" type="submit"><i class="icon-pencil"></i>&nbsp;Editar</button>
+	        </div>
+		</form><!-- /.form -->
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
