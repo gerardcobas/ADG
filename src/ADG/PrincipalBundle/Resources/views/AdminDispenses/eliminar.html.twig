@@ -1,0 +1,48 @@
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title text-danger">Eliminar dispensa matrimonial
+          </h4>
+        </div>
+      <form action="{{ path("dispenses_eliminar_confirmar") }}" method="post">
+	      	<div class="modal-body"> 
+	      		<strong class="text-danger">S'eliminarà l'entrada amb la següent informació:</strong>
+	      		
+	      		<input type="hidden" name="numref" value="{{ info.numref }}">
+	      		<h4>Informació general</h4>
+				<h5 style="color: #d9534f">Classificació de l'arxiu</h5><p>{{ info.nodac }}</p>
+				<h5 style="color: #d9534f">Data</h5><p>{{ info.data }}</p>
+				<h5 style="color: #d9534f">Any</h5><p>{{ info.any }}</p>
+				<h5 style="color: #d9534f">Tipus</h5><p>{{ info.tipus }}</p>
+				<h5 style="color: #d9534f">Control</h5><p>{{ info.control }}</p>
+				<h5 style="color: #d9534f">Document</h5><p>{{ info.document }}</p>
+				
+				<h4>Informació marit</h4>
+				<h5 style="color: #d9534f">Primer cognom</h5><p>{{ info.maritCognom1 }}</p>
+				<h5 style="color: #d9534f">Segon cognom</h5><p>{{ info.maritCognom2 }}</p>
+				<h5 style="color: #d9534f">Nom</h5><p>{{ info.maritNom }}</p>
+				<h5 style="color: #d9534f">Estat civil</h5><p>{{ info.maritEstatCivil }}</p>
+				<h5 style="color: #d9534f">Ofici</h5><p>{{ info.maritOfici }}</p>
+				<h5 style="color: #d9534f">Nacionalitat</h5><p>{{ info.maritNacionalitat }}</p>
+				<h5 style="color: #d9534f">Lloc naixement</h5><p>{{ info.maritLlocNaixement }}</p>
+				<h5 style="color: #d9534f">Veinatge</h5><p>{{ info.maritVeinatge }}</p>
+				
+				<h4>Informació muller</h4>
+			 	<h5 style="color: #d9534f">Primer cognom</h5><p>{{ info.mullerCognom1 }}</p>
+				<h5 style="color: #d9534f">Segon cognom</h5><p>{{ info.mullerCognom2 }}</p>
+				<h5 style="color: #d9534f">Nom</h5><p>{{ info.mullerNom }}</p>
+				<h5 style="color: #d9534f">Estat civil</h5><p>{{ info.mullerEstatCivil }}</p>
+				<h5 style="color: #d9534f">Ofici</h5><p>{{ info.mullerOfici }}</p>
+				<h5 style="color: #d9534f">Nacionalitat</h5><p>{{ info.mullerNacionalitat }}</p>
+				<h5 style="color: #d9534f">Lloc naixement</h5><p>{{ info.mullerLlocNaixement }}</p>
+				<h5 style="color: #d9534f">Veinatge</h5><p>{{ info.mullerVeinatge }}</p>
+				
+	        </div>
+	        <div class="modal-footer">
+	          <button class="btn btn-default" data-dismiss="modal">Tancar</button>
+	          <button class="btn btn-danger" type="submit"><i class="icon-remove"></i>&nbsp;Eliminar</button>
+	        </div>
+		</form><!-- /.form -->
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->

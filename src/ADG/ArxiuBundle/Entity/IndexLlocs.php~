@@ -91,4 +91,17 @@ class IndexLlocs
     {
         return $this->nom;
     }
+
+    /**
+     * Set num
+     *
+     * @param string $num
+     * @return IndexLlocs
+     */
+    public function setNum($num)
+    {
+        $this->num = $num;
+
+        return $this;
+    }
 }

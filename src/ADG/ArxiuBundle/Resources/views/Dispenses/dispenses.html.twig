@@ -66,6 +66,29 @@
 	<div class="page-header">
         <h1>{{ 'dispenses.header' | trans }}</h1>
 	</div>	
+	
+		{% for flashMessage in app.session.flashbag.get('success') %}
+		<div class="row" style="margin-left:0px ">
+			<div class="col-md-7 col-lg-7 " style="margin-left:-5px">
+			    <div class="alert alert-success alert-dismissable">
+			    	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			        <strong>{{ flashMessage }}</strong>
+			    </div>
+			</div>
+		</div>
+	{% endfor %}
+	{% for flashMessage in app.session.flashbag.get('error') %}
+		<div class="row" style="margin-left:0px ">
+			<div class="col-md-7 col-lg-7" style="margin-left:-5px ">
+			    <div class="alert alert-danger alert-dismissable">
+			    	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			        <strong>{{ flashMessage }}</strong>
+			    </div>
+			</div>
+		</div>
+	{% endfor %}	
+	
+	
 	<div class="row" style="margin-bottom: 5px;margin-left: 15px;margin-right: 0px">
 		<div class="btn-group" style="margin-top:5px;margin-bottom:5px;">
 			<a type="button" class="btn {% if seleccio is sameas("dispenses") %}btn-primary{% else %}btn-default{% endif %}" 
@@ -124,8 +147,8 @@
 		                        		<a data-toggle="modal" href="{{  path('dispenses_detall', {'id':i.numref }) }}" data-target="#ampliarInfo" class="btn btn-sm btn-info" type="button"><i class="icon-info"></i></a>
 		                        		
 			                			{% if is_granted('ROLE_ADMIN') %}
-			                        		<a data-toggle="modal" href="{{ path('dispenses') }}" data-target="#editarDispenses" class="btn btn-xs btn-primary" type="button"><i class="icon-pencil"></i></a>
-			                        		<a data-toggle="modal" href="{{path('dispenses') }}" data-target="#eliminarDispenses" class="btn btn-xs btn-danger" type="button"><i class="icon-remove"></i></a>
+			                        		<a data-toggle="modal" href="{{ path('dispenses_editar', { 'id':i.numref }) }}" data-target="#editarDispenses" class="btn btn-xs btn-primary" type="button"><i class="icon-pencil"></i></a>
+			                        		<a data-toggle="modal" href="{{ path('dispenses_eliminar', { 'id':i.numref }) }}" data-target="#eliminarDispenses" class="btn btn-xs btn-danger" type="button"><i class="icon-remove"></i></a>
 			                        	{% endif %}
 		                        	</td>
 			                    </tr>

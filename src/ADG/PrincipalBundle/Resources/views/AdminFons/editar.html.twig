@@ -15,7 +15,7 @@
 	      		<div class="space10"></div>
 		      	<div class="input-group">
 					<span class="input-group-addon">Classificació de l'arxiu</span>
-					<input type="text" class="form-control" value="{{ info.nodac }}" pattern="^([a-zA-Z0-9]*\.)*$" name="inputNodac" >
+					<input type="text" class="form-control" value="{{ info.nodac }}" pattern="^([a-zA-Z0-9]*\.)*$" name="inputNodac" title="Només pot tenir números i/o lletres i finalitzar amb un punt.">
 				</div><div class="space10"></div>
 				 		
 	      		 {% if tipus is sameas("arxius") or tipus is sameas("mitra") %}

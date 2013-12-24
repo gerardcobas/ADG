@@ -1,0 +1,119 @@
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Afegir nova dispensa matrimonial</h4>
+        </div>
+      <form action="{{ path("dispenses_nou_confirmar") }}" method="post">
+	      	<div class="modal-body"> 
+	      		<p>Cal afegir la següent informació:</p>
+	      		<div class="space10"></div>
+	      		
+	      		<h5>Informació general</h5>
+	      		
+		      	<div class="input-group">
+						<span class="input-group-addon">Classificació de l'arxiu</span>
+						<input type="text" class="form-control" pattern="^([a-zA-Z0-9]*\.)*$" name="inputNodac" 
+					title="Només pot tenir números i/o lletres i finalitzar amb un punt." required>
+				</div><div class="space10"></div>
+	      		<div class="input-group">
+						<span class="input-group-addon">Data</span>
+						{% set patro="^(([0-9]{3,4})\ ([a-zA-Z]*)\ ([0-9]{1,2}))$|^([0-9]{3,4})$" %}
+						<input type="text" class="form-control" name="inputData" pattern="{{ patro }}"
+						title="La data ha de tenir el format &quot;1650 juliol 9&quot; o bé &quot;1650&quot;" required>
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Any</span>
+						<input type="text" class="form-control" name="inputAny">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Tipus</span>
+						<input type="text" class="form-control" name="inputTipus">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Control</span>
+						<input type="text" class="form-control" name="inputControl">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Document</span>
+						<input type="text" class="form-control" name="inputDocument">
+				</div><div class="space10"></div>
+				
+				<h5>Informació marit</h5>
+				<div class="input-group">
+						<span class="input-group-addon">Primer cognom</span>
+						<input type="text" class="form-control" name="inputCog1Marit">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Segon cognom</span>
+						<input type="text" class="form-control" name="inputCog2Marit">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Nom</span>
+						<input type="text" class="form-control" name="inputNomMarit">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Estat civil</span>
+						<input type="text" class="form-control" name="inputEstatMarit">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Ofici</span>
+						<input type="text" class="form-control" name="inputOficiMarit">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Nacionalitat</span>
+						<input type="text" class="form-control" name="inputNacionalitatMarit">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Lloc de naixement</span>
+						<input type="text" class="form-control" name="inputLlocNaixMarit">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Veinatge</span>
+						<input type="text" class="form-control" name="inputVeinatgeMarit">
+				</div><div class="space10"></div>
+				
+				
+				<h5>Informació muller</h5>
+				<div class="input-group">
+						<span class="input-group-addon">Primer cognom</span>
+						<input type="text" class="form-control" name="inputCog1Muller">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Segon cognom</span>
+						<input type="text" class="form-control" name="inputCog2Muller">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Nom</span>
+						<input type="text" class="form-control" name="inputNomMuller">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Estat civil</span>
+						<input type="text" class="form-control" name="inputEstatMuller">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Ofici</span>
+						<input type="text" class="form-control" name="inputOficiMuller">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Nacionalitat</span>
+						<input type="text" class="form-control" name="inputNacionalitatMuller">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Lloc de naixement</span>
+						<input type="text" class="form-control" name="inputLlocNaixMuller">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Veinatge</span>
+						<input type="text" class="form-control" name="inputVeinatgeMuller">
+				</div><div class="space10"></div>
+				
+	        </div>
+	        
+	        <div class="modal-footer">
+	          <button class="btn btn-default" data-dismiss="modal">Tancar</button>
+	          <button class="btn btn-success" type="submit"><i class="icon-plus"></i>&nbsp;Afegir</button>
+	        </div>
+		</form><!-- /.form -->
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->

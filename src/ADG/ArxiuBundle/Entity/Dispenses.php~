@@ -13,9 +13,9 @@ use Doctrine\ORM\Mapping as ORM;
 class Dispenses
 {
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="numref", type="string", length=255, nullable=false)
+     * @ORM\Column(name="numref", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */

@@ -1,0 +1,28 @@
+dispenses_nou:
+    pattern:  /nou
+    defaults: { _controller: "PrincipalBundle:AdminDispenses:nou" }
+    
+dispenses_nou_confirmar:
+    pattern:  /confirmar/nou
+    defaults: { _controller: "PrincipalBundle:AdminDispenses:nouConfirmar" }
+    requirements: { _method: post }
+    
+dispenses_editar:
+    pattern:  /{id}/editar
+    defaults: { _controller: "PrincipalBundle:AdminDispenses:editar" }
+    
+dispenses_editar_confirmar:
+    pattern:  /editar/confirmar
+    defaults: { _controller: "PrincipalBundle:AdminDispenses:editarConfirmar" }
+    requirements: { _method: post }    
+    
+dispenses_eliminar:
+    pattern:  /{id}/eliminar
+    defaults: { _controller: "PrincipalBundle:AdminDispenses:eliminar" }    
+
+dispenses_eliminar_confirmar:
+    pattern:  /eliminar/confirmar
+    defaults: { _controller: "PrincipalBundle:AdminDispenses:eliminarConfirmar" }
+    requirements: { _method: post }    
+    
+    

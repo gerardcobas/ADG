@@ -30,3 +30,7 @@ admin_documents:
 admin_llistat:
     resource: "@PrincipalBundle/Resources/config/routing/llistat.yml"
     prefix:   /llistat         
+    
+admin_dispenses:
+    resource: "@PrincipalBundle/Resources/config/routing/dispenses.yml"
+    prefix:   /dispenses  

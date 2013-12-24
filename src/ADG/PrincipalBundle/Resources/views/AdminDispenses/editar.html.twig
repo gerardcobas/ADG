@@ -1,0 +1,121 @@
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Modificar dispensa matrimonial</h4>
+        </div>
+      <form action="{{ path("dispenses_editar_confirmar") }}" method="post">
+	      	<div class="modal-body"> 
+	      		<p>Es pot modificar següent informació:</p>
+	      		<div class="space10"></div>
+	      		
+	      		
+	      		<input type="hidden" name="numref" value="{{ info.numref }}">
+	      		<h5>Informació general</h5>
+	      		
+		      	<div class="input-group">
+						<span class="input-group-addon">Classificació de l'arxiu</span>
+						<input type="text" class="form-control" pattern="^([a-zA-Z0-9]*\.)*$" name="inputNodac" 
+					title="Només pot tenir números i/o lletres i finalitzar amb un punt." value="{{ info.nodac }}"required>
+				</div><div class="space10"></div>
+	      		<div class="input-group">
+						<span class="input-group-addon">Data</span>
+						{% set patro="^(([0-9]{3,4})\ ([a-zA-Z]*)\ ([0-9]{1,2}))$|^([0-9]{3,4})$" %}
+						<input type="text" class="form-control" name="inputData" pattern="{{ patro }}"
+						title="La data ha de tenir el format &quot;1650 juliol 9&quot; o bé &quot;1650&quot;" value="{{ info.data }}"required>
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Any</span>
+						<input type="text" class="form-control" name="inputAny" value="{{ info.any }}">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Tipus</span>
+						<input type="text" class="form-control" name="inputTipus" value="{{ info.tipus }}">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Control</span>
+						<input type="text" class="form-control" name="inputControl" value="{{ info.control }}">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Document</span>
+						<input type="text" class="form-control" name="inputDocument" value="{{ info.document }}">
+				</div><div class="space10"></div>
+				
+				<h5>Informació marit</h5>
+				<div class="input-group">
+						<span class="input-group-addon">Primer cognom</span>
+						<input type="text" class="form-control" name="inputCog1Marit" value="{{ info.maritCognom1 }}">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Segon cognom</span>
+						<input type="text" class="form-control" name="inputCog2Marit" value="{{ info.maritCognom2 }}">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Nom</span>
+						<input type="text" class="form-control" name="inputNomMarit" value="{{ info.maritNom }}">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Estat civil</span>
+						<input type="text" class="form-control" name="inputEstatMarit" value="{{ info.maritEstatCivil }}">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Ofici</span>
+						<input type="text" class="form-control" name="inputOficiMarit" value="{{ info.maritOfici }}">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Nacionalitat</span>
+						<input type="text" class="form-control" name="inputNacionalitatMarit" value="{{ info.maritNacionalitat }}">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Lloc de naixement</span>
+						<input type="text" class="form-control" name="inputLlocNaixMarit" value="{{ info.maritLlocNaixement }}">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Veinatge</span>
+						<input type="text" class="form-control" name="inputVeinatgeMarit" value="{{ info.maritVeinatge }}">
+				</div><div class="space10"></div>
+				
+				
+				<h5>Informació muller</h5>
+				<div class="input-group">
+						<span class="input-group-addon">Primer cognom</span>
+						<input type="text" class="form-control" name="inputCog1Muller" value="{{ info.mullerCognom1 }}">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Segon cognom</span>
+						<input type="text" class="form-control" name="inputCog2Muller" value="{{ info.mullerCognom2 }}">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Nom</span>
+						<input type="text" class="form-control" name="inputNomMuller" value="{{ info.mullerNom }}">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Estat civil</span>
+						<input type="text" class="form-control" name="inputEstatMuller" value="{{ info.mullerEstatCivil }}">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Ofici</span>
+						<input type="text" class="form-control" name="inputOficiMuller" value="{{ info.mullerOfici }}">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Nacionalitat</span>
+						<input type="text" class="form-control" name="inputNacionalitatMuller" value="{{ info.mullerNacionalitat }}">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Lloc de naixement</span>
+						<input type="text" class="form-control" name="inputLlocNaixMuller" value="{{ info.mullerLlocNaixement }}">
+				</div><div class="space10"></div>
+				<div class="input-group">
+						<span class="input-group-addon">Veinatge</span>
+						<input type="text" class="form-control" name="inputVeinatgeMuller" value="{{ info.mullerVeinatge }}">
+				</div><div class="space10"></div>
+				
+	        </div>
+	        
+	        <div class="modal-footer">
+	          <button class="btn btn-default" data-dismiss="modal">Tancar</button>
+	          <button class="btn btn-success" type="submit"><i class="icon-pencil"></i>&nbsp;Editar</button>
+	        </div>
+		</form><!-- /.form -->
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
