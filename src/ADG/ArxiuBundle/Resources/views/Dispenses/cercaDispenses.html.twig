@@ -98,13 +98,13 @@
 	       	
 	       	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 	        	<select class="form-control" name="param">
-	                <option value="exacte">Any exacte</option>
-	                <option value="2">±2</option>
-	                <option value="5">±5</option>
-	                <option value="10">±10</option>
-	                <option value="20">±20</option>
-	                <option value="abans">Abans de</option>
-	                <option value="despres">Després de</option>
+	                <option value="exacte" {% if param is sameas("exacte") %}selected{% endif %}>Any exacte</option>
+	                <option value="2" {% if param is sameas("2") %}selected{% endif %}>±2</option>
+	                <option value="5" {% if param is sameas("5") %}selected{% endif %}>±5</option>
+	                <option value="10" {% if param is sameas("10") %}selected{% endif %}>±10</option>
+	                <option value="20" {% if param is sameas("20") %}selected{% endif %}>±20</option>
+	                <option value="abans" {% if param is sameas("abans") %}selected{% endif %}>Abans de</option>
+	                <option value="despres" {% if param is sameas("despres") %}selected{% endif %}>Després de</option>
 	            </select>
 	       	</div>
 	    	<div class="space10"></div>

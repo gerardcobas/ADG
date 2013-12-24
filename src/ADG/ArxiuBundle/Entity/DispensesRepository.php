@@ -321,4 +321,25 @@ class DispensesRepository extends EntityRepository
 		return $q->getResult();
 	}
 	
+	public function findNewControl(){
+		$em = $this->getEntityManager();
+		$qb = $em->createQueryBuilder();
+	
+		// Build the query
+		$qb->select('d.control')->from('ArxiuBundle:Dispenses', 'd');
+
+		$qb->orderBy('d.control', 'DESC');
+		$qb->setMaxResults(1);
+		$q = $qb->getQuery();
+		$r=$q->getResult();
+		$res=1;
+		foreach ($r as $valor1){
+			foreach ($valor1 as $valor2){
+				$res=$valor2;
+			}
+		}
+		$resultat=intval($res)+1;
+		return $resultat.'';
+	}
+	
 }

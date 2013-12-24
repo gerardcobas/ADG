@@ -34,7 +34,17 @@ class AdminDispensesController extends Controller
     		$entity->setAny($any);
     		
     		$entity->setTipus($request->request->get('inputTipus'));
-    		$entity->setControl($request->request->get('inputControl'));
+
+    		$control=$request->request->get('inputControl');
+    		if ($control == "impediment") {
+    			$rep = $em->getRepository('ArxiuBundle:Dispenses');
+    			$nouControl=$rep->findNewControl();
+    			$entity->setControl($nouControl);
+    		}
+    		else{
+    			$entity->setControl('');
+    		}
+
     		$entity->setDocument($request->request->get('inputDocument'));
     		
     		//atributs marit
@@ -129,7 +139,17 @@ class AdminDispensesController extends Controller
     		$entity->setAny($any);
     		
     		$entity->setTipus($request->request->get('inputTipus'));
-    		$entity->setControl($request->request->get('inputControl'));
+    		
+    	    $control=$request->request->get('inputControl');
+    		if ($control == "impediment") {
+    			$rep = $em->getRepository('ArxiuBundle:Dispenses');
+    			$nouControl=$rep->findNewControl();
+    			$entity->setControl($nouControl);
+    		}
+    		else{
+    			$entity->setControl('');
+    		}
+    		
     		$entity->setDocument($request->request->get('inputDocument'));
     		
     		//atributs marit

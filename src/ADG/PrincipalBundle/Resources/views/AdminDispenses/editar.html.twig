@@ -24,6 +24,17 @@
 						<input type="text" class="form-control" name="inputData" pattern="{{ patro }}"
 						title="La data ha de tenir el format &quot;1650 juliol 9&quot; o bé &quot;1650&quot;" value="{{ info.data }}"required>
 				</div><div class="space10"></div>
+				
+				<select class="form-control" name="inputControl" style="max-width: 220px">
+					{% if info.control is not null and info.control is not empty %}
+        				<option value="proclames">Dispensa de proclames</option>
+	                	<option value="impediment" selected>Dispensa d'impediment</option>
+					{% else %}
+						<option value="proclames" selected>Dispensa de proclames</option>
+	                	<option value="impediment">Dispensa d'impediment</option>
+					{% endif %}
+				</select><div class="space10"></div>
+				
 				<div class="input-group">
 						<span class="input-group-addon">Any</span>
 						<input type="text" class="form-control" name="inputAny" value="{{ info.any }}">
@@ -31,10 +42,6 @@
 				<div class="input-group">
 						<span class="input-group-addon">Tipus</span>
 						<input type="text" class="form-control" name="inputTipus" value="{{ info.tipus }}">
-				</div><div class="space10"></div>
-				<div class="input-group">
-						<span class="input-group-addon">Control</span>
-						<input type="text" class="form-control" name="inputControl" value="{{ info.control }}">
 				</div><div class="space10"></div>
 				<div class="input-group">
 						<span class="input-group-addon">Document</span>
