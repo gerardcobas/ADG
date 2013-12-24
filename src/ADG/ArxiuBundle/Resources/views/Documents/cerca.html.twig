@@ -1,15 +1,15 @@
-<div class="panel-heading"><h4 style="margin-top:-3px;margin-bottom:-3px">Cerca {{ seleccio }}</h4></div>
+<div class="panel-heading"><h4 style="margin-top:-3px;margin-bottom:-3px">{{ 'documents.cerca.cerca' | trans }} {{ seleccio }}</h4></div>
 <div class="panel-body">
 <form action="{{ path('documents_cercar', { 'seleccio': seleccio }) }}" method="post">
 	<div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-10">
-			<h5>Número de classificació</h5>
+			<h5>{{ 'documents.cerca.classificacio' | trans }}</h5>
 			<div class="input-group">
 				<span class="input-group-addon"><i class="icon-archive"></i></span>
 				<input type="text" class="form-control search-query" name="nodac" value="{{ nodac }}">
 			</div>
 			<div class="space10"></div>
-			<h5>Data</h5>
+			<h5>{{ 'documents.cerca.data' | trans }}</h5>
 			<div class="input-group">
 				<span class="input-group-addon"><i class="icon-calendar"></i></span>
 				<input type="text" class="form-control search-query" name="data" value="{{ data }}">
@@ -18,7 +18,7 @@
        	</div>
        	
        	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-10">
-        	<h5>Paraula clau</h5>
+        	<h5>{{ 'documents.cerca.paraula' | trans }}</h5>
 			<div class="input-group">
 				<span class="input-group-addon"><i class="icon-flag"></i></span>
 				<input type="text" class="form-control search-query" name="paraula" value="{{ paraula }}">

@@ -236,7 +236,10 @@ documents:
     alerta3: No s'han trobat resultats.
     continguts: Continguts
     cerca:
-        titol: Cerca  
+        cerca: Cerca
+        classificacio: Classificació de l'arxiu
+        data: Data
+        paraula: Paraula clau  
     detall:
        info: Informació detallada 
        classificacio: Classificació de l'arxiu
@@ -244,6 +247,9 @@ documents:
        descripcio: Descripció
        texte: Texte
        referencia: Referencia
+    taula:
+       descripcio: Descripció
+       operacions: Operacions
        
 #parroquies
 parroquies:
@@ -252,7 +258,19 @@ parroquies:
     cercar1: Cercar parròquies
     cercar2: Cercar arxius dipositats
     resultats: Resultats de la cerca
-    avis: No s'han trobat arxius dipositats per aquesta parròquia.       
+    avis: No s'han trobat arxius dipositats per aquesta parròquia.
+    cerca:
+        classificacio: Classificació de l'arxiu
+        data: Data
+        nom: Nom
+        paraula: Paraula clau
+        parroquia: Nom de pàrroquia
+    taula:
+        classificacio: Classificació
+        data: Data
+        nom: Nom
+        titol: Títol
+        operacions: Operacions      
        
       
          

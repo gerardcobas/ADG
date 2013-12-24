@@ -1,10 +1,10 @@
-<div class="panel-heading"><h4 style="margin-top:-3px;margin-bottom:-3px">Cercar parròquies</h4></div>
+<div class="panel-heading"><h4 style="margin-top:-3px;margin-bottom:-3px">{{ 'parroquies.cercar1' | trans }}</h4></div>
 
 <div class="panel-body">
 	<form action="{{ path('parroquies_cerca') }}" method="post">
 		<div class="row">
 			<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-			  	<h5>Nom de parròquia</h5>
+			  	<h5>{{ 'parroquies.cerca.parroquia' | trans }}</h5>
 			  	<div class="input-group">
 					<span class="input-group-addon"><i class="icon-picture"></i></span>
 					<input type="text" class="form-control search-query" name="nom" value="{{ nom }}">
