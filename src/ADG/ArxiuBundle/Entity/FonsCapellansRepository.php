@@ -66,7 +66,7 @@ class FonsCapellansRepository extends EntityRepository
 		$qb->orderBy('f.num', 'DESC');
 		$qb->setMaxResults(1);
 		$q = $qb->getQuery();
-	
+		$r=$q->getResult();
 		if(empty($r)) {
 			$resultat=$prefix.'1';
 		}
