@@ -17,45 +17,45 @@
 {% block arxiuContingut %}
 			
 			<input type="hidden" name="nivell" value="{{ info.nivell }}">
-			<h5 class="text-warning">Area d'identificació</h5>
-			<p><strong>Nivell:</strong> {{ info.nivell }}</p>
-		  	{% if info.titol is not null and info.titol is not empty %}<p><strong>Titol:</strong> {{ info.titol }}</p>{% endif %}
-			{% if info.codi is not null and info.codi is not empty %}<p><strong>Codi de referencia:</strong> {{ info.codi }}</p>{% endif %}
-		    {% if info.data is not null and info.data is not empty %}<p><strong>Data:</strong> {{ info.data }}</p>{% endif %}
-		    {% if info.volum is not null and info.volum is not empty %}<p><strong>Volum i suport:</strong> {{ info.volum }}</p>{% endif %}
+			<h4>Area d'identificació</h4>
+			<p><strong class="text-danger">Nivell:</strong> {{ info.nivell }}</p>
+		  	{% if info.titol is not null and info.titol is not empty %}<p><strong class="text-danger">Titol:</strong> {{ info.titol }}</p>{% endif %}
+			{% if info.codi is not null and info.codi is not empty %}<p><strong class="text-danger">Codi de referencia:</strong> {{ info.codi }}</p>{% endif %}
+		    {% if info.data is not null and info.data is not empty %}<p><strong class="text-danger">Data:</strong> {{ info.data }}</p>{% endif %}
+		    {% if info.volum is not null and info.volum is not empty %}<p><strong class="text-danger">Volum i suport:</strong> {{ info.volum }}</p>{% endif %}
 		    
-		    <h5 class="text-warning">Area de context</h5>
-		    {% if info.nomProductor is not null and info.nomProductor is not empty %}<p><strong>Nom del productor:</strong> {{ info.nomProductor }}</p>{% endif %}
-		    {% if info.historiaProductor is not null and info.historiaProductor is not empty %}<p><strong>Historia del productor:</strong> {{ info.historiaProductor }}</p>{% endif %}
-		    {% if info.historiaArxivistica is not null and info.historiaArxivistica is not empty %}<p><strong>Historia arxivistica:</strong> {{ info.historiaArxivistica }}</p>{% endif %}
-		    {% if info.dadesIngres is not null and info.dadesIngres is not empty %}<p><strong>Dades sobre l'ingrés:</strong> {{ info.dadesIngres }}</p>{% endif %}
+		    <h4>Area de context</h4>
+		    {% if info.nomProductor is not null and info.nomProductor is not empty %}<p><strong class="text-danger">Nom del productor:</strong> {{ info.nomProductor }}</p>{% endif %}
+		    {% if info.historiaProductor is not null and info.historiaProductor is not empty %}<p><strong class="text-danger">Historia del productor:</strong> {{ info.historiaProductor }}</p>{% endif %}
+		    {% if info.historiaArxivistica is not null and info.historiaArxivistica is not empty %}<p><strong class="text-danger">Historia arxivistica:</strong> {{ info.historiaArxivistica }}</p>{% endif %}
+		    {% if info.dadesIngres is not null and info.dadesIngres is not empty %}<p><strong class="text-danger">Dades sobre l'ingrés:</strong> {{ info.dadesIngres }}</p>{% endif %}
 		    
-		    <h5 class="text-warning">Area de contingut i estructura</h5>
-		    {% if info.abast is not null and info.abast is not empty %}<p><strong>Abast i contingut:</strong> {{ info.abast }}</p>{% endif %}
-		    {% if info.organitzacio is not null and info.organitzacio is not empty %}<p><strong>Sistema d'organització:</strong> {{ info.organitzacio }}</p>{% endif %}
-		    {% if info.informacioUtilitzacio is not null and info.informacioUtilitzacio is not empty %}<p><strong>Informació sobre la valoració, selecció i eliminació:</strong> {{ info.informacioUtilitzacio }}</p>{% endif %}
-		    {% if info.increments is not null and info.increments is not empty %}<p><strong>Increments:</strong> {{ info.increments }}</p>{% endif %}
+		    <h4>Area de contingut i estructura</h4>
+		    {% if info.abast is not null and info.abast is not empty %}<p><strong class="text-danger">Abast i contingut:</strong> {{ info.abast }}</p>{% endif %}
+		    {% if info.organitzacio is not null and info.organitzacio is not empty %}<p><strong class="text-danger">Sistema d'organització:</strong> {{ info.organitzacio }}</p>{% endif %}
+		    {% if info.informacioUtilitzacio is not null and info.informacioUtilitzacio is not empty %}<p><strong class="text-danger">Informació sobre la valoració, selecció i eliminació:</strong> {{ info.informacioUtilitzacio }}</p>{% endif %}
+		    {% if info.increments is not null and info.increments is not empty %}<p><strong class="text-danger">Increments:</strong> {{ info.increments }}</p>{% endif %}
 		    
-		    <h5 class="text-warning">Area de condicions d'acces i ús</h5>
-		    {% if info.condicionsAcces is not null and info.condicionsAcces is not empty %}<p><strong>Condicions d'accés:</strong> {{ info.condicionsAcces }}</p>{% endif %}
-		    {% if info.condicionsReproduccio is not null and info.condicionsReproduccio is not empty %}<p><strong>Condicions de reproducció:</strong> {{ info.condicionsReproduccio }}</p>{% endif %}
-		    {% if info.llengues is not null and info.llengues is not empty %}<p><strong>Llengues i escriptures dels documents:</strong> {{ info.llengues }}</p>{% endif %}
-		    {% if info.caracteristiques is not null and info.caracteristiques is not empty %}<p><strong>Caracteristiques físiques i requisits técnics:</strong> {{ info.caracteristiques }}</p>{% endif %}
-		    {% if info.instruments is not null and info.instruments is not empty %}<p><strong>Instruments de descripció:</strong> {{ info.instruments }}</p>{% endif %}
+		    <h4>Area de condicions d'acces i ús</h4>
+		    {% if info.condicionsAcces is not null and info.condicionsAcces is not empty %}<p><strong class="text-danger">Condicions d'accés:</strong> {{ info.condicionsAcces }}</p>{% endif %}
+		    {% if info.condicionsReproduccio is not null and info.condicionsReproduccio is not empty %}<p><strong class="text-danger">Condicions de reproducció:</strong> {{ info.condicionsReproduccio }}</p>{% endif %}
+		    {% if info.llengues is not null and info.llengues is not empty %}<p><strong class="text-danger">Llengues i escriptures dels documents:</strong> {{ info.llengues }}</p>{% endif %}
+		    {% if info.caracteristiques is not null and info.caracteristiques is not empty %}<p><strong class="text-danger">Caracteristiques físiques i requisits técnics:</strong> {{ info.caracteristiques }}</p>{% endif %}
+		    {% if info.instruments is not null and info.instruments is not empty %}<p><strong class="text-danger">Instruments de descripció:</strong> {{ info.instruments }}</p>{% endif %}
 		    
-		    <h5 class="text-warning">Area de documentació relacionada</h5>
-		    {% if info.existenciaOriginals is not null and info.existenciaOriginals is not empty %}<p><strong>Existencia i localització dels originals:</strong> {{ info.existenciaOriginals }}</p>{% endif %}
-		    {% if info.existenciaReproduccions is not null and info.existenciaOriginals is not empty  %}<p><strong>Existencia i localització de les reproduccions:</strong> {{ info.existenciaReproduccions }}</p>{% endif %}
-		    {% if info.documentacio is not null and info.documentacio is not empty %}<p><strong>Documentació relacionada:</strong> {{ info.documentacio }}</p>{% endif %}
-		    {% if info.bibliografia is not null and info.bibliografia is not empty %}<p><strong>Bibliografia:</strong> {{ info.bibliografia }}</p>{% endif %}
+		    <h4>Area de documentació relacionada</h4>
+		    {% if info.existenciaOriginals is not null and info.existenciaOriginals is not empty %}<p><strong class="text-danger">Existencia i localització dels originals:</strong> {{ info.existenciaOriginals }}</p>{% endif %}
+		    {% if info.existenciaReproduccions is not null and info.existenciaOriginals is not empty  %}<p><strong class="text-danger">Existencia i localització de les reproduccions:</strong> {{ info.existenciaReproduccions }}</p>{% endif %}
+		    {% if info.documentacio is not null and info.documentacio is not empty %}<p><strong class="text-danger">Documentació relacionada:</strong> {{ info.documentacio }}</p>{% endif %}
+		    {% if info.bibliografia is not null and info.bibliografia is not empty %}<p><strong class="text-danger">Bibliografia:</strong> {{ info.bibliografia }}</p>{% endif %}
 		    
-		    <h5 class="text-warning">Area de notes</h5>
-		    {% if info.notes is not null and info.notes is not empty %}<p><strong>Notes:</strong> {{ info.notes }}</p>{% endif %}
+		    <h4>Area de notes</h4>
+		    {% if info.notes is not null and info.notes is not empty %}<p><strong class="text-danger">Notes:</strong> {{ info.notes }}</p>{% endif %}
 		    
-		    <h5 class="text-warning">Area de control de la descripció</h5>
-		    {% if info.autoria is not null and info.autoria is not empty %}<p><strong>Autoría i dates:</strong> {{ info.autoria }}</p>{% endif %}
-		    {% if info.fonts is not null and info.fonts is not empty %}<p><strong>Fonts:</strong> {{ info.fonts }}</p>{% endif %}
-		    {% if info.regles is not null and info.regles is not empty %}<p><strong>Regles i convencions:</strong> {{ info.regles }}</p>{% endif %}
+		    <h4>Area de control de la descripció</h4>
+		    {% if info.autoria is not null and info.autoria is not empty %}<p><strong class="text-danger">Autoría i dates:</strong> {{ info.autoria }}</p>{% endif %}
+		    {% if info.fonts is not null and info.fonts is not empty %}<p><strong class="text-danger">Fonts:</strong> {{ info.fonts }}</p>{% endif %}
+		    {% if info.regles is not null and info.regles is not empty %}<p><strong class="text-danger">Regles i convencions:</strong> {{ info.regles }}</p>{% endif %}
 		    
 {% endblock %}
 

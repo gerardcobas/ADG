@@ -10,14 +10,14 @@
 		      	<input type="hidden" name="usuari" value="{{ usuari.username }}">
 		      	<div class="space10"></div>
 		      	
-		      	<p><strong>Usuari:</strong> {{ usuari.username }}</p>
-		      	<p><strong>Email:</strong> {{ usuari.email }}</p>
+		      	<p><strong class="text-danger">Usuari:</strong> {{ usuari.username }}</p>
+		      	<p><strong class="text-danger">Email:</strong> {{ usuari.email }}</p>
 		      	
                 {% set permis = '' %} 
                 {% for rol in usuari.roles if rol is sameas("ROLE_ADMIN") %} {% set permis = 'Gestor' %} 
                 {% else %} {% set permis = 'Usuari' %} 
                 {% endfor  %}
-				<p><strong>Permis:</strong> {{ permis }}</p>
+				<p><strong class="text-danger">Permis:</strong> {{ permis }}</p>
 		        
 	        </div>
 	        <div class="modal-footer">
