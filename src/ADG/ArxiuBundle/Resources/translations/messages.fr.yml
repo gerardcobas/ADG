@@ -1,0 +1,276 @@
+#ArxiuBundle\Resources\translations\messages.fr.yml
+
+submenu:
+    classificacio: Classification de l'archive
+    dispenses: Dispenses de mariage
+    recerca: Recherche documentaire
+    index: Index de lieux et personnes
+    documents: Documents i textes
+    parroquies: Paroises
+    
+#general 
+general:
+    datatable:
+        entrades: _MENU_ par page
+        zero: Rien trouvé
+        info: Trouvé _TOTAL_ entrées
+        empty: 0 entrées
+        filtrades: (filtré de _MAX_ entrées en total)
+        seguent: Suivante
+        anterior: Précedent
+        general: Recherche Général
+        
+fons:
+    #fons
+    titol: Fonds et séries
+    header: Recherche documentaire
+    taula:
+        classificacio: Classification
+        operacions: Opérations
+        dades: Donnés
+        data: Date
+        nom: Nom
+        fitxa: Fiche
+        institucio: Institution
+        foli: Folio
+    alerta: Les résultats sont affichés lors de la recherche.
+    alerta2: Vous choisissez le contenu de la recherche.
+    
+    #cerca
+    cerca:
+        data: Date
+        clau: Mots clés
+        nom: Nom de la personne
+        lloc: Lieu
+        dataOrd: Data d'ordination sacerdotale
+        congregacio: Congrégation
+        tipus: Type de recherche
+        relaxada: Détendu
+        estricte: Strict
+        buscar: Chercher    
+    #detall
+    detall:
+        info: Détail
+        classificacio: Classification de l'archive
+        dades: Donnés
+        data: Date
+        notari: Notaire
+        mides: Domensions
+        obs: Observations
+        llibre: Livre
+        full: Feuille
+        cognom: Nom, Prénom
+        natural: Naturel
+        congregacio: Congregation
+        llocCong: Lieu de la congregation
+        fitxa: Fiche
+        dataNaix: Date de naissanse
+        natural: Naturel
+        ordenacio: Ordenation
+        obit: Date de décès
+        altre: Autres
+        institucio: Institution
+        foli: Folio
+        tancar: Fermer
+    #menuLateral
+    continguts: Contenu
+    lletres:
+        titol: Lettres
+        llicencies: Licences de charité
+        registres: Registres Itineris
+    manuals:
+        titol: Classements bénéfiques
+        manuals: Manuels 1271-1928
+        beneficis: Fonds de dotations bénéfiques
+        seu: Dotations de fundations de la Cathédrale
+        patronat: Processus de droit de patronage
+    arxius:
+        titol: Archives incorporées
+        curia: Rouleaux de la Curie et autres
+        almoina: Pia Almoina
+        stfeliu: Rouleaux de St.Feliu de Gérone
+        besalu: Rouleaux de Besalú
+        llado: Rouleaux de Llado
+        cadins: Rouleaux de Cadins
+    notaria:
+        titol: Notaire
+        notalarum: Notalarum 1924-1947 et supplément
+    ordes:
+        titol: Ordres religieux et professions
+        capellans: Prêtes
+        monges: Soeurs
+        seminaristes: Séminaristes
+    testaments:
+        titol: Testaments, definitions...
+        testaments: Testaments
+        definicions: Definitions
+        resolucions: Resolutions d'execution testamentaire
+        instuicions: Institutions de Cause Pia
+    processos:
+        titol: Processus
+        medievals: Processus médiévales (1282-1500)
+        moderns: Processus modernes (1585-1864)   
+    mitra:
+        titol: Mitre
+        mitra: Rouleaux de la mitre
+        delmes: Dîmes   
+
+#guia    
+guia:    
+    title: Classification
+    header: Classification de l'archive
+    fi: Pas plus de contenu
+    info: Niveau de description
+    titol: Titre
+    codi: Code de référence
+    data: Date
+    volum: Volume et support
+    
+    nomProductor: Nom du producteus
+    historiaProductor: Histoire du producteur
+    historiaArxivistica: Histoire archivistique
+    dadesIngres: Données du dépôt
+    
+    abast: Portée et contenu    
+    organitzacio: Système d'organitzation   
+    informacioUtilitzacio: Information sur l'évaluation, selection et élimination
+    increments: Augments
+    
+    condicionsAcces: Conditions d'accès
+    condicionsReproduccio: Conditions de reproduction
+    llengues: Langue et écritures des documents
+    caracteristiques: Caractéristiques physiques et téchniques
+    instruments: Instruments de description
+    
+    existenciaOriginals: Existence et localisation des originaux
+    existenciaReproduccions: Existence et localisation des copies
+    documentacio: Documentation associée
+    bibliografia: Bibliographie
+    
+    notes: Remarques
+    
+    autoria: Auteur et date
+    fonts: Sources
+    regles: Normatives et conventions
+    
+
+#dispenses matrimonials    
+dispenses:
+    titol: Dispenses de mariage
+    header: Dispenses de mariage
+    alerta: Les résultats sont affichés lors de la recherche.
+    cerca:
+        titol: Recherche de dispenses de mariage
+        ma: Mari
+        mu: Femme
+        nom: Prénom
+        cog: Nom de famille
+        cog2: Second nom de famille
+        naix: Lieu de naissance
+        res: Lieu de résidence
+        buscar: Chercher
+        any: Année
+        interval: Intervalle d'années
+    taula:
+        classificacio: Classification de l'archive
+        operacions: Opérations
+        any: Année
+        manom: Prénom mari
+        macog: Nom mari
+        munom: Prénom femme
+        mucog: Nom femme
+    detall:
+       info: Détail
+       classificacio: Classification de l'archive
+       tancar: Fermer
+       data: Date
+       any: Année
+       tipus: Type
+       control: Contrôle
+       nom: Prénom
+       cog: Nom de famille
+       cog2: Second nom de famille
+       EstatCivil: État matrimonial
+       Ofici: Office
+       Nacionalitat: Nationalité
+       LlocNaixement: Liue de naissance
+       Veinatge: Lieu de résidence
+    cognom: Noms de famille
+    cognoms:
+       titol: Recherche patronymes similaires
+       fonetica: Similitude phonétique
+       grau: Niveau de similitude
+       baixa: Faible
+       mitjana: Moyenne
+       alta: Haute
+       contenen: Contenant du mot
+       paraula: mot
+       cercar: Chercher
+       
+#index llocs i persones
+llistat:
+    titol: Index de lieux et personnes
+    header: Index de lieux et personnes
+    alerta: Les résultats sont affichés lors de la recherche.
+    alerta2: Sélectionnez un nom pour voir ses options.
+    alerta3: Pas de résultats trouvés.
+    cerca:
+        titol: Recherche des lieux ou personnes
+        tipus: Chercher par
+        persona: Personne
+        lloc: Lieu
+        paraula: Mots clés
+        buscar: Chercher
+    taula:
+        nodac: Classification
+        num: Numéro
+        nom: Nom
+        operacions: Opérations
+        
+#documents i textos        
+documents:
+    titol: Documents et textes
+    header: Documents et textes
+    alerta: Les résultats sont affichés lors de la recherche.
+    alerta2: Choisissez le contenu de la recherche.
+    alerta3: Pas de résultats trouvés.
+    continguts: Contenus
+    cerca:
+        cerca: Chercher
+        classificacio: Classification de l'archive
+        data: Date
+        paraula: Mot clé  
+    detall:
+       info: Détail
+       classificacio: Classification de l'archive
+       data: Date
+       descripcio: Description
+       texte: Texte
+       referencia: Référence
+    taula:
+       descripcio: Description
+       operacions: Opérations
+       
+#parroquies
+parroquies:
+    titol: Parroisses
+    header: Parroisses
+    cercar1: Chercher par parroisses
+    cercar2: Chercher par archives déposés
+    resultats: Résultats de la recherche
+    avis: Pas d'archives déposés pour cette paroisse trouvés.
+    cerca:
+        classificacio: Classification de l'archive
+        data: Date
+        nom: Nom
+        paraula: Mot clé
+        parroquia: Nom de la paroisse
+    taula:
+        classificacio: Classification
+        data: Date
+        nom: Nom
+        titol: Titre
+        operacions: Opérations    
+       
+      
+         
