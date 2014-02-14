@@ -3,7 +3,7 @@ parameters:
 
 services:
     adg.bibliotecabundle.menu.voter.request:
-        class: Adg\PrincipalBundle\Menu\RequestVoter
+        class: ADG\PrincipalBundle\Menu\RequestVoter
         arguments:
             - "@service_container"
         tags:

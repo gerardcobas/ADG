@@ -1,6 +1,6 @@
 <?php
 
-namespace Adg\PrincipalBundle\Menu;
+namespace ADG\PrincipalBundle\Menu;
 
 use Knp\Menu\ItemInterface;
 use Knp\Menu\Matcher\Voter\VoterInterface;

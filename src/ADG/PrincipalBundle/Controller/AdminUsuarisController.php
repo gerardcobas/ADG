@@ -7,7 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\SecurityContext;
-use Adg\PrincipalBundle\Entity\User;
+use ADG\PrincipalBundle\Entity\User;
 
 class AdminUsuarisController extends Controller
 {
