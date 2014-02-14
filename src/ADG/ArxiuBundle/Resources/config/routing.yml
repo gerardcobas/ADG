@@ -3,11 +3,6 @@ arxiu:
     defaults:
         _controller: ArxiuBundle:Default:arxiu
         
-altre:
-    pattern: /altre
-    defaults:
-        _controller: ArxiuBundle:Default:altre
-        
 guia_routes:
     resource: "@ArxiuBundle/Resources/config/routing/guia.yml"
     prefix:   /guia      
