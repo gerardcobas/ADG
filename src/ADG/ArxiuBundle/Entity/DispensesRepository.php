@@ -274,6 +274,8 @@ class DispensesRepository extends EntityRepository
 		$result=array();
 		$any="";
 		$document="";
+		$control="";
+		$data="";
 		
 		$em = $this->getEntityManager();
 		$qb = $em->createQueryBuilder();
@@ -300,7 +302,30 @@ class DispensesRepository extends EntityRepository
 			}
 		}
 		
-		return array($any,$document);
+		// control
+		$qb->select('d3.control')->from('ArxiuBundle:Dispenses', 'd3');
+		$qb->andWhere('d3.numref = :numref');
+		$qb->setParameter('numref', $id);
+		$q = $qb->getQuery();
+		$r=$q->getResult();
+		foreach ($r as $row){
+			foreach ($row as $valor){
+				$control=$valor;
+			}
+		}
+		// control
+		$qb->select('d4.data')->from('ArxiuBundle:Dispenses', 'd4');
+		$qb->andWhere('d4.numref = :numref');
+		$qb->setParameter('numref', $id);
+		$q = $qb->getQuery();
+		$r=$q->getResult();
+		foreach ($r as $row){
+			foreach ($row as $valor){
+				$data=$valor;
+			}
+		}
+		
+		return array($any,$document,$control,$data);
 	}	
 	
 	public function findDetalls($num , $nodac){
