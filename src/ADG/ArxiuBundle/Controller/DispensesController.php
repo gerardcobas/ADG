@@ -137,8 +137,8 @@ class DispensesController extends Controller
     	 */
     	
     	
-    	$resultat[]="http://10.0.0.1/arxiu/Dispenses_Impediment/directori/001.pdf";
-    	$resultat[]="http://10.0.0.1/arxiu/Dispenses_Impediment/directori/002.pdf";
+    	$resultat[]="ftp://192.168.1.39/test/test.pdf";
+    	$resultat[]="ftp://192.168.1.39/test/test.pdf";
     	return $resultat;
     }
     
