@@ -1,276 +1,276 @@
 #ArxiuBundle\Resources\translations\messages.ca.yml
 
 submenu:
-    classificacio: Classificación archivo
-    dispenses: Dispenses matrimonials
-    recerca: Recerca per fons i sèries
-    index: Index de llocs i persones
-    documents: Documents i textos
-    parroquies: Parròquies
+    classificacio: Clasificación archivo
+    dispenses: Dispensas matrimoniales
+    recerca: Búsqueda por fondos y series
+    index: Índice de lugares y personas
+    documents: Documentos y textos
+    parroquies: Parroquias
     
 #general 
 general:
     datatable:
-        entrades: _MENU_ per pàgina
-        zero: No s'ha trobat res
-        info: Trobades _TOTAL_ entrades
-        empty: 0 entrades trobades
-        filtrades: (filtrades desde _MAX_ entrades totals)
-        seguent: Següent
+        entrades: _MENÚ_ por página
+        zero: No se ha encontrado nada
+        info: Encontradas _TOTAL_ entradas
+        empty: 0 entradas encontradas
+        filtrades: (filtradas desde _MAX_ entradas totales)
+        seguent: Siguiente
         anterior: Anterior
-        general: Cerca general
+        general: Búsqueda general
         
 fons:
     #fons
-    titol: Fons i series
-    header: Cerca per fons i series
+    titol: Fondos y series
+    header: Búsqueda por fondos y series
     taula:
-        classificacio: Classificació
-        operacions: Operacions
-        dades: Dades
-        data: Data
-        nom: Nom
-        fitxa: Fitxa
-        institucio: Institució
-        foli: Foli
-    alerta: Els resultats es mostraran al realitzar la cerca.
-    alerta2: Cal escollir el contingut de la cerca.
+        classificacio: Clasificación
+        operacions: Operaciones
+        dades: Datos
+        data: Fecha
+        nom: Nombre
+        fitxa: Ficha
+        institucio: Institución
+        foli: Folio
+    alerta: Los resultados se mostrarán al realizar la búsqueda.
+    alerta2: Se debe elegir el contenido de la búsqueda.
     
     #cerca
     cerca:
-        data: Data
-        clau: Paraules clau
-        nom: Nom de persona
-        lloc: Lloc
-        dataOrd: Data d'ordenació
-        congregacio: Congregació
-        tipus: Tipus de cerca
-        relaxada: Relaxada
-        estricte: Estricte
-        buscar: Cercar    
+        data: Fecha
+        clau: Palabras clave
+        nom: Nombre de persona
+        lloc: Lugar
+        dataOrd: Fecha de ordenación
+        congregacio: Congregación
+        tipus: Tipos de búsqueda
+        relaxada: Relajada
+        estricte: Estricta
+        buscar: Buscar    
     #detall
     detall:
-        info: Informació completa
-        classificacio: Classificació de l'arxiu
-        dades: Dades
-        data: Data
-        notari: Notari
-        mides: Mides
-        obs: Observacions
-        llibre: Llibre
-        full: Full
-        cognom: Cognom, Nom
+        info: Información completa
+        classificacio: Clasificación del archivo
+        dades: Datos
+        data: Fecha
+        notari: Notario
+        mides: Medidas
+        obs: Observaciones
+        llibre: Libro
+        full: Hoja
+        cognom: Apellido, Nombre
         natural: Natural
-        congregacio: Congregació
-        llocCong: Lloc de congregació
-        fitxa: Fitxa
-        dataNaix: Data de naixement
+        congregacio: Congregación
+        llocCong: Lugar de congregación
+        fitxa: Ficha
+        dataNaix: Fecha de nacimiento
         natural: Natural
-        ordenacio: Ordenació
-        obit: Data óbit
-        altre: Altres
-        institucio: Institució
-        foli: Foli
-        tancar: Tancar
+        ordenacio: Ordenación
+        obit: Fecha óbito 
+        altre: Otros
+        institucio: Institución
+        foli: Folio
+        tancar: Cerrar
     #menuLateral
-    continguts: Continguts
+    continguts: Contenidos
     lletres:
-        titol: Lletres
-        llicencies: Llicències per demanar caritat
-        registres: Registres Itineris
+        titol: Letras
+        llicencies: Licencias para pedir caridad
+        registres: Registros Itineris
     manuals:
-        titol: Manuals de col·lacions beneficials
-        manuals: Manuals 1271-1928
-        beneficis: Dotalies de beneficis
-        seu: Dotalies de fundacions de la Seu
-        patronat: Processos sobre dret de patronat
+        titol: Manuales de colaciones beneficiales
+        manuals: Manuales 1271-1928
+        beneficis: Dotarías de beneficios
+        seu: Dotarías de fundaciones de la Sede
+        patronat: Procesos sobre derecho de patronato
     arxius:
-        titol: Arxius incorporats
-        curia: Pergamins de la cúria i diversos
-        almoina: Pia Almoina
-        stfeliu: Pergamins de St.Feliu de Girona
-        besalu: Pergamins de Besalú
-        llado: Pergamins de Llado
-        cadins: Pergamins de Cadins
+        titol: Archivos incorporados
+        curia: Pergaminos de la Curia y varios
+        almoina: Limosna Pía
+        stfeliu: Pergaminos de St.Feliu de Girona
+        besalu: Pergaminos de Besalú
+        llado: Pergaminos de Llado
+        cadins: Pergaminos de Cadins
     notaria:
-        titol: Notaria
-        notalarum: Notalarum 1924-1947 i suplement
+        titol: Notaría
+        notalarum: Notalarum 1924-1947 y suplemento
     ordes:
-        titol: Ordes i professions
-        capellans: Capellans
-        monges: Monges
-        seminaristes: Seminaristes
+        titol: Órdenes y profesiones
+        capellans: Sacerdotes
+        monges: Monjas
+        seminaristes: Seminaristas
     testaments:
-        titol: Testaments, definicions...
-        testaments: Testaments
-        definicions: Definicions
-        resolucions: Resolucions de marmessories
-        instuicions: Instuicions de causes Pies
+        titol: Testamentos, definiciones...
+        testaments: Testamentos
+        definicions: Definiciones
+        resolucions: Resoluciones de albaceazgo
+        instuicions: Instuiciones de causas Pías
     processos:
-        titol: Processos
-        medievals: Processos medievals (1282-1500)
-        moderns: Processos moderns (1585-1864)   
+        titol: Procesos
+        medievals: Procesos medievales (1282-1500)
+        moderns: Procesos modernos (1585-1864)   
     mitra:
         titol: Mitra
-        mitra: Pergamins de la mitra
-        delmes: Delmes   
+        mitra: Pergaminos de la mitra
+        delmes: Diezmos
 
 #guia    
 guia:    
-    title: Classificació
-    header: Classificació de l'arxiu
-    fi: No hi ha més contingut
-    info: Nivell de descripció
-    titol: Titol
-    codi: Codi de referencia
-    data: Data
-    volum: Volum i suport
+    title: Clasificación
+    header: Clasificación del archivo
+    fi: No hay más contenido
+    info: Nivel de descripción
+    titol: Título
+    codi: Código de referencia
+    data: Fecha
+    volum: Volumen y soporte
     
-    nomProductor: Nom del productor
+    nomProductor: Nombre del productor
     historiaProductor: Historia del productor
-    historiaArxivistica: Historia arxivistica
-    dadesIngres: Dades sobre l'ingrés
+    historiaArxivistica: Historia archivística
+    dadesIngres: Datos sobre el ingreso
     
-    abast: Abast i contingut    
-    organitzacio: Sistema d'organització    
-    informacioUtilitzacio: Informació sobre la valoració, selecció i eliminació
-    increments: Increments
+    abast: Alcance y contenido
+    organitzacio: Sistema de organización    
+    informacioUtilitzacio: Información sobre la valoración, selección y eliminación
+    increments: Incrementos
     
-    condicionsAcces: Condicions d'accés
-    condicionsReproduccio: Condicions de reproducció
-    llengues: Llengues i escriptures dels documents
-    caracteristiques: Caracteristiques físiques i requisits técnics
-    instruments: Instruments de descripció
+    condicionsAcces: Condiciones de acceso
+    condicionsReproduccio: Condiciones de reproducción
+    llengues: Lenguas y escrituras de los documentos
+    caracteristiques: Características físicas y requisitos técnicos
+    instruments: Instrumentos de descripción
     
-    existenciaOriginals: Existencia i localització dels originals
-    existenciaReproduccions: Existencia i localització de les reproduccions
-    documentacio: Documentació relacionada
-    bibliografia: Bibliografia
+    existenciaOriginals: Existencia y localización de los originales
+    existenciaReproduccions: Existencia y localización de las reproducciones
+    documentacio: Documentación relacionada
+    bibliografia: Bibliografía
     
-    notes: Notes
+    notes: Notas
     
-    autoria: Autoría i dates
-    fonts: Fonts
-    regles: Regles i convencions
+    autoria: Autoría y fechas
+    fonts: Fuentes
+    regles: Reglas y convenciones
     
 
 #dispenses matrimonials    
 dispenses:
-    titol: Dispenses matrimonials
-    header: Dispenses matrimonials
-    alerta: Els resultats es mostraran al realitzar la cerca.
+    titol: Dispensas matrimoniales
+    header: Dispensas matrimoniales
+    alerta: Los resultados se mostrarán al realizar la búsqueda.
     cerca:
-        titol: Cerca de dispenses matrimonials
-        ma: Marit
-        mu: Muller
-        nom: Nom
-        cog: Primer cognom
-        cog2: Segon cognom
-        naix: Població de naixement
-        res: Població de residencia
-        buscar: Cercar
-        any: Any
-        interval: Interval d'anys
+        titol: Búsqueda de dispensas matrimoniales
+        ma: Marido
+        mu: Mujer
+        nom: Nombre
+        cog: Primer apellido
+        cog2: Segundo apellido
+        naix: Población de nacimiento
+        res: Población de residencia
+        buscar: Buscar
+        any: Año
+        interval: Intervalo de años
     taula:
-        classificacio: Classificació de l'arxiu
-        operacions: Operacions
-        any: Any
-        manom: Nom marit
-        macog: Cognom marit
-        munom: Nom muller
-        mucog: Cognom muller
+        classificacio: Clasificación del archivo
+        operacions: Operaciones
+        any: Año
+        manom: Nombre marido
+        macog: Apellido marido
+        munom: Nombre mujer
+        mucog: Apellido mujer
     detall:
-       info: Informació detallada 
-       classificacio: Classificació de l'arxiu
-       tancar: Tancar
-       data: Data
-       any: Any
-       tipus: Tipus
+       info: Información detallada 
+       classificacio: Clasificación del archivo
+       tancar: Cerrar
+       data: Fecha
+       any: Año
+       tipus: Tipo
        control: Control
-       nom: Nom
-       cog: Primer cognom
-       cog2: Segon cognom
-       EstatCivil: Estat civil
-       Ofici: Ofici
-       Nacionalitat: Nacionalitat
-       LlocNaixement: Lloc de naixement
-       Veinatge: Lloc de residencia
-    cognom: Cognom
+       nom: Nombre
+       cog: Primer apellido
+       cog2: Segundo apellido
+       EstatCivil: Estado civil
+       Ofici: Oficio
+       Nacionalitat: Nacionalidad
+       LlocNaixement: Lugar de nacimiento
+       Veinatge: Lugar de residencia
+    cognom: Apellido
     cognoms:
-       titol: Cerca de cognoms semblants
-       fonetica: Semblança fonética
-       grau: Grau de semblança
-       baixa: Baixa
-       mitjana: Mitjana
+       titol: Búsqueda de apellidos similares
+       fonetica: Semejanza fonética
+       grau: Grado de semejanza
+       baixa: Baja
+       mitjana: Mediana
        alta: Alta
-       contenen: Contenen la paraula
-       paraula: Paraula
-       cercar: Cercar
+       contenen: Contienen la palabra
+       paraula: Palabra
+       cercar: Buscar
        
 #index llocs i persones
 llistat:
-    titol: Index de llocs i persones
-    header: Index de llocs i persones
-    alerta: Els resultats es mostraran al realitzar la cerca.
-    alerta2: Seleccionar un nom per veure les seves opcions.
-    alerta3: No s'han trobat resultats.
+    titol: Índice de localidades y personas
+    header:  Índice de localidades y personas
+    alerta: Los resultados se mostrarán al realizar la búsqueda.
+    alerta2: Seleccionar un nombre para ver sus opciones.
+    alerta3: No se han encontrado resultados.
     cerca:
-        titol: Cerca per llocs o persones
-        tipus: Cercar per
+        titol: Búsqueda por localidad o personas
+        tipus: Buscar por
         persona: Persona
-        lloc: Localitat
-        paraula: Paraules clau
-        buscar: Cercar
+        lloc: Localidad
+        paraula: Palabras clave
+        buscar: Buscar
     taula:
-        nodac: Classificació
+        nodac: Clasificación
         num: Número
-        nom: Nom
-        operacions: Operacions
+        nom: Nombre
+        operacions: Operaciones
         
 #documents i textos        
 documents:
-    titol: Documents i textos
-    header: Documents i textos
-    alerta: Els resultats es mostraran al realitzar la cerca.
-    alerta2: Cal escollir el contingut de la cerca.
-    alerta3: No s'han trobat resultats.
-    continguts: Continguts
+    titol: Documentos y textos
+    header: Documentos y textos
+    alerta: Los resultados se mostrarán al realizar la búsqueda.
+    alerta2: Se debe elegir el contenido de la búsqueda.
+    alerta3: No se han encontrado resultados.
+    continguts: Contenidos
     cerca:
-        cerca: Cerca
-        classificacio: Classificació de l'arxiu
-        data: Data
-        paraula: Paraula clau  
+        cerca: Buscar
+        classificacio: Clasificación del archivo
+        data: Fecha
+        paraula: Palabra clave  
     detall:
-       info: Informació detallada 
-       classificacio: Classificació de l'arxiu
-       data: Data
-       descripcio: Descripció
-       texte: Texte
+       info: Información detallada 
+       classificacio: Clasificación del archivo
+       data: Fecha
+       descripcio: Descripción
+       texte: Texto
        referencia: Referencia
     taula:
-       descripcio: Descripció
-       operacions: Operacions
+       descripcio: Descripción
+       operacions: Operaciones
        
 #parroquies
 parroquies:
-    titol: Parròquies
-    header: Parròquies
-    cercar1: Cercar parròquies
-    cercar2: Cercar arxius dipositats
-    resultats: Resultats de la cerca
-    avis: No s'han trobat arxius dipositats per aquesta parròquia.
+    titol: Parroquias
+    header: Parroquias
+    cercar1: Buscar parroquias
+    cercar2: Buscar archivos depositados
+    resultats: Resultados de la búsqueda
+    avis: No se han encontrado archivos depositados por esta parroquia.
     cerca:
-        classificacio: Classificació de l'arxiu
-        data: Data
-        nom: Nom
-        paraula: Paraula clau
-        parroquia: Nom de pàrroquia
+        classificacio: Clasificación del archivo
+        data: Fecha
+        nom: Nombre
+        paraula: Palabra clave
+        parroquia: Nombre de parroquia
     taula:
-        classificacio: Classificació
-        data: Data
-        nom: Nom
-        titol: Títol
-        operacions: Operacions      
+        classificacio: Clasificación
+        data: Fecha
+        nom: Nombre
+        titol: Título
+        operacions: Operaciones      
        
       
          
