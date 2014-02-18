@@ -14,14 +14,30 @@
 {% endblock %}
 
 {% block arxiuNivell %}
-	<input type="hidden" name="original" value="{{ info.nivell }}">
-      	{% set len =  info.nivell | length %}
-      	<input type="hidden" name="nivell" value="{{ info.nivell | slice(0, len-2) }}">
+		<input type="hidden" name="original" value="{{ info.nivell }}">
+	
+		{% set divisio = info.nivell |split('.') %}
+		{% set pre = "" %}
+		{% set post = "" %}
+		
+		{% for di in divisio %}
+			{% if loop.index == loop.length-1  %}
+				{% set post = di %}
+			{% else %}
+				{% if pre == "" %}
+					{% set pre = di %}
+				{% else %}
+					{% set pre = pre~'.'~di %} 
+				{% endif %}  
+			{% endif %}
+    	{% endfor %}
+    	
+      	<input type="hidden" name="nivell" value="{{ pre }}">
       	<div class="input-group">
-			<span class="input-group-addon">Nivell *  <strong>{{ info.nivell | slice(0, len-2) }}</strong></span>
+			<span class="input-group-addon">Nivell *  <strong>{{ pre }}</strong></span>
 			<input type="text" class="form-control" pattern="^([a-zA-Z0-9]*\.)$" 
 				title="Només pot tenir números i/o lletres i finalitzar amb un punt." 
-				value="{{ info.nivell | slice(len-2, len) }}" name="suffix" required>
+				value="{{ post~'.' }}" name="suffix" required>
 		</div><div class="space10"></div>
 {% endblock %}
 
