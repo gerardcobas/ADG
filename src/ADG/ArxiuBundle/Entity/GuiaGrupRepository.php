@@ -12,10 +12,10 @@ class GuiaGrupRepository extends EntityRepository
 		$qb = $em->createQueryBuilder();
 	
 		// Build the query
-		$qb->select('g.nivell, g.titol')->from('ArxiuBundle:GuiaGrup', 'g');
+		$qb->select('g.nivell, g.titol, LENGTH(g.nivell) AS long')->from('ArxiuBundle:GuiaGrup', 'g');
 
 		$qb->where('g.nivell LIKE :grup');
-		
+		$qb->orderBy('long', 'ASC');
 		
 		//Genera format de grup (X.X.)
 		$parts = explode('.', $id);

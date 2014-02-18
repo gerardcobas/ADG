@@ -12,7 +12,9 @@ class GuiaFonsRepository extends EntityRepository
 		$qb = $em->createQueryBuilder();
 	
 		// Build the query
-		$qb->select('f.nivell, f.titol')->from('ArxiuBundle:GuiaFons', 'f');
+		$qb->select('f.nivell, f.titol, LENGTH(f.nivell) AS long')->from('ArxiuBundle:GuiaFons', 'f');
+		$qb->orderBy('long', 'ASC');
+		
 		$q = $qb->getQuery();
 	
 		return $q->getResult();

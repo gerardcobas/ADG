@@ -12,9 +12,10 @@ class GuiaSerieRepository extends EntityRepository
 		$qb = $em->createQueryBuilder();
 	
 		// Build the query
-		$qb->select('se.nivell, se.titol')->from('ArxiuBundle:GuiaSerie', 'se');
+		$qb->select('se.nivell, se.titol, LENGTH(se.nivell) AS long')->from('ArxiuBundle:GuiaSerie', 'se');
 
 		$qb->where('se.nivell LIKE :serie');
+		$qb->orderBy('long', 'ASC');
 		
 		//Genera format de subfons (X.X.X.)
 		$parts = explode('.', $id);

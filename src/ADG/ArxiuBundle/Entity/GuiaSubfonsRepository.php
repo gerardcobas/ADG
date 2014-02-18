@@ -12,9 +12,10 @@ class GuiaSubfonsRepository extends EntityRepository
 		$qb = $em->createQueryBuilder();
 	
 		// Build the query
-		$qb->select('s.nivell, s.titol')->from('ArxiuBundle:GuiaSubfons', 's');
+		$qb->select('s.nivell, s.titol, LENGTH(s.nivell) AS long')->from('ArxiuBundle:GuiaSubfons', 's');
 
 		$qb->where('s.nivell LIKE :fons');
+		$qb->orderBy('long', 'ASC');
 		
 		//Genera format de subfons (X.)
 		$parts = explode('.', $id);

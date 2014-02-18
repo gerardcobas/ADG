@@ -12,10 +12,11 @@ class GuiaUsimpleRepository extends EntityRepository
 		$qb = $em->createQueryBuilder();
 
 		// Build the query
-		$qb->select('us.nivell, us.titol')->from('ArxiuBundle:GuiaUsimple', 'us');
+		$qb->select('us.nivell, us.titol, LENGTH(us.nivell) AS long')->from('ArxiuBundle:GuiaUsimple', 'us');
 
 		$qb->where('us.nivell LIKE :usim');
-
+		$qb->orderBy('long', 'ASC');
+		
 		//Genera format de subfons (X.X.X.X.X.)
 		$parts = explode('.', $id);
 		$qq=$parts[0].'.'.$parts[1].'.'.$parts[2].'.'.$parts[3].'.'.$parts[4].'.';

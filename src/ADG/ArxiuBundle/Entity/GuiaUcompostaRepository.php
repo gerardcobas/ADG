@@ -12,9 +12,10 @@ class GuiaUcompostaRepository extends EntityRepository
 		$qb = $em->createQueryBuilder();
 	
 		// Build the query
-		$qb->select('uc.nivell, uc.titol')->from('ArxiuBundle:GuiaUcomposta', 'uc');
+		$qb->select('uc.nivell, uc.titol, LENGTH(uc.nivell) AS long')->from('ArxiuBundle:GuiaUcomposta', 'uc');
 
 		$qb->where('uc.nivell LIKE :ucomp');
+		$qb->orderBy('long', 'ASC');
 		
 		//Genera format de subfons (X.X.X.X.)
 		$parts = explode('.', $id);
