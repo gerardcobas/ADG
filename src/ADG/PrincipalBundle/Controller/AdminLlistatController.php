@@ -61,7 +61,7 @@ class AdminLlistatController extends Controller
 
     }
 
-    public function editarAction($tipus,$id)
+    public function editarAction($tipus,$nom,$id)
     {
     	$info=null;
     	$em = $this->getDoctrine()->getManager();
@@ -72,8 +72,10 @@ class AdminLlistatController extends Controller
     	elseif ($tipus == 'lloc') {
     		$rep = $em->getRepository('ArxiuBundle:IndexLlocs');
     	}
-    	$info=$rep->find($id);
-
+    	$info=$rep->find(array(
+	    			'nom' => $nom,
+	    			'num' => $id
+	    	));
     	return $this->render('PrincipalBundle:AdminLlistat:editar.html.twig',
     			array('info' => $info,'tipus' => $tipus)
     	);
@@ -99,8 +101,12 @@ class AdminLlistatController extends Controller
 						array('info'=>null,'noms'=>NULL,'tipus'=>'persona', 'paraula'=>'', 'select'=>"llista")
 				);
 			}
-	    	$entity=$rep->find($request->request->get('num'));
-
+	    	$entity=$rep->find(array(
+	    			'nom' => $request->request->get('nom'),
+	    			'num' => $request->request->get('num')
+	    	));
+	    	
+	    	
 	    	$nodac = $request->request->get('inputNodac');
 	    	$entity->setNodac($nodac);
 	    	$nom = $request->request->get('inputNom');
@@ -119,7 +125,7 @@ class AdminLlistatController extends Controller
     	);
     }
 
-    public function eliminarAction($tipus,$id)
+    public function eliminarAction($tipus,$nom,$id)
     {
     	$info=null;
     	$em = $this->getDoctrine()->getManager();
@@ -129,8 +135,10 @@ class AdminLlistatController extends Controller
     	elseif ($tipus == 'lloc') {
     		$rep = $em->getRepository('ArxiuBundle:IndexLlocs');
     	}
-    	$info=$rep->find($id);
-
+    	$info=$rep->find(array(
+	    			'nom' => $nom,
+	    			'num' => $id
+	    	));
     	return $this->render('PrincipalBundle:AdminLlistat:eliminar.html.twig',
     			array('info' => $info,'tipus' => $tipus)
     	);
@@ -142,6 +150,7 @@ class AdminLlistatController extends Controller
     	$request = $this->getRequest();
     	if ($request->isMethod('POST')) {
     		$num = $request->request->get('num');
+    		$nom = $request->request->get('nom');
     		$tipus = $request->request->get('tipus');
     		
     		$em = $this->getDoctrine()->getManager();
@@ -156,7 +165,11 @@ class AdminLlistatController extends Controller
 						array('info'=>null,'noms'=>NULL,'tipus'=>'persona', 'paraula'=>'', 'select'=>"llista")
 				);
 			}
-	    	$entity=$rep->find($num);
+	    	$entity=$rep->find(array(
+	    			'nom' => $nom,
+	    			'num' => $num
+	    	));
+	    	
     		$em->remove($entity);
     		$em->flush();
     			

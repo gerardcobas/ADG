@@ -14,6 +14,7 @@ class IndexPersonesRepository extends EntityRepository
 		$qb->select('DISTINCT i.nom')->from('ArxiuBundle:IndexPersones', 'i');
 		$qb->andWhere('i.nom LIKE :nom OR i.nodac LIKE :nom');
 		$qb->setParameter('nom', '%'.$nom.'%');
+		$qb->setMaxResults(3852);
 		$q = $qb->getQuery();
 
 		return $q->getResult();
@@ -32,14 +33,15 @@ class IndexPersonesRepository extends EntityRepository
 		return $q->getResult();
 	}
 	
-	public function findDetalls($num , $nodac){
+	public function findDetalls($nom, $num , $nodac){
 	
 		$em = $this->getEntityManager();
 		$qb = $em->createQueryBuilder();
 	
 		$qb->select('i.nodac, i.nom')->from('ArxiuBundle:IndexPersones', 'i');
-		$qb->where('i.num = :num');
+		$qb->where('i.num = :num and i.nom = :nom');
 		$qb->setParameter('num', $num);
+		$qb->setParameter('nom', $nom);
 		
 		$qb->orWhere('i.nodac = :nodac');
 		$qb->setParameter('nodac', $nodac);

@@ -20,6 +20,6 @@ veure_lloc:
         _controller: ArxiuBundle:Llistat:veureLloc    
         
 llistat_detall:
-    pattern: /detall/{id}
+    pattern: /detall/{nom}/{id}
     defaults:
         _controller: ArxiuBundle:Llistat:detall    

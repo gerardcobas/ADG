@@ -61,7 +61,7 @@ class LlistatController extends Controller
     	);
     }
     
-    public function detallAction($id)
+    public function detallAction($nom, $id)
     {
 
     	/* OPCIO 1: Identificar prefix del num de ref Ex:"P-001-xxxx" i fer forward al controlador que correspongui
@@ -78,8 +78,10 @@ class LlistatController extends Controller
     			"Documents", "DocumentsAdlimina", "ParroquiesArxius");
     	
     	$ambTot=array("Dispenses", "Fons", "FonsArxius", "FonsCapellans", "FonsMitra", "FonsMonges", 
-    			"FonsSeminaristes", "FonsTestaments", "FonsLiberden", "IndexLlocs", "IndexPersones"); //index llocs i persones l'ultim per mostrar algo sempre
-
+    			"FonsSeminaristes", "FonsTestaments", "FonsLiberden"); 
+		
+    	$ultimaOpcio=array("IndexLlocs", "IndexPersones"); //index llocs i persones l'ultim per mostrar algo sempre
+    	
     	$info=null;
     	$em = $this->getDoctrine()->getManager();
 
@@ -102,6 +104,14 @@ class LlistatController extends Controller
     	//busca per num antic i per nodac
     	foreach ($ambTot as $t){
     		$info = $em->getRepository('ArxiuBundle:'.$t)->findDetalls($id, $nodac);
+    		if ($info != null and $info !="") {
+    			return $this->render('ArxiuBundle:Llistat:detall.html.twig', array('info'=>$info));
+    		}
+    	}
+    	
+    	//busca per num antic i per nodac
+    	foreach ($ultimaOpcio as $ul){
+    		$info = $em->getRepository('ArxiuBundle:'.$ul)->findDetalls($nom, $id, $nodac);
     		if ($info != null and $info !="") {
     			return $this->render('ArxiuBundle:Llistat:detall.html.twig', array('info'=>$info));
     		}

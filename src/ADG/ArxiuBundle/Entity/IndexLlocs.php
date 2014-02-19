@@ -30,7 +30,8 @@ class IndexLlocs
     /**
      * @var string
      *
-     * @ORM\Column(name="nom", type="text", nullable=true)
+     * @ORM\Column(name="nom", type="string", length=255, nullable=true)
+     * @ORM\Id
      */
     private $nom;
 

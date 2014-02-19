@@ -9,11 +9,11 @@ llistat_nou_confirmar:
     requirements: { _method: post }
 
 llistat_editar:
-    pattern: /{tipus}/{id}/editar
+    pattern: /{tipus}/{nom}/{id}/editar
     defaults: { _controller: "PrincipalBundle:AdminLlistat:editar" }  
         
 llistat_eliminar:        
-    pattern: /{tipus}/{id}/eliminar
+    pattern: /{tipus}/{nom}/{id}/eliminar
     defaults: { _controller: "PrincipalBundle:AdminLlistat:eliminar" }  
 
 llistat_editar_confirmar:
