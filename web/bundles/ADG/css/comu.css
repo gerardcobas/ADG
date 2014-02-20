@@ -1,6 +1,6 @@
 /*Custom layout*/
 
-body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom{
+.row, body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom{
 	margin-right: 0px;
 }
 .fixed-position {
