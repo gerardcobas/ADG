@@ -166,7 +166,8 @@ Format per imprimir
 */
 
 @media (max-width: 345px) {
-	body, .navbar {
+	body{
+		zoom: 92%;
 		min-width: 345px;
 	}
 }
