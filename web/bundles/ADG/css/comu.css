@@ -91,6 +91,14 @@ article {
 	margin-bottom:-1px;
 }
 
+pre {
+	padding: 0;
+	background: inherit;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif-webkit-body;
+	border: none;
+	text-align: justify;
+	padding-right: 15px;
+}
 
 /* Vertical spacers */
 .space50 {
