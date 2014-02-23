@@ -13,7 +13,7 @@
     
 .subnavbar-inner {
 	height: 60px;
-	background: #fff;
+	background: #fafafa;
 	border-bottom: 1px solid #d6d6d6;
 }
 
@@ -46,11 +46,11 @@
 	padding: 0 15px;
 	font-size: 13px;
 	font-weight: bold;
-	color: #b2afaa;
+	color: #800000;
 }
 
 .subnavbar .container-sub > ul > li > a:hover {
-	color: #888;
+	color: #222;
 	text-decoration: none;
 }
 
@@ -71,7 +71,7 @@
 .subnavbar .container-sub > ul > li.active > a {
 	
 	border-bottom:3px solid #4cae4c;
-	color: #383838;
+	color: #222;
 }
 
 .subnavbar .dropdown .dropdown-menu a {

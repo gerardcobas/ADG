@@ -47,10 +47,6 @@ html, body, .container, .content {
 a.foot {
 	margin-right: 10px;
 }
-a.foot:hover, a.foot:focus {
-	color: #ffffff;
-	text-decoration: inherit;
-}
 
 .account-container {
 	width: 330px; 
@@ -99,32 +95,48 @@ pre {
 	padding-right: 15px;
 }
 
-/* Navbars and footer Color styles */
+/* General color styles*/
+.page-header {
+	color: #800000;
+	border-bottom: 1px solid #800000;
+}
+
+/* Navbars Color styles */
 .navbar-inverse, .dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus,
-.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus, .footer-wrapper {
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus{
 	background-color: #800000;
 	border-color: #660000;
 }
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus,
 .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus,
-.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus {
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus,
+.navbar-inverse .navbar-nav .open .dropdown-menu>.active>a {
 	background-color: #660000;
 }
-.navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-brand, footer, a.foot {
-	color: #F5F1DE;
+.navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+	color: #DEB887;
 }
 .navbar-inverse .navbar-nav>.dropdown>a .caret, .navbar-inverse .navbar-nav>.dropdown>a .caret {
-	border-top-color: #F5F1DE;
-	border-bottom-color: #F5F1DE;
+	border-top-color: #DEB887;
+	border-bottom-color: #DEB887;
 }
 .navbar-inverse .navbar-toggle {
 	border-color: #660000;
 }
 
-/* Texts color styles*/
-.page-header {
-	color: #800000;
-	border-bottom: 1px solid #800000;
+/*footer Color styles */
+.footer-wrapper {
+	border-bottom: solid 2px #800000;
+	border-top: solid 2px #800000;
+	background-color: #f0f0f0;
+}
+footer, a.foot {
+	color: #660000;
+}
+a.foot:hover, a.foot:focus {
+	color: #222;
+	text-decoration: inherit;
 }
 
 /* Vertical spacers */
