@@ -10,6 +10,7 @@ submenu:
     
 #general 
 general:
+    continguts: Fond
     datatable:
         entrades: _MENU_ par page
         zero: Rien trouvé

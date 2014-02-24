@@ -1,7 +1,7 @@
 #ArxiuBundle\Resources\translations\messages.ca.yml
 
 submenu:
-    classificacio: Clasificación archivo
+    classificacio: Cuadro de clasificación
     dispenses: Dispensas matrimoniales
     recerca: Búsqueda por fondos y series
     index: Índice de lugares y personas
@@ -10,6 +10,7 @@ submenu:
     
 #general 
 general:
+    continguts: Fondos
     datatable:
         entrades: _MENÚ_ por página
         zero: No se ha encontrado nada
@@ -117,8 +118,8 @@ fons:
 
 #guia    
 guia:    
-    title: Clasificación
-    header: Clasificación del archivo
+    title: Cuadro de clasificación
+    header: Cuadro de clasificación del archivo
     fi: No hay más contenido
     info: Nivel de descripción
     titol: Título
