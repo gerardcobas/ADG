@@ -277,7 +277,44 @@ class AdminGuiaController extends Controller
 		return $this->redirect($this->generateUrl('guia'));
 	}
 	
+	/**
+	 * Obre formulari per editar en masa tots els subnivells.
+	 */
+	public function totsAction($id)
+	{
+		return $this->render('PrincipalBundle:AdminGuia:tots.html.twig',
+				array('nodac' => $id)
+		);
+	}
 	
+	public function totsConfirmarAction()
+	{
+		$request = $this->getRequest();
+		if ($request->isMethod('POST')) {
+			
+			$nodac = $request->request->get('nodac');
+			$param=$request->request->get('param');
+			$valor = $request->request->get('valor');
+			
+			$parts = explode('.', $nodac);
+			$tam=sizeof($parts);
+			
+			$arrayGuia=array("Fons","Subfons","Grup","Serie","Ucomposta","Usimple","Uinstalacio");
+			$em = $this->getDoctrine()->getManager();
+			
+			for ($num=$tam-2; $num <= 6; $num++ ) {
+				$rep = $em->getRepository('ArxiuBundle:Guia'.$arrayGuia[$num]);
+				$rep->updateParam($nodac, $param, $valor);
+			}
+			
+			$this->get('session')->getFlashBag()->add(
+					'success',
+					"Nivells actualitzats correctament!"
+			);
+			return $this->redirect($this->generateUrl('search', array('id' => $nodac)));
+		}
+		return $this->redirect($this->generateUrl('guia'));
+	}
 	
 	public function eliminarAction($id)
 	{
@@ -365,32 +402,25 @@ class AdminGuiaController extends Controller
 	
 		//obtenir la informacio del identificador indicat
 		if($tam==2){
-			$repFons = $em->getRepository('ArxiuBundle:GuiaFons');
-			$info=$repFons->findOneByNivell($id);
+			$info = $em->getRepository('ArxiuBundle:GuiaFons')->findOneByNivell($id);
 		}
 		else if($tam==3){
-			$repSub = $em->getRepository('ArxiuBundle:GuiaSubfons');
-			$info=$repSub->findOneByNivell($id);
+			$info = $em->getRepository('ArxiuBundle:GuiaSubfons')->findOneByNivell($id);
 		}
 		else if($tam==4){
-			$repGrup = $em->getRepository('ArxiuBundle:GuiaGrup');
-			$info=$repGrup->findOneByNivell($id);
+			$info = $em->getRepository('ArxiuBundle:GuiaGrup')->findOneByNivell($id);
 		}
 		else if($tam==5){
-			$repSerie = $em->getRepository('ArxiuBundle:GuiaSerie');
-			$info=$repSerie->findOneByNivell($id);
+			$info = $em->getRepository('ArxiuBundle:GuiaSerie')->findOneByNivell($id);
 		}
 		else if($tam==6){
-			$repUcomp = $em->getRepository('ArxiuBundle:GuiaUcomposta');
-			$info=$repUcomp->findOneByNivell($id);
+			$info = $em->getRepository('ArxiuBundle:GuiaUcomposta')->findOneByNivell($id);
 		}
 		else if($tam==7){
-			$repUsim = $em->getRepository('ArxiuBundle:GuiaUsimple');
-			$info=$repUsim->findOneByNivell($id);
+			$info = $em->getRepository('ArxiuBundle:GuiaUsimple')->findOneByNivell($id);
 		}
 		else if($tam==8){
-			$repUinst = $em->getRepository('ArxiuBundle:GuiaUinstalacio');
-			$info=$repUinst->findOneByNivell($id);
+			$info = $em->getRepository('ArxiuBundle:GuiaUinstalacio')->findOneByNivell($id);
 		}
 		
 		if($info === null){

@@ -48,7 +48,7 @@
 			  
 				  <h4>Administració:</h4>
 				  <div class="btn-group" style="margin-top:5px;margin-bottom:5px;">	
-				  	<a data-toggle="modal" href="{{ path('guia_nou', { 'id': info.nivell }) }}" data-target="#nouGuia" class="btn btn-success" type="button"><i class="icon-plus"></i>&nbsp;Afegir nou</a>
+				  	<a data-toggle="modal" href="{{ path('guia_nou', { 'id': info.nivell }) }}" data-target="#nouGuia" class="btn btn-success" type="button"><i class="icon-plus"></i>&nbsp;Afegir copia</a>
 	              </div>
 	              <!-- No mostrar si es l'ultim nivell -->
 	              {% if info.nivell |split('.')|length < 8 %}
@@ -57,7 +57,10 @@
 					  </div>
 				  {% endif %}
 	              <div class="btn-group" style="margin-top:5px;margin-bottom:5px;">
-	              	<a data-toggle="modal" href="{{ path('guia_editar', { 'id': info.nivell }) }}" data-target="#editarGuia" class="btn btn-primary" type="button"><i class="icon-pencil"></i>&nbsp;Editar</a>
+	              	<a data-toggle="modal" href="{{ path('guia_editar', { 'id': info.nivell }) }}" data-target="#editarGuia" class="btn btn-primary" type="button"><i class="icon-pencil"></i>&nbsp;Editar selecció</a>
+	              </div>
+	              <div class="btn-group" style="margin-top:5px;margin-bottom:5px;">
+	              	<a data-toggle="modal" href="{{ path('guia_tots', { 'id': info.nivell }) }}" data-target="#totsGuia" class="btn btn-primary" type="button"><i class="icon-pencil"></i>&nbsp;Editar tots</a>
 	              </div>
 	              <div class="btn-group" style="margin-top:5px;margin-bottom:5px;">
 	              	<a data-toggle="modal" href="{{ path('guia_eliminar', { 'id': info.nivell }) }}" data-target="#eliminarGuia" class="btn btn-danger" type="button"><i class="icon-remove"></i>&nbsp;Eliminar</a>
@@ -76,6 +79,9 @@
 	</div><!-- /.modal -->
 	
 	<div class="modal" id="editarGuia" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	</div><!-- /.modal -->
+	
+	<div class="modal" id="totsGuia" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	</div><!-- /.modal -->
 	
 	<div class="modal" id="eliminarGuia" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

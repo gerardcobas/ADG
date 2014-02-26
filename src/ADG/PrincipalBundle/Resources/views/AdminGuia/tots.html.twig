@@ -1,0 +1,57 @@
+<div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title text-warning">
+			Editar tots els subnivells a partir de <strong>{{ nodac }}</strong>
+          </h4>
+          
+        </div><!-- /.header -->
+        
+		<form action="{{ path("guia_tots_confirmar") }}" method="post">
+			<div class="modal-body">
+				<p class="text-warning">Es modificara l'informació triada per tots els subnivells.</p>
+		    	<input type="hidden" name="nodac" value="{{ nodac }}">
+		    	
+		    	<select class="form-control" name="param">
+	                <option value="data" selected>Data</option>
+	                <option value="volum">Volum</option>
+	                <option value="historiaProductor">Historia del productor</option>
+	                <option value="historiaArxivistica">Historia arxivística</option>
+	                <option value="dadesIngres">Dades d'ingrés</option>
+	                <option value="abast">Abast</option>
+	                
+	                <option value="organitzacio">Organització</option>
+	                <option value="informacioUtilitzacio">Informacio d'utilitzacio</option>
+	                <option value="increments">Increments</option>
+	                <option value="condicionsAcces">Condicions d'accès</option>
+	                <option value="condicionsReproduccio">Condicions reproducció</option>
+	                <option value="llengues">Llengues</option>
+	                <option value="caracteristiques">Característiques</option>
+	                
+	                <option value="instruments">Instruments</option>
+	                <option value="existenciaOriginals">Existencia d'originals</option>
+	                <option value="existenciaReproduccions">Existencia de reproduccions</option>
+	                <option value="documentacio">Documentació</option>
+	                <option value="bibliografia">Bibliografia</option>
+	                <option value="notes">Notes</option>
+	                <option value="autoria">Autoria</option>
+	                <option value="fonts">Fonts</option>
+	                <option value="regles">Regles</option>
+	            </select>
+		    	<div class="space10"></div>
+		    	<div class="input-group">
+					<span class="input-group-addon">Nou valor</span>
+					<input type="text" class="form-control"
+						value="" name="valor">
+				</div><div class="space10"></div>
+		
+	        </div>
+	        <div class="modal-footer">
+	          <button class="btn btn-default" data-dismiss="modal">Tancar</button>
+	          <button class="btn btn-success" type="submit"><i class="icon-pencil"></i>&nbsp;Editar</button>		
+	        </div>
+		</form><!-- /.form -->
+
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->

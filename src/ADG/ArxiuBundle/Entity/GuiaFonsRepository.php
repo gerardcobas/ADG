@@ -35,5 +35,15 @@ class GuiaFonsRepository extends EntityRepository
 		return $q->getResult();
 	}
 	
+	public function updateParam($nivell, $param, $valor){
+		$em = $this->getEntityManager();
+		$qb = $em->createQueryBuilder();
+	
+		$em->createQuery('UPDATE ArxiuBundle:GuiaFons t SET t.'.$param.' = :valor WHERE t.nivell LIKE :nivell')
+				->setParameter('valor', $valor)
+				->setParameter('nivell', $nivell.'%')
+	            ->execute();
+	}
+	
 	
 }

@@ -23,8 +23,17 @@ guia_editar:
 guia_editar_confirmar:
     pattern:  /confirmar/editar
     defaults: { _controller: "PrincipalBundle:AdminGuia:editarConfirmar" }
-    requirements: { _method: post }        
+    requirements: { _method: post }
     
+guia_tots:
+    pattern:  /tots/{id}
+    defaults: { _controller: "PrincipalBundle:AdminGuia:tots" }
+    
+guia_tots_confirmar:
+    pattern:  /confirmar/tots
+    defaults: { _controller: "PrincipalBundle:AdminGuia:totsConfirmar" }
+    requirements: { _method: post }        
+            
 guia_eliminar:
     pattern:  /{id}/eliminar
     defaults: { _controller: "PrincipalBundle:AdminGuia:eliminar" }
