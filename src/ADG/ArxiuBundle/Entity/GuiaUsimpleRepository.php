@@ -41,4 +41,14 @@ class GuiaUsimpleRepository extends EntityRepository
 		$q = $qb->getQuery();
 		return $q->getResult();
 	}
+	
+	public function updateParam($nivell, $param, $valor){
+		$em = $this->getEntityManager();
+		$qb = $em->createQueryBuilder();
+	
+		$em->createQuery('UPDATE ArxiuBundle:GuiaUsimple t SET t.'.$param.' = :valor WHERE t.nivell LIKE :nivell')
+		->setParameter('valor', $valor)
+		->setParameter('nivell', $nivell.'%')
+		->execute();
+	}
 }
