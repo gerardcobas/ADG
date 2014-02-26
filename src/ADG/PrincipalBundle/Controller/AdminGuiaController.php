@@ -296,21 +296,34 @@ class AdminGuiaController extends Controller
 			$param=$request->request->get('param');
 			$valor = $request->request->get('valor');
 			
-			$parts = explode('.', $nodac);
-			$tam=sizeof($parts);
-			
-			$arrayGuia=array("Fons","Subfons","Grup","Serie","Ucomposta","Usimple","Uinstalacio");
-			$em = $this->getDoctrine()->getManager();
-			
-			for ($num=$tam-2; $num <= 6; $num++ ) {
-				$rep = $em->getRepository('ArxiuBundle:Guia'.$arrayGuia[$num]);
-				$rep->updateParam($nodac, $param, $valor);
+			if($param == "data" or $param == "volum" or $param == "historiaProductor" or $param == "historiaArxivistica" or $param == "dadesIngres"
+		 		or $param == "abast" or $param == "organitzacio" or $param == "informacioUtilitzacio" or $param == "increments" or $param == "condicionsAcces"
+				or $param == "condicionsReproduccio" or $param == "llengues" or $param == "caracteristiques" or $param == "instruments" 
+				or $param == "existenciaOriginals" or $param == "existenciaReproduccions" or $param == "documentacio" or $param == "bibliografia" 
+				or $param == "notes" or $param == "autoria" or $param == "fonts" or $param == "regles"){
+				
+				$parts = explode('.', $nodac);
+				$tam=sizeof($parts);
+				$arrayGuia=array("Fons","Subfons","Grup","Serie","Ucomposta","Usimple","Uinstalacio");
+				$em = $this->getDoctrine()->getManager();
+					
+				for ($num=$tam-2; $num <= 6; $num++ ) {
+					$rep = $em->getRepository('ArxiuBundle:Guia'.$arrayGuia[$num]);
+					$rep->updateParam($nodac, $param, $valor);
+				}
+					
+				$this->get('session')->getFlashBag()->add(
+						'success',
+						"Nivells actualitzats correctament!"
+				);
+			}
+			else {
+				$this->get('session')->getFlashBag()->add(
+						'error',
+						"No s'han pogut modificar tots!"
+				);
 			}
 			
-			$this->get('session')->getFlashBag()->add(
-					'success',
-					"Nivells actualitzats correctament!"
-			);
 			return $this->redirect($this->generateUrl('search', array('id' => $nodac)));
 		}
 		return $this->redirect($this->generateUrl('guia'));
