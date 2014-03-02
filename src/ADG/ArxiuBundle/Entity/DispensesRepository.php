@@ -274,64 +274,6 @@ class DispensesRepository extends EntityRepository
 		return array_filter($result);
 	}
 	
-	public function findForDocument($id){
-		$result=array();
-		$any="";
-		$document="";
-		$control="";
-		$data="";
-		
-		$em = $this->getEntityManager();
-		$qb = $em->createQueryBuilder();
-		// any
-		$qb->select('d.any')->from('ArxiuBundle:Dispenses', 'd');
-		$qb->andWhere('d.numref = :numref');
-		$qb->setParameter('numref', $id);
-		$q = $qb->getQuery();
-		$r=$q->getResult();
-		foreach ($r as $row){
-			foreach ($row as $valor){
-				$any=$valor;
-			}
-		}
-		// document
-		$qb->select('d2.document')->from('ArxiuBundle:Dispenses', 'd2');
-		$qb->andWhere('d2.numref = :numref');
-		$qb->setParameter('numref', $id);
-		$q = $qb->getQuery();
-		$r=$q->getResult();
-		foreach ($r as $row){
-			foreach ($row as $valor){
-				$document=$valor;
-			}
-		}
-		
-		// control
-		$qb->select('d3.control')->from('ArxiuBundle:Dispenses', 'd3');
-		$qb->andWhere('d3.numref = :numref');
-		$qb->setParameter('numref', $id);
-		$q = $qb->getQuery();
-		$r=$q->getResult();
-		foreach ($r as $row){
-			foreach ($row as $valor){
-				$control=$valor;
-			}
-		}
-		// control
-		$qb->select('d4.data')->from('ArxiuBundle:Dispenses', 'd4');
-		$qb->andWhere('d4.numref = :numref');
-		$qb->setParameter('numref', $id);
-		$q = $qb->getQuery();
-		$r=$q->getResult();
-		foreach ($r as $row){
-			foreach ($row as $valor){
-				$data=$valor;
-			}
-		}
-		
-		return array($any,$document,$control,$data);
-	}	
-	
 	public function findDetalls($num , $nodac){
 		$em = $this->getEntityManager();
 		$qb = $em->createQueryBuilder();
