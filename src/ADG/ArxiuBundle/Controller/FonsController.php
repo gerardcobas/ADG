@@ -141,12 +141,12 @@ class FonsController extends Controller
     		if($seleccio=="llicencies") $info=$rep->findForFons("Q-001-", $cercaParaula);
     		if($seleccio=="registres") $info=$rep->findForFons("I-001-", $cercaParaula);
     		
-    		if($seleccio=="manuals") $info=$rep->findForFons("D-1", $cercaParaula);
-    		if($seleccio=="beneficis") $info=$rep->findForFons("D-001-", $cercaParaula);
-    		if($seleccio=="seu") $info=$rep->findForFons("D-002-", $cercaParaula);
-    		if($seleccio=="patronat") $info=$rep->findForFons("A-", $cercaParaula);
+    		if($seleccio=="manuals") $info=$rep->findFonsManuals($cercaParaula);
+    		if($seleccio=="beneficis") $info=$rep->findFonsBeneficis($cercaParaula);
+    		if($seleccio=="seu") $info=$rep->findFonsFundacions($cercaParaula);
+    		if($seleccio=="patronat") $info=$rep->findFonsProcessos($cercaParaula);
     		
-    		if($seleccio=="notalarum") $info=$rep->findForFons("G-001-", $cercaParaula);
+    		if($seleccio=="notalarum") $info=$rep->findForFons("G-", $cercaParaula);
     		if($seleccio=="deposita") $info=$rep->findForFons("U-3", $cercaParaula);
     		
     		if($seleccio=="medievals") $info=$rep->findForFons("C-000-", $cercaParaula);
@@ -232,7 +232,7 @@ class FonsController extends Controller
     	elseif ($seleccio == "seminaristes"){
     		$tipus="seminaristes";
     	}
-    	elseif ($seleccio == "testaments" or $seleccio == "resolucions" or $seleccio == "definicions" or $seleccio == "definicions"){
+    	elseif ($seleccio == "testaments" or $seleccio == "resolucions" or $seleccio == "definicions" or $seleccio == "instuicions"){
     		$tipus="testaments";
     	}
     	else{

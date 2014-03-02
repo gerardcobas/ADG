@@ -12,7 +12,7 @@ class FonsCapellansRepository extends EntityRepository
 	
 		// Build the query
 		$qb->select('fc.num, fc.nodac, fc.cognom, fc.fitxa')->from('ArxiuBundle:FonsCapellans', 'fc');
-		
+		$qb->setMaxResults(3934);
 		$qb->where('fc.cognom LIKE :nom');
 		$qb->andWhere('fc.naturalDe LIKE :lloc');
 		$qb->andWhere('fc.ordenacio LIKE :data');
@@ -32,7 +32,7 @@ class FonsCapellansRepository extends EntityRepository
 	
 		// Build the query
 		$qb->select('fc.num, fc.nodac, fc.cognom, fc.fitxa')->from('ArxiuBundle:FonsCapellans', 'fc');
-	
+		$qb->setMaxResults(3934);
 		if ($nom!=null && $nom !="") {
 			$qb->where('fc.cognom = :nom');
 			$qb->setParameter('nom', $nom );

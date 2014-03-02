@@ -20,6 +20,7 @@ class FonsMongesRepository extends EntityRepository
 		$qb->setParameter('nom', '%'. $nom . '%');
 		$qb->setParameter('lloc', '%'. $lloc . '%');
 		$qb->setParameter('congregacio', '%'. $congregacio . '%');
+		$qb->setMaxResults(4378);
 		
 		$q = $qb->getQuery();
 	
@@ -32,7 +33,7 @@ class FonsMongesRepository extends EntityRepository
 	
 		// Build the query
 		$qb->select('fm.num, fm.nodac, fm.cognom, fm.fitxa')->from('ArxiuBundle:FonsMonges', 'fm');
-	
+		$qb->setMaxResults(4378);
 		if ($nom!=null && $nom !="") {
 			$qb->where('fm.cognom = :nom');
 			$qb->setParameter('nom', $nom );
@@ -45,8 +46,9 @@ class FonsMongesRepository extends EntityRepository
 			$qb->andWhere('fm.congregacio = :congregacio');
 			$qb->setParameter('congregacio', $congregacio);
 		}
+		
 		$q = $qb->getQuery();
-	
+		
 		return $q->getResult();
 	}
 	

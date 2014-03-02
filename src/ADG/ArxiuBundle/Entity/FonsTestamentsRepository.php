@@ -12,7 +12,7 @@ class FonsTestamentsRepository extends EntityRepository
 	
 		// Build the query
 		$qb->select('ft.num, ft.nodac, ft.dades')->from('ArxiuBundle:FonsTestaments', 'ft');
-		
+		$qb->setMaxResults(3581);
 		$qb->where('ft.num LIKE :prefix');
 		$qb->andWhere('ft.dades LIKE :paraula');
 		

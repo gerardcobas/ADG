@@ -18,9 +18,64 @@ class FonsRepository extends EntityRepository
 		
 		$qb->setParameter('prefix', $prefix . '%');
 		$qb->setParameter('paraula', '%'. $paraula . '%');
-
+		$qb->setMaxResults(3721);
 		$q = $qb->getQuery();
+		return $q->getResult();
+	}
 	
+	public function findFonsManuals($paraula){
+		$em = $this->getEntityManager();
+		$qb = $em->createQueryBuilder();
+	
+		$qb->select('f.num, f.nodac, f.dades')->from('ArxiuBundle:Fons', 'f');
+		$qb->where("(f.num>='D-152-00000' AND f.num<='D-503-99999')");
+		$qb->andWhere('f.dades LIKE :paraula');
+		$qb->setParameter('paraula', '%'. $paraula . '%');
+		$qb->setMaxResults(3198);
+	
+		$q = $qb->getQuery();
+		return $q->getResult();
+	}
+	
+	public function findFonsBeneficis($paraula){
+		$em = $this->getEntityManager();
+		$qb = $em->createQueryBuilder();
+	
+		$qb->select('f.num, f.nodac, f.dades')->from('ArxiuBundle:Fons', 'f');
+		$qb->where("((f.num LIKE 'D-001%') OR (f.num>='D-004-00000' AND f.num<='D-036-99999'))");
+		$qb->andWhere('f.dades LIKE :paraula');
+		$qb->setParameter('paraula', '%'. $paraula . '%');
+		$qb->setMaxResults(3017);
+	
+		$q = $qb->getQuery();
+		return $q->getResult();
+	}
+	
+	public function findFonsFundacions($paraula){
+		$em = $this->getEntityManager();
+		$qb = $em->createQueryBuilder();
+	
+		$qb->select('f.num, f.nodac, f.dades')->from('ArxiuBundle:Fons', 'f');
+		$qb->where("(f.num LIKE 'D-002%' OR f.num LIKE 'D-003%')");
+		$qb->andWhere('f.dades LIKE :paraula');
+		$qb->setParameter('paraula', '%'. $paraula . '%');
+		$qb->setMaxResults(3017);
+	
+		$q = $qb->getQuery();
+		return $q->getResult();
+	}
+	
+	public function findFonsProcessos($paraula){
+		$em = $this->getEntityManager();
+		$qb = $em->createQueryBuilder();
+	
+		$qb->select('f.num, f.nodac, f.dades')->from('ArxiuBundle:Fons', 'f');
+		$qb->where("(f.num>='A-038-00000' AND f.num<='A-163-99999')");
+		$qb->andWhere('f.dades LIKE :paraula');
+		$qb->setParameter('paraula', '%'. $paraula . '%');
+		$qb->setMaxResults(3017);
+	
+		$q = $qb->getQuery();
 		return $q->getResult();
 	}
 	
