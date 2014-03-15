@@ -266,8 +266,22 @@ Format per imprimir
 		border: 0;
 		box-shadow: none;
 	}
-	 .dropdown-menu>li>a {
+	.dropdown-menu>li>a {
 	 	color: #DEB887;
-	 }
+	}
+	.coverInfoCol {
+		padding-right: 0px;
+	}
+}
+
+/*------------------------------------------------------------------
+[4. Max Width: 1200px]
+* Cover
+*/
+
+@media (max-width: 1200px) {
+	.coverInfoCol {
+		padding-right: 0px;
+	}
 }
 
