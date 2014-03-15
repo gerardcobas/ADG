@@ -94,6 +94,36 @@ pre {
 	text-align: justify;
 	padding-right: 15px;
 }
+.imatges {
+	width: 100%;
+	-webkit-border-radius: 4px;
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.35);
+}
+
+/* Cover */
+.gironaCover {
+	width: 100%;
+	-webkit-border-radius: 15px;
+}
+.coverInfo {
+	-webkit-border-radius: 4px;
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.35);
+	padding: 5px 1px 5px 5px;
+	color: #656565;
+}
+.coverInfo > h2 {
+	font-weight: normal;
+	color: #800000;
+	text-shadow: 0 1px 0 #f0f0f0;
+}
+.coverInfo a {
+	color: #656565;
+}
+.coverInfo a:hover, .coverInfo a:focus {
+	color: #222;
+	text-decoration: inherit;
+}
+
 
 /* General color styles*/
 .page-header {

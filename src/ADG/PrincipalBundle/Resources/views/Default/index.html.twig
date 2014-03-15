@@ -3,14 +3,39 @@
 {% block title %}{{ 'index.inici' | trans}}{% endblock %}
 
 {% block body %}
-		<div class="row">
+		
+
+		<img class="gironaCover" src="{{ asset('bundles/ADG/img/girona.png') }}"/>
+
+		
+		<div class="row" style="margin-top: 20px">
 	        <div class="col-lg-4" align="center">
-	        	<div class="space100"></div>
-	            <img src="{{ asset('bundles/ADG/img/logo-bisbat.jpg') }}"/><br>
-	            {{ 'index.propietat' | trans}}
-	            <div class="space10"></div>
-	            <img src="{{ asset('bundles/ADG/img/logo-diputacio.gif') }}"/><br>
-	            {{ 'index.colaborador' | trans}}
+	        	<div class="space100 visible-lg"></div>
+	            <div class="coverInfo">
+	            
+	            	<h2>{{ 'contacte.head' | trans }}</h2>
+	            	
+		            <address>
+		            	<i class="icon-map-marker"></i> 	
+		                Pujada Sant Martí, 12<br>
+		                17004, GIRONA
+		            </address>
+		           
+		            <address>
+		            	<i class="icon-phone"></i>
+		            	972 48 73 46
+		            </address>
+		            <address>
+		            <a class="icon-envelope-alt" href="mailto:info@arxiuadg.org" target="_top">&nbsp;info@arxiuadg.org</a>
+		            <br>
+					<a class="icon-envelope-alt" href="mailto:arxiu@catedraldegirona.org" target="_top">&nbsp;arxiu@catedraldegirona.org</a>
+					</address>
+					
+					<p><strong><i class="icon-time"></i>&nbsp;Horari</strong><br>
+		            De dilluns a dijous, de 16 h a 20 h<br>
+					Consultes convingudes: dijous de 10 h a 14 h<br>
+					Tancat: Juliol i agost / 24 desembre a 6 gener</p>
+	            </div>
 	        </div>
 	        
 	        <div class="col-lg-8" style="padding-right: 0px;">
@@ -30,4 +55,18 @@
 	     
 	        </div>
 	 </div>
+	 
+	 <div class="row" style="padding-top: 20px; margin-bottom: 20px;">
+	 
+	        <div class="col-lg-offset-2 col-lg-4 col-md-6 col-sm-6 col-xs-12" align="center">
+	            <img style="height: 80px" src="{{ asset('bundles/ADG/img/logo-bisbat.jpg') }}"/><br>
+	            {{ 'index.propietat' | trans}}
+	        </div>
+	        
+	        <div class="col-lg-4 col-xs-offset-2 col-md-6 col-sm-6 col-xs-12" align="center">
+		        <img src="{{ asset('bundles/ADG/img/logo-diputacio.png') }}"/><br>
+		        {{ 'index.colaborador' | trans}}
+	        </div>
+	 </div>
+	 
 {% endblock %}
