@@ -21,7 +21,7 @@ class GuiaGrupRepository extends EntityRepository
 		$parts = explode('.', $id);
 		$qq=$parts[0].'.'.$parts[1].'.';
 		$qb->setParameter('grup', $qq . '%');
-	
+		$qb->setMaxResults(3869);
 		$q = $qb->getQuery();
 	
 		return $q->getResult();

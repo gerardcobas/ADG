@@ -21,7 +21,7 @@ class GuiaSubfonsRepository extends EntityRepository
 		$parts = explode('.', $id);
 		$qq=$parts[0].'.';
 		$qb->setParameter('fons', $qq . '%');
-	
+		$qb->setMaxResults(3530);
 		$q = $qb->getQuery();
 	
 		return $q->getResult();

@@ -21,7 +21,7 @@ class GuiaUinstalacioRepository extends EntityRepository
 		$parts = explode('.', $id);
 		$qq=$parts[0].'.'.$parts[1].'.'.$parts[2].'.'.$parts[3].'.'.$parts[4].'.'.$parts[5].'.';
 		$qb->setParameter('uinst', $qq . '%');
-
+		$qb->setMaxResults(3543);
 		$q = $qb->getQuery();
 
 		return $q->getResult();

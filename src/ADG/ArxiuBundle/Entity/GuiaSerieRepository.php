@@ -21,7 +21,8 @@ class GuiaSerieRepository extends EntityRepository
 		$parts = explode('.', $id);
 		$qq=$parts[0].'.'.$parts[1].'.'.$parts[2].'.';
 		$qb->setParameter('serie', $qq . '%');
-	
+		$qb->setMaxResults(3724);
+		
 		$q = $qb->getQuery();
 	
 		return $q->getResult();

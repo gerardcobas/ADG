@@ -22,6 +22,7 @@ class ParroquiesArxiusRepository extends EntityRepository
 		$qb->andWhere('(p.titol LIKE :paraula OR p.autors LIKE :paraula OR p.unitat LIKE :paraula OR p.volum LIKE :paraula OR p.notes LIKE :paraula 
 				OR p.fitxa LIKE :paraula OR p.dataIngres LIKE :paraula)');
 		$qb->setParameter('paraula', '%'.$paraula.'%');
+		$qb->setMaxResults(2572);
 		$q = $qb->getQuery();
 
 		return $q->getResult();
@@ -36,7 +37,7 @@ class ParroquiesArxiusRepository extends EntityRepository
 		$qb->select('p.nodac,p.titol')->from('ArxiuBundle:ParroquiesArxius', 'p');
 		$qb->where('p.nom LIKE :nom');
 		$qb->setParameter('nom', '%'.$nom.'%');
-	
+		$qb->setMaxResults(2572);
 		$q = $qb->getQuery();
 		return $q->getResult();
 	}

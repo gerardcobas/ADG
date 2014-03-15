@@ -21,7 +21,7 @@ class GuiaUsimpleRepository extends EntityRepository
 		$parts = explode('.', $id);
 		$qq=$parts[0].'.'.$parts[1].'.'.$parts[2].'.'.$parts[3].'.'.$parts[4].'.';
 		$qb->setParameter('usim', $qq . '%');
-
+		$qb->setMaxResults(3157);
 		$q = $qb->getQuery();
 
 		return $q->getResult();

@@ -21,7 +21,7 @@ class GuiaUcompostaRepository extends EntityRepository
 		$parts = explode('.', $id);
 		$qq=$parts[0].'.'.$parts[1].'.'.$parts[2].'.'.$parts[3].'.';
 		$qb->setParameter('ucomp', $qq . '%');
-	
+		$qb->setMaxResults(3530);
 		$q = $qb->getQuery();
 	
 		return $q->getResult();
