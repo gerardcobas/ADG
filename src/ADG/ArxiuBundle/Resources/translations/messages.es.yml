@@ -12,7 +12,7 @@ submenu:
 general:
     continguts: Fondos
     datatable:
-        entrades: _MENÚ_ por página
+        entrades: _MENU_ por página
         zero: No se ha encontrado nada
         info: Encontradas _TOTAL_ entradas
         empty: 0 entradas encontradas
