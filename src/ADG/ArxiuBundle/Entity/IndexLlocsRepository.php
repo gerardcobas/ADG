@@ -42,9 +42,11 @@ class IndexLlocsRepository extends EntityRepository
 		$qb->where('i.num = :num and i.nom = :nom');
 		$qb->setParameter('num', $num);
 		$qb->setParameter('nom', $nom);
-	
-		$qb->orWhere('i.nodac = :nodac');
-		$qb->setParameter('nodac', $nodac);
+		
+		if($nodac != "" and $nodac != null) {
+			$qb->orWhere('i.nodac = :nodac');
+			$qb->setParameter('nodac', $nodac);
+		}
 	
 		$qb->setMaxResults(1);
 		$q = $qb->getQuery();

@@ -96,8 +96,10 @@ class FonsMongesRepository extends EntityRepository
 	
 		$qb->where('i.num = :num');
 		$qb->setParameter('num', $num);
-		$qb->orWhere('i.nodac = :nodac');
-		$qb->setParameter('nodac', $nodac);
+		if($nodac != "" and $nodac != null) {
+			$qb->orWhere('i.nodac = :nodac');
+			$qb->setParameter('nodac', $nodac);
+		}
 		$qb->setMaxResults(1);
 		$q = $qb->getQuery();
 	
