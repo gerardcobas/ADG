@@ -137,17 +137,17 @@ class FonsController extends Controller
     		$rep = $em->getRepository('ArxiuBundle:Fons');
     		
     		//Comprovar la seleccio i buscar en funcio del prefix fixat per l'arxiu
-    		if($seleccio=="lletres") $info=$rep->findForFons("U-001-", $cercaParaula);
-    		if($seleccio=="llicencies") $info=$rep->findForFons("Q-001-", $cercaParaula);
-    		if($seleccio=="registres") $info=$rep->findForFons("I-001-", $cercaParaula);
+    		if($seleccio=="lletres") $info=$rep->findFonsLletres($cercaParaula);
+    		if($seleccio=="llicencies") $info=$rep->findForFons("Q-", $cercaParaula);
+    		if($seleccio=="registres") $info=$rep->findForFons("I-", $cercaParaula);
     		
     		if($seleccio=="manuals") $info=$rep->findFonsManuals($cercaParaula);
     		if($seleccio=="beneficis") $info=$rep->findFonsBeneficis($cercaParaula);
-    		if($seleccio=="seu") $info=$rep->findFonsFundacions($cercaParaula);
-    		if($seleccio=="patronat") $info=$rep->findFonsProcessos($cercaParaula);
+    		if($seleccio=="seu") $info=$rep->findFonsSeu($cercaParaula);
+    		if($seleccio=="patronat") $info=$rep->findFonsPatronat($cercaParaula);
     		
-    		if($seleccio=="notalarum") $info=$rep->findForFons("G-", $cercaParaula);
-    		if($seleccio=="deposita") $info=$rep->findForFons("U-3", $cercaParaula);
+    		if($seleccio=="notalarum") $info=$rep->findFonsNotalarum($cercaParaula);
+    		if($seleccio=="deposita") $info=$rep->findFonsDeposita($cercaParaula);
     		
     		if($seleccio=="medievals") $info=$rep->findForFons("C-000-", $cercaParaula);
     		if($seleccio=="moderns") $info=$rep->findForFons("C-001-", $cercaParaula);

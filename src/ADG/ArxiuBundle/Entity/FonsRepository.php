@@ -23,6 +23,21 @@ class FonsRepository extends EntityRepository
 		return $q->getResult();
 	}
 	
+	public function findFonsLletres($paraula){
+		$em = $this->getEntityManager();
+		$qb = $em->createQueryBuilder();
+	
+		$qb->select('f.num, f.nodac, f.dades')->from('ArxiuBundle:Fons', 'f');
+		$qb->where("(f.num>='U-000-00000' AND f.num<='U-323-99999')");
+		$qb->andWhere('f.dades LIKE :paraula');
+		$qb->setParameter('paraula', '%'. $paraula . '%');
+		$qb->setMaxResults(3198);
+	
+		$q = $qb->getQuery();
+		return $q->getResult();
+	}
+	
+	
 	public function findFonsManuals($paraula){
 		$em = $this->getEntityManager();
 		$qb = $em->createQueryBuilder();
@@ -51,7 +66,7 @@ class FonsRepository extends EntityRepository
 		return $q->getResult();
 	}
 	
-	public function findFonsFundacions($paraula){
+	public function findFonsSeu($paraula){
 		$em = $this->getEntityManager();
 		$qb = $em->createQueryBuilder();
 	
@@ -65,7 +80,7 @@ class FonsRepository extends EntityRepository
 		return $q->getResult();
 	}
 	
-	public function findFonsProcessos($paraula){
+	public function findFonsPatronat($paraula){
 		$em = $this->getEntityManager();
 		$qb = $em->createQueryBuilder();
 	
@@ -78,6 +93,35 @@ class FonsRepository extends EntityRepository
 		$q = $qb->getQuery();
 		return $q->getResult();
 	}
+	
+	public function findFonsNotalarum($paraula){
+		$em = $this->getEntityManager();
+		$qb = $em->createQueryBuilder();
+	
+		$qb->select('f.num, f.nodac, f.dades')->from('ArxiuBundle:Fons', 'f');
+		$qb->where("(f.num>='G-000-00000' AND f.num<='G-184-99999')");
+		$qb->andWhere('f.dades LIKE :paraula');
+		$qb->setParameter('paraula', '%'. $paraula . '%');
+		$qb->setMaxResults(3017);
+	
+		$q = $qb->getQuery();
+		return $q->getResult();
+	}
+	
+	public function findFonsDeposita($paraula){
+		$em = $this->getEntityManager();
+		$qb = $em->createQueryBuilder();
+	
+		$qb->select('f.num, f.nodac, f.dades')->from('ArxiuBundle:Fons', 'f');
+		$qb->where("(f.num>='U-324-00000' AND f.num<='U-326-99999')");
+		$qb->andWhere('f.dades LIKE :paraula');
+		$qb->setParameter('paraula', '%'. $paraula . '%');
+		$qb->setMaxResults(3017);
+	
+		$q = $qb->getQuery();
+		return $q->getResult();
+	}
+
 	
 	/*
 	 * Retorna un nou identificador, calculat a partir del ultim segons els prefix donat.

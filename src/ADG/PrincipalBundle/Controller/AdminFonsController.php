@@ -342,15 +342,15 @@ class AdminFonsController extends Controller
     	
 		//obte ids
     	//lletres
-    	if($seleccio=="lletres") $nouId=$rep->findNewId("U-001-"); 
-    	if($seleccio=="llicencies") $nouId=$rep->findNewId("Q-001-");
-    	if($seleccio=="registres") $nouId=$rep->findNewId("I-001-");
+    	if($seleccio=="lletres") $nouId=$rep->findNewId("U-000-"); 
+    	if($seleccio=="llicencies") $nouId=$rep->findNewId("Q-000-");
+    	if($seleccio=="registres") $nouId=$rep->findNewId("I-000-");
     	
     	//manuals
-    	if($seleccio=="manuals") $nouId=$rep->findNewId("D-1");
+    	if($seleccio=="manuals") $nouId=$rep->findNewId("D-152-");
     	if($seleccio=="beneficis") $nouId=$rep->findNewId("D-001-");
     	if($seleccio=="seu") $nouId=$rep->findNewId("D-002-"); 
-    	if($seleccio=="patronat") $nouId=$rep->findNewId("A-");
+    	if($seleccio=="patronat") $nouId=$rep->findNewId("A-038-");
     	    	
     	//arxius
     	if($seleccio=="curia") $nouId=$rep->findNewId("P-001-");
@@ -361,8 +361,8 @@ class AdminFonsController extends Controller
     	if($seleccio=="cadins") $nouId=$rep->findNewId("P-006-");
     	
     	//notaria
-    	if($seleccio=="notalarum") $nouId=$rep->findNewId("G-001-"); 
-    	if($seleccio=="deposita") $nouId=$rep->findNewId("U-3");
+    	if($seleccio=="notalarum") $nouId=$rep->findNewId("G-000-"); 
+    	if($seleccio=="deposita") $nouId=$rep->findNewId("U-324-");
     	 
     	//ordes
     	if($seleccio=="capellans") $nouId=$rep->findNewId("R-001-"); 
