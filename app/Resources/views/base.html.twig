@@ -50,12 +50,33 @@
 				$(name).printThis();
 			}	         
 	    </script>
-	    <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
 		<script type="text/javascript">
-			_uacct = "UA-1248411-1";
-			urchinTracker();
-		</script> 
+			  var _gaq = _gaq || [];
+			  _gaq.push(['_setAccount', 'UA-1248411-1']);
+			  _gaq.push(['_trackPageview']);
+			
+			  (function() {
+			    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			  })();
+		</script>
+		
+		<script type="text/javascript">
+			console.log(
+				"    Website done by:                                                               \n" +
+				"					   _____                        _                               \n" +
+				"					  / ____|                      | |                              \n" +
+				"					 | |  __  ___ _ __ __ _ _ __ __| |                              \n" +
+				"					 | | |_ |/ _ \\ '__/ _` | '__/ _` |                             \n" +
+				"					 | |__| |  __/ | | (_| | | | (_| |                              \n" +
+				"					   \_____|\\___|_|  \\__,_|_|  \\__,_|     COBAS                \n" +
+				"                                                                                   \n" +
+				"         Hey there! Feel free to contact me at GitHub, @gerardcobas                \n" +
+				"                                                                                   \n" +
+				"                                                                                   \n" +
+				"-----------------------------------------------------------------------------------\n");
+		</script>  
         {% block javascripts %}{% endblock %}
-        
     </body>
 </html>
