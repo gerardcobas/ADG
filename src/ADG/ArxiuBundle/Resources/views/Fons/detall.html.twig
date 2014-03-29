@@ -14,7 +14,9 @@
 			 	{% if info.notari is not null and info.notari is not empty %}<h5 style="color: #3a87ad">{{ 'fons.detall.notari' | trans }}</h5><p>{{ info.notari }}</p>{% endif %}
 			 	{% if info.mides is not null and info.mides is not empty %}<h5 style="color: #3a87ad">{{ 'fons.detall.mides' | trans }}</h5><p>{{ info.mides }}</p>{% endif %}
 			 	{% if info.obs is not null and info.obs is not empty %}<h5 style="color: #3a87ad">{{ 'fons.detall.obs' | trans }}</h5><p>{{ info.obs }}</p>{% endif %}
-			 	
+			 	<div class="space10" style="border-bottom: #EDEDED solid 1px;"></div>
+			 	{% if info.num is not null and info.num is not empty %}<h5 style="color: #3a87ad">{{ 'llistat.taula.num' | trans }}</h5><p>{{ info.num }}</p>{% endif %}
+      		 	
 			 {% elseif tipus is sameas("fons") %}
 			 	{% if info.dades is not null and info.dades is not empty %}<h5 style="color: #3a87ad">{{ 'fons.detall.dades' | trans }}</h5><p>{{ info.dades }}</p>{% endif %}
 			 	{% if info.llibre is not null and info.llibre is not empty %}<h5 style="color: #3a87ad">{{ 'fons.detall.llibre' | trans }}</h5><p>{{ info.llibre }}</p>{% endif %}

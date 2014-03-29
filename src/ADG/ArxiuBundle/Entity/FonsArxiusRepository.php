@@ -20,7 +20,7 @@ class FonsArxiusRepository extends EntityRepository
 		$qb->setParameter('prefix', $prefix . '%');
 		$qb->setParameter('paraula', '%'. $paraula . '%');
 		$qb->setParameter('data', '%'. $data . '%');
-		
+		$qb->setMaxResults(3912);
 		$q = $qb->getQuery();
 	
 		return $q->getResult();
@@ -65,7 +65,7 @@ class FonsArxiusRepository extends EntityRepository
 	public function findDetalls($num , $nodac){
 		$em = $this->getEntityManager();
 		$qb = $em->createQueryBuilder();
-		$qb->select('i.nodac, i.data, i.dades, i.notari, i.mides, i.obs')
+		$qb->select('i.num, i.nodac, i.data, i.dades, i.notari, i.mides, i.obs')
 		->from('ArxiuBundle:FonsArxius', 'i');
 	
 		$qb->where('i.num = :num');
