@@ -11,6 +11,7 @@
       		{% if info.data is not null and info.data is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.data' | trans }}</h5><p>{{ info.data }}</p>{% endif %}
       		{% if info.any is not null and info.any is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.any' | trans }}</h5><p>{{ info.any }}</p>{% endif %}
       		{% if info.tipus is not null and info.tipus is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.tipus' | trans }}</h5><p>{{ info.tipus }}</p>{% endif %}
+      		{% if info.control is not null and info.control is not empty %}<h5 style="color: #3a87ad">{{ 'llistat.taula.num' | trans }} de control</h5><p>{{ info.control }}</p>{% endif %}
       		
       		<h4>Marit</h4>
       		{% if info.maritNom is not null and info.maritNom is not empty %}<h5 style="color: #3a87ad">{{ 'dispenses.detall.nom' | trans }}</h5><p>{{ info.maritNom }}</p>{% endif %}

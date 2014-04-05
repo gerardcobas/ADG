@@ -277,7 +277,7 @@ class DispensesRepository extends EntityRepository
 	public function findDetalls($num , $nodac){
 		$em = $this->getEntityManager();
 		$qb = $em->createQueryBuilder();
-		$qb->select('i.nodac, i.data, i.any, i.tipus, 
+		$qb->select('i.nodac, i.data, i.any, i.tipus, i.control,
 				i.maritNom, i.maritCognom1, i.maritCognom2, i.maritEstatCivil, i.maritOfici, i.maritNacionalitat, i.maritLlocNaixement, i.maritVeinatge,
 				i.mullerNom, i.mullerCognom1, i.mullerCognom2, i.mullerEstatCivil, i.mullerOfici, i.mullerNacionalitat, i.mullerLlocNaixement, i.mullerVeinatge')
 		->from('ArxiuBundle:Dispenses', 'i');
